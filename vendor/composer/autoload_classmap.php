@@ -36,6 +36,7 @@ return array(
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/Parser/NodeTraverser.php',
     'CreateLotsTable' => $baseDir . '/app/database/migrations/2014_09_11_182432_create_lots_table.php',
     'CreateOwnersTable' => $baseDir . '/app/database/migrations/2014_09_11_182003_create_owners_table.php',
+    'CreateRegionsTable' => $baseDir . '/app/database/migrations/2014_09_11_183633_create_regions_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',
