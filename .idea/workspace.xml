@@ -55,10 +55,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014_09_11_183633_create_regions_table.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2014_09_11_183633_create_regions_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_183633_create_regions_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="749" selection-end="749" vertical-scroll-proportion="0.86283183" vertical-offset="0" max-vertical-offset="678">
+            <state line="40" column="0" selection-start="749" selection-end="749" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="675">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_09_11_185144_create_entranxits_table.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="55" selection-start="411" selection-end="411" vertical-scroll-proportion="0.3887195" vertical-offset="0" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -82,12 +91,13 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_182003_create_owners_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_182432_create_lots_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_183633_create_regions_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="213" />
+    <option name="x" value="108" />
     <option name="y" value="27" />
     <option name="width" value="976" />
     <option name="height" value="933" />
@@ -249,7 +259,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="213" y="27" width="976" height="933" extended-state="0" />
+    <frame x="108" y="27" width="976" height="933" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -388,7 +398,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_183633_create_regions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="749" selection-end="749" vertical-scroll-proportion="0.86283183" vertical-offset="0" max-vertical-offset="678">
+        <state line="40" column="0" selection-start="749" selection-end="749" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="55" selection-start="411" selection-end="411" vertical-scroll-proportion="0.3887195" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>

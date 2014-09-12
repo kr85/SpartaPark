@@ -34,6 +34,7 @@ return array(
     'ClassPreloader\\Parser\\DirVisitor' => $vendorDir . '/classpreloader/classpreloader/src/Parser/DirVisitor.php',
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/Parser/NodeTraverser.php',
+    'CreateEntranxitsTable' => $baseDir . '/app/database/migrations/2014_09_11_185144_create_entranxits_table.php',
     'CreateLotsTable' => $baseDir . '/app/database/migrations/2014_09_11_182432_create_lots_table.php',
     'CreateOwnersTable' => $baseDir . '/app/database/migrations/2014_09_11_182003_create_owners_table.php',
     'CreateRegionsTable' => $baseDir . '/app/database/migrations/2014_09_11_183633_create_regions_table.php',
