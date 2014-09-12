@@ -1,20 +1,21 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
-class OwnersTableSeeder extends Seeder {
+class OwnersTableSeeder extends Seeder
+{
 
 	public function run()
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Owner::create([
-
-			]);
-		}
+      for ($i = 0; $i < 10; $i++) {
+         Owner::create(array(
+            'name'          => $faker->name,
+            'phone_number'  => $faker->phoneNumber,
+            'email_address' => $faker->email
+         ));
+      }
 	}
 
 }
