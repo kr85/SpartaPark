@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,88 +25,62 @@
     <favorites_list name="spartapark" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="Lot.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="34" selection-start="684" selection-end="684" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="780">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Region.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/Region.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="13" selection-start="469" selection-end="493" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Entranxit.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="42" selection-start="517" selection-end="517" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/composer.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="36" selection-start="292" selection-end="292" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="780">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="OwnersTableSeeder.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/database/seeds/OwnersTableSeeder.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="24" selection-start="100" selection-end="100" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="390">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DatabaseSeeder.php" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="6" selection-start="241" selection-end="241" vertical-scroll-proportion="0.5625" vertical-offset="0" max-vertical-offset="400">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LotsTableSeeder.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="65" column="28" selection-start="1757" selection-end="1757" vertical-scroll-proportion="-40.625" vertical-offset="0" max-vertical-offset="1770">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="2014_09_11_182432_create_lots_table.php" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182432_create_lots_table.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="9" selection-start="313" selection-end="313" vertical-scroll-proportion="0.35532996" vertical-offset="100" max-vertical-offset="690">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="Lot.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="34" selection-start="684" selection-end="684" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Region.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Region.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="13" selection-start="469" selection-end="493" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entranxit.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="42" selection-start="517" selection-end="517" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="36" selection-start="292" selection-end="292" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OwnersTableSeeder.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/seeds/OwnersTableSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="24" selection-start="100" selection-end="100" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="40" selection-start="316" selection-end="316" vertical-scroll-proportion="0.2813599" vertical-offset="0" max-vertical-offset="853">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -131,6 +106,7 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/database/seeds/OwnersTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/RegionsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
       </list>
     </option>
@@ -468,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_183633_create_regions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="749" selection-end="749" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="658">
@@ -500,7 +469,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="3" selection-start="455" selection-end="455" vertical-scroll-proportion="0.33240998" vertical-offset="0" max-vertical-offset="722">
           <folding>
-            <element signature="e#7#392#0" expanded="true" />
+            <element signature="e#7#392#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -508,6 +477,27 @@
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182003_create_owners_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="22" selection-start="216" selection-end="216" vertical-scroll-proportion="0.4954955" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182432_create_lots_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="9" selection-start="313" selection-end="313" vertical-scroll-proportion="0.35532996" vertical-offset="100" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="45" selection-start="2894" selection-end="2894" vertical-scroll-proportion="0.4875" vertical-offset="1350" max-vertical-offset="1770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_183633_create_regions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="191" selection-end="191" vertical-scroll-proportion="0.15989847" vertical-offset="72" max-vertical-offset="675">
           <folding />
         </state>
       </provider>
@@ -547,23 +537,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182432_create_lots_table.php">
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/RegionsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="9" selection-start="313" selection-end="313" vertical-scroll-proportion="0.35532996" vertical-offset="100" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="28" selection-start="1757" selection-end="1757" vertical-scroll-proportion="-40.625" vertical-offset="0" max-vertical-offset="1770">
+        <state line="61" column="25" selection-start="1773" selection-end="1773" vertical-scroll-proportion="1.0726846" vertical-offset="0" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="6" selection-start="241" selection-end="241" vertical-scroll-proportion="0.5625" vertical-offset="0" max-vertical-offset="400">
+        <state line="16" column="40" selection-start="316" selection-end="316" vertical-scroll-proportion="0.2813599" vertical-offset="0" max-vertical-offset="853">
           <folding />
         </state>
       </provider>
