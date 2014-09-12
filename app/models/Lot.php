@@ -34,4 +34,14 @@ class Lot extends Eloquent
    {
       return $this->hasMany('Region', 'lot_id');
    }
+
+   /**
+    * Lot has an Entrance and Exit
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function entranxits()
+   {
+      return $this->hasMany('Entranxit', 'lot_id');
+   }
 }

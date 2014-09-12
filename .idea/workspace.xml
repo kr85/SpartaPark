@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Entranxit.php" afterPath="$PROJECT_DIR$/app/models/Entranxit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Lot.php" afterPath="$PROJECT_DIR$/app/models/Lot.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Owner.php" afterPath="$PROJECT_DIR$/app/models/Owner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Region.php" afterPath="$PROJECT_DIR$/app/models/Region.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,76 +27,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="31" selection-start="213" selection-end="213" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_09_11_182003_create_owners_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182003_create_owners_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="22" selection-start="216" selection-end="216" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_09_11_182432_create_lots_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182432_create_lots_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="9" selection-start="313" selection-end="336" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="690">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_09_11_183633_create_regions_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_183633_create_regions_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="749" selection-end="749" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="675">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_09_11_185144_create_entranxits_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="55" selection-start="411" selection-end="411" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="705">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Owner.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="30" selection-start="141" selection-end="141" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="555">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lot.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Lot.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="4" selection-start="443" selection-end="443" vertical-scroll-proportion="0.59148264" vertical-offset="0" max-vertical-offset="634">
+            <state line="38" column="34" selection-start="684" selection-end="684" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <file leaf-file-name="Region.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Region.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="3" selection-start="455" selection-end="455" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330">
-              <folding>
-                <element signature="e#7#392#0" expanded="true" />
-              </folding>
+            <state line="28" column="13" selection-start="469" selection-end="493" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entranxit.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="42" selection-start="517" selection-end="517" vertical-scroll-proportion="0.5645161" vertical-offset="0" max-vertical-offset="744">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,14 +75,16 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/models/Owner.php" />
+        <option value="$PROJECT_DIR$/app/models/Entranxit.php" />
+        <option value="$PROJECT_DIR$/app/models/Region.php" />
         <option value="$PROJECT_DIR$/app/models/Lot.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="121" />
-    <option name="y" value="45" />
+    <option name="x" value="778" />
+    <option name="y" value="48" />
     <option name="width" value="976" />
     <option name="height" value="933" />
   </component>
@@ -280,7 +236,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="121" y="45" width="976" height="933" extended-state="0" />
+    <frame x="778" y="48" width="976" height="933" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -396,13 +352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="31" selection-start="213" selection-end="213" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182003_create_owners_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="22" selection-start="216" selection-end="216" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="615">
@@ -445,25 +394,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="31" selection-start="213" selection-end="213" vertical-scroll-proportion="0.12465374" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="30" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20775624" vertical-offset="0" max-vertical-offset="722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="3" selection-start="455" selection-end="455" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330">
+        <state line="16" column="3" selection-start="455" selection-end="455" vertical-scroll-proportion="0.33240998" vertical-offset="0" max-vertical-offset="722">
           <folding>
             <element signature="e#7#392#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="30" selection-start="141" selection-end="141" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="555">
+        <state line="38" column="34" selection-start="684" selection-end="684" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="443" selection-end="443" vertical-scroll-proportion="0.59148264" vertical-offset="0" max-vertical-offset="634">
+        <state line="28" column="13" selection-start="469" selection-end="493" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="42" selection-start="517" selection-end="517" vertical-scroll-proportion="0.5645161" vertical-offset="0" max-vertical-offset="744">
           <folding />
         </state>
       </provider>
