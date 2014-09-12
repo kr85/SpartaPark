@@ -2,6 +2,6 @@
 
 *** Full read me coming soon ***
 
-### License
+## License
 
 &copy; Copyright 2014, SpartaPark

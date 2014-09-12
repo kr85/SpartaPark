@@ -17,36 +17,13 @@ This Laravel 4 package provides a variety of generators to speed up your develop
 
 > [Want a 5-minute video overview?](https://dl.dropboxusercontent.com/u/774859/Work/Laravel-4-Generators/Get-Started-With-Laravel-Custom-Generators.mp4)
 
-
-## Laravel 4.2 and Below
-
 Begin by installing this package through Composer. Edit your project's `composer.json` file to require `way/generators`.
 
 	"require-dev": {
-		"way/generators": "~2.0"
+		"way/generators": "2.*"
 	}
 
-Next, update Composer from the Terminal:
-
-    composer update --dev
-
-Once this operation completes, the final step is to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
-
-    'Way\Generators\GeneratorsServiceProvider'
-
-That's it! You're all set to go. Run the `artisan` command from the Terminal to see the new `generate` commands.
-
-    php artisan
-    
-## Laravel 4.3 and Above
-
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `way/generators`.
-
-	"require-dev": {
-		"way/generators": "~3.0"
-	}
-
-> Version 3 of these generators works with Laravel 4.3 and higher, due to the new default folder structure in Laravel.
+> Please note that version 2 of this package removed support for a couple of generators, such as `generate:form`. If you'd like to continue using them, stick with version `1.1`.
 
 Next, update Composer from the Terminal:
 
@@ -221,7 +198,7 @@ Nice! A few things to notice here:
 - It parsed the `fields` options, and added those fields.
 - The drop method is smart enough to realize that, in reverse, the table should be dropped entirely.
 
-To declare fields, use a comma+space-separated list of key:value:option sets, where `key` is the name of the field, `value` is the [column type](http://laravel.com/docs/schema#adding-columns), and `option` is a way to specify indexes and such, like `unique` or `nullable`. Here are some examples:
+To declare fields, use a comma+space-separated list of key:value:option sets, where `key` is the name of the field, `value` is the [column type](http://four.laravel.com/docs/schema#adding-columns), and `option` is a way to specify indexes and such, like `unique` or `nullable`. Here are some examples:
 
 - `--fields="first:string, last:string"`
 - `--fields="age:integer, yob:date"`

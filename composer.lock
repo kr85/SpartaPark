@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d8ef9b158769138a10cc66f548767ddc",
+    "hash": "6053a4163c5768e32a2cb7b70089bd29",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1811,16 +1811,16 @@
         },
         {
             "name": "way/generators",
-            "version": "dev-master",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JeffreyWay/Laravel-4-Generators.git",
-                "reference": "27a8d2ea720b406f2527d286477b98e2f4259a11"
+                "reference": "484d379c6bc1d38c75e4f52f74efcbcd11f7dd2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/27a8d2ea720b406f2527d286477b98e2f4259a11",
-                "reference": "27a8d2ea720b406f2527d286477b98e2f4259a11",
+                "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/484d379c6bc1d38c75e4f52f74efcbcd11f7dd2c",
+                "reference": "484d379c6bc1d38c75e4f52f74efcbcd11f7dd2c",
                 "shasum": ""
             },
             "require": {
@@ -1849,11 +1849,13 @@
             "authors": [
                 {
                     "name": "Jeffrey Way",
-                    "email": "jeffrey@jeffrey-way.com"
+                    "email": "jeffrey@jeffrey-way.com",
+                    "homepage": "http://jeffrye-way.com",
+                    "role": "Developer"
                 }
             ],
             "description": "Rapidly generate resources, migrations, models, and much more.",
-            "time": "2014-09-11 14:50:30"
+            "time": "2014-05-27 14:21:26"
         }
     ],
     "packages-dev": [
@@ -2336,9 +2338,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "way/generators": 20
-    },
+    "stability-flags": [
+
+    ],
     "prefer-stable": false,
     "platform": [
 

@@ -4,7 +4,7 @@
 	"keywords": ["SpartaPark", "SJSU", "parking", "garage"],
 	"require": {
 		"laravel/framework": "4.2.*",
-		"way/generators": "dev-master",
+		"way/generators": "~2.0",
 		"barryvdh/laravel-ide-helper": "1.*"
 	},
 	"require-dev": {
