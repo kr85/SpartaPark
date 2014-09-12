@@ -8,7 +8,7 @@ class Owner extends Eloquent
    /**
     * @var string Name of the table
     */
-   protected $table = "owners";
+   protected $table = 'owners';
 
    /**
     * @var array Validation rules
