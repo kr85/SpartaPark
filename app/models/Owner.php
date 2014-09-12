@@ -1,13 +1,32 @@
 <?php
 
-class Owner extends \Eloquent {
+/**
+ * Class Owner
+ */
+class Owner extends Eloquent
+{
+   /**
+    * @var string Name of the table
+    */
+   protected $table = "owners";
 
-	// Add your validation rules here
-	public static $rules = [
-		// 'title' => 'required'
-	];
+   /**
+    * @var array Validation rules
+    */
+   public static $rules = array();
 
-	// Don't forget to fill this array
-	protected $fillable = [];
+   /**
+    * @var array Properties that can be mass assigned
+    */
+   protected $fillable = array();
 
+   /**
+    * Owner has many lots
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function lots()
+   {
+      return $this->hasMany('Lot', 'owner_id');
+   }
 }
