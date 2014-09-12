@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder {
       // $this->call('OwnersTableSeeder');
       // $this->call('LotsTableSeeder');
       // $this->call('RegionsTableSeeder');
-      $this->call('EntranxitsTableSeeder');
+      // $this->call('EntranxitsTableSeeder');
 	}
 
 }
