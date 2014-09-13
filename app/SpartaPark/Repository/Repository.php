@@ -8,7 +8,7 @@
 interface Repository
 {
    /**
-    * Get all properties
+    * Get all entities.
     *
     * @param array $with
     * @return mixed
@@ -16,7 +16,7 @@ interface Repository
    public function all(array $with);
 
    /**
-    * Get one property with a condition
+    * Get one entity with a condition
     *
     * @param $key
     * @param $value
@@ -26,7 +26,7 @@ interface Repository
    public function getOneWhere($key, $value, array $with);
 
    /**
-    * Get many properties with a condition
+    * Get many entities with a condition
     *
     * @param $key
     * @param $value
@@ -34,4 +34,12 @@ interface Repository
     * @return mixed
     */
    public function getManyWhere($key, $value, array $with);
+
+   /**
+    * Helper make
+    *
+    * @param array $with
+    * @return mixed
+    */
+   public function make(array $with);
 }
