@@ -6,14 +6,27 @@
 class MainController extends BaseController
 {
 
-   public function getLotInfo()
+   public function getLotInfo($id)
    {
-      return  'Lot info';
+      $lots = Lot::find($id);
+      $regions = Region::where('lot_id', '=', $lots->id)->get();
+      $lot = array(
+         'id'        => $lots->id,
+         'name'      => $lots->name,
+         'address'   => $lots->address,
+         'longitude' => $lots->longitude,
+         'latitude'  => $lots->latitude,
+         'regions'   => $regions
+      );
+
+      return  $lot;
    }
 
-   public function getRegionInfo()
+   public function getRegionInfo($id)
    {
-      return 'Region info';
+      $region = Region::find($id);
+
+      return $region;
    }
 
    public function getLotsNearAddress()
@@ -25,4 +38,5 @@ class MainController extends BaseController
    {
       return 'Lots near coordinates';
    }
+
 }
