@@ -5,11 +5,38 @@
  */
 class MainController extends BaseController
 {
+   /**
+    * @var Lot instance
+    */
+   protected $lot;
 
+   /**
+    * @var Region instance
+    */
+   protected $region;
+
+   /**
+    * Constructor
+    *
+    * @param Lot $lot lot instance
+    * @param Region $region region instance
+    */
+   public function __construct(Lot $lot, Region $region)
+   {
+      $this->lot    = $lot;
+      $this->region = $region;
+   }
+
+   /**
+    * Gets lot information by id
+    *
+    * @param $id lot id
+    * @return array array of lot information
+    */
    public function getLotInfo($id)
    {
-      $lots = Lot::find($id);
-      $regions = Region::where('lot_id', '=', $lots->id)->get();
+      $lots = $this->lot->find($id);
+      $regions = $this->region->where('lot_id', '=', $lots->id)->get();
       $lot = array(
          'id'        => $lots->id,
          'name'      => $lots->name,
@@ -24,7 +51,7 @@ class MainController extends BaseController
 
    public function getRegionInfo($id)
    {
-      $region = Region::find($id);
+      $region = $this->region->find($id);
 
       return $region;
    }

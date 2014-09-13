@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,28 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="32" selection-start="468" selection-end="468" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="705">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_09_12_192902_remove_timestamps_from_lots_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="506" selection-end="506" vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="600">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_09_12_193057_remove_timestamps_from_regions_table.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="30" selection-start="502" selection-end="502" vertical-scroll-proportion="0.59183675" vertical-offset="0" max-vertical-offset="735">
+            <state line="21" column="43" selection-start="316" selection-end="316" vertical-scroll-proportion="0.41611624" vertical-offset="0" max-vertical-offset="1110">
               <folding />
             </state>
           </provider>
@@ -94,9 +74,9 @@
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php" />
-        <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
       </list>
     </option>
   </component>
@@ -343,7 +323,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39042208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39042208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -543,23 +523,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="32" selection-start="468" selection-end="468" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="705">
+        <state line="35" column="0" selection-start="515" selection-end="515" vertical-scroll-proportion="0.6938776" vertical-offset="0" max-vertical-offset="735">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="506" selection-end="506" vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="600">
+        <state line="35" column="0" selection-start="506" selection-end="506" vertical-scroll-proportion="0.673712" vertical-offset="0" max-vertical-offset="757">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="30" selection-start="502" selection-end="502" vertical-scroll-proportion="0.59183675" vertical-offset="0" max-vertical-offset="735">
+        <state line="21" column="43" selection-start="316" selection-end="316" vertical-scroll-proportion="0.41611624" vertical-offset="0" max-vertical-offset="1110">
           <folding />
         </state>
       </provider>
