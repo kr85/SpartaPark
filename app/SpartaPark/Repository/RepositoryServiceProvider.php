@@ -5,6 +5,8 @@ use SpartaPark\Repository\Lot\EloquentLotRepository;
 use SpartaPark\Repository\Owner\EloquentOwnerRepository;
 use Owner;
 use Lot;
+use Region;
+use SpartaPark\Repository\Region\EloquentRegionRepository;
 
 /**
  * Class RepositoryServiceProvider
@@ -20,6 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
    {
       $this->registerOwnerRepository();
       $this->registerLotRepository();
+      $this->registerRegionRepository();
    }
 
    /**
@@ -39,6 +42,16 @@ class RepositoryServiceProvider extends ServiceProvider
    {
       $this->app->bind('SpartaPark\Repository\Lot\LotRepository', function($app) {
          return new EloquentLotRepository(new Lot());
+      });
+   }
+
+   /**
+    * Register region repository
+    */
+   public function registerRegionRepository()
+   {
+      $this->app->bind('SpartaPark\Repository\Region\RegionRepository', function($app) {
+         return new EloquentRegionRepository(new Region());
       });
    }
 }
