@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/Lot/LotRepository.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/Lot/LotRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryServiceProvider.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RepositoryServiceProvider.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="4" selection-start="363" selection-end="363" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="540">
+            <state line="21" column="37" selection-start="503" selection-end="503" vertical-scroll-proportion="0.44179523" vertical-offset="0" max-vertical-offset="735">
               <folding>
                 <element signature="e#40#79#0" expanded="true" />
               </folding>
@@ -96,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EloquentLotRepository.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EloquentLotRepository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Lot/EloquentLotRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="358" selection-end="358" vertical-scroll-proportion="0.37868163" vertical-offset="0" max-vertical-offset="713">
+            <state line="27" column="1" selection-start="510" selection-end="510" vertical-scroll-proportion="-16.875" vertical-offset="0" max-vertical-offset="495">
               <folding>
                 <element signature="e#44#97#0" expanded="true" />
               </folding>
@@ -164,10 +164,10 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/AbstractEloquentRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Owner/OwnerRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Owner/EloquentOwnerRepository.php" />
-        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Lot/LotRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Lot/EloquentLotRepository.php" />
+        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -660,15 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="363" selection-end="363" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="540">
-          <folding>
-            <element signature="e#40#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Lot/LotRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="1" selection-start="252" selection-end="252" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
@@ -680,9 +671,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Lot/EloquentLotRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="358" selection-end="358" vertical-scroll-proportion="0.37868163" vertical-offset="0" max-vertical-offset="713">
+        <state line="27" column="1" selection-start="510" selection-end="510" vertical-scroll-proportion="-16.875" vertical-offset="0" max-vertical-offset="495">
           <folding>
             <element signature="e#44#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="37" selection-start="503" selection-end="503" vertical-scroll-proportion="0.44179523" vertical-offset="0" max-vertical-offset="735">
+          <folding>
+            <element signature="e#40#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
