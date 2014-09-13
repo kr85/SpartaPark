@@ -124,6 +124,7 @@ return array(
 		
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+      'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
 
       'SpartaPark\Repository\RepositoryServiceProvider',
 
@@ -193,6 +194,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+      'Gmaps'           => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
 
 	),
 

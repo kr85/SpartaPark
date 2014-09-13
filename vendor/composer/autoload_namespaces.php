@@ -43,4 +43,5 @@ return array(
     'Crypt' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
     'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
+    'Appitventures\\Phpgmaps\\' => array($vendorDir . '/appitventures/phpgmaps/src'),
 );

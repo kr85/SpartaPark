@@ -1,7 +1,14 @@
-Version 1.0.0-dev
+Version 1.0.1-dev
 -----------------
 
 Nothing yet.
+
+Version 1.0.0 (12.09.2014)
+--------------------------
+
+* [BC] Removed deprecated `Template` and `TemplateLoader` classes.
+
+* Fixed XML unserializer to properly work with new namespaced node names.
 
 Version 1.0.0-beta2 (31.08.2014)
 --------------------------------
@@ -22,7 +29,7 @@ Version 1.0.0-beta2 (31.08.2014)
 * The autoloader now only requires a file if it exists. This allows usages like
   `class_exists('PhpParser\NotExistingClass')`.
 
-* Added experimental ``bin/php-parse.php`` script, which is intended to help exploring and debugging the node tree.
+* Added experimental `bin/php-parse.php` script, which is intended to help exploring and debugging the node tree.
 
 * Separated the parser implemention (in `lib/PhpParser/ParserAbstract.php`) and the generated data (in
   `lib/PhpParser/Parser.php`). Furthermore the parser now uses meaningful variable names and contains comments

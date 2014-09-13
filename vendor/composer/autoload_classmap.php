@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Appitventures\\Phpgmaps\\Facades\\Phpgmaps' => $vendorDir . '/appitventures/phpgmaps/src/Appitventures/Phpgmaps/Facades/Phpgmaps.php',
+    'Appitventures\\Phpgmaps\\Phpgmaps' => $vendorDir . '/appitventures/phpgmaps/src/Appitventures/Phpgmaps/Phpgmaps.php',
+    'Appitventures\\Phpgmaps\\PhpgmapsServiceProvider' => $vendorDir . '/appitventures/phpgmaps/src/Appitventures/Phpgmaps/PhpgmapsServiceProvider.php',
     'Barryvdh\\LaravelIdeHelper\\Alias' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Alias.php',
     'Barryvdh\\LaravelIdeHelper\\Console\\GeneratorCommand' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Console/GeneratorCommand.php',
     'Barryvdh\\LaravelIdeHelper\\Console\\ModelsCommand' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Console/ModelsCommand.php',
@@ -1385,6 +1388,8 @@ return array(
     'SpartaPark\\Repository\\Lot\\LotRepository' => $baseDir . '/app/SpartaPark/Repository/Lot/LotRepository.php',
     'SpartaPark\\Repository\\Owner\\EloquentOwnerRepository' => $baseDir . '/app/SpartaPark/Repository/Owner/EloquentOwnerRepository.php',
     'SpartaPark\\Repository\\Owner\\OwnerRepository' => $baseDir . '/app/SpartaPark/Repository/Owner/OwnerRepository.php',
+    'SpartaPark\\Repository\\Region\\EloquentRegionRepository' => $baseDir . '/app/SpartaPark/Repository/Region/EloquentRegionRepository.php',
+    'SpartaPark\\Repository\\Region\\RegionRepository' => $baseDir . '/app/SpartaPark/Repository/Region/RegionRepository.php',
     'SpartaPark\\Repository\\Repository' => $baseDir . '/app/SpartaPark/Repository/Repository.php',
     'SpartaPark\\Repository\\RepositoryServiceProvider' => $baseDir . '/app/SpartaPark/Repository/RepositoryServiceProvider.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',
