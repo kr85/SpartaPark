@@ -32,10 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Repository.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Repository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="24" selection-start="591" selection-end="591" vertical-scroll-proportion="0.6340819" vertical-offset="0" max-vertical-offset="757">
+            <state line="36" column="1" selection-start="680" selection-end="680" vertical-scroll-proportion="-22.5" vertical-offset="0" max-vertical-offset="630">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crudable.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Crudable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="28" selection-start="602" selection-end="602" vertical-scroll-proportion="0.71334213" vertical-offset="0" max-vertical-offset="757">
               <folding />
             </state>
           </provider>
@@ -85,6 +94,7 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php" />
+        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Crudable.php" />
       </list>
     </option>
   </component>
@@ -190,6 +200,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,11 +426,6 @@
         <state line="8" column="36" selection-start="292" selection-end="292" vertical-scroll-proportion="0.14067996" vertical-offset="0" max-vertical-offset="853" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="42" selection-start="517" selection-end="517" vertical-scroll-proportion="0.49237984" vertical-offset="0" max-vertical-offset="853" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Region.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="13" selection-start="469" selection-end="493" vertical-scroll-proportion="0.49237984" vertical-offset="0" max-vertical-offset="853">
@@ -462,9 +485,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="11" selection-start="40" selection-end="49" vertical-scroll-proportion="0.099075295" vertical-offset="0" max-vertical-offset="757">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="24" selection-start="591" selection-end="591" vertical-scroll-proportion="0.6340819" vertical-offset="0" max-vertical-offset="757">
+        <state line="36" column="1" selection-start="680" selection-end="680" vertical-scroll-proportion="-22.5" vertical-offset="0" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Crudable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="28" selection-start="602" selection-end="602" vertical-scroll-proportion="0.71334213" vertical-offset="0" max-vertical-offset="757">
           <folding />
         </state>
       </provider>
