@@ -1,6 +1,7 @@
 <?php
 
 use SpartaPark\Repository\Lot\LotRepository;
+use SpartaPark\Repository\Region\RegionRepository;
 
 /**
  * Class MainController
@@ -13,15 +14,20 @@ class MainController extends BaseController
    protected $lotRepository;
 
    /**
-    * @var Region instance
+    * @var SpartaPark\Repository\Region\RegionRepository region repository
     */
-   protected $region;
+   protected $regionRepository;
 
-
-   public function __construct(LotRepository $lotRepository, Region $region)
+   /**
+    * Constructor
+    *
+    * @param LotRepository $lotRepository lot repository
+    * @param RegionRepository $regionRepository region repository
+    */
+   public function __construct(LotRepository $lotRepository, RegionRepository $regionRepository)
    {
       $this->lotRepository    = $lotRepository;
-      $this->region = $region;
+      $this->regionRepository = $regionRepository;
    }
 
    /**
@@ -53,7 +59,7 @@ class MainController extends BaseController
     */
    public function getRegionInfo($id)
    {
-      $region = $this->region->find($id);
+      $region = $this->regionRepository->find($id, array());
 
       return $region;
    }
