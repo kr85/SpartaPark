@@ -125,6 +125,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
+      'SpartaPark\Repository\RepositoryServiceProvider',
+
 	),
 
 	/*
