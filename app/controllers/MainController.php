@@ -1,29 +1,26 @@
 <?php
 
+use SpartaPark\Repository\Lot\LotRepository;
+
 /**
  * Class MainController
  */
 class MainController extends BaseController
 {
    /**
-    * @var Lot instance
+    * @var SpartaPark\Repository\Lot\LotRepository lot repository
     */
-   protected $lot;
+   protected $lotRepository;
 
    /**
     * @var Region instance
     */
    protected $region;
 
-   /**
-    * Constructor
-    *
-    * @param Lot $lot lot instance
-    * @param Region $region region instance
-    */
-   public function __construct(Lot $lot, Region $region)
+
+   public function __construct(LotRepository $lotRepository, Region $region)
    {
-      $this->lot    = $lot;
+      $this->lotRepository    = $lotRepository;
       $this->region = $region;
    }
 
@@ -35,15 +32,14 @@ class MainController extends BaseController
     */
    public function getLotInfo($id)
    {
-      $lots = $this->lot->find($id);
-      $regions = $this->region->where('lot_id', '=', $lots->id)->get();
+      $lot = $this->lotRepository->find($id, array('regions'));
       $lot = array(
-         'id'        => $lots->id,
-         'name'      => $lots->name,
-         'address'   => $lots->address,
-         'longitude' => $lots->longitude,
-         'latitude'  => $lots->latitude,
-         'regions'   => $regions
+         'id'        => $lot->id,
+         'name'      => $lot->name,
+         'address'   => $lot->address,
+         'longitude' => $lot->longitude,
+         'latitude'  => $lot->latitude,
+         'regions'   => $lot->regions
       );
 
       return  $lot;

@@ -1381,6 +1381,8 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'SpartaPark\\Repository\\AbstractEloquentRepository' => $baseDir . '/app/SpartaPark/Repository/AbstractEloquentRepository.php',
     'SpartaPark\\Repository\\Crudable' => $baseDir . '/app/SpartaPark/Repository/Crudable.php',
+    'SpartaPark\\Repository\\Lot\\EloquentLotRepository' => $baseDir . '/app/SpartaPark/Repository/Lot/EloquentLotRepository.php',
+    'SpartaPark\\Repository\\Lot\\LotRepository' => $baseDir . '/app/SpartaPark/Repository/Lot/LotRepository.php',
     'SpartaPark\\Repository\\Owner\\EloquentOwnerRepository' => $baseDir . '/app/SpartaPark/Repository/Owner/EloquentOwnerRepository.php',
     'SpartaPark\\Repository\\Owner\\OwnerRepository' => $baseDir . '/app/SpartaPark/Repository/Owner/OwnerRepository.php',
     'SpartaPark\\Repository\\Repository' => $baseDir . '/app/SpartaPark/Repository/Repository.php',
