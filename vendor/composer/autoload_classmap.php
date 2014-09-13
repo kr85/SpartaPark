@@ -1377,6 +1377,7 @@ return array(
     'Region' => $baseDir . '/app/models/Region.php',
     'RegionsTableSeeder' => $baseDir . '/app/database/seeds/RegionsTableSeeder.php',
     'RemoveTimestampsFromLotsTable' => $baseDir . '/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php',
+    'RemoveTimestampsFromRegionsTable' => $baseDir . '/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',
     'Stack\\StackedHttpKernel' => $vendorDir . '/stack/builder/src/Stack/StackedHttpKernel.php',

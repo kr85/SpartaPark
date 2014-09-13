@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,10 +36,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014_09_12_192902_remove_timestamps_from_lots_table.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2014_09_12_192902_remove_timestamps_from_lots_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="30" selection-start="493" selection-end="493" vertical-scroll-proportion="0.5746367" vertical-offset="0" max-vertical-offset="757">
+            <state line="35" column="0" selection-start="506" selection-end="506" vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_09_12_193057_remove_timestamps_from_regions_table.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="30" selection-start="502" selection-end="502" vertical-scroll-proportion="0.59183675" vertical-offset="0" max-vertical-offset="735">
               <folding />
             </state>
           </provider>
@@ -89,6 +96,7 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php" />
       </list>
     </option>
   </component>
@@ -544,7 +552,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="30" selection-start="493" selection-end="493" vertical-scroll-proportion="0.5746367" vertical-offset="0" max-vertical-offset="757">
+        <state line="35" column="0" selection-start="506" selection-end="506" vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_193057_remove_timestamps_from_regions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="30" selection-start="502" selection-end="502" vertical-scroll-proportion="0.59183675" vertical-offset="0" max-vertical-offset="735">
           <folding />
         </state>
       </provider>
