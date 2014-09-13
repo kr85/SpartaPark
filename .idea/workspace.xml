@@ -59,12 +59,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OwnerRepository.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OwnerRepository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Owner/OwnerRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="260" selection-end="260" vertical-scroll-proportion="0.26530612" vertical-offset="0" max-vertical-offset="735">
+            <state line="13" column="1" selection-start="260" selection-end="260" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
               <folding>
                 <element signature="e#46#81#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EloquentOwnerRepository.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Owner/EloquentOwnerRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="1" selection-start="539" selection-end="539" vertical-scroll-proportion="0.56802243" vertical-offset="0" max-vertical-offset="713">
+              <folding>
+                <element signature="e#46#99#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,13 +128,14 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/AbstractEloquentRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Owner/OwnerRepository.php" />
+        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Owner/EloquentOwnerRepository.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="901" />
-    <option name="y" value="93" />
+    <option name="x" value="860" />
+    <option name="y" value="95" />
     <option name="width" value="1276" />
     <option name="height" value="933" />
   </component>
@@ -309,7 +321,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="901" y="93" width="1276" height="933" extended-state="0" />
+    <frame x="860" y="95" width="1276" height="933" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -426,7 +438,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="30" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20775624" vertical-offset="0" max-vertical-offset="722" />
+        <state line="10" column="30" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20775624" vertical-offset="0" max-vertical-offset="722">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182003_create_owners_table.php">
@@ -563,9 +577,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Owner/OwnerRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="260" selection-end="260" vertical-scroll-proportion="0.26530612" vertical-offset="0" max-vertical-offset="735">
+        <state line="13" column="1" selection-start="260" selection-end="260" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
           <folding>
             <element signature="e#46#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Owner/EloquentOwnerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="1" selection-start="539" selection-end="539" vertical-scroll-proportion="0.56802243" vertical-offset="0" max-vertical-offset="713">
+          <folding>
+            <element signature="e#46#99#0" expanded="true" />
           </folding>
         </state>
       </provider>
