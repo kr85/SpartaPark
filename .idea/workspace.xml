@@ -28,7 +28,7 @@
       <file leaf-file-name="MainController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="43" selection-start="316" selection-end="316" vertical-scroll-proportion="0.41611624" vertical-offset="0" max-vertical-offset="1110">
+            <state line="50" column="0" selection-start="999" selection-end="999" vertical-scroll-proportion="0.40554821" vertical-offset="443" max-vertical-offset="1200">
               <folding />
             </state>
           </provider>
@@ -539,7 +539,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="43" selection-start="316" selection-end="316" vertical-scroll-proportion="0.41611624" vertical-offset="0" max-vertical-offset="1110">
+        <state line="50" column="0" selection-start="999" selection-end="999" vertical-scroll-proportion="0.40554821" vertical-offset="443" max-vertical-offset="1200">
           <folding />
         </state>
       </provider>

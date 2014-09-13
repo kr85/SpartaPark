@@ -31,7 +31,7 @@ class MainController extends BaseController
     * Gets lot information by id
     *
     * @param $id lot id
-    * @return array array of lot information
+    * @return array of lot information
     */
    public function getLotInfo($id)
    {
@@ -49,6 +49,12 @@ class MainController extends BaseController
       return  $lot;
    }
 
+   /**
+    * Gets region information by id
+    *
+    * @param $id region id
+    * @return \Illuminate\Support\Collection|static region information
+    */
    public function getRegionInfo($id)
    {
       $region = $this->region->find($id);
