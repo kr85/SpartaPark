@@ -5,7 +5,7 @@ use SpartaPark\Repository\Repository;
 
 /**
  * Interface RegionRepository
- * 
+ *
  * @package SpartaPark\Repository\Region
  */
 interface RegionRepository extends Repository, Crudable

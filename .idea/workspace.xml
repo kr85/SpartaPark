@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="" />
+    <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php" />
+    </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,22 +25,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RegionRepository.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="3" selection-start="159" selection-end="159" vertical-scroll-proportion="0.1519537" vertical-offset="0" max-vertical-offset="691">
-              <folding>
-                <element signature="e#47#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Repository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="38" column="17" selection-start="699" selection-end="699" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="750">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EloquentRegionRepository.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Region/EloquentRegionRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="10" selection-start="374" selection-end="374" vertical-scroll-proportion="0.39073807" vertical-offset="0" max-vertical-offset="691">
+              <folding>
+                <element signature="e#47#100#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php" />
+        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Region/EloquentRegionRepository.php" />
       </list>
     </option>
   </component>
@@ -657,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="17" selection-start="699" selection-end="699" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/AbstractEloquentRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="41" selection-start="315" selection-end="315" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="1860">
@@ -730,9 +726,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="3" selection-start="159" selection-end="159" vertical-scroll-proportion="0.1519537" vertical-offset="0" max-vertical-offset="691">
+        <state line="13" column="1" selection-start="265" selection-end="265" vertical-scroll-proportion="0.2821997" vertical-offset="0" max-vertical-offset="691">
           <folding>
             <element signature="e#47#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="17" selection-start="699" selection-end="699" vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Region/EloquentRegionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="10" selection-start="374" selection-end="374" vertical-scroll-proportion="0.39073807" vertical-offset="0" max-vertical-offset="691">
+          <folding>
+            <element signature="e#47#100#0" expanded="true" />
           </folding>
         </state>
       </provider>
