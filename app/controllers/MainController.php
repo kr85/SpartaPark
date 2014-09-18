@@ -71,7 +71,12 @@ class MainController extends BaseController
       return $region;
    }
 
-
+   /**
+    * Gets all lots near search address
+    *
+    * @param null $address search address
+    * @return array of nearest lots
+    */
    public function getLotsNearAddress($address = null)
    {
       $geocode = Geocoder::geocode($address);

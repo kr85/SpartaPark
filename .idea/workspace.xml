@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,14 +28,14 @@
       <file leaf-file-name="MainController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="1717" selection-end="1717" vertical-scroll-proportion="-0.28468034" vertical-offset="1331" max-vertical-offset="3015">
+            <state line="74" column="39" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.16767189" vertical-offset="971" max-vertical-offset="3090">
               <folding>
                 <element signature="e#7#51#0" expanded="true" />
-                <marker date="1411080047358" expanded="true" signature="3296:5510" placeholder="SELECT name,..name..." />
-                <marker date="1411080047358" expanded="true" signature="3296:4434" placeholder="SELECT name,..name..." />
-                <marker date="1411080047358" expanded="true" signature="3612:5331" placeholder="SELECT l.nam..lots..." />
-                <marker date="1411080047358" expanded="true" signature="3612:4434" placeholder="SELECT l.nam..lots..." />
-                <marker date="1411080047358" expanded="true" signature="4428:4708" placeholder="SELECT 37.33..." />
+                <marker date="1411080261810" expanded="true" signature="3433:5647" placeholder="SELECT name,..name..." />
+                <marker date="1411080261810" expanded="true" signature="3433:4571" placeholder="SELECT name,..name..." />
+                <marker date="1411080261810" expanded="true" signature="3749:5468" placeholder="SELECT l.nam..lots..." />
+                <marker date="1411080261810" expanded="true" signature="3749:4571" placeholder="SELECT l.nam..lots..." />
+                <marker date="1411080261810" expanded="true" signature="4565:4845" placeholder="SELECT 37.33..." />
               </folding>
             </state>
           </provider>
@@ -637,14 +635,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="1717" selection-end="1717" vertical-scroll-proportion="-0.28468034" vertical-offset="1331" max-vertical-offset="3015">
+        <state line="74" column="39" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.16767189" vertical-offset="971" max-vertical-offset="3090">
           <folding>
             <element signature="e#7#51#0" expanded="true" />
-            <marker date="1411080047358" expanded="true" signature="3296:5510" placeholder="SELECT name,..name..." />
-            <marker date="1411080047358" expanded="true" signature="3296:4434" placeholder="SELECT name,..name..." />
-            <marker date="1411080047358" expanded="true" signature="3612:5331" placeholder="SELECT l.nam..lots..." />
-            <marker date="1411080047358" expanded="true" signature="3612:4434" placeholder="SELECT l.nam..lots..." />
-            <marker date="1411080047358" expanded="true" signature="4428:4708" placeholder="SELECT 37.33..." />
+            <marker date="1411080261810" expanded="true" signature="3433:5647" placeholder="SELECT name,..name..." />
+            <marker date="1411080261810" expanded="true" signature="3433:4571" placeholder="SELECT name,..name..." />
+            <marker date="1411080261810" expanded="true" signature="3749:5468" placeholder="SELECT l.nam..lots..." />
+            <marker date="1411080261810" expanded="true" signature="3749:4571" placeholder="SELECT l.nam..lots..." />
+            <marker date="1411080261810" expanded="true" signature="4565:4845" placeholder="SELECT 37.33..." />
           </folding>
         </state>
       </provider>
