@@ -2,6 +2,38 @@
 
 /*
 |--------------------------------------------------------------------------
+| Error Handling
+|--------------------------------------------------------------------------
+*/
+
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+/**
+ * General Exceptions
+ */
+App::error(function(Exception $exception)
+{
+   if(Config::get('app.debug') === true) {
+      return null;
+   }
+
+   return View::make('error');
+});
+
+/**
+ * 404 Exception
+ */
+App::error(function(NotFoundHttpException $exception)
+{
+   if(Config::get('app.debug') === true) {
+      return null;
+   }
+
+   return View::make('error.404');
+});
+
+/*
+|--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
 */
