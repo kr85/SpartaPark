@@ -4,9 +4,9 @@ use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
 
 /**
- * Class MainController
+ * Class MobileController
  */
-class MainController extends BaseController
+class MobileController extends BaseController
 {
    /**
     * @var SpartaPark\Repository\Lot\LotRepository lot repository
@@ -33,11 +33,6 @@ class MainController extends BaseController
    {
       $this->lotRepository    = $lotRepository;
       $this->regionRepository = $regionRepository;
-   }
-
-   public function getIndex()
-   {
-      return $this->layout = View::make('spartapark.index');
    }
 
    /**
@@ -207,11 +202,4 @@ class MainController extends BaseController
 
       return $results;
    }
-
-   public function getDirections($address)
-   {
-
-   }
-
-
 }
