@@ -8,7 +8,7 @@
 
 Route::get('/', array(
    'as' => 'index',
-   'uses' => 'MainController@getIndex'
+   'uses' => 'WebController@getIndex'
 ));
 
 Route::get('api/lot_info/lot_id/{id}', array(
@@ -30,8 +30,3 @@ Route::get('api/lots_near_coordinates/latitude/{latitude}/longitude/{longitude}'
    'as' => 'lots.near.coordinates',
    'uses' => 'MobileController@getLotsNearCoordinates'
 ))->where('longitude', '[0-9\.\-]+', 'latitude', '[0-9\.\-]+');
-
-Route::get('address/', array(
-   'as' => 'address',
-   'uses' => 'MainController@getNearestLocationsFromDB'
-));

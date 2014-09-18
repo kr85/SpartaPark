@@ -6,7 +6,7 @@ use SpartaPark\Repository\Region\RegionRepository;
 /**
  * Class MainController
  */
-class MainController extends BaseController
+class WebController extends BaseController
 {
    /**
     * @var SpartaPark\Repository\Lot\LotRepository lot repository

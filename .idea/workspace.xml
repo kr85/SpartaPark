@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/hello.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/app/controllers/WebController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,28 +29,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
+      <file leaf-file-name="WebController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="3" selection-start="0" selection-end="6817" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="3330">
+            <state line="39" column="29" selection-start="933" selection-end="933" vertical-scroll-proportion="0.5114596" vertical-offset="161" max-vertical-offset="3330">
               <folding>
                 <element signature="e#7#51#0" expanded="true" />
-                <marker date="1411081238686" expanded="true" signature="4505:6719" placeholder="SELECT name,..name..." />
-                <marker date="1411081238686" expanded="true" signature="4505:5643" placeholder="SELECT name,..name..." />
-                <marker date="1411081238686" expanded="true" signature="4821:6540" placeholder="SELECT l.nam..lots..." />
-                <marker date="1411081238686" expanded="true" signature="4821:5643" placeholder="SELECT l.nam..lots..." />
-                <marker date="1411081238686" expanded="true" signature="5637:5917" placeholder="SELECT 37.33..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MobileController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="46" selection-start="4906" selection-end="4906" vertical-scroll-proportion="-106.875" vertical-offset="0" max-vertical-offset="3150">
-              <folding>
-                <element signature="e#7#51#0" expanded="true" />
+                <marker date="1411081428374" expanded="true" signature="4504:6718" placeholder="SELECT name,..name..." />
+                <marker date="1411081428374" expanded="true" signature="4504:5642" placeholder="SELECT name,..name..." />
+                <marker date="1411081428374" expanded="true" signature="4820:6539" placeholder="SELECT l.nam..lots..." />
+                <marker date="1411081428374" expanded="true" signature="4820:5642" placeholder="SELECT l.nam..lots..." />
+                <marker date="1411081428374" expanded="true" signature="5636:5916" placeholder="SELECT 37.33..." />
               </folding>
             </state>
           </provider>
@@ -80,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="3" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.6513872" vertical-offset="0" max-vertical-offset="829">
+            <state line="31" column="39" selection-start="977" selection-end="977" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="555">
               <folding>
                 <element signature="e#7#185#0" expanded="true" />
               </folding>
@@ -153,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_18_132302_update_latitude_from_lots_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/app/controllers/MobileController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
@@ -220,6 +213,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,14 +332,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="26" width="1922" height="1029" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14589989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14589989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -433,11 +444,6 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="48" selection-end="48" vertical-scroll-proportion="0.052754983" vertical-offset="0" max-vertical-offset="853" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.052754983" vertical-offset="0" max-vertical-offset="853" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php">
@@ -567,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/hello.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="861">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="5" selection-start="456" selection-end="456" vertical-scroll-proportion="0.2402746" vertical-offset="0" max-vertical-offset="874">
@@ -632,34 +631,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="0" selection-end="6817" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="3330">
+        <state line="31" column="39" selection-start="977" selection-end="977" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="555">
           <folding>
-            <element signature="e#7#51#0" expanded="true" />
-            <marker date="1411081238686" expanded="true" signature="4505:6719" placeholder="SELECT name,..name..." />
-            <marker date="1411081238686" expanded="true" signature="4505:5643" placeholder="SELECT name,..name..." />
-            <marker date="1411081238686" expanded="true" signature="4821:6540" placeholder="SELECT l.nam..lots..." />
-            <marker date="1411081238686" expanded="true" signature="4821:5643" placeholder="SELECT l.nam..lots..." />
-            <marker date="1411081238686" expanded="true" signature="5637:5917" placeholder="SELECT 37.33..." />
+            <element signature="e#7#185#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="46" selection-start="4906" selection-end="4906" vertical-scroll-proportion="-106.875" vertical-offset="0" max-vertical-offset="3150">
+        <state line="171" column="46" selection-start="4906" selection-end="4906" vertical-scroll-proportion="0.2943305" vertical-offset="2321" max-vertical-offset="3150">
           <folding>
             <element signature="e#7#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="3" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.6513872" vertical-offset="0" max-vertical-offset="829">
+        <state line="39" column="29" selection-start="933" selection-end="933" vertical-scroll-proportion="0.5114596" vertical-offset="161" max-vertical-offset="3330">
           <folding>
-            <element signature="e#7#185#0" expanded="true" />
+            <element signature="e#7#51#0" expanded="true" />
+            <marker date="1411081428374" expanded="true" signature="4504:6718" placeholder="SELECT name,..name..." />
+            <marker date="1411081428374" expanded="true" signature="4504:5642" placeholder="SELECT name,..name..." />
+            <marker date="1411081428374" expanded="true" signature="4820:6539" placeholder="SELECT l.nam..lots..." />
+            <marker date="1411081428374" expanded="true" signature="4820:5642" placeholder="SELECT l.nam..lots..." />
+            <marker date="1411081428374" expanded="true" signature="5636:5916" placeholder="SELECT 37.33..." />
           </folding>
         </state>
       </provider>
