@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,14 +29,14 @@
       <file leaf-file-name="MainController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="39" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.16767189" vertical-offset="971" max-vertical-offset="3090">
+            <state line="107" column="40" selection-start="2735" selection-end="2735" vertical-scroll-proportion="0.6381182" vertical-offset="1076" max-vertical-offset="3285">
               <folding>
                 <element signature="e#7#51#0" expanded="true" />
-                <marker date="1411080261810" expanded="true" signature="3433:5647" placeholder="SELECT name,..name..." />
-                <marker date="1411080261810" expanded="true" signature="3433:4571" placeholder="SELECT name,..name..." />
-                <marker date="1411080261810" expanded="true" signature="3749:5468" placeholder="SELECT l.nam..lots..." />
-                <marker date="1411080261810" expanded="true" signature="3749:4571" placeholder="SELECT l.nam..lots..." />
-                <marker date="1411080261810" expanded="true" signature="4565:4845" placeholder="SELECT 37.33..." />
+                <marker date="1411080825270" expanded="true" signature="4459:6673" placeholder="SELECT name,..name..." />
+                <marker date="1411080825270" expanded="true" signature="4459:5597" placeholder="SELECT name,..name..." />
+                <marker date="1411080825270" expanded="true" signature="4775:6494" placeholder="SELECT l.nam..lots..." />
+                <marker date="1411080825270" expanded="true" signature="4775:5597" placeholder="SELECT l.nam..lots..." />
+                <marker date="1411080825270" expanded="true" signature="5591:5871" placeholder="SELECT 37.33..." />
               </folding>
             </state>
           </provider>
@@ -71,7 +72,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="50" selection-start="612" selection-end="612" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="630">
+            <state line="33" column="0" selection-start="996" selection-end="1107" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="630">
               <folding>
                 <element signature="e#7#185#0" expanded="true" />
               </folding>
@@ -626,7 +627,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="50" selection-start="612" selection-end="612" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="630">
+        <state line="33" column="0" selection-start="996" selection-end="1107" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="630">
           <folding>
             <element signature="e#7#185#0" expanded="true" />
           </folding>
@@ -635,14 +636,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="39" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.16767189" vertical-offset="971" max-vertical-offset="3090">
+        <state line="107" column="40" selection-start="2735" selection-end="2735" vertical-scroll-proportion="0.6381182" vertical-offset="1076" max-vertical-offset="3285">
           <folding>
             <element signature="e#7#51#0" expanded="true" />
-            <marker date="1411080261810" expanded="true" signature="3433:5647" placeholder="SELECT name,..name..." />
-            <marker date="1411080261810" expanded="true" signature="3433:4571" placeholder="SELECT name,..name..." />
-            <marker date="1411080261810" expanded="true" signature="3749:5468" placeholder="SELECT l.nam..lots..." />
-            <marker date="1411080261810" expanded="true" signature="3749:4571" placeholder="SELECT l.nam..lots..." />
-            <marker date="1411080261810" expanded="true" signature="4565:4845" placeholder="SELECT 37.33..." />
+            <marker date="1411080825270" expanded="true" signature="4459:6673" placeholder="SELECT name,..name..." />
+            <marker date="1411080825270" expanded="true" signature="4459:5597" placeholder="SELECT name,..name..." />
+            <marker date="1411080825270" expanded="true" signature="4775:6494" placeholder="SELECT l.nam..lots..." />
+            <marker date="1411080825270" expanded="true" signature="4775:5597" placeholder="SELECT l.nam..lots..." />
+            <marker date="1411080825270" expanded="true" signature="5591:5871" placeholder="SELECT 37.33..." />
           </folding>
         </state>
       </provider>

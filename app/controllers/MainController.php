@@ -102,15 +102,47 @@ class MainController extends BaseController
       }
 
       return $lots;
-
    }
 
    /**
+    * Get all lots near current location
+    *
+    * @param null $latitude current latitude
+    * @param null $longitude current longitude
+    * @return array of all lots near current location
+    */
+   public function getLotsNearCoordinates($latitude = null, $longitude = null)
+   {
+      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      $lots = array();
+      $i = 0;
+
+      foreach ($locations as $location) {
+         $lot = $this->lotRepository->find($location->id, array('regions'));
+         $lot = array(
+            'id'        => $lot->id,
+            'name'      => $lot->name,
+            'address'   => $lot->address,
+            'distance'  => $location->distance,
+            'longitude' => $lot->longitude,
+            'latitude'  => $lot->latitude,
+            'regions'   => $lot->regions
+         );
+         $lots[$i] = $lot;
+         $i++;
+      }
+
+      return $lots;
+   }
+
+   /**
+    * Gets all lots from the database that are near specific location
+    *
     * @param null $latitude given latitude
     * @param null $longitude given longitude
     * @param null $radius given radius
     * @param null $distanceUnit given distance units
-    * @return array of all lots
+    * @return array of all lots near search location
     */
    private function getNearestLocationsFromDB($latitude     = null,
                                               $longitude    = null,
@@ -178,24 +210,5 @@ class MainController extends BaseController
 
    }
 
-   public function getLotsNearCoordinates($longitude = null, $latitude = null)
-   {
-      $config = array();
-      $config['center'] = 'auto';
-      $config['onboundschanged'] = 'if (!centreGot) {
-	      var mapCentre = map.getCenter();
-	      marker_0.setOptions({
-		      position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
-	      });
-      }
-      centreGot = true;';
-      Gmaps::initialize($config);
-
-      $marker = array();
-      Gmaps::add_marker($marker);
-      $data['map'] = Gmaps::create_map();
-
-      return $this->layout = View::make('spartapark.index', $data);
-   }
 
 }

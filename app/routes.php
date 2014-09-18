@@ -26,10 +26,10 @@ Route::get('api/lots_near_address/address/{address}', array(
    'uses' => 'MainController@getLotsNearAddress'
 ))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');
 
-Route::get('api/lots_near_coordinates/', array(
+Route::get('api/lots_near_coordinates/latitude/{latitude}/longitude/{longitude}', array(
    'as' => 'lots.near.coordinates',
    'uses' => 'MainController@getLotsNearCoordinates'
-))->where('longitude', '[0-9\.]+', 'latitude', '[0-9\.\-]+');
+))->where('longitude', '[0-9\.\-]+', 'latitude', '[0-9\.\-]+');
 
 Route::get('address/', array(
    'as' => 'address',
