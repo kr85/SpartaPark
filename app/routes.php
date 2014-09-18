@@ -21,7 +21,7 @@ Route::get('api/region_info/region_id/{id}', array(
    'uses' => 'MainController@getRegionInfo'
 ))->where('id', '[0-9]+');
 
-Route::get('api/lots_near_address/address/', array(
+Route::get('api/lots_near_address/address/{address}', array(
    'as' => 'lots.near.address',
    'uses' => 'MainController@getLotsNearAddress'
 ))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');

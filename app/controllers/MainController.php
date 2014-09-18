@@ -71,35 +71,59 @@ class MainController extends BaseController
       return $region;
    }
 
+
    public function getLotsNearAddress($address = null)
    {
-      $g = Geocoder::geocode('San Jose State University, 95192');
-      dd($g);
+      $geocode = Geocoder::geocode($address);
+      $latitude = $geocode->getLatitude();
+      $longitude = $geocode->getLongitude();
+      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      $lots = array();
+      $i = 0;
 
-      //$ip = \GetIP\GetIP::get();;
-      $location = GeoIP::getLocation('162.197.213.38');
-      $latitude = $location['lat'];
-      $longitude = $location['lon'];
+      foreach ($locations as $location) {
+         $lot = $this->lotRepository->find($location->id, array('regions'));
+         $lot = array(
+            'id'        => $lot->id,
+            'name'      => $lot->name,
+            'address'   => $lot->address,
+            'distance'  => $location->distance,
+            'longitude' => $lot->longitude,
+            'latitude'  => $lot->latitude,
+            'regions'   => $lot->regions
+         );
+         $lots[$i] = $lot;
+         $i++;
+      }
 
-      $config['center'] = 'auto';
-      $config['zoom'] = 'auto';
-      $config['directions'] = TRUE;
-      $config['directionsStart'] = $latitude . ', ' . $longitude;
-      $config['directionsEnd'] = $address;
-      $config['directionsDivID'] = 'directionsDiv';
-      Gmaps::initialize($config);
-      $data['map'] = Gmaps::create_map();
-      return $this->layout = View::make('spartapark.index', $data);
+      return $lots;
+
    }
 
-   public function getNearestLocationsFromDB()
+   /**
+    * @param null $latitude given latitude
+    * @param null $longitude given longitude
+    * @param null $radius given radius
+    * @param null $distanceUnit given distance units
+    * @return array of all lots
+    */
+   private function getNearestLocationsFromDB($latitude     = null,
+                                              $longitude    = null,
+                                              $radius       = null,
+                                              $distanceUnit = null)
    {
-      $latitude = 37.3351874;
-      $longitude = -121.8810715;
-      $radius = 5;
-      $distanceUnit = 69.0;
+      // Default radius is 5 miles
+      if ($radius == null) {
+         $radius = 5;
+      }
+
+      // Default distance units are miles
+      if ($distanceUnit == null) {
+         $distanceUnit = 69.0;
+      }
 
       $results = DB::select('SELECT
+                                id,
                                 name,
                                 address,
                                 latitude,
@@ -107,6 +131,7 @@ class MainController extends BaseController
                                 distance
                              FROM (
                                 SELECT
+                                   l.id,
                                    l.name,
                                    l.address,
                                    l.latitude,
@@ -139,7 +164,7 @@ class MainController extends BaseController
                              ORDER BY distance ASC
                              LIMIT 15'
       );
-      
+
       return $results;
    }
 
