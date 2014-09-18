@@ -1,13 +1,18 @@
-<!DOCTYPE>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A Parking Guidance System">
-        <meta name="author" content="Kosta Rashev">
-        <title>SpartaPark</title>
-    </head>
-    <body>
-    </body>
-</html>
+@extends('layouts.master')
+
+@section('content')
+    @if(Route::currentRouteName() == 'lots.near.coordinates')
+        @include('partials.geolocation')
+    @elseif(Route::currentRouteName() == 'lots.near.address')
+        @include('partials.address')
+    @endif
+
+    {{ HTML::link('api/lot_info/lot_id/51', 'Lot_info by lot_id') }}
+    <br />
+    {{ HTML::link('api/region_info/region_id/35', 'Regon_info by region_id') }}
+    <br />
+    {{ HTML::link('api/lots_near_coordinates', 'Lot_near_my_coordinates') }}
+    <br />
+    {{ HTML::link('api/lots_near_address/address/', 'Lot_near_address') }}
+
+@stop

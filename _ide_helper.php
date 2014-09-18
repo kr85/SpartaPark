@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.8 on 2014-09-12.
+ * Generated for Laravel 4.2.9 on 2014-09-17.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -6934,9 +6934,9 @@ namespace {
         }
         
         /**
-         * Returns the requested URI.
+         * Returns the requested URI (path and query string).
          *
-         * @return string The raw URI (i.e. not urldecoded)
+         * @return string The raw URI (i.e. not URI decoded)
          * @api 
          * @static 
          */
@@ -6960,9 +6960,9 @@ namespace {
         }
         
         /**
-         * Generates a normalized URI for the Request.
+         * Generates a normalized URI (URL) for the Request.
          *
-         * @return string A normalized URI for the Request
+         * @return string A normalized URI (URL) for the Request
          * @see getQueryString()
          * @api 
          * @static 
@@ -9566,9 +9566,9 @@ namespace {
         }
         
         /**
-         * Returns the requested URI.
+         * Returns the requested URI (path and query string).
          *
-         * @return string The raw URI (i.e. not urldecoded)
+         * @return string The raw URI (i.e. not URI decoded)
          * @api 
          * @static 
          */
@@ -9592,9 +9592,9 @@ namespace {
         }
         
         /**
-         * Generates a normalized URI for the Request.
+         * Generates a normalized URI (URL) for the Request.
          *
-         * @return string A normalized URI for the Request
+         * @return string A normalized URI (URL) for the Request
          * @see getQueryString()
          * @api 
          * @static 
@@ -11540,7 +11540,7 @@ namespace {
          *
          * @param string $path
          * @param mixed $extra
-         * @param bool $secure
+         * @param bool|null $secure
          * @return string 
          * @static 
          */
@@ -11564,7 +11564,7 @@ namespace {
          * Generate a URL to an application asset.
          *
          * @param string $path
-         * @param bool $secure
+         * @param bool|null $secure
          * @return string 
          * @static 
          */
@@ -12213,6 +12213,224 @@ namespace {
          */
         public static function getNames(){
             return \Illuminate\View\Factory::getNames();
+        }
+        
+    }
+
+
+    class Gmaps extends \Appitventures\Phpgmaps\Facades\Phpgmaps{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function initialize($config = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::initialize($config);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add_marker($params = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::add_marker($params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add_polyline($params = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::add_polyline($params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add_polygon($params = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::add_polygon($params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add_circle($params = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::add_circle($params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add_rectangle($params = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::add_rectangle($params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add_ground_overlay($params = array()){
+            return \Appitventures\Phpgmaps\Phpgmaps::add_ground_overlay($params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function create_map(){
+            return \Appitventures\Phpgmaps\Phpgmaps::create_map();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function is_lat_long($input){
+            return \Appitventures\Phpgmaps\Phpgmaps::is_lat_long($input);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function get_lat_long_from_address($address, $attempts = 0){
+            return \Appitventures\Phpgmaps\Phpgmaps::get_lat_long_from_address($address, $attempts);
+        }
+        
+    }
+
+
+    class GeoIP extends \Torann\GeoIP\GeoIPFacade{
+        
+        /**
+         * Save location data in the session.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function saveLocation(){
+            \Torann\GeoIP\GeoIP::saveLocation();
+        }
+        
+        /**
+         * Get location from IP.
+         *
+         * @param string $ip Optional
+         * @return array 
+         * @static 
+         */
+        public static function getLocation($ip = null){
+            return \Torann\GeoIP\GeoIP::getLocation($ip);
+        }
+        
+    }
+
+
+    class Geocoder extends \Toin0u\Geocoder\GeocoderFacade{
+        
+        /**
+         * 
+         *
+         * @param \Geocoder\ResultFactoryInterface $resultFactory
+         * @static 
+         */
+        public static function setResultFactory($resultFactory = null){
+            return \Geocoder\Geocoder::setResultFactory($resultFactory);
+        }
+        
+        /**
+         * 
+         *
+         * @param integer $maxResults
+         * @return \Geocoder\GeocoderInterface 
+         * @static 
+         */
+        public static function limit($maxResults){
+            return \Geocoder\Geocoder::limit($maxResults);
+        }
+        
+        /**
+         * 
+         *
+         * @return integer $maxResults
+         * @static 
+         */
+        public static function getMaxResults(){
+            return \Geocoder\Geocoder::getMaxResults();
+        }
+        
+        /**
+         * {@inheritDoc}
+         *
+         * @static 
+         */
+        public static function geocode($value){
+            return \Geocoder\Geocoder::geocode($value);
+        }
+        
+        /**
+         * {@inheritDoc}
+         *
+         * @static 
+         */
+        public static function reverse($latitude, $longitude){
+            return \Geocoder\Geocoder::reverse($latitude, $longitude);
+        }
+        
+        /**
+         * Registers a provider.
+         *
+         * @param \Geocoder\ProviderInterface $provider
+         * @return \Geocoder\GeocoderInterface 
+         * @static 
+         */
+        public static function registerProvider($provider){
+            return \Geocoder\Geocoder::registerProvider($provider);
+        }
+        
+        /**
+         * Registers a set of providers.
+         *
+         * @param \Geocoder\ProviderInterface[] $providers
+         * @return \Geocoder\GeocoderInterface 
+         * @static 
+         */
+        public static function registerProviders($providers = array()){
+            return \Geocoder\Geocoder::registerProviders($providers);
+        }
+        
+        /**
+         * Sets the provider to use.
+         *
+         * @param string $name A provider's name
+         * @return \Geocoder\GeocoderInterface 
+         * @static 
+         */
+        public static function using($name){
+            return \Geocoder\Geocoder::using($name);
+        }
+        
+        /**
+         * Returns registered providers indexed by name.
+         *
+         * @return \Geocoder\ProviderInterface[] 
+         * @static 
+         */
+        public static function getProviders(){
+            return \Geocoder\Geocoder::getProviders();
         }
         
     }

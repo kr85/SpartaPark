@@ -125,6 +125,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
       'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
+      'Torann\GeoIP\GeoIPServiceProvider',
+      'Toin0u\Geocoder\GeocoderServiceProvider',
 
       'SpartaPark\Repository\RepositoryServiceProvider',
 
@@ -195,6 +197,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
       'Gmaps'           => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
+      'GeoIP'           => 'Torann\GeoIP\GeoIPFacade',
+      'Geocoder'        => 'Toin0u\Geocoder\GeocoderFacade',
 
 	),
 
