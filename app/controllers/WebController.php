@@ -74,68 +74,45 @@ class WebController extends BaseController
       return $region;
    }
 
-   /**
-    * Gets all lots near search address
-    *
-    * @param null $address search address
-    * @return array of nearest lots
-    */
    public function getLotsNearAddress($address = null)
    {
-      $geocode = Geocoder::geocode($address);
-      $latitude = $geocode->getLatitude();
-      $longitude = $geocode->getLongitude();
-      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
-      $lots = array();
-      $i = 0;
+      $g = Geocoder::geocode('San Jose State University, 95192');
+      dd($g);
 
-      foreach ($locations as $location) {
-         $lot = $this->lotRepository->find($location->id, array('regions'));
-         $lot = array(
-            'id'        => $lot->id,
-            'name'      => $lot->name,
-            'address'   => $lot->address,
-            'distance'  => $location->distance,
-            'longitude' => $lot->longitude,
-            'latitude'  => $lot->latitude,
-            'regions'   => $lot->regions
-         );
-         $lots[$i] = $lot;
-         $i++;
-      }
+      //$ip = \GetIP\GetIP::get();;
+      $location = GeoIP::getLocation('162.197.213.38');
+      $latitude = $location['lat'];
+      $longitude = $location['lon'];
 
-      return $lots;
+      $config['center'] = 'auto';
+      $config['zoom'] = 'auto';
+      $config['directions'] = TRUE;
+      $config['directionsStart'] = $latitude . ', ' . $longitude;
+      $config['directionsEnd'] = $address;
+      $config['directionsDivID'] = 'directionsDiv';
+      Gmaps::initialize($config);
+      $data['map'] = Gmaps::create_map();
+      return $this->layout = View::make('spartapark.index', $data);
    }
 
-   /**
-    * Get all lots near current location
-    *
-    * @param null $latitude current latitude
-    * @param null $longitude current longitude
-    * @return array of all lots near current location
-    */
-   public function getLotsNearCoordinates($latitude = null, $longitude = null)
+   public function getLotsNearCoordinates()
    {
-      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
-      $lots = array();
-      $i = 0;
-
-      foreach ($locations as $location) {
-         $lot = $this->lotRepository->find($location->id, array('regions'));
-         $lot = array(
-            'id'        => $lot->id,
-            'name'      => $lot->name,
-            'address'   => $lot->address,
-            'distance'  => $location->distance,
-            'longitude' => $lot->longitude,
-            'latitude'  => $lot->latitude,
-            'regions'   => $lot->regions
-         );
-         $lots[$i] = $lot;
-         $i++;
+      $config = array();
+      $config['center'] = 'auto';
+      $config['onboundschanged'] = 'if (!centreGot) {
+	      var mapCentre = map.getCenter();
+	      marker_0.setOptions({
+		      position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+	      });
       }
+      centreGot = true;';
+      Gmaps::initialize($config);
 
-      return $lots;
+      $marker = array();
+      Gmaps::add_marker($marker);
+      $data['map'] = Gmaps::create_map();
+
+      return $this->layout = View::make('spartapark.index', $data);
    }
 
    /**

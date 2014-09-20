@@ -34,7 +34,7 @@ App::error(function(NotFoundHttpException $exception)
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Web Service Routes
 |--------------------------------------------------------------------------
 */
 
@@ -43,6 +43,21 @@ Route::get('/', array(
    'uses' => 'WebController@getIndex'
 ));
 
+Route::get('address/{address}', array(
+   'as' => 'lots.near.address.web',
+   'uses' => 'WebController@getLotsNearAddress'
+))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');
+
+Route::get('current_location', array(
+   'as' => 'lots.near.current.location',
+   'uses' => 'WebController@getLotsNearCoordinates'
+))->where('longitude', '[0-9\.\-]+', 'latitude', '[0-9\.\-]+');
+
+/*
+ \--------------------------------------------------------------------------
+ | Mobile Service Routes
+ |--------------------------------------------------------------------------
+ */
 Route::get('api/lot_info/lot_id/{id}', array(
    'as' => 'lot.info',
    'uses' => 'MobileController@getLotInfo'

@@ -19,11 +19,6 @@ class MobileController extends BaseController
    protected $regionRepository;
 
    /**
-    * @var string master layout
-    */
-   protected $layout = 'layouts.master';
-
-   /**
     * Constructor
     *
     * @param LotRepository $lotRepository lot repository

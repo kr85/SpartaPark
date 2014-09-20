@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    @if(Route::currentRouteName() == 'lots.near.coordinates')
+    @if(Route::currentRouteName() == 'lots.near.current.location')
         @include('partials.geolocation')
-    @elseif(Route::currentRouteName() == 'lots.near.address')
+    @elseif(Route::currentRouteName() == 'lots.near.address.web')
         @include('partials.address')
     @endif
 
