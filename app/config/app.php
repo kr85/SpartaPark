@@ -127,6 +127,7 @@ return array(
       'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
       'Torann\GeoIP\GeoIPServiceProvider',
       'Toin0u\Geocoder\GeocoderServiceProvider',
+      'Intervention\Image\ImageServiceProvider',
 
       'SpartaPark\Repository\RepositoryServiceProvider',
 
@@ -199,6 +200,7 @@ return array(
       'Gmaps'           => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
       'GeoIP'           => 'Torann\GeoIP\GeoIPFacade',
       'Geocoder'        => 'Toin0u\Geocoder\GeocoderFacade',
+      'Image'           => 'Intervention\Image\Facades\Image',
 
 	),
 

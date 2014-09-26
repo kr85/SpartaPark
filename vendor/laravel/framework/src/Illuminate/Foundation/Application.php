@@ -234,10 +234,8 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 		{
 			return in_array($this['env'], func_get_args());
 		}
-		else
-		{
-			return $this['env'];
-		}
+
+		return $this['env'];
 	}
 
 	/**
@@ -910,10 +908,8 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 		{
 			throw new NotFoundHttpException($message);
 		}
-		else
-		{
-			throw new HttpException($code, $message, null, $headers);
-		}
+
+		throw new HttpException($code, $message, null, $headers);
 	}
 
 	/**

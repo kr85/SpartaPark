@@ -176,16 +176,16 @@ class MobileController extends BaseController
                                 FROM lots AS l
                                 JOIN (
                                    SELECT
-                                      '. $latitude .' AS latpoint,
-                                      '. $longitude .' AS longpoint,
-                                      '. $radius .' AS radius,
-                                      '. $distanceUnit .' AS distance_unit
+                                      ' . $latitude . ' AS latpoint,
+                                      ' . $longitude . ' AS longpoint,
+                                      ' . $radius . ' AS radius,
+                                      ' . $distanceUnit . ' AS distance_unit
                                   ) AS p
                                 WHERE
                                    l.latitude
                                       BETWEEN p.latpoint  - (p.radius / p.distance_unit)
                                          AND p.latpoint  + (p.radius / p.distance_unit)
-                                   AND
+                                AND
                                    l.longitude
                                       BETWEEN p.longpoint - (p.radius / (p.distance_unit * COS(RADIANS(p.latpoint))))
                                          AND p.longpoint + (p.radius / (p.distance_unit * COS(RADIANS(p.latpoint))))

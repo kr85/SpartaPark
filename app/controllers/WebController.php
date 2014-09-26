@@ -76,8 +76,8 @@ class WebController extends BaseController
 
    public function getLotsNearAddress($address = null)
    {
-      $g = Geocoder::geocode('San Jose State University, 95192');
-      dd($g);
+
+
 
       //$ip = \GetIP\GetIP::get();;
       $location = GeoIP::getLocation('162.197.213.38');
@@ -95,15 +95,25 @@ class WebController extends BaseController
       return $this->layout = View::make('spartapark.index', $data);
    }
 
-   public function getLotsNearCoordinates()
+   public function getCoordinates()
    {
+      /*echo '<script type="text/javascript">
+         var mapCentre = map.getCenter();
+	      var latitude = mapCentre.lat();
+	      var longitude = mapCentre.lng();
+	      window.location.href = "current_location/latitude/" + latitude + "/longitude/" + longitude;
+      </script>';*/
+
       $config = array();
       $config['center'] = 'auto';
       $config['onboundschanged'] = 'if (!centreGot) {
 	      var mapCentre = map.getCenter();
+	      var latitude = mapCentre.lat();
+	      var longitude = mapCentre.lng();
 	      marker_0.setOptions({
 		      position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
 	      });
+	      window.location.href = "current_location/latitude/" + latitude + "/longitude/" + longitude;
       }
       centreGot = true;';
       Gmaps::initialize($config);
@@ -113,6 +123,12 @@ class WebController extends BaseController
       $data['map'] = Gmaps::create_map();
 
       return $this->layout = View::make('spartapark.index', $data);
+   }
+
+   public function getLotsNearCoordinates($latitude, $longitude)
+   {
+      $coords = array($latitude, $longitude);
+      dd($coords);
    }
 
    /**
@@ -190,5 +206,43 @@ class WebController extends BaseController
 
    }
 
+   /**
+    * Uploads images to the database
+    *
+    * @return \Illuminate\Http\JsonResponse
+    */
+   public function uploadImage()
+   {
+      // Get lot id
+      $lot_id = Input::get('lot_id');
+      // Get region id
+      $region_id = Input::get('region_id');
+      // Get orientation
+      $orientation = Input::get('orientation');
+      // Get image
+      $image = Input::file('image');
+      // Destination
+      $destinationPath = 'uploads';
+      // Image name
+      $filename = str_random(12);
+
+      // Moves the image to the destination folder
+      $uploadSuccess = $image->move($destinationPath, $filename);
+
+      // Creates a new entry in the database
+      $newEntry = Entranxit::create(array(
+         'lot_id'      => $lot_id,
+         'region_id'   => $region_id,
+         'orientation' => $orientation,
+         'image'       => $uploadSuccess->getPath() . '/' . $uploadSuccess->getFilename()
+      ));
+
+      // Checks if image was stored successfully
+      if ($uploadSuccess && $newEntry) {
+         return Response::json('success', 200);
+      } else {
+         return Response::json('error', 400);
+      }
+   }
 
 }

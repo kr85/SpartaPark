@@ -4,9 +4,51 @@
    Author's custom styles
    ========================================================================== */
 
+#logo {
+  background: url(../images/SpartaParkLogo.jpg) no-repeat center center;
+  background-size: 81px 156px;
+}
 
+.navbar-default .navbar-brand {
+  height: 175px;
+  width: 90px;
+}
 
+.navbar {
+  height: 175px;
+}
 
+.header-text {
+  width: 800px;
+  padding: 30px 10px 0 0;
+}
+
+.header-text .title {
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 5px 5px 3px #48adba;
+  font-weight: bold;
+}
+
+.header-text .subtitle {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav > li > a {
+  padding-top: 75px;
+  font-size: 20px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-shadow: 5px 5px 5px #345c68;
+}
+
+.content {
+  margin-top: 200px;
+}
 
 
 

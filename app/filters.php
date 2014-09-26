@@ -88,3 +88,17 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+ |--------------------------------------------------------------------------
+ | Custom Filters
+ |--------------------------------------------------------------------------
+ */
+
+Route::filter('raspberry_pi', function()
+{
+   if (Input::get('password') != '12345')
+   {
+      throw new \Symfony\Component\Finder\Exception\AccessDeniedException;
+   }
+});

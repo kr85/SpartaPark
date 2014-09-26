@@ -13,7 +13,8 @@
         "toin0u/geocoder-laravel": "@stable",
         "kriswallsmith/buzz": "dev-master",
         "zendframework/zend-http": "2.3.*@dev",
-        "geoip/geoip": "dev-master"
+        "geoip/geoip": "dev-master",
+        "intervention/image": "2.*"
 	},
 	"require-dev": {
 	   "phpunit/phpunit": "3.7.*",

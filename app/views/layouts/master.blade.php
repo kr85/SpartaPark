@@ -13,6 +13,7 @@
 
         <!-- Bootstrap CSS -->
         {{ HTML::style('assets/stylesheets/bootstrap.css') }}
+        <!--link rel="stylesheet" href="/assets/stylesheets/bootstrap.min.css"-->
         {{ HTML::style('assets/stylesheets/bootstrap-theme.css') }}
 
         <!-- Custom CSS -->
@@ -26,8 +27,20 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-            @yield('content')
+        <div class="header">
+            <div class="container">
+                @include('headers.main')
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                @yield('content')
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                @include('footers.main')
+            </div>
         </div>
 
         <!-- Javascript -->

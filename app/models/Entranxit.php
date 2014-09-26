@@ -13,7 +13,12 @@ class Entranxit extends Eloquent
    /**
     * @var array Properties that can be mass assigned
     */
-   protected $fillable = array();
+   protected $fillable = array(
+      'lot_id',
+      'region_id',
+      'orientation',
+      'image'
+   );
 
    /**
     * Entrance and Exit belong to a lot
