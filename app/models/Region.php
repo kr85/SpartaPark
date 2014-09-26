@@ -16,6 +16,11 @@ class Region extends Eloquent
    protected $fillable = array();
 
    /**
+    * @var bool timestamps disabled
+    */
+   public $timestamps = false;
+
+   /**
     * Region belongs to a lot
     *
     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

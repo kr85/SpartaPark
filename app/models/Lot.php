@@ -16,6 +16,11 @@ class Lot extends Eloquent
    protected $fillable = array();
 
    /**
+    * @var bool timestamps disabled
+    */
+   public $timestamps = false;
+
+   /**
     * Lot belongs to a owner
     *
     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
