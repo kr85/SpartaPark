@@ -7,7 +7,14 @@ class OwnersTableSeeder extends Seeder
 
 	public function run()
 	{
-		$faker = Faker::create();
+      Owner::create(array(
+         'name'          => 'San Jose State University',
+         'phone_number'  => '408-924-1000',
+         'email_address' => 'admin@sjsu.edu'
+      ));
+
+      // Uncomment to use Faker
+		/*$faker = Faker::create();
 
       for ($i = 0; $i < 10; $i++) {
          Owner::create(array(
@@ -15,7 +22,7 @@ class OwnersTableSeeder extends Seeder
             'phone_number'  => $faker->phoneNumber,
             'email_address' => $faker->email
          ));
-      }
+      }*/
 	}
 
 }

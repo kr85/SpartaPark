@@ -7,7 +7,8 @@ class EntranxitsTableSeeder extends Seeder
 
 	public function run()
 	{
-		$faker = Faker::create();
+      // Uncomment to use Faker
+		/*$faker = Faker::create();
 
       for ($i = 0; $i < 5; $i++) {
          Entranxit::create(array(
@@ -55,7 +56,7 @@ class EntranxitsTableSeeder extends Seeder
             'lot_id' => 3,
             'region_id' => $i + 1
          ));
-      }
+      }*/
 
 	}
 
