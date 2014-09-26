@@ -49,6 +49,10 @@ class WebController extends BaseController
    public function getLotInfo($id)
    {
       $lot = $this->lotRepository->find($id, array('regions'));
+      if (!$lot) {
+         return false;
+      }
+
       $lot = array(
          'id'        => $lot->id,
          'name'      => $lot->name,
@@ -70,6 +74,9 @@ class WebController extends BaseController
    public function getRegionInfo($id)
    {
       $region = $this->regionRepository->find($id, array());
+      if (!$region) {
+         return false;
+      }
 
       return $region;
    }
@@ -215,10 +222,22 @@ class WebController extends BaseController
    {
       // Get lot id
       $lot_id = Input::get('lot_id');
+      if (!$this->getLotInfo($lot_id)) {
+         return Response::json('Lot not found', 404);
+      }
+
       // Get region id
       $region_id = Input::get('region_id');
+      if (!$this->getRegionInfo($region_id)) {
+         return Response::json('Region not found', 404);
+      }
+
       // Get orientation
       $orientation = Input::get('orientation');
+      if (strcasecmp(strtolower($orientation), 'entrance') != 0 && strcasecmp(strtolower($orientation), 'exit') != 0) {
+         return Response::json('Orientation not entrance or exit', 404);
+      }
+
       // Get image
       $image = Input::file('image');
       // Destination
@@ -239,10 +258,52 @@ class WebController extends BaseController
 
       // Checks if image was stored successfully
       if ($uploadSuccess && $newEntry) {
-         return Response::json('success', 200);
+         return Response::json('Success', 200);
       } else {
-         return Response::json('error', 400);
+         return Response::json('Error', 400);
       }
    }
 
+   public function uploadImages($lot_id, $region_id, $orientation)
+   {
+      // Check lot id
+      if (!$this->getLotInfo($lot_id)) {
+         return Response::json('Lot not found', 404);
+      }
+
+      // Check region id
+      if (!$this->getRegionInfo($region_id)) {
+         return Response::json('Region not found', 404);
+      }
+
+      // Check orientation
+      if (strcasecmp(strtolower($orientation), 'entrance') != 0 && strcasecmp(strtolower($orientation), 'exit') != 0) {
+         return Response::json('Orientation not entrance or exit', 404);
+      }
+
+      // Get image
+      $image = Input::file('image');
+      // Destination
+      $destinationPath = 'uploads';
+      // Image name
+      $filename = str_random(12);
+
+      // Moves the image to the destination folder
+      $uploadSuccess = $image->move($destinationPath, $filename);
+
+      // Creates a new entry in the database
+      $newEntry = Entranxit::create(array(
+         'lot_id'      => $lot_id,
+         'region_id'   => $region_id,
+         'orientation' => $orientation,
+         'image'       => $uploadSuccess->getPath() . '/' . $uploadSuccess->getFilename()
+      ));
+
+      // Checks if image was stored successfully
+      if ($uploadSuccess && $newEntry) {
+         return Response::json('Success', 200);
+      } else {
+         return Response::json('Error', 400);
+      }
+   }
 }
