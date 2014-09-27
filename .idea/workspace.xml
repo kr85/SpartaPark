@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +64,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="EloquentLotRepository.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="EloquentLotRepository.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Lot/EloquentLotRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.2" vertical-offset="80" max-vertical-offset="480">
+                <state line="17" column="6" selection-start="340" selection-end="340" vertical-scroll-proportion="-6.6666665" vertical-offset="80" max-vertical-offset="480">
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RepositoryServiceProvider.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="61" column="35" selection-start="1542" selection-end="1542" vertical-scroll-proportion="1.5" vertical-offset="315" max-vertical-offset="1125">
+                  <folding>
+                    <element signature="e#40#79#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -85,10 +97,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="EloquentEntranxitRepository.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="EloquentEntranxitRepository.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="3" selection-start="153" selection-end="153" vertical-scroll-proportion="0.26649746" vertical-offset="0" max-vertical-offset="495">
+                <state line="6" column="35" selection-start="148" selection-end="148" vertical-scroll-proportion="-0.027918782" vertical-offset="101" max-vertical-offset="495">
                   <folding>
                     <element signature="e#39#92#0" expanded="true" />
                   </folding>
@@ -122,7 +134,6 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Lot/EloquentLotRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Region/EloquentRegionRepository.php" />
-        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/views/partials/geolocation.blade.php" />
         <option value="$PROJECT_DIR$/app/views/partials/address.blade.php" />
         <option value="$PROJECT_DIR$/vendor/torann/geoip/src/Torann/GeoIP/GeoIP.php" />
@@ -162,6 +173,7 @@
         <option value="$PROJECT_DIR$/app/controllers/MobileController.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EntranxitRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php" />
+        <option value="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -561,7 +573,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1512247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1512247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -593,11 +605,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/partials/geolocation.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="182" selection-end="182" vertical-scroll-proportion="0.15393387" vertical-offset="0" max-vertical-offset="877" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/packages/toin0u/geocoder-laravel/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="69" selection-start="463" selection-end="463" vertical-scroll-proportion="0.2948886" vertical-offset="0" max-vertical-offset="763" />
@@ -856,18 +863,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="35" selection-start="148" selection-end="148" vertical-scroll-proportion="-0.027918782" vertical-offset="101" max-vertical-offset="495">
+          <folding>
+            <element signature="e#39#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Lot/EloquentLotRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.2" vertical-offset="80" max-vertical-offset="480">
+        <state line="17" column="6" selection-start="340" selection-end="340" vertical-scroll-proportion="-6.6666665" vertical-offset="80" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php">
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="3" selection-start="153" selection-end="153" vertical-scroll-proportion="0.26649746" vertical-offset="0" max-vertical-offset="495">
+        <state line="61" column="35" selection-start="1542" selection-end="1542" vertical-scroll-proportion="1.5" vertical-offset="315" max-vertical-offset="1125">
           <folding>
-            <element signature="e#39#92#0" expanded="true" />
+            <element signature="e#40#79#0" expanded="true" />
           </folding>
         </state>
       </provider>

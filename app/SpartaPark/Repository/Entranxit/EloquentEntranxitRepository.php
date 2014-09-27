@@ -5,7 +5,7 @@ use Entranxit;
 
 /**
  * Class EloquentEntranxitRepository
- * 
+ *
  * @package SpartaPark\Entranxit
  */
 class EloquentEntranxitRepository extends AbstractEloquentRepository implements EntranxitRepository

@@ -1,12 +1,14 @@
 <?php namespace SpartaPark\Repository;
 
 use Illuminate\Support\ServiceProvider;
+use SpartaPark\Entranxit\EloquentEntranxitRepository;
 use SpartaPark\Repository\Lot\EloquentLotRepository;
 use SpartaPark\Repository\Owner\EloquentOwnerRepository;
 use Owner;
 use Lot;
 use Region;
 use SpartaPark\Repository\Region\EloquentRegionRepository;
+use Entranxit;
 
 /**
  * Class RepositoryServiceProvider
@@ -23,6 +25,7 @@ class RepositoryServiceProvider extends ServiceProvider
       $this->registerOwnerRepository();
       $this->registerLotRepository();
       $this->registerRegionRepository();
+      $this->registerEntranxitRepository();
    }
 
    /**
@@ -52,6 +55,16 @@ class RepositoryServiceProvider extends ServiceProvider
    {
       $this->app->bind('SpartaPark\Repository\Region\RegionRepository', function($app) {
          return new EloquentRegionRepository(new Region());
+      });
+   }
+
+   /**
+    * Register entranxit repository
+    */
+   public function registerEntranxitRepository()
+   {
+      $this->app->bind('SpartaPark\Repository\Entranxit\EntranxitRepository', function($app) {
+         return new EloquentEntranxitRepository(new Entranxit());
       });
    }
 }
