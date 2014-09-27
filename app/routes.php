@@ -102,3 +102,13 @@ Route::get('api/lots_near_coordinates/latitude/{latitude}/longitude/{longitude}'
    'as'   => 'lots.near.coordinates',
    'uses' => 'MobileController@getLotsNearCoordinates'
 ))->where('longitude', '[0-9\.\-]+', 'latitude', '[0-9\.\-]+');
+
+Route::get('api/available_near_address/address/{address}', array(
+   'as'   => 'available.near.address',
+   'uses' => 'MobileController@getAvailableNearAddress'
+))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');
+
+Route::get('api/available_near_coordinates/latitude/{latitude}/longitude/{longitude}', array(
+   'as'   => 'available.near.coordinates',
+   'uses' => 'MobileController@getAvailableNearCoordinates'
+))->where('longitude', '[0-9\.\-]+', 'latitude', '[0-9\.\-]+');

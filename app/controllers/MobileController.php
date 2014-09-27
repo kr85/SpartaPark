@@ -39,6 +39,9 @@ class MobileController extends BaseController
    public function getLotInfo($id)
    {
       $lot = $this->lotRepository->find($id, array('regions'));
+      if (!$lot) {
+         return 'Lot does not exist';
+      }
       $lot = array(
          'id'        => $lot->id,
          'name'      => $lot->name,
@@ -60,7 +63,9 @@ class MobileController extends BaseController
    public function getRegionInfo($id)
    {
       $region = $this->regionRepository->find($id, array());
-
+      if (!$region) {
+         return 'Region does not exist';
+      }
       return $region;
    }
 
@@ -98,6 +103,62 @@ class MobileController extends BaseController
    }
 
    /**
+    * Get all lots near address with available spots
+    *
+    * @param null $address search address
+    * @return array all lots with available spots
+    */
+   public function getAvailableNearAddress($address = null)
+   {
+      $geocode = Geocoder::geocode($address);
+      $latitude = $geocode->getLatitude();
+      $longitude = $geocode->getLongitude();
+      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      $lots = array();
+      $i = 0;
+
+      foreach ($locations as $location) {
+         $lot = $this->lotRepository->find($location->id, array('regions'));
+         $regions = $lot->regions;
+         $lotRegions = array();
+         $j = 0;
+         $lotAvailableSpots = 0;
+
+         foreach ($regions as $region) {
+            if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+               $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+               $filteredRegion = array(
+                  'id'              => $region->id,
+                  'name'            => $region->name,
+                  'capacity'        => $region->capacity,
+                  'spots_occupied'  => $region->spots_occupied,
+                  'spots_available' => json_encode($availableSpots),
+                  'lot_id'          => $region->lot_id
+               );
+               $lotAvailableSpots += $availableSpots;
+               $lotRegions[$j] = $filteredRegion;
+               $j++;
+            }
+         }
+
+         $lot = array(
+            'id'              => $lot->id,
+            'name'            => $lot->name,
+            'address'         => $lot->address,
+            'spots_available' => json_encode($lotAvailableSpots),
+            'distance'        => $location->distance,
+            'longitude'       => $lot->longitude,
+            'latitude'        => $lot->latitude,
+            'regions'         => $lotRegions
+         );
+         $lots[$i] = $lot;
+         $i++;
+      }
+
+      return $lots;
+   }
+
+   /**
     * Get all lots near current location
     *
     * @param null $latitude current latitude
@@ -112,6 +173,8 @@ class MobileController extends BaseController
 
       foreach ($locations as $location) {
          $lot = $this->lotRepository->find($location->id, array('regions'));
+
+
          $lot = array(
             'id'        => $lot->id,
             'name'      => $lot->name,
@@ -120,6 +183,60 @@ class MobileController extends BaseController
             'longitude' => $lot->longitude,
             'latitude'  => $lot->latitude,
             'regions'   => $lot->regions
+         );
+         $lots[$i] = $lot;
+         $i++;
+      }
+
+      return $lots;
+   }
+
+   /**
+    * Get all lots with available spots near current location
+    *
+    * @param null $latitude current latitude
+    * @param null $longitude current longitude
+    * @return array of all lots near current location
+    */
+   public function getAvailableNearCoordinates($latitude = null, $longitude = null)
+   {
+      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      $lots = array();
+      $i = 0;
+
+      foreach ($locations as $location) {
+         $lot = $this->lotRepository->find($location->id, array('regions'));
+         $regions = $lot->regions;
+         $lotRegions = array();
+         $j = 0;
+         $lotAvailableSpots = 0;
+
+         foreach ($regions as $region) {
+            if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+               $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+               $filteredRegion = array(
+                  'id'              => $region->id,
+                  'name'            => $region->name,
+                  'capacity'        => $region->capacity,
+                  'spots_occupied'  => $region->spots_occupied,
+                  'spots_available' => json_encode($availableSpots),
+                  'lot_id'          => $region->lot_id
+               );
+               $lotAvailableSpots += $availableSpots;
+               $lotRegions[$j] = $filteredRegion;
+               $j++;
+            }
+         }
+
+         $lot = array(
+            'id'              => $lot->id,
+            'name'            => $lot->name,
+            'address'         => $lot->address,
+            'spots_available' => json_encode($lotAvailableSpots),
+            'distance'        => $location->distance,
+            'longitude'       => $lot->longitude,
+            'latitude'        => $lot->latitude,
+            'regions'         => $lotRegions
          );
          $lots[$i] = $lot;
          $i++;
