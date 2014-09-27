@@ -1,7 +1,7 @@
-<?php namespace SpartaPark\Entranxit;
+<?php namespace SpartaPark\Repository\Entranxit;
 
-use SpartaPark\Repository\AbstractEloquentRepository;
 use Entranxit;
+use SpartaPark\Repository\AbstractEloquentRepository;
 
 /**
  * Class EloquentEntranxitRepository

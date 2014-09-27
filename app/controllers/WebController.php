@@ -2,7 +2,7 @@
 
 use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
-use SpartaPark\Entranxit\EntranxitRepository;
+use SpartaPark\Repository\Entranxit\EntranxitRepository;
 
 /**
  * Class MainController
@@ -20,7 +20,7 @@ class WebController extends BaseController
    protected $regionRepository;
 
    /**
-    * @var SpartaPark\Entranxit\EntranxitRepository entranxit repository
+    * @var SpartaPark\Repository\Entranxit\EntranxitRepository entranxit repository
     */
    protected $entranxitRepository;
 

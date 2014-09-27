@@ -1,13 +1,13 @@
 <?php namespace SpartaPark\Repository;
 
 use Illuminate\Support\ServiceProvider;
-use SpartaPark\Entranxit\EloquentEntranxitRepository;
 use SpartaPark\Repository\Lot\EloquentLotRepository;
 use SpartaPark\Repository\Owner\EloquentOwnerRepository;
+use SpartaPark\Repository\Region\EloquentRegionRepository;
+use SpartaPark\Repository\Entranxit\EloquentEntranxitRepository;
 use Owner;
 use Lot;
 use Region;
-use SpartaPark\Repository\Region\EloquentRegionRepository;
 use Entranxit;
 
 /**
