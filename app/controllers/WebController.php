@@ -2,6 +2,7 @@
 
 use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
+use SpartaPark\Entranxit\EntranxitRepository;
 
 /**
  * Class MainController
@@ -19,6 +20,11 @@ class WebController extends BaseController
    protected $regionRepository;
 
    /**
+    * @var SpartaPark\Entranxit\EntranxitRepository entranxit repository
+    */
+   protected $entranxitRepository;
+
+   /**
     * @var string master layout
     */
    protected $layout = 'layouts.master';
@@ -28,11 +34,15 @@ class WebController extends BaseController
     *
     * @param LotRepository $lotRepository lot repository
     * @param RegionRepository $regionRepository region repository
+    * @param EntranxitRepository $entranxitRepository entranxit repository
     */
-   public function __construct(LotRepository $lotRepository, RegionRepository $regionRepository)
+   public function __construct(LotRepository       $lotRepository,
+                               RegionRepository    $regionRepository,
+                               EntranxitRepository $entranxitRepository)
    {
-      $this->lotRepository    = $lotRepository;
-      $this->regionRepository = $regionRepository;
+      $this->lotRepository       = $lotRepository;
+      $this->regionRepository    = $regionRepository;
+      $this->entranxitRepository = $entranxitRepository;
    }
 
    public function getIndex()
@@ -249,7 +259,7 @@ class WebController extends BaseController
       $uploadSuccess = $image->move($destinationPath, $filename);
 
       // Creates a new entry in the database
-      $newEntry = Entranxit::create(array(
+      $newEntry = $this->entranxitRepository->create(array(
          'lot_id'      => $lot_id,
          'region_id'   => $region_id,
          'orientation' => $orientation,
