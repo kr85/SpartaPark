@@ -61,7 +61,7 @@ Route::get('current_location/latitude/{latitude}/longitude/{longitude}', array(
 Route::post('api/upload_image/lot_id/{lot_id}/region_id/{region_id}/orientation/{orientation}', array(
    'as'     => 'upload.images',
    'before' => 'raspberry_pi',
-   'uses'   => 'WebController@uploadImages'
+   'uses'   => 'WebController@uploadImage'
 ))->where(array('lot_id'      => '[0-9]+',
                 'region_id'   => '[0-9]+',
                 'orientation' => '[a-zA-Z]+'));
@@ -70,13 +70,6 @@ Route::get('api/upload_image', array(
    'as'   => 'getUpload',
    'uses' => 'WebController@getIndex'
 ));
-
-Route::post('api/upload_image', array(
-   'as'     => 'upload.image',
-   'before' => 'raspberry_pi',
-   'uses'   => 'WebController@uploadImage'
-));
-
 
 /*
  \--------------------------------------------------------------------------

@@ -226,55 +226,12 @@ class WebController extends BaseController
    /**
     * Uploads images to the database
     *
-    * @return \Illuminate\Http\JsonResponse
+    * @param $lot_id lot id
+    * @param $region_id region id
+    * @param $orientation car orientation
+    * @return \Illuminate\Http\JsonResponse json response
     */
-   public function uploadImage()
-   {
-      // Get lot id
-      $lot_id = Input::get('lot_id');
-      if (!$this->getLotInfo($lot_id)) {
-         return Response::json('Lot not found', 404);
-      }
-
-      // Get region id
-      $region_id = Input::get('region_id');
-      if (!$this->getRegionInfo($region_id)) {
-         return Response::json('Region not found', 404);
-      }
-
-      // Get orientation
-      $orientation = Input::get('orientation');
-      if (strcasecmp(strtolower($orientation), 'entrance') != 0 && strcasecmp(strtolower($orientation), 'exit') != 0) {
-         return Response::json('Orientation not entrance or exit', 404);
-      }
-
-      // Get image
-      $image = Input::file('image');
-      // Destination
-      $destinationPath = 'uploads';
-      // Image name
-      $filename = str_random(12);
-
-      // Moves the image to the destination folder
-      $uploadSuccess = $image->move($destinationPath, $filename);
-
-      // Creates a new entry in the database
-      $newEntry = $this->entranxitRepository->create(array(
-         'lot_id'      => $lot_id,
-         'region_id'   => $region_id,
-         'orientation' => $orientation,
-         'image'       => $uploadSuccess->getPath() . '/' . $uploadSuccess->getFilename()
-      ));
-
-      // Checks if image was stored successfully
-      if ($uploadSuccess && $newEntry) {
-         return Response::json('Success', 200);
-      } else {
-         return Response::json('Error', 400);
-      }
-   }
-
-   public function uploadImages($lot_id, $region_id, $orientation)
+   public function uploadImage($lot_id, $region_id, $orientation)
    {
       // Check lot id
       if (!$this->getLotInfo($lot_id)) {
