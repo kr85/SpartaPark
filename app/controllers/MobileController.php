@@ -46,8 +46,8 @@ class MobileController extends BaseController
          'id'        => $lot->id,
          'name'      => $lot->name,
          'address'   => $lot->address,
-         'longitude' => $lot->longitude,
-         'latitude'  => $lot->latitude,
+         'longitude' => json_decode($lot->longitude),
+         'latitude'  => json_decode($lot->latitude),
          'regions'   => $lot->regions
       );
 
@@ -81,6 +81,9 @@ class MobileController extends BaseController
       $latitude = $geocode->getLatitude();
       $longitude = $geocode->getLongitude();
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      if (empty($locations)) {
+         return 'There are no parking lots within 5 miles';
+      }
       $lots = array();
       $i = 0;
 
@@ -91,8 +94,8 @@ class MobileController extends BaseController
             'name'      => $lot->name,
             'address'   => $lot->address,
             'distance'  => $location->distance,
-            'longitude' => $lot->longitude,
-            'latitude'  => $lot->latitude,
+            'longitude' => json_decode($lot->longitude),
+            'latitude'  => json_decode($lot->latitude),
             'regions'   => $lot->regions
          );
          $lots[$i] = $lot;
@@ -114,6 +117,9 @@ class MobileController extends BaseController
       $latitude = $geocode->getLatitude();
       $longitude = $geocode->getLongitude();
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      if (empty($locations)) {
+         return 'There are no parking lots within 5 miles';
+      }
       $lots = array();
       $i = 0;
 
@@ -132,7 +138,7 @@ class MobileController extends BaseController
                   'name'            => $region->name,
                   'capacity'        => $region->capacity,
                   'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => json_encode($availableSpots),
+                  'spots_available' => $availableSpots,
                   'lot_id'          => $region->lot_id
                );
                $lotAvailableSpots += $availableSpots;
@@ -145,10 +151,10 @@ class MobileController extends BaseController
             'id'              => $lot->id,
             'name'            => $lot->name,
             'address'         => $lot->address,
-            'spots_available' => json_encode($lotAvailableSpots),
+            'spots_available' => $lotAvailableSpots,
             'distance'        => $location->distance,
-            'longitude'       => $lot->longitude,
-            'latitude'        => $lot->latitude,
+            'longitude'       => json_decode($lot->longitude),
+            'latitude'        => json_decode($lot->latitude),
             'regions'         => $lotRegions
          );
          $lots[$i] = $lot;
@@ -168,6 +174,9 @@ class MobileController extends BaseController
    public function getLotsNearCoordinates($latitude = null, $longitude = null)
    {
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      if (empty($locations)) {
+         return 'There are no parking lots within 5 miles';
+      }
       $lots = array();
       $i = 0;
 
@@ -180,8 +189,8 @@ class MobileController extends BaseController
             'name'      => $lot->name,
             'address'   => $lot->address,
             'distance'  => $location->distance,
-            'longitude' => $lot->longitude,
-            'latitude'  => $lot->latitude,
+            'longitude' => json_decode($lot->longitude),
+            'latitude'  => json_decode($lot->latitude),
             'regions'   => $lot->regions
          );
          $lots[$i] = $lot;
@@ -201,6 +210,9 @@ class MobileController extends BaseController
    public function getAvailableNearCoordinates($latitude = null, $longitude = null)
    {
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      if (empty($locations)) {
+         return 'There are no parking lots within 5 miles';
+      }
       $lots = array();
       $i = 0;
 
@@ -219,7 +231,7 @@ class MobileController extends BaseController
                   'name'            => $region->name,
                   'capacity'        => $region->capacity,
                   'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => json_encode($availableSpots),
+                  'spots_available' => $availableSpots,
                   'lot_id'          => $region->lot_id
                );
                $lotAvailableSpots += $availableSpots;
@@ -232,10 +244,10 @@ class MobileController extends BaseController
             'id'              => $lot->id,
             'name'            => $lot->name,
             'address'         => $lot->address,
-            'spots_available' => json_encode($lotAvailableSpots),
+            'spots_available' => $lotAvailableSpots,
             'distance'        => $location->distance,
-            'longitude'       => $lot->longitude,
-            'latitude'        => $lot->latitude,
+            'longitude'       => json_decode($lot->longitude),
+            'latitude'        => json_decode($lot->latitude),
             'regions'         => $lotRegions
          );
          $lots[$i] = $lot;
