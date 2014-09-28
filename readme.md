@@ -1,4 +1,4 @@
-## SpartaPark - A Parking Guidance System
+## SpartaPark - Parking Guidance System
 
 *** Full read me coming soon ***
 
