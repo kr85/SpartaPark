@@ -14,9 +14,23 @@
         </div>
         <div class="collapse navbar-collapse" id="navCollapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">Contact</a></li>
+                @if(Route::currentRouteName() == 'index')
+                    <li class="active">{{ HTML::linkRoute('index', 'Home') }}</li>
+                    <li>{{ HTML::linkRoute('about', 'About') }}</li>
+                    <li>{{ HTML::linkRoute('contact', 'Contact') }}</li>
+                @elseif(Route::currentRouteName() == 'about')
+                    <li>{{ HTML::linkRoute('index', 'Home') }}</li>
+                    <li class="active">{{ HTML::linkRoute('about', 'About') }}</li>
+                    <li>{{ HTML::linkRoute('contact', 'Contact') }}</li>
+                @elseif(Route::currentRouteName() == 'contact')
+                    <li>{{ HTML::linkRoute('index', 'Home') }}</li>
+                    <li>{{ HTML::linkRoute('about', 'About') }}</li>
+                    <li class="active">{{ HTML::linkRoute('contact', 'Contact') }}</li>
+                @else
+                    <li>{{ HTML::linkRoute('index', 'Home') }}</li>
+                    <li>{{ HTML::linkRoute('about', 'About') }}</li>
+                    <li>{{ HTML::linkRoute('contact', 'Contact') }}</li>
+                @endif
             </ul>
         </div>
     </div>

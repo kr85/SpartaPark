@@ -28,11 +28,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <!--<div class="header">
-            <div class="container">-->
         @include('headers.main')
-            <!--</div>
-        </div>-->
         <div class="carousel-container">
             <div class="carousel-wrapper">
                 @include('partials.carousels.main')

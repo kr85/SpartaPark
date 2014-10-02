@@ -45,9 +45,34 @@ class WebController extends BaseController
       $this->entranxitRepository = $entranxitRepository;
    }
 
+   /**
+    * Gets SpartaPark index page
+    *
+    * @return \Illuminate\View\View SpartaPark main page
+    */
    public function getIndex()
    {
       return $this->layout = View::make('spartapark.index');
+   }
+
+   /**
+    * Gets SpartaPark about page
+    *
+    * @return \Illuminate\View\View SpartaPark about page
+    */
+   public function getAbout()
+   {
+      return $this->layout = View::make('abouts.index');
+   }
+
+   /**
+    * Gets SpartaPark contact page
+    *
+    * @return \Illuminate\View\View SpartaPark contact page
+    */
+   public function getContact()
+   {
+      return $this->layout = View::make('contacts.index');
    }
 
    /**

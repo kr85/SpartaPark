@@ -43,6 +43,16 @@ Route::get('/', array(
    'uses' => 'WebController@getIndex'
 ));
 
+Route::get('about', array(
+   'as'   => 'about',
+   'uses' => 'WebController@getAbout'
+));
+
+Route::get('contact', array(
+   'as'   => 'contact',
+   'uses' => 'WebController@getContact'
+));
+
 Route::get('address/{address}', array(
    'as'   => 'lots.near.address.web',
    'uses' => 'WebController@getLotsNearAddress'
