@@ -7,7 +7,7 @@
         @include('partials.address')
     @endif-->
     <div class="content-wrapper">
-        Content Here Soon...
+        <h3>Content Here Soon...</h3>
     </div>
 @stop
 

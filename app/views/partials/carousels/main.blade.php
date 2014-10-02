@@ -1,6 +1,6 @@
 <!-- Begin bg-fade-carousel -->
 <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-<!-- Wrapper for slides -->
+    <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
             <div class="slide1"></div>
@@ -32,7 +32,7 @@
         <div class="item">
             <div class="slide10"></div>
         </div>
-    </div><!-- .carousel-inner -->
+    </div><!-- End carousel-inner -->
     <div class="container carousel-overlay text-center">
         <h1>SpartaPark</h1>
         <p class="lead">Guidance Parking System For San Jose State University</p>
@@ -44,5 +44,5 @@
     <a class="carousel-control right" href="#bg-fade-carousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
-</div><!-- .carousel -->
+</div><!-- End carousel -->
 <!-- End bg-fade-carousel -->
