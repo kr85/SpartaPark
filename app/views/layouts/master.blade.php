@@ -27,15 +27,18 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="header">
-            <div class="container">
-                @include('headers.main')
+        <!--<div class="header">
+            <div class="container">-->
+        @include('headers.main')
+            <!--</div>
+        </div>-->
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                @include('partials.carousels.main')
             </div>
         </div>
-        <div class="content">
-            <div class="container">
-                @yield('content')
-            </div>
+        <div class="container">
+            @yield('content')
         </div>
         <div class="footer">
             <div class="container">
@@ -46,7 +49,7 @@
         <!-- Javascript -->
         {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
         <script>window.jQuery || document.write('{{ HTML::script('assets/javascrpt/vendor/jquery-1.10.2.min.js\' }}')</script>
-        {{ HTML::script('assets/javascript/plugins.js') }}
+        {{ HTML::script('assets/javascript/vendor/bootstrap.js') }}
         {{ HTML::script('assets/javascript/plugins.js') }}
         {{ HTML::script('assets/javascript/main.js') }}
 
@@ -59,5 +62,6 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-54990766-1');ga('send','pageview');
         </script>
+        @yield('footer-assets')
     </body>
 </html>

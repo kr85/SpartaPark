@@ -1,31 +1,24 @@
-<!-- Fixed navigation bar -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<!--navigation bar-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar-main">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only"></span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navCollapse">
+                <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="logo" href="/"></a>
-            <div class="row">
-                <div class="header-text">
-                    <div class="title">
-                        SpartaPark
-                    </div>
-                    <div class="subtitle">
-                        Guidance Parking System
-                    </div>
-                </div>
-            </div>
+            <a class="navbar-brand" href="/">
+                <img src="assets/images/logo-4.png" alt="">
+            </a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse" id="navCollapse">
             <ul class="nav navbar-nav navbar-right">
-                <li>{{ HTML::link('', 'HOME') }}</li>
-                <li>{{ HTML::link('', 'ABOUT') }}</li>
-                <li>{{ HTML::link('', 'CONTACT US') }}</li>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<!--end navigation bar-->
