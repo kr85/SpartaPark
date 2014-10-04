@@ -52,7 +52,36 @@ class WebController extends BaseController
     */
    public function getIndex()
    {
-      return $this->layout = View::make('spartapark.index');
+      $config['center'] = '37.335, -121.880';
+      $config['zoom'] = '15';
+      Gmaps::initialize($config);
+
+      $marker = array();
+      $marker['position'] = '37.3353235, -121.8804712';
+      $marker['infowindow_content'] = 'San Jose State University';
+      Gmaps::add_marker($marker);
+
+      $marker = array();
+      $marker['position'] = '37.33225930, -121.88335920';
+      $marker['infowindow_content'] = 'SJSU West Parking Garage';
+      $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000';
+      Gmaps::add_marker($marker);
+
+      $marker = array();
+      $marker['position'] = '37.33347370, -121.87991640';
+      $marker['infowindow_content'] = 'SJSU South Parking Garage';
+      $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000';
+      Gmaps::add_marker($marker);
+
+      $marker = array();
+      $marker['position'] = '37.33847300, -121.88054690';
+      $marker['infowindow_content'] = 'SJSU North Parking Garage';
+      $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000';
+      Gmaps::add_marker($marker);
+
+      $data['map'] = Gmaps::create_map();
+
+      return $this->layout = View::make('spartapark.index', $data);
    }
 
    /**
@@ -170,7 +199,7 @@ class WebController extends BaseController
    public function getLotsNearCoordinates($latitude, $longitude)
    {
       $coords = array($latitude, $longitude);
-      dd($coords);
+      //dd($coords);
    }
 
    /**

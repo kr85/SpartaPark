@@ -2,10 +2,20 @@
    SpartaPark's Custom Styles
    ========================================================================== */
 .content-wrapper {
-  min-height: 2000px;
+  min-height: 1000px;
   margin-top: 30px;
 }
 @media (max-width: 767px) {
+  .navbar-default .navbar-nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 1px;
+    margin-right: 0;
+  }
   .navbar > .container .navbar-brand {
     margin-top: -7px;
   }
@@ -63,6 +73,17 @@
     height: 60px;
     margin: 0;
   }
+  .back-to-top:hover,
+  .back-to-top:focus {
+    background-image: url(../images/backTopOff.png);
+    background-size: 60px 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+  }
   .footer-logo {
     background-image: url(../images/SpartaParkFooterHead.png);
     background-size: 104px 116px;
@@ -78,6 +99,33 @@
     font-weight: bold;
     color: rgba(102, 102, 102, 0.95);
   }
+  .available-parking-button-wrapper {
+    border: 5px solid transparent;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-top: -5px;
+  }
+  .available-parking-button {
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: rgba(0, 69, 163, 0.80);
+    border: 1px solid #0041A9;
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    color: #FFF !important;
+    padding: 10px 17px;
+    height: 42px;
+    opacity: 1;
+  }
+  .available-parking-button:hover,
+  .available-parking-button:focus {
+    background: #005EFF;
+  }
+  .available-parking-button-text:before {
+    content: "Available Parking";
+    color: #ffffff;
+  }
 }
 @media (min-width: 768px) {
   .navbar .container {
@@ -91,6 +139,13 @@
     margin-top: -7px;
   }
   .navbar-default .navbar-nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 5px;
     margin-right: 0;
   }
   .carousel-overlay h1 {
@@ -147,6 +202,17 @@
     margin: 0;
     padding: 0;
   }
+  .back-to-top:hover,
+  .back-to-top:focus {
+    background-image: url(../images/backTopOff.png);
+    background-size: 60px 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+  }
   .footer-logo {
     background-image: url(../images/SpartaParkFooterLogo.png);
     background-size: 261px 62px;
@@ -162,6 +228,35 @@
     font-weight: bold;
     color: rgba(102, 102, 102, 0.95);
   }
+  .available-parking-button-wrapper {
+    width: 222px;
+    border: 5px solid transparent;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-top: -5px;
+  }
+  .available-parking-button {
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: rgba(0, 69, 163, 0.80);
+    border: 1px solid #0041A9;
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    color: #FFF !important;
+    padding: 10px 17px;
+    width: 212px;
+    height: 42px;
+    opacity: 1;
+  }
+  .available-parking-button:hover,
+  .available-parking-button:focus {
+    background: #005EFF;
+  }
+  .available-parking-button-text:before {
+    content: "Available Parking";
+    color: #ffffff;
+  }
 }
 @media (min-width: 992px) {
 
@@ -170,6 +265,9 @@
   top: 0;
   left: 0;
   right: 0;
+  background: black;
+  border: black;
+  box-shadow: 2px 2px 2px black;
 }
 .slide1,
 .slide2,
@@ -255,16 +353,6 @@
   background-image: none;
   background-color: rgba(18, 133, 227, 0.30);
 }
-.navbar-default .navbar-nav > li > a {
-  color: #fff;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.75);
-  font-weight: bold;
-  border-radius: 4px;
-  padding: 10px 15px;
-  margin-top: 5px;
-  margin-right: 0;
-}
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
@@ -304,7 +392,7 @@
 .carousel-overlay h1::-moz-selection {
   background: rgba(8, 82, 180, 0.20);
 }
-.carousel-overlay .btn {
+/*.carousel-overlay .btn {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -314,7 +402,7 @@
 .carousel-overlay .btn-lg {
   font-size: 1.75em;
   padding: 10px 30px;
-}
+}*/
 .carousel-overlay .lead::selection {
   background: rgba(8, 82, 180, 0.20);
 }

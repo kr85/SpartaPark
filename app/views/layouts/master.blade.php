@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="shortcut icon" href="<?php echo URL::to('assets/images/spartapark-favicon.ico'); ?>">
-        <title>SpartaPark  | Parking Guidance System</title>
+        <title>SpartaPark  | SJSU Parking Guidance System</title>
         <meta name="description" content="A Parking Guidance System">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Kosta Rashev">
@@ -28,16 +28,22 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <!-- Header -->
         @include('headers.main')
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
-                @include('partials.carousels.main')
+
+        <!-- Main page carousel -->
+        @if(Route::currentRouteName() == 'index')
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    @include('partials.carousels.main')
+                </div>
             </div>
-        </div>
-        <div class="container">
-            @yield('content')
-        </div>
+         @endif
+
+        <!-- Content -->
+        @yield('content')
+
         <!-- Footer -->
         @include('footers.main')
 
@@ -57,6 +63,8 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-54990766-1');ga('send','pageview');
         </script>
+
+        <!-- Page footer assets -->
         @yield('footer-assets')
     </body>
 </html>

@@ -13,6 +13,12 @@
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="nav navbar-nav">
+                <li class="available-parking-button-wrapper">
+                    <a class="btn btn-primary available-parking-button available-parking-button-text">
+                    </a>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(Route::currentRouteName() == 'index')
                     <li class="active">{{ HTML::linkRoute('index', 'Home') }}</li>
