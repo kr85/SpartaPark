@@ -2,8 +2,11 @@
    SpartaPark's Custom Styles
    ========================================================================== */
 .content-wrapper {
-  min-height: 1000px;
+  min-height: 700px;
   margin-top: 30px;
+}
+.content-wrapper-navbar-push {
+  margin-top: 90px;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav > li > a {
@@ -13,7 +16,7 @@
     font-weight: bold;
     border-radius: 4px;
     padding: 10px 15px;
-    margin-top: 1px;
+    margin-top: 0;
     margin-right: 0;
   }
   .navbar > .container .navbar-brand {
@@ -122,10 +125,10 @@
   .available-parking-button:focus {
     background: #005EFF;
   }
-  .available-parking-button-text:before {
+  /*.available-parking-button-text:before {
     content: "Available Parking";
     color: #ffffff;
-  }
+  }*/
 }
 @media (min-width: 768px) {
   .navbar .container {
@@ -253,10 +256,10 @@
   .available-parking-button:focus {
     background: #005EFF;
   }
-  .available-parking-button-text:before {
+  /*.available-parking-button-text:before {
     content: "Available Parking";
     color: #ffffff;
-  }
+  }*/
 }
 @media (min-width: 992px) {
 

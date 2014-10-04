@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/WebController.php" afterPath="$PROJECT_DIR$/app/controllers/WebController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" afterPath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/abouts/index.blade.php" afterPath="$PROJECT_DIR$/app/views/abouts/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contacts/index.blade.php" afterPath="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/headers/main.blade.php" afterPath="$PROJECT_DIR$/app/views/headers/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
@@ -29,73 +30,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="8" selection-start="420" selection-end="449" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="16" selection-start="2903" selection-end="2916" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="geolocation.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/geolocation.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="5" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/footers/main.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="51" selection-start="137" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="585">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/headers/main.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="154" selection-start="954" selection-end="954" vertical-scroll-proportion="0.29929578" vertical-offset="0" max-vertical-offset="852">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="28" selection-start="1156" selection-end="1175" vertical-scroll-proportion="-14.375" vertical-offset="450" max-vertical-offset="1845">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="14" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="6585">
+            <state line="7" column="1" selection-start="252" selection-end="279" vertical-scroll-proportion="-3.8888888" vertical-offset="0" max-vertical-offset="6645">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="availableparking.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="63" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="63" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="availableparking.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="46" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+            <state line="4" column="63" selection-start="139" selection-end="139" vertical-scroll-proportion="0.06864989" vertical-offset="0" max-vertical-offset="874">
               <folding />
             </state>
           </provider>
@@ -170,26 +135,26 @@
         <option value="$PROJECT_DIR$/app/views/contacts/main.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/main.php" />
-        <option value="$PROJECT_DIR$/app/views/abouts/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/footers/main.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/javascript/main.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/partials/carousels/main.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/app/views/spartapark/available_parking.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
         <option value="$PROJECT_DIR$/app/views/headers/main.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
+        <option value="$PROJECT_DIR$/app/views/abouts/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="143" />
-    <option name="y" value="130" />
+    <option name="x" value="27" />
+    <option name="y" value="89" />
     <option name="width" value="1914" />
     <option name="height" value="1026" />
   </component>
@@ -644,7 +609,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="143" y="130" width="1914" height="1026" extended-state="0" />
+    <frame x="27" y="89" width="1914" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -886,68 +851,9 @@
         <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.017584994" vertical-offset="0" max-vertical-offset="853" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="0.22285715" vertical-offset="0" max-vertical-offset="875" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="35" selection-start="96" selection-end="111" vertical-scroll-proportion="0.068571426" vertical-offset="0" max-vertical-offset="875" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/footers/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="51" selection-start="137" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/geolocation.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/carousels/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="81" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="6585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="16" selection-start="2903" selection-end="2916" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="8" selection-start="420" selection-end="449" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="28" selection-start="1156" selection-end="1175" vertical-scroll-proportion="-14.375" vertical-offset="450" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>
@@ -959,9 +865,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.08802817" vertical-offset="0" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/geolocation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="182" selection-end="182" vertical-scroll-proportion="0.15845071" vertical-offset="0" max-vertical-offset="852">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="16" selection-start="2903" selection-end="2916" vertical-scroll-proportion="1.1498855" vertical-offset="0" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/footers/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="51" selection-start="137" selection-end="145" vertical-scroll-proportion="0.051487416" vertical-offset="0" max-vertical-offset="874">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/headers/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="154" selection-start="954" selection-end="954" vertical-scroll-proportion="0.29929578" vertical-offset="0" max-vertical-offset="852">
+        <state line="17" column="68" selection-start="868" selection-end="868" vertical-scroll-proportion="0.29176202" vertical-offset="0" max-vertical-offset="874">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="28" selection-start="1156" selection-end="1175" vertical-scroll-proportion="0.40588236" vertical-offset="450" max-vertical-offset="1845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="1" selection-start="252" selection-end="279" vertical-scroll-proportion="-3.8888888" vertical-offset="0" max-vertical-offset="6645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="63" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="63" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="63" selection-start="139" selection-end="139" vertical-scroll-proportion="0.06864989" vertical-offset="0" max-vertical-offset="874">
           <folding />
         </state>
       </provider>
