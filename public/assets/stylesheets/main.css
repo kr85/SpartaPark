@@ -15,6 +15,69 @@
   .carousel-overlay .lead {
     font-size: 1.5em;
   }
+  .footer-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(204, 204, 204, 0.24);
+    border-top-style: solid;
+    border-color: rgba(54, 54, 54, 0.40);
+  }
+  .footer-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100px;
+  }
+  .footer-nav > a:hover,
+  .footer-nav > a:focus {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1em;
+    color: #000000;
+  }
+  .footer-nav > a {
+    color: rgba(125, 125, 125, 0.89);
+    font-weight: 900;
+  }
+  ul > li.footer-nav {
+    list-style-type: none;
+    display: none;
+  }
+  ul > li.vertical-align-footer-nav {
+    vertical-align: middle;
+    padding-top: 59px;
+  }
+  ul > li.vertical-align-back-to-top {
+    vertical-align: middle;
+    padding-top: 40px;
+    padding-right: 30px;
+    list-style-type: none;
+  }
+  .back-to-top {
+    background-image: url(../images/top.png);
+    background-size: 60px 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+  }
+  .footer-logo {
+    background-image: url(../images/SpartaParkFooterHead.png);
+    background-size: 104px 116px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 104px;
+    height: 116px;
+    margin: 0;
+    padding: 0;
+  }
+  .copyright {
+    text-align: center;
+    font-weight: bold;
+    color: rgba(102, 102, 102, 0.95);
+  }
 }
 @media (min-width: 768px) {
   .navbar .container {
@@ -35,6 +98,69 @@
   }
   .carousel-overlay .lead {
     font-size: 2.6em;
+  }
+  .footer-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(204, 204, 204, 0.24);
+    border-top-style: solid;
+    border-color: rgba(54, 54, 54, 0.40);
+  }
+  .footer-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100px;
+  }
+  .footer-nav > a:hover,
+  .footer-nav > a:focus {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1em;
+    color: #000000;
+  }
+  .footer-nav > a {
+    color: rgba(125, 125, 125, 0.89);
+    font-weight: 600;
+  }
+  ul > li.footer-nav {
+    list-style-type: none;
+    display: inline;
+  }
+  ul > li.vertical-align-footer-nav {
+    vertical-align: middle;
+    padding-top: 59px;
+  }
+  ul > li.vertical-align-back-to-top {
+    vertical-align: middle;
+    padding-top: 10px;
+    list-style-type: none;
+  }
+  .back-to-top {
+    background-image: url(../images/top.png);
+    background-size: 60px 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-logo {
+    background-image: url(../images/SpartaParkFooterLogo.png);
+    background-size: 261px 62px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 261px;
+    height: 62px;
+    margin: 0;
+    padding: 0;
+  }
+  .copyright {
+    text-align: center;
+    font-weight: bold;
+    color: rgba(102, 102, 102, 0.95);
   }
 }
 @media (min-width: 992px) {
@@ -209,6 +335,12 @@
   box-shadow: 2px 2px 2px #000000;
 }
 .logo {
-  background-image: url(../images/logo-3.png);
-  background-size: 100%;
+  background-image: url(../images/SpartaParkLogo.png);
+  background-size: 168px 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 168px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
 }

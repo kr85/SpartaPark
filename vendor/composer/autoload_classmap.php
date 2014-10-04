@@ -1081,6 +1081,7 @@ return array(
     'Intervention\\Image\\Gd\\Shapes\\PolygonShape' => $vendorDir . '/intervention/image/src/Intervention/Image/Gd/Shapes/PolygonShape.php',
     'Intervention\\Image\\Gd\\Shapes\\RectangleShape' => $vendorDir . '/intervention/image/src/Intervention/Image/Gd/Shapes/RectangleShape.php',
     'Intervention\\Image\\Image' => $vendorDir . '/intervention/image/src/Intervention/Image/Image.php',
+    'Intervention\\Image\\ImageCache' => $vendorDir . '/intervention/imagecache/src/Intervention/Image/ImageCache.php',
     'Intervention\\Image\\ImageManager' => $vendorDir . '/intervention/image/src/Intervention/Image/ImageManager.php',
     'Intervention\\Image\\ImageManagerStatic' => $vendorDir . '/intervention/image/src/Intervention/Image/ImageManagerStatic.php',
     'Intervention\\Image\\ImageServiceProvider' => $vendorDir . '/intervention/image/src/Intervention/Image/ImageServiceProvider.php',

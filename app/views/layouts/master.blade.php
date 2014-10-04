@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="shortcut icon" href="<?php echo URL::to('assets/images/spartapark-favicon.ico'); ?>">
-        <title>SpartaPark</title>
+        <title>SpartaPark  | Parking Guidance System</title>
         <meta name="description" content="A Parking Guidance System">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Kosta Rashev">
@@ -28,6 +28,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <!-- Header -->
         @include('headers.main')
         <div class="carousel-container">
             <div class="carousel-wrapper">
@@ -37,11 +38,8 @@
         <div class="container">
             @yield('content')
         </div>
-        <div class="footer">
-            <div class="container">
-                @include('footers.main')
-            </div>
-        </div>
+        <!-- Footer -->
+        @include('footers.main')
 
         <!-- Javascript -->
         {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}

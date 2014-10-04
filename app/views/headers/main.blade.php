@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-                <img src="assets/images/logo-2.png" alt="SpartaPark">
+                <div class="logo"></div>
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navCollapse">
