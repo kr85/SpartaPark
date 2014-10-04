@@ -105,6 +105,16 @@ class WebController extends BaseController
    }
 
    /**
+    * Gets SpartaPark available parking page
+    *
+    * @return \Illuminate\View\View SpartaPark available parking page
+    */
+   public function getAvailableParking()
+   {
+      return $this->layout = View::make('spartapark.availableparking');
+   }
+
+   /**
     * Gets lot information by id
     *
     * @param $id lot id

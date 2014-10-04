@@ -15,8 +15,7 @@
         <div class="collapse navbar-collapse" id="navCollapse">
             <ul class="nav navbar-nav">
                 <li class="available-parking-button-wrapper">
-                    <a class="btn btn-primary available-parking-button available-parking-button-text">
-                    </a>
+                    {{ HTML::linkRoute('parking', '', null, array('class' => 'btn btn-primary available-parking-button available-parking-button-text')) }}
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

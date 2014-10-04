@@ -53,6 +53,11 @@ Route::get('contact', array(
    'uses' => 'WebController@getContact'
 ));
 
+Route::get('parking', array(
+   'as'   => 'parking',
+   'uses' => 'WebController@getAvailableParking'
+));
+
 Route::get('address/{address}', array(
    'as'   => 'lots.near.address.web',
    'uses' => 'WebController@getLotsNearAddress'
