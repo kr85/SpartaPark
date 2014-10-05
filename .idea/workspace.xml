@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/images/SpartaParkFooterLogo.png" afterPath="$PROJECT_DIR$/public/assets/images/SpartaParkFooterLogo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/images/SpartaParkLogo.png" afterPath="$PROJECT_DIR$/public/assets/images/SpartaParkLogo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assets/images/SpartaParkLogo.png" afterPath="$PROJECT_DIR$/public/assets/images/SpartaParkLogoWhite.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,7 +30,7 @@
       <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="317" column="45" selection-start="7329" selection-end="7329" vertical-scroll-proportion="4.437856" vertical-offset="863" max-vertical-offset="6645">
+            <state line="428" column="57" selection-start="9870" selection-end="9870" vertical-scroll-proportion="0.74344355" vertical-offset="5768" max-vertical-offset="6645">
               <folding />
             </state>
           </provider>
@@ -327,6 +326,28 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -574,8 +595,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/javascript/smooth-scroll" />
       <recent name="$PROJECT_DIR$/public/assets/images" />
+      <recent name="$PROJECT_DIR$/public/assets/javascript/smooth-scroll" />
       <recent name="$PROJECT_DIR$/app/views/layouts" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/config/production" />
@@ -914,7 +935,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="45" selection-start="7329" selection-end="7329" vertical-scroll-proportion="4.437856" vertical-offset="863" max-vertical-offset="6645">
+        <state line="428" column="57" selection-start="9870" selection-end="9870" vertical-scroll-proportion="0.74344355" vertical-offset="5768" max-vertical-offset="6645">
           <folding />
         </state>
       </provider>
