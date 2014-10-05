@@ -129,7 +129,7 @@ class WebController extends BaseController
       // Check if validator passes
       if ($validator->passes()) {
          // Send email
-         Mail::send('emails.hello', $data, function($message) use ($data)
+         Mail::send('emails.notify', $data, function($message) use ($data)
          {
             $message->from($data['email'], $data['first_name']);
             $message->to('ni6to.bg@gmail.com', 'SpartaPark Team')->subject($data['subject']);
