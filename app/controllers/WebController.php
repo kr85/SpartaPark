@@ -141,9 +141,9 @@ class WebController extends BaseController
 
         // Redirect to contact page if validator does not pass
       } else {
-         return Redirect::to('contact')
+         return Redirect::route('contact')
             ->withInput()
-            ->withErrors($validator->errors());
+            ->withErrors($validator);
       }
    }
 

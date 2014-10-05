@@ -14,10 +14,6 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                @elseif (Session::has('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ Session::get('success') }}
-                    </div>
                 @endif
 
                 <div class="row">
@@ -51,6 +47,7 @@
                 {{ Form::reset('Reset', array('class' => 'btn btn-default')) }}
                 {{ Form::submit('Send', array('class' => 'btn btn-primary')) }}
             {{ Form::close() }}
+            <br /><br /><br /><br />
         </div>
     </div>
 @stop

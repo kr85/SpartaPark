@@ -53,7 +53,7 @@ Route::get('contact', array(
    'uses' => 'WebController@getContact'
 ));
 
-Route::post('contact_request', array(
+Route::post('contact', array(
    'as'   => 'contact.request',
    'uses' => 'WebController@postContact'
 ));
