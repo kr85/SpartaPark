@@ -105,6 +105,49 @@ class WebController extends BaseController
    }
 
    /**
+    * Post the contact form
+    *
+    * @return $this
+    */
+   public function postContact()
+   {
+      // Get all contact form data
+      $data = Input::all();
+
+      // Validation rules
+      $rules = array(
+         'first_name' => 'required|alpha',
+         'last_name'  => 'required|alpha',
+         'email'      => 'required|email',
+         'subject'    => 'required|min:3',
+         'message'    => 'required|min:20'
+      );
+
+      // Validate the data
+      $validator = Validator::make($data, $rules);
+
+      // Check if validator passes
+      if ($validator->passes()) {
+         // Send email
+         Mail::send('emails.hello', $data, function($message) use ($data)
+         {
+            $message->from($data['email'], $data['first_name']);
+            $message->to('ni6to.bg@gmail.com', 'SpartaPark Team')->subject($data['subject']);
+         });
+
+         // Return to contact page with a success notification
+         return $this->layout = View::make('contacts.index')
+            ->with('success', 'Email successfully sent!');
+
+        // Redirect to contact page if validator does not pass
+      } else {
+         return Redirect::to('contact')
+            ->withInput()
+            ->withErrors($validator->errors());
+      }
+   }
+
+   /**
     * Gets SpartaPark available parking page
     *
     * @return \Illuminate\View\View SpartaPark available parking page
