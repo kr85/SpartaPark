@@ -6,7 +6,7 @@
             <h3>Questions. Concerns. Feedback. No Problem!</h3>
             <h3>Drop Us A Line</h3>
 
-            {{ Form::open() }}
+            {{ Form::open(array('route' => 'contact.request')) }}
 
                 @if(count($errors->all()))
                     <ul class="errors">
