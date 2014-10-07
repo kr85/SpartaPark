@@ -22,6 +22,36 @@
   .navbar > .container .navbar-brand {
     margin-top: -7px;
   }
+  .slide1 {
+    background-image: url(../images/carousel-mobile-1.jpg);
+  }
+  .slide2 {
+    background-image: url(../images/carousel-mobile-2.jpg);
+  }
+  .slide3 {
+    background-image: url(../images/carousel-mobile-3.jpg);
+  }
+  .slide4 {
+    background-image: url(../images/carousel-mobile-4.jpg);
+  }
+  .slide5 {
+    background-image: url(../images/carousel-mobile-5.jpg);
+  }
+  .slide6 {
+    background-image: url(../images/carousel-mobile-6.jpg);
+  }
+  .slide7 {
+    background-image: url(../images/carousel-mobile-7.jpg);
+  }
+  .slide8 {
+    background-image: url(../images/carousel-mobile-8.jpg);
+  }
+  .slide9 {
+    background-image: url(../images/carousel-mobile-9.jpg);
+  }
+  .slide10 {
+    background-image: url(../images/carousel-mobile-10.jpg);
+  }
   .carousel-overlay h1 {
     font-size: 2.5em;
   }
@@ -161,6 +191,36 @@
     padding: 10px 15px;
     margin-top: 5px;
     margin-right: 0;
+  }
+  .slide1 {
+    background-image: url(../images/carousel-web-1.jpg);
+  }
+  .slide2 {
+    background-image: url(../images/carousel-web-2.jpg);
+  }
+  .slide3 {
+    background-image: url(../images/carousel-web-3.jpg);
+  }
+  .slide4 {
+    background-image: url(../images/carousel-web-4.jpg);
+  }
+  .slide5 {
+    background-image: url(../images/carousel-web-5.jpg);
+  }
+  .slide6 {
+    background-image: url(../images/carousel-web-6.jpg);
+  }
+  .slide7 {
+    background-image: url(../images/carousel-web-7.jpg);
+  }
+  .slide8 {
+    background-image: url(../images/carousel-web-8.jpg);
+  }
+  .slide9 {
+    background-image: url(../images/carousel-web-9.jpg);
+  }
+  .slide10 {
+    background-image: url(../images/carousel-web-10.jpg);
   }
   .carousel-overlay h1 {
     font-size: 5em;
@@ -308,36 +368,6 @@
   background-size: auto;
   background-position: center center;
   background-repeat: no-repeat;
-}
-.slide1 {
-  background-image: url(../images/main-1.jpg);
-}
-.slide2 {
-  background-image: url(../images/main-2.jpg);
-}
-.slide3 {
-  background-image: url(../images/main-3.jpg);
-}
-.slide4 {
-  background-image: url(../images/main-4.jpg);
-}
-.slide5 {
-  background-image: url(../images/main-5.jpg);
-}
-.slide6 {
-  background-image: url(../images/main-6.jpg);
-}
-.slide7 {
-  background-image: url(../images/main-7.jpg);
-}
-.slide8 {
-  background-image: url(../images/main-8.jpg);
-}
-.slide9 {
-  background-image: url(../images/main-9.jpg);
-}
-.slide10 {
-  background-image: url(../images/main-10.jpg);
 }
 /* Carousel Fade Effect */
 .carousel.carousel-fade .item {
