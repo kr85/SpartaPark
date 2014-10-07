@@ -22,7 +22,7 @@
                         {{ HTML::linkRoute('contact', 'Contact') }}
                     </li>
                     <li class="pull-right vertical-align-back-to-top col-xs-pull-1">
-                        <a href="">
+                        <a href="#top">
                             <div class="back-to-top">
                             </div>
                         </a>
