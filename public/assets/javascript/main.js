@@ -1,4 +1,5 @@
 (function ($) {
+
     // Smooth scrolling
     $(function() {
         $("a[href='#top']").on('click', function() {

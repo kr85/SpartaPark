@@ -23,12 +23,12 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 {{ Form::label('first_name', 'First Name:') }}
                                 <br />
-                                {{ Form::text('first_name', '', array('class' => 'col-xs-12 col-sm-12 col-md-12')) }}
+                                {{ Form::text('first_name', '', array('class' => 'textarea-style')) }}
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 {{ Form::label('last_name', 'Last Name:') }}
                                 <br />
-                                {{ Form::text('last_name', '', array('class' => 'col-xs-12 col-sm-12 col-md-12')) }}
+                                {{ Form::text('last_name', '', array('class' => 'textarea-style')) }}
                             </div>
                         </div>
                         <br />
