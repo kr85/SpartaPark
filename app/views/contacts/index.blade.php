@@ -1,10 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="content-wrapper-navbar-push">
         <div class="content-wrapper">
-            <header class="page-header">
-                <h3>Questions. Concerns. Feedback. No Problem!</h3>
+            <header class="contact-page-header">
+
             </header>
 
             <div class="notification">
@@ -13,7 +12,8 @@
 
             <div class="contact-form-wrapper">
                 <div class="contact-form-center">
-                    <h3>Drop Us A Line</h3>
+                    <h3 class="contact-form-title">QUESTIONS? COMMENTS? FEEDBACK?</h3>
+                    <br />
 
                     {{ Form::open(array('route' => 'contact.request')) }}
 
@@ -42,7 +42,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 {{ Form::label('email', 'E-mail Address:') }}
                                 <br />
-                                {{ Form::email('email', '', array('placeholder' => 'example@email.com', 'class' => 'textarea-style')) }}
+                                {{ Form::email('email', '', array('class' => 'textarea-style')) }}
                             </div>
                         </div>
                         <br />
@@ -78,7 +78,6 @@
                 </div>
             </div>
         </div>
-    </div>
 @stop
 
 @section('footer-assets')

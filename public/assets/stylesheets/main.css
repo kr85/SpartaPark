@@ -3,10 +3,40 @@
    ========================================================================== */
 .content-wrapper {
   min-height: 700px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .content-wrapper-navbar-push {
   margin-top: 90px;
+}
+@media (max-width: 480px) {
+  .contact-page-header {
+    background-image: url(../images/header-image-contact-3.jpg);
+    background-size: 300px 70px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0);
+    height: 70px;
+    width: 300px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .contact-page-header {
+    background-image: url(../images/header-image-contact-1.jpg);
+    background-size: 500px 116px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0);
+    height: 116px;
+    width: 500px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav > li > a {
@@ -169,6 +199,10 @@
     background: #fcfcfc;
     margin-left: auto;
     margin-right: auto;
+  }
+  header.page-header > h1 {
+    font-size: 26px;
+    line-height: 1.4;
   }
 }
 @media (min-width: 768px) {
@@ -347,9 +381,34 @@
     width: 900px;
     margin: auto;
   }
+  .contact-page-header {
+    background-image: url(../images/header-image-contact-1.jpg);
+    background-size: 700px 163px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0);
+    height: 163px;
+    width: 700px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
 }
 @media (min-width: 992px) {
-
+  .contact-page-header {
+    background-image: url(../images/header-image-contact.jpg);
+    background-size: 944px 220px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0);
+    height: 220px;
+    width: 944px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
 }
 .navbar {
   top: 0;
@@ -509,6 +568,15 @@
 }
 .alert {
   text-align: center;
+}
+.page-header {
+  margin: auto;
+  text-align: center;
+}
+.contact-form-title {
+  text-shadow: 2px 2px 2px rgba(0, 18, 255, 0.38);
+  text-align: center;
+  line-height: 1.5;
 }
 .sidebar {
   width: 300px;
