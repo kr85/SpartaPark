@@ -578,6 +578,15 @@
   text-align: center;
   line-height: 1.5;
 }
+.btn-style {
+  border-radius: 4px;
+  background: rgba(0, 69, 163, 0.80);
+  border: 1px solid #0041A9;
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  color: #FFF !important;
+  opacity: 1;
+  width: 100px;
+}
 .sidebar {
   width: 300px;
   height: 100%;

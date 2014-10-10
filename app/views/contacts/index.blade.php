@@ -69,7 +69,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="pull-right">
                                     {{ Form::reset('Reset', array('class' => 'btn btn-default')) }}
-                                    {{ Form::submit('Send', array('class' => 'btn btn-primary')) }}
+                                    {{ Form::submit('Send', array('class' => 'btn btn-primary btn-style')) }}
                                 </div>
                             </div>
                         </div>
