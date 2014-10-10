@@ -5,9 +5,6 @@
   min-height: 700px;
   margin-top: 50px;
 }
-.content-wrapper-navbar-push {
-  margin-top: 90px;
-}
 @media (max-width: 480px) {
   .contact-page-header {
     background-image: url(../images/header-image-contact-3.jpg);
@@ -39,6 +36,9 @@
   }
 }
 @media (max-width: 767px) {
+  .content-wrapper-navbar-push {
+    margin-top: 100px;
+  }
   .navbar-default .navbar-nav > li > a {
     color: #fff;
     text-transform: uppercase;
@@ -48,6 +48,8 @@
     padding: 10px 15px;
     margin-top: 0;
     margin-right: 0;
+    margin-bottom: 5px;
+    text-align: center;
   }
   .navbar > .container .navbar-brand {
     margin-top: -7px;
@@ -204,8 +206,17 @@
     font-size: 26px;
     line-height: 1.4;
   }
+  .about {
+    margin-top: 30px;
+  }
+  .team {
+    margin-top: 50px;
+  }
 }
 @media (min-width: 768px) {
+  .content-wrapper-navbar-push {
+    margin-top: 100px;
+  }
   .navbar .container {
     width: 90%;
     margin-left: auto;
@@ -394,8 +405,39 @@
     margin-right: auto;
     margin-top: 100px;
   }
+  .about {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .team {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+}
+@media (min-width: 990px) and (max-width: 1200px) {
+  .about {
+    margin-top: -50px;
+    margin-left: 0;
+  }
+  .team {
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 @media (min-width: 992px) {
+  .navbar-default .navbar-nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  .content-wrapper-navbar-push {
+    margin-top: 150px;
+  }
   .contact-page-header {
     background-image: url(../images/header-image-contact.jpg);
     background-size: 944px 220px;
@@ -408,6 +450,16 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+  }
+}
+@media (min-width: 1201px) {
+  .about {
+    margin-top: -50px;
+    margin-left: 50px;
+  }
+  .team {
+    margin-left: 50px;
+    margin-top: 0;
   }
 }
 .navbar {
@@ -594,4 +646,27 @@
 }
 div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   height: 750px;
+}
+.team-member-image {
+  background-image: url(../images/me.png);
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0
+}
+.thumbnail {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+  padding: 15px;
+  width: -moz-fit-content;
+  box-shadow: 0 1px 10px #A7A7A7, 0 1px 0 #FFF inset;
+  border: 1px solid #B3B3B3;
+  background: none repeat scroll 0 0 #fcfcfc;
+}
+.img-thumbnail {
+  display: block;
 }

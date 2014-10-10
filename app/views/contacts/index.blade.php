@@ -2,10 +2,9 @@
 
 @section('content')
         <div class="content-wrapper">
-            <header class="contact-page-header">
+            <div class="contact-page-header"></div>
 
-            </header>
-
+            <!-- Notifications -->
             <div class="notification">
                 @include('partials.notifications.success-error')
             </div>
