@@ -3,7 +3,13 @@
 @section('content')
     <div class="content-wrapper-navbar-push">
         <div class="content-wrapper">
-            <h3>Questions. Concerns. Feedback. No Problem!</h3>
+            <header class="page-header">
+                <h3>Questions. Concerns. Feedback. No Problem!</h3>
+            </header>
+
+            <div class="notification">
+                @include('partials.notifications.success-error')
+            </div>
 
             <div class="contact-form-wrapper">
                 <div class="contact-form-center">

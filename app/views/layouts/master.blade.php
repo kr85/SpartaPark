@@ -14,7 +14,6 @@
 
         <!-- Bootstrap CSS -->
         {{ HTML::style('assets/stylesheets/bootstrap.css') }}
-        <!--link rel="stylesheet" href="/assets/stylesheets/bootstrap.min.css"-->
         {{ HTML::style('assets/stylesheets/bootstrap-theme.css') }}
 
         <!-- Custom CSS -->
@@ -41,19 +40,6 @@
             </div>
         @endif
 
-        <!-- Notifications -->
-        <div class="container">
-            @if(Session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session::get('success') }}
-                </div>
-            @elseif(Session::has('error'))
-                <div class="alert alert-warning" role="alert">
-                    {{ Session::get('error') }}
-                </div>
-            @endif
-        </div>
-
         <!-- Content -->
         @yield('content')
 
@@ -64,6 +50,7 @@
         {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
         <script>window.jQuery || document.write('{{ HTML::script('assets/javascrpt/vendor/jquery-1.10.2.min.js\' }}')</script>
         {{ HTML::script('assets/javascript/vendor/bootstrap.js') }}
+        {{ HTML::script('assets/javascript/alertify/alertify.js') }}
         {{ HTML::script('assets/javascript/plugins.js') }}
         {{ HTML::script('assets/javascript/main.js') }}
 

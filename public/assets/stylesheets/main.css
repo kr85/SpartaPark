@@ -161,6 +161,7 @@
   }*/
   .contact-form-wrapper {
     margin-bottom: 50px;
+    margin-top: 50px;
     padding: 20px 50px 20px 50px;
     border: 1px solid #b3b3b3;
     border-radius: 4px;
@@ -168,7 +169,6 @@
     background: #fcfcfc;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
   }
 }
 @media (min-width: 768px) {
@@ -333,6 +333,7 @@
   }*/
   .contact-form-wrapper {
     margin-bottom: 50px;
+    margin-top: 50px;
     padding: 30px 100px 40px 100px;
     border: 1px solid #b3b3b3;
     border-radius: 4px;
@@ -341,6 +342,10 @@
     margin-left: auto;
     margin-right: auto;
     width: 700px;
+  }
+  .notification {
+    width: 900px;
+    margin: auto;
   }
 }
 @media (min-width: 992px) {
@@ -501,6 +506,9 @@
 }
 .text-field-style {
   width: 90%;
+}
+.alert {
+  text-align: center;
 }
 .sidebar {
   width: 300px;

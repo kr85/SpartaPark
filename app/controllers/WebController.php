@@ -132,11 +132,11 @@ class WebController extends BaseController
          Mail::send('emails.notify', $data, function($message) use ($data)
          {
             $message->from($data['email'], $data['first_name']);
-            $message->to('ni6to.bg@gmail.com', 'SpartaPark Team')->subject($data['subject']);
+            $message->to('spartaparkcontact@gmail.com', 'SpartaPark Team')->subject($data['subject']);
          });
 
          // Return to contact page with a success notification
-         return $this->layout = View::make('contacts.index')
+         return Redirect::route('contact')
             ->with('success', 'Email successfully sent!');
 
         // Redirect to contact page if validator does not pass
