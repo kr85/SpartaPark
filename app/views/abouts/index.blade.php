@@ -12,69 +12,69 @@
                 </div>
                 <div class="col-md-9">
                     <div class="about">
-                        <h3>About SpartaPark</h3>
+                        <h3 class="about-title">About SpartaPark</h3>
                     </div>
                     <div class="team" style="display: none;">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">
                                     </div>
                                     <div class="caption">
-                                        <p class="team-member-name"></p>
-                                        <p class="team-member-position"></p>
+                                        <p class="team-member-name">Daniel Franklin</p>
+                                        <p class="team-member-position">Co-Founder and Hardware Engineer</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">
                                     </div>
                                     <div class="caption">
-                                        <p class="team-member-name"></p>
-                                        <p class="team-member-position"></p>
+                                        <p class="team-member-name">Kosta Rashev</p>
+                                        <p class="team-member-position">Co-Founder and Web Service Engineer</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">
                                     </div>
                                     <div class="caption">
-                                        <p class="team-member-name"></p>
-                                        <p class="team-member-position"></p>
+                                        <p class="team-member-name">Nergal Issaie</p>
+                                        <p class="team-member-position">Co-Founder and Mobile Software Engineer</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 col-md-4">
+                        <!--</div>
+                        <div class="row">-->
+                            <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">
                                     </div>
                                     <div class="caption">
-                                        <p class="team-member-name"></p>
-                                        <p class="team-member-position"></p>
+                                        <p class="team-member-name">Odkhuu Batmunkh</p>
+                                        <p class="team-member-position">Co-Founder and Mobile Software Engineer</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">
                                     </div>
                                     <div class="caption">
-                                        <p class="team-member-name"></p>
-                                        <p class="team-member-position"></p>
+                                        <p class="team-member-name">Patrick Roteman</p>
+                                        <p class="team-member-position">Co-Founder and Software Engineer</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">
                                     </div>
                                     <div class="caption">
-                                        <p class="team-member-name"></p>
-                                        <p class="team-member-position"></p>
+                                        <p class="team-member-name">Thuy Nguyen</p>
+                                        <p class="team-member-position">Co-Founder and Hardware Engineer</p>
                                     </div>
                                 </div>
                             </div>
