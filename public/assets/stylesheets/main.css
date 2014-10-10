@@ -618,6 +618,14 @@
   border-radius: 4px;
   border: 1px solid #b3b3b3;
 }
+.textarea-style:focus {
+  background-color: #fff;
+  border: 1px solid rgba(0, 80, 243, 0.88);
+
+  -webkit-box-shadow: 0 1 10px rgba(0, 69, 163, 0.80);
+  -moz-box-shadow: 0 1 10px rgba(0, 69, 163, 0.80);
+  box-shadow: 0 1px 10px #0045a3, 0 1px 0 #FFF inset;
+}
 .text-field-style {
   width: 90%;
 }
@@ -629,7 +637,7 @@
   text-align: center;
 }
 .contact-form-title {
-  text-shadow: 2px 2px 2px rgba(0, 18, 255, 0.38);
+  text-shadow: 2px 2px 2px rgba(0, 69, 163, 0.80);
   text-align: center;
   line-height: 1.5;
 }
@@ -664,16 +672,17 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   box-shadow: 0 1px 10px #A7A7A7, 0 1px 0 #FFF inset;
   border: 1px solid #B3B3B3;
   background: none repeat scroll 0 0 #fcfcfc;
+  display: table;
 }
 .thumbnail:hover {
   box-shadow: 0 1px 10px #0045a3, 0 1px 0 #FFF inset;
-  border: 1px solid #0041A9;
+  border: 1px solid rgba(0, 80, 243, 0.88);
 }
 .img-thumbnail {
   display: block;
 }
 .about-title {
-  text-shadow: 2px 2px 2px rgba(0, 18, 255, 0.38);
+  text-shadow: 2px 2px 2px rgba(0, 69, 163, 0.80);
   line-height: 1.5;
   font-size: 30px;
 }

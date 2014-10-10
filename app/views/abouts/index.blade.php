@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="about">
-                        <h3 class="about-title">About SpartaPark</h3>
+                        <h3 class="about-title">ABOUT SPARTAPARK</h3>
                     </div>
                     <div class="team" style="display: none;">
                         <div class="row">
