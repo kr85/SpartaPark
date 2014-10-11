@@ -526,11 +526,13 @@
   color: #ffffff;
   background-image: none;
   background-color: rgba(18, 133, 227, 0.30);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
   background-color: rgba(18, 133, 227, 0.30);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
 }
 .navbar-collapse.in {
   background-color: rgba(255,255,255,.5);

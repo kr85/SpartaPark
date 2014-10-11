@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contacts/index.blade.php" afterPath="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
     </list>
     <ignored path="spartapark.iws" />
@@ -26,19 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="610" column="21" selection-start="14289" selection-end="14289" vertical-scroll-proportion="-14.888889" vertical-offset="8748" max-vertical-offset="13065">
+            <state line="533" column="45" selection-start="12725" selection-end="12725" vertical-scroll-proportion="0.43867925" vertical-offset="7623" max-vertical-offset="13095">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="77" selection-start="713" selection-end="713" vertical-scroll-proportion="0.3257143" vertical-offset="0" max-vertical-offset="1350">
+            <state line="19" column="77" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
               <folding />
             </state>
           </provider>
@@ -133,8 +132,8 @@
         <option value="$PROJECT_DIR$/app/config/mail.php" />
         <option value="$PROJECT_DIR$/app/views/partials/notifications/success-error.blade.php" />
         <option value="$PROJECT_DIR$/app/views/abouts/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
       </list>
     </option>
   </component>
@@ -798,13 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="610" column="21" selection-start="14289" selection-end="14289" vertical-scroll-proportion="-14.888889" vertical-offset="8748" max-vertical-offset="13065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="64" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
@@ -814,7 +806,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="77" selection-start="713" selection-end="713" vertical-scroll-proportion="0.3257143" vertical-offset="0" max-vertical-offset="1350">
+        <state line="19" column="77" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="533" column="45" selection-start="12725" selection-end="12725" vertical-scroll-proportion="0.43867925" vertical-offset="7623" max-vertical-offset="13095">
           <folding />
         </state>
       </provider>
