@@ -688,6 +688,11 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   text-shadow: 2px 2px 2px rgba(0, 69, 163, 0.80);
   line-height: 1.5;
   font-size: 30px;
+  margin-bottom: 30px;
+}
+.about-text {
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 .team-member-name {
   margin-left: -8px;
@@ -701,6 +706,33 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   margin-top: -7px;
   font-size: 13px;
   color: #989898;
+}
+.nav-pills > li.active > a {
+  background: rgba(0, 69, 163, 0.80);
+  border: 1px solid #0041A9;
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+  font-weight: bold;
+}
+.nav-pills > li > a {
+  background: rgba(255, 255, 255, 0.100);
+  border: 1px solid rgba(201, 201, 201, 0.32);
+  box-shadow: 0 3px 5px rgba(232, 232, 232, 0.50) inset, 0 0 1px rgba(232, 232, 232, 0.5) inset;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  font-weight: bold;
+  color: rgba(0, 69, 163, 0.80);
+  text-align: center;
+}
+.nav-pills > li > a:hover {
+  background: rgba(132, 132, 132, 0.08);
+  border: 1px solid rgba(201, 201, 201, 0.32);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  font-weight: bold;
+  color: rgba(0, 69, 163, 0.80);
 }
 .col-premd-1, .col-premd-2, .col-premd-3, .col-premd-4, .col-premd-5, .col-premd-6, .col-premd-7, .col-premd-8, .col-premd-9, .col-premd-10, .col-premd-11, .col-premd-12 {
   position: relative;
