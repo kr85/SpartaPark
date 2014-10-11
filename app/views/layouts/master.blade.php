@@ -13,14 +13,17 @@
         <meta name="author" content="Kosta Rashev">
 
         <!-- Bootstrap CSS -->
-        {{ HTML::style('assets/stylesheets/bootstrap.css') }}
-        {{ HTML::style('assets/stylesheets/bootstrap-theme.css') }}
+        {{ HTML::style('assets/stylesheets/bootstrap.min.css') }}
+        {{ HTML::style('assets/stylesheets/bootstrap-theme.min.css') }}
 
         <!-- Custom CSS -->
         {{ HTML::style('assets/stylesheets/main.css') }}
 
         <!-- Modernizr JS -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <!-- Google Maps API -->
+        {{ HTML::script('http://maps.googleapis.com/maps/api/js?key=AIzaSyBy9kjH-cI-tNnrMNWt6YBmgp-irYkNIb4&sensor=true') }}
         @yield('script')
     </head>
     <body>
@@ -50,7 +53,7 @@
         {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
         <script>window.jQuery || document.write('{{ HTML::script('assets/javascrpt/vendor/jquery-1.10.2.min.js\' }}')</script>
         {{ HTML::script('assets/javascript/vendor/jquery.browser.min.js') }}
-        {{ HTML::script('assets/javascript/vendor/bootstrap.js') }}
+        {{ HTML::script('assets/javascript/vendor/bootstrap.min.js') }}
         {{ HTML::script('assets/javascript/plugins.js') }}
         {{ HTML::script('assets/javascript/main.js') }}
 

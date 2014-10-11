@@ -48,8 +48,8 @@ class MobileController extends BaseController
          'id'        => $lot->id,
          'name'      => $lot->name,
          'address'   => $lot->address,
-         'longitude' => json_decode($lot->longitude),
-         'latitude'  => json_decode($lot->latitude),
+         'longitude' => $lot->longitude,
+         'latitude'  => $lot->latitude,
          'regions'   => $lot->regions
       );
 
@@ -104,8 +104,8 @@ class MobileController extends BaseController
             'name'      => $lot->name,
             'address'   => $lot->address,
             'distance'  => $location->distance,
-            'longitude' => json_decode($lot->longitude),
-            'latitude'  => json_decode($lot->latitude),
+            'longitude' => $lot->longitude,
+            'latitude'  => $lot->latitude,
             'regions'   => $lot->regions
          );
          $lots[$i] = $lot;
@@ -156,7 +156,7 @@ class MobileController extends BaseController
                   'name'            => $region->name,
                   'capacity'        => $region->capacity,
                   'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => $availableSpots,
+                  'spots_available' => json_encode($availableSpots),
                   'lot_id'          => $region->lot_id
                );
                // Calculate lot's available spots
@@ -170,10 +170,10 @@ class MobileController extends BaseController
             'id'              => $lot->id,
             'name'            => $lot->name,
             'address'         => $lot->address,
-            'spots_available' => $lotAvailableSpots,
+            'spots_available' => json_encode($lotAvailableSpots),
             'distance'        => $location->distance,
-            'longitude'       => json_decode($lot->longitude),
-            'latitude'        => json_decode($lot->latitude),
+            'longitude'       => $lot->longitude,
+            'latitude'        => $lot->latitude,
             'regions'         => $lotRegions
          );
          $lots[$i] = $lot;
@@ -209,8 +209,8 @@ class MobileController extends BaseController
             'name'      => $lot->name,
             'address'   => $lot->address,
             'distance'  => $location->distance,
-            'longitude' => json_decode($lot->longitude),
-            'latitude'  => json_decode($lot->latitude),
+            'longitude' => $lot->longitude,
+            'latitude'  => $lot->latitude,
             'regions'   => $lot->regions
          );
          $lots[$i] = $lot;
@@ -256,7 +256,7 @@ class MobileController extends BaseController
                   'name'            => $region->name,
                   'capacity'        => $region->capacity,
                   'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => $availableSpots,
+                  'spots_available' => json_encode($availableSpots),
                   'lot_id'          => $region->lot_id
                );
                // Calculate lot's available spots
@@ -270,10 +270,10 @@ class MobileController extends BaseController
             'id'              => $lot->id,
             'name'            => $lot->name,
             'address'         => $lot->address,
-            'spots_available' => $lotAvailableSpots,
+            'spots_available' => json_encode($lotAvailableSpots),
             'distance'        => $location->distance,
-            'longitude'       => json_decode($lot->longitude),
-            'latitude'        => json_decode($lot->latitude),
+            'longitude'       => $lot->longitude,
+            'latitude'        => $lot->latitude,
             'regions'         => $lotRegions
          );
          $lots[$i] = $lot;

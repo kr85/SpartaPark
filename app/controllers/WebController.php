@@ -184,6 +184,7 @@ class WebController extends BaseController
       $data['map'] = Gmaps::create_map();
 
       return $this->layout = View::make('spartapark.availableparking', $data);*/
+      //$availableParking = $this->getAvailableNearCoordinates(37.3353235, -121.8804712);
 
       return $this->layout = View::make('spartapark.availableparking');
    }
@@ -284,6 +285,69 @@ class WebController extends BaseController
    {
       $coords = array($latitude, $longitude);
       //dd($coords);
+   }
+
+   /**
+    * Get all lots with available spots near current location
+    *
+    * @param null $latitude current latitude
+    * @param null $longitude current longitude
+    * @return array of all lots near current location
+    */
+   public function getAvailableNearCoordinates($latitude = null, $longitude = null)
+   {
+      // Check database for nearest locations based on address's latitude and longitude
+      $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+      // Check if there are any locations within 5 miles
+      if (empty($locations)) {
+         return 'There are no parking lots within 5 miles';
+      }
+      $lots = array();
+      $i = 0;
+
+      foreach ($locations as $location) {
+         // Find lot by id
+         $lot = $this->lotRepository->find($location->id, array('regions'));
+         $regions = $lot->regions;
+         $lotRegions = array();
+         $j = 0;
+         $lotAvailableSpots = 0;
+
+         foreach ($regions as $region) {
+            // Check if region capacity is greater than spots occupied
+            if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+               // Calculate available spots
+               $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+               $filteredRegion = array(
+                  'id'              => $region->id,
+                  'name'            => $region->name,
+                  'capacity'        => $region->capacity,
+                  'spots_occupied'  => $region->spots_occupied,
+                  'spots_available' => json_encode($availableSpots),
+                  'lot_id'          => $region->lot_id
+               );
+               // Calculate lot's available spots
+               $lotAvailableSpots += $availableSpots;
+               $lotRegions[$j] = $filteredRegion;
+               $j++;
+            }
+         }
+
+         $lot = array(
+            'id'              => $lot->id,
+            'name'            => $lot->name,
+            'address'         => $lot->address,
+            'spots_available' => json_encode($lotAvailableSpots),
+            'distance'        => $location->distance,
+            'longitude'       => $lot->longitude,
+            'latitude'        => $lot->latitude,
+            'regions'         => $lotRegions
+         );
+         $lots[$i] = $lot;
+         $i++;
+      }
+
+      return $lots;
    }
 
    /**

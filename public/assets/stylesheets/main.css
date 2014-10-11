@@ -923,3 +923,10 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
     margin-left: 0;
   }
 }
+.map-canvas {
+  margin-top: 6px;
+  width: 100%;
+  min-height: 500px;
+  height: 700px;
+
+}
