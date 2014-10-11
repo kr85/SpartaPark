@@ -17,7 +17,7 @@
                     {{ Form::open(array('route' => 'contact.request')) }}
 
                         @if(count($errors->all()))
-                            <ul class="errors">
+                            <ul class="errors col-sm-offset-3 col-md-offset-3">
                                 @foreach($errors->all() as $error)
                                     <li>{{ $error }}</li>
                                 @endforeach
