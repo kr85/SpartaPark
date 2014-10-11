@@ -49,8 +49,8 @@
         <!-- Javascript -->
         {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
         <script>window.jQuery || document.write('{{ HTML::script('assets/javascrpt/vendor/jquery-1.10.2.min.js\' }}')</script>
+        {{ HTML::script('assets/javascript/vendor/jquery.browser.min.js') }}
         {{ HTML::script('assets/javascript/vendor/bootstrap.js') }}
-        {{ HTML::script('assets/javascript/alertify/alertify.js') }}
         {{ HTML::script('assets/javascript/plugins.js') }}
         {{ HTML::script('assets/javascript/main.js') }}
 
