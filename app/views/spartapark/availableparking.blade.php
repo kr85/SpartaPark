@@ -250,6 +250,8 @@
                 <div class="map-canvas" id="googleMap"></div>
             </div>
         </div>
+        <div class="push">
+        </div>
     </div>
 
 @stop
