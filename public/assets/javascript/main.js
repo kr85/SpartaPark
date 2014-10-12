@@ -10,7 +10,7 @@
         });
     });
 
-    // Chrome footer CSS fix
+    // Chrome CSS fixes
     $(function() {
         $.browser.chrome = /chrom(e|ium)/.test(navigator.userAgent.toLowerCase());
 
