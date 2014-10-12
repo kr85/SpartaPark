@@ -11,24 +11,24 @@ class LotsTableSeeder extends Seeder
          'name'      => 'SJSU West Parking Garage',
          'address'   => '348 S 4th Street, San Jose, CA 95112',
          'owner_id'  => '1',
-         'longitude' => '-121.8833592',
-         'latitude'  => '37.3322593'
+         'longitude' => '-121.8830326',
+         'latitude'  => '37.3323731'
       ));
 
       Lot::create(array(
          'name'      => 'SJSU South Parking Garage',
          'address'   => '330 S 7th Street, San Jose, CA 95112',
          'owner_id'  => '1',
-         'longitude' => '-121.8799164',
-         'latitude'  => '37.3334737'
+         'longitude' => '-121.8808485',
+         'latitude'  => '37.3331113'
       ));
 
       Lot::create(array(
          'name'      => 'SJSU North Parking Garage',
          'address'   => '421 E San Fernando Street, San Jose, CA 95112',
          'owner_id'  => '1',
-         'longitude' => '-121.8805469',
-         'latitude'  => '37.338473'
+         'longitude' => '-121.880713',
+         'latitude'  => '37.339324'
       ));
 
 

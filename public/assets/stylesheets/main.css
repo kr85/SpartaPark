@@ -928,5 +928,35 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   width: 100%;
   min-height: 500px;
   height: 700px;
-
+}
+.col-md-2 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.col-md-10 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.lot-entry {
+  border-bottom: 1px solid #EDEDED;
+  min-height: 55px;
+  min-width: 300px;
+  position: relative;
+  background-color: #FFF;
+  color: #999;
+  cursor: pointer;
+}
+.lot-entry:hover {
+  background-color: rgba(0, 141, 255, 0.18);
+}
+.lot-entry-active {
+  background-color: rgba(0, 141, 255, 0.41);
+}
+.lot-entry-container {
+  padding: 15px 10px 10px 30px;
+}
+.lot-entry-name {
+  font-weight: bolder;
+  font-size: 14px;
+  color: #000000;
 }

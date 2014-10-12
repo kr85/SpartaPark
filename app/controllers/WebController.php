@@ -1,5 +1,6 @@
 <?php
 
+use SpartaPark\Repository\Owner\OwnerRepository;
 use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
 use SpartaPark\Repository\Entranxit\EntranxitRepository;
@@ -9,6 +10,8 @@ use SpartaPark\Repository\Entranxit\EntranxitRepository;
  */
 class WebController extends BaseController
 {
+   protected $ownerRepository;
+
    /**
     * @var SpartaPark\Repository\Lot\LotRepository lot repository
     */
@@ -35,14 +38,17 @@ class WebController extends BaseController
     * @param LotRepository $lotRepository lot repository
     * @param RegionRepository $regionRepository region repository
     * @param EntranxitRepository $entranxitRepository entranxit repository
+    * @param OwnerRepository $ownerRepository owner repository
     */
    public function __construct(LotRepository       $lotRepository,
                                RegionRepository    $regionRepository,
-                               EntranxitRepository $entranxitRepository)
+                               EntranxitRepository $entranxitRepository,
+                               OwnerRepository     $ownerRepository)
    {
       $this->lotRepository       = $lotRepository;
       $this->regionRepository    = $regionRepository;
       $this->entranxitRepository = $entranxitRepository;
+      $this->ownerRepository     = $ownerRepository;
    }
 
    /**
@@ -154,39 +160,27 @@ class WebController extends BaseController
     */
    public function getAvailableParking()
    {
-      /*$config['center'] = '37.335, -121.880';
-      $config['zoom'] = 'auto';
-      Gmaps::initialize($config);
-
-      $marker = array();
-      $marker['position'] = '37.3353235, -121.8804712';
-      $marker['infowindow_content'] = 'San Jose State University';
-      Gmaps::add_marker($marker);
-
-      $marker = array();
-      $marker['position'] = '37.33225930, -121.88335920';
-      $marker['infowindow_content'] = 'SJSU West Parking Garage';
-      $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000';
-      Gmaps::add_marker($marker);
-
-      $marker = array();
-      $marker['position'] = '37.33347370, -121.87991640';
-      $marker['infowindow_content'] = 'SJSU South Parking Garage';
-      $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000';
-      Gmaps::add_marker($marker);
-
-      $marker = array();
-      $marker['position'] = '37.33847300, -121.88054690';
-      $marker['infowindow_content'] = 'SJSU North Parking Garage';
-      $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000';
-      Gmaps::add_marker($marker);
-
-      $data['map'] = Gmaps::create_map();
-
-      return $this->layout = View::make('spartapark.availableparking', $data);*/
       $availableParking = $this->getAvailableNearCoordinates(37.3353235, -121.8804712);
 
-      return $this->layout = View::make('spartapark.availableparking')->with('availableParking', $availableParking);
+      return $this->layout = View::make('spartapark.availableparking')
+         ->with('availableParking', $availableParking);
+   }
+
+   public function getOwnerInfo($id)
+   {
+      $owner = $this->ownerRepository->find($id, array());
+      if (!$owner) {
+         return false;
+      }
+
+      $owner = array(
+         'id'            => $owner->id,
+         'name'          => $owner->name,
+         'phone_number'  => $owner->phone_number,
+         'email_address' => $owner->email_address
+      );
+
+      return $owner;
    }
 
    /**
@@ -323,7 +317,7 @@ class WebController extends BaseController
                   'name'            => $region->name,
                   'capacity'        => $region->capacity,
                   'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => json_encode($availableSpots),
+                  'spots_available' => json_decode($availableSpots),
                   'lot_id'          => $region->lot_id
                );
                // Calculate lot's available spots
@@ -337,8 +331,8 @@ class WebController extends BaseController
             'id'              => $lot->id,
             'name'            => $lot->name,
             'address'         => $lot->address,
-            'spots_available' => json_encode($lotAvailableSpots),
-            'distance'        => $location->distance,
+            'spots_available' => json_decode($lotAvailableSpots),
+            'distance'        => json_decode($location->distance),
             'longitude'       => $lot->longitude,
             'latitude'        => $lot->latitude,
             'regions'         => $lotRegions

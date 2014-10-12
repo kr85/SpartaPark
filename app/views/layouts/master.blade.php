@@ -20,7 +20,7 @@
         {{ HTML::style('assets/stylesheets/main.css') }}
 
         <!-- Modernizr JS -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        {{ HTML::script('assets/javascript/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
 
         <!-- Google Maps API -->
         {{ HTML::script('http://maps.googleapis.com/maps/api/js?key=AIzaSyBy9kjH-cI-tNnrMNWt6YBmgp-irYkNIb4&sensor=true') }}
