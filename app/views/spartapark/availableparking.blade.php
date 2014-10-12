@@ -172,6 +172,7 @@
                 $("div").removeClass("lot-entry-hover");
                 google.maps.event.addListener(marker, 'mouseout', function() {
                     infoWindow.close();
+                    $(id).removeClass("lot-entry-active");
                     $(id).removeClass("lot-entry-hover");
                 });
             });
@@ -189,9 +190,10 @@
             return marker;
         }
 
+        // Create a lot entry to the sidebar
         function createLotEntry(marker, lotData)
         {
-            var ul = document.getElementById("marker_list");
+            var ul = document.getElementById("marker-list");
             var li = document.createElement("li");
 
             var distance = Math.round(lotData.distance * 100) / 100;
@@ -241,8 +243,8 @@
 @section('content')
     <div class="content-wrapper">
         <div class="sidebar-map-area-wrapper">
-            <div class="sidebar">
-                <ul id="marker_list"></ul>
+            <div class="sidebar" id="sidebar">
+                <ul id="marker-list"></ul>
             </div>
             <div class="map-area">
                 <div class="map-canvas" id="googleMap"></div>

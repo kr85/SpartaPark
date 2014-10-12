@@ -925,7 +925,6 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
 }
 .map-canvas {
   margin-top: 6px;
-  width: 100%;
   min-height: 500px;
   height: 700px;
 }
@@ -966,7 +965,7 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   font-size: 14px;
   color: #000000;
 }
-ul#marker_list {
+ul#marker-list {
   list-style-type: none;
   margin-left: -40px;
 }
