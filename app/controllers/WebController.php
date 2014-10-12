@@ -184,9 +184,9 @@ class WebController extends BaseController
       $data['map'] = Gmaps::create_map();
 
       return $this->layout = View::make('spartapark.availableparking', $data);*/
-      //$availableParking = $this->getAvailableNearCoordinates(37.3353235, -121.8804712);
+      $availableParking = $this->getAvailableNearCoordinates(37.3353235, -121.8804712);
 
-      return $this->layout = View::make('spartapark.availableparking');
+      return $this->layout = View::make('spartapark.availableparking')->with('availableParking', $availableParking);
    }
 
    /**

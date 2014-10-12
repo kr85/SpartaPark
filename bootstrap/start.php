@@ -28,7 +28,7 @@ $env = $app->detectEnvironment(array(
 
 	'local'       => array('krr11'),
    'development' => array('127.0.0.1', 'localhost', '*.dev'),
-   'production'  => array('*.com'),
+   'production'  => array('*.com', '*.net'),
 
 ));
 

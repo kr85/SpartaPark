@@ -2,27 +2,8 @@
 
 @section('script')
     <script>
-        (function() {
-        var response = null;
-
-        function getJson(url)
-        {
-            if (!response) {
-                $.getJSON(url, function(data) {
-                    response = data;
-                });
-            }
-
-            return response;
-        }
-
-        })();
-
-        //var availableParking = getJson("http://spartapark.dev/api/available_near_coordinates/latitude/37.3353235/longitude/-121.8804712");
-
-        $.getJSON("http://spartapark.cloudapp.net/api/available_near_coordinates/latitude/37.3353235/longitude/-121.8804712", function(data){
-                    console.log(data);
-                });
+        var availableParking = <?php echo json_encode($availableParking); ?>;
+        console.log(availableParking);
 
         var map;
         var infoWindow = new google.maps.InfoWindow;
@@ -95,6 +76,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-3">
+
             </div>
             <div class="col-md-9">
                 <div class="map-canvas" id="googleMap"></div>
