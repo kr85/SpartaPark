@@ -52,6 +52,9 @@
   .about-text:last-child {
     margin-bottom: 70px;
   }
+  .sidebar-map-area-wrapper .map-area {
+    min-width: 300px;
+  }
 }
 @media (max-width: 767px) {
   .content-wrapper-navbar-push {
@@ -205,10 +208,6 @@
   .available-parking-button:focus {
     background: #005EFF;
   }
-  /*.available-parking-button-text:before {
-    content: "Available Parking";
-    color: #ffffff;
-  }*/
   .contact-form-wrapper {
     margin-bottom: 70px;
     margin-top: 50px;
@@ -441,6 +440,18 @@
   .about-text:last-child {
     margin-bottom: 70px;
   }
+  .sidebar-map-area-wrapper .sidebar {
+    position: relative;
+    min-height: 1px;
+    padding-right: 0;
+    padding-left: 0;
+    float: left;
+    min-width: 350px;
+    margin-right: -15px;
+  }
+  .sidebar-map-area-wrapper .map-area {
+    min-width: 300px;
+  }
 }
 @media (min-width: 990px) and (max-width: 1200px) {
   .about {
@@ -595,17 +606,6 @@
 .carousel-overlay h1::-moz-selection {
   background: rgba(8, 82, 180, 0.20);
 }
-/*.carousel-overlay .btn {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 4px solid #2e3784;
-  border-radius: 6px;
-}
-.carousel-overlay .btn-lg {
-  font-size: 1.75em;
-  padding: 10px 30px;
-}*/
 .carousel-overlay .lead::selection {
   background: rgba(8, 82, 180, 0.20);
 }
@@ -949,14 +949,31 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
 .lot-entry:hover {
   background-color: rgba(0, 141, 255, 0.18);
 }
+.lot-entry-hover {
+  background-color: rgba(0, 141, 255, 0.18);
+}
 .lot-entry-active {
   background-color: rgba(0, 141, 255, 0.41);
 }
+.lot-entry-active:hover {
+  background-color: rgba(0, 141, 255, 0.41);
+}
 .lot-entry-container {
-  padding: 15px 10px 10px 30px;
+  padding: 15px 30px 10px 20px;
 }
 .lot-entry-name {
   font-weight: bolder;
   font-size: 14px;
   color: #000000;
+}
+ul#marker_list {
+  list-style-type: none;
+  margin-left: -40px;
+}
+#lot-name, #lot-distance {
+  display: inline;
+}
+.sidebar-map-area-wrapper {
+  height: inherit;
+  width: 100%;
 }
