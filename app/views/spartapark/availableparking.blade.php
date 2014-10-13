@@ -68,7 +68,7 @@
                 position: lotLatLng,
                 map: map,
                 title: lotData.name,
-                icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000"
+                icon: "assets/images/parkinggarage3.png"
             });
 
             var distance = Math.round(lotData.distance * 100) / 100;
@@ -93,14 +93,21 @@
                 var color = "green";
             }
 
+            htmlMore = html;
             html = html + addressLine1 + '<br />' + addressLine2 +
                 '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                 'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
-                lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
+                lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
+                '<div style="text-align: center;"><small><i>Click on icon for more info</i></small></div>';
 
             bindInfoWindow(marker, map, infoWindow, html, lotData.id);
 
-            html = html + '<hr style="margin-top: 6px;">';
+            htmlMore = htmlMore + addressLine1 + '<br />' + addressLine2 +
+                            '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
+                            'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
+                            lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
+
+            htmlMore = htmlMore + '<hr style="margin-top: 6px;">';
 
             var regionTable = '<table style="width: 100%; padding-bottom: 30px;"><tr><td style="font-size: 14px;">' +
                 '<strong>Region</strong></td><td class="pull-right" style="font-size: 14px;"><strong>Available' +
@@ -124,10 +131,10 @@
 
             regionTable = regionTable + regionTableBody + '</table>';
 
-            html = html + regionTable + '<hr><a href="#" style="float: right; padding-bottom: 10px; font-size: 13px;">' +
+            htmlMore = htmlMore + regionTable + '<hr><a href="#" style="float: right; padding-bottom: 10px; font-size: 13px;">' +
                 '<strong>Directions</strong></a>';
 
-            bindInfoWindowOnClick(marker, map, infoWindow, html, lotData.id);
+            bindInfoWindowOnClick(marker, map, infoWindow, htmlMore, lotData.id);
 
             createLotEntry(marker, lotData);
 
@@ -198,9 +205,9 @@
 
             var distance = Math.round(lotData.distance * 100) / 100;
 
-            var html = '<div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container"><div class="lot-entry-name" id="lot-name">' + lotData.name +
-                  '</div>' +
-                  '<div class="pull-right" id="lot-distance">' + distance + ' miles</div><br />';
+            var html = '<div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container">' +
+                '<div class="lot-entry-name" id="lot-name">' + lotData.name + '</div>' +
+                '<div class="pull-right" id="lot-distance">' + distance + ' miles</div><br />';
 
             var address = lotData.address;
             var addressLine1 = address.split(",")[0];
@@ -218,7 +225,11 @@
                 var color = "green";
             }
 
-            html = html + addressLine1 + '<br />' + addressLine2;
+            html = html + addressLine1 + '<br />' + addressLine2 + '<br /><div style="display: inline; color: ' +
+                color + ';"><strong>' + lotData.spots_available + ' Available Parking ' + spots +
+                '</strong></div><div style="display: inline;" class="pull-right"><small><i>Click for more info</i></small></div>';
+
+
 
             li.innerHTML = html;
             ul.appendChild(li);

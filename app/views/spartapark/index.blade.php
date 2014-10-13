@@ -68,7 +68,7 @@
                 position: lotLatLng,
                 map: map,
                 title: lotData.name,
-                icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=P|0099FF|000000"
+                icon: "assets/images/parkinggarage3.png"
             });
 
             var distance = Math.round(lotData.distance * 100) / 100;
