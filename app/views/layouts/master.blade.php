@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="shortcut icon" href="<?php echo URL::to('assets/images/spartapark-favicon.ico'); ?>">
+        <link rel="shortcut icon" href="<?php echo URL::to('assets/images/favicon.ico'); ?>">
         <title>SpartaPark  | SJSU Parking Guidance System</title>
         <meta name="description" content="A Parking Guidance System">
         <meta name="viewport" content="width=device-width, initial-scale=1">
