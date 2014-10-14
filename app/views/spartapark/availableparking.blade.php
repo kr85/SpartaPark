@@ -94,24 +94,24 @@
             }
 
             htmlMore = html;
-            html = html + addressLine1 + '<br />' + addressLine2 +
+            html += addressLine1 + '<br />' + addressLine2 +
                 '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                 'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
-                '<div style="text-align: center;"><small><i>Click on icon for more info</i></small></div>';
+                '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
 
             bindInfoWindow(marker, map, infoWindow, html, lotData.id);
 
-            htmlMore = htmlMore + addressLine1 + '<br />' + addressLine2 +
-                            '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
-                            'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
-                            lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
+            htmlMore += addressLine1 + '<br />' + addressLine2 +
+                '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
+                'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
+                lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
 
-            htmlMore = htmlMore + '<hr style="margin-top: 6px;">';
+            htmlMore += '<hr style="margin-top: 6px;">';
 
             var regionTable = '<table style="width: 100%; padding-bottom: 30px;"><tr><td style="font-size: 14px;">' +
                 '<strong>Region</strong></td><td class="pull-right" style="font-size: 14px;"><strong>Available' +
-                '</strong></td></tr>'
+                '</strong></td></tr>';
 
             var l;
             var r;
@@ -123,20 +123,26 @@
                     var lotId = regions[r].lot_id;
 
                     if (lotDataId == lotId) {
-                        regionTableBody = regionTableBody + '<tr><td>' + regions[r].name +
+                        regionTableBody += '<tr><td>' + regions[r].name +
                         '</td><td class="pull-right">' + regions[r].spots_available + '</td></tr>';
                     }
                 }
             }
 
-            regionTable = regionTable + regionTableBody + '</table>';
+            regionTable += regionTableBody + '</table>';
 
-            htmlMore = htmlMore + regionTable + '<hr><a href="#" style="float: right; padding-bottom: 10px; font-size: 13px;">' +
+            htmlMore += regionTable + '<hr><a href="#" style="float: right; padding-bottom: 10px; font-size: 13px;">' +
                 '<strong>Directions</strong></a>';
 
             bindInfoWindowOnClick(marker, map, infoWindow, htmlMore, lotData.id);
 
-            createLotEntry(marker, lotData);
+            var windowSize = $(window).width();
+
+            if (windowSize > 767) {
+                createLotEntryWeb(marker, lotData);
+            } else {
+                createLotEntryMobile(marker, lotData);
+            }
 
             marker.setMap(map);
         }
@@ -197,8 +203,8 @@
             return marker;
         }
 
-        // Create a lot entry to the sidebar
-        function createLotEntry(marker, lotData)
+        // Create a lot entry to the sidebar for web
+        function createLotEntryWeb(marker, lotData)
         {
             var ul = document.getElementById("marker-list");
             var li = document.createElement("li");
@@ -225,11 +231,82 @@
                 var color = "green";
             }
 
-            html = html + addressLine1 + '<br />' + addressLine2 + '<br /><div style="display: inline; color: ' +
+            html += addressLine1 + '<br />' + addressLine2 + '<br /><div style="display: inline; color: ' +
                 color + ';"><strong>' + lotData.spots_available + ' Available Parking ' + spots +
                 '</strong></div><div style="display: inline;" class="pull-right"><small><i>Click for more info</i></small></div>';
 
+            li.innerHTML = html;
+            ul.appendChild(li);
 
+            google.maps.event.addDomListener(li, "mouseover", function(){
+                google.maps.event.trigger(marker, "mouseover");
+            });
+
+            google.maps.event.addDomListener(li, "mouseout", function(){
+                google.maps.event.trigger(marker, "mouseout");
+            });
+
+            google.maps.event.addDomListener(li, "click", function(){
+                google.maps.event.trigger(marker, "click");
+            });
+        }
+
+        // Create a lot entry to the sidebar for mobile
+        function createLotEntryMobile(marker, lotData)
+        {
+            var ul = document.getElementById("marker-list");
+            var li = document.createElement("li");
+
+            var distance = Math.round(lotData.distance * 100) / 100;
+
+            var html = '<div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container">' +
+                '<div class="lot-entry-name" id="lot-name">' + lotData.name + '</div>' +
+                '<div class="pull-right" id="lot-distance">' + distance + ' miles</div><br />';
+
+            var address = lotData.address;
+            var addressLine1 = address.split(",")[0];
+            var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
+
+            if (lotData.spots_available == 0) {
+                var spots = "spots";
+                var color = "red"
+            }
+            else if (lotData.spots_available == 1) {
+                var spots = "Spot";
+                var color = "green"
+            } else {
+                var spots = "Spots"
+                var color = "green";
+            }
+
+            html += addressLine1 + '<br />' + addressLine2 + '<br /><div style="display: inline; color: ' +
+                color + ';"><strong>' + lotData.spots_available + ' Available Parking ' + spots +
+                '</strong></div><div style="display: inline;" class="pull-right"><small><i>Click for more info</i></small></div>';
+
+            var regionTable = '<table style="width: 100%; padding-bottom: 30px;"><tr><td style="font-size: 14px;">' +
+                '<strong>Region</strong></td><td class="pull-right" style="font-size: 14px;"><strong>Available' +
+                '</strong></td></tr>';
+
+            var lotDataId = lotData.id;
+            var l;
+            var r;
+            var regionTableBody = '';
+
+            for (l = 0; l < lots.length; l++) {
+                var regions = lots[l].regions;
+                for (r = 0; r < regions.length; r++) {
+                    var lotId = regions[r].lot_id;
+
+                    if (lotDataId == lotId) {
+                        regionTableBody += '<tr><td>' + regions[r].name +
+                        '</td><td class="pull-right">' + regions[r].spots_available + '</td></tr>';
+                    }
+                }
+            }
+
+            regionTable += regionTableBody + '</table>';
+
+            html += regionTable;
 
             li.innerHTML = html;
             ul.appendChild(li);
