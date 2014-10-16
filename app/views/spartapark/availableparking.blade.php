@@ -33,7 +33,22 @@
             var mapOptions = {
                 center: myLatLng,
                 zoom: 17,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: true,
+                panControl: true,
+                panControlOptions: {
+                    position: google.maps.ControlPosition.RIGHT_TOP
+                },
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE,
+                    position: google.maps.ControlPosition.RIGHT_TOP
+                },
+                scaleControl: true,
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.RIGHT_TOP
+                }
             };
 
             // New map object
