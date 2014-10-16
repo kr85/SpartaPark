@@ -1,8 +1,39 @@
 /* ==========================================================================
    SpartaPark's Custom Styles
    ========================================================================== */
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -185px;
+  padding: 0 0 185px;
+}
+.wrapper > .container {
+
+}
+footer, .push {
+  height: 185px;
+}
+footer {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  bottom: 0;
+}
 .content-wrapper {
-  min-height: 700px;
   margin-top: 50px;
 }
 @media (max-width: 480px) {
@@ -438,12 +469,12 @@
   }
   .sidebar-map-area-wrapper .sidebar {
     position: relative;
-    min-height: 1px;
     padding-right: 0;
     padding-left: 0;
     float: left;
     min-width: 350px;
     margin-right: -15px;
+    margin-left: -5px;
   }
   .sidebar-map-area-wrapper .map-area {
     min-width: 300px;
@@ -677,7 +708,7 @@
   width: 100px;
 }
 div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
-  height: 750px;
+  height: 100%;
 }
 .team-member-image {
   background-image: url(../images/me.png);
@@ -919,10 +950,10 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
     margin-left: 0;
   }
 }
-.map-canvas {
+#map-canvas {
   margin-top: 6px;
-  min-height: 500px;
-  height: 700px;
+  position: relative;
+  height: 100% !important;
 }
 .index-map-canvas {
   margin-top: 6px;
@@ -936,7 +967,7 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   border: 1px solid rgba(0, 80, 243, 0.88);
 }
 .lot-entry {
-  border-bottom: 1px solid #EDEDED;
+  border-bottom: 1px solid #cecece;
   min-height: 55px;
   min-width: 300px;
   position: relative;
@@ -951,13 +982,13 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   background-color: rgba(0, 141, 255, 0.18);
 }
 .lot-entry-active {
-  background-color: rgba(0, 141, 255, 0.41);
+  background-color: rgba(0, 141, 255, 0.30);
 }
 .lot-entry-active:hover {
-  background-color: rgba(0, 141, 255, 0.41);
+  background-color: rgba(0, 141, 255, 0.30);
 }
 .lot-entry-container {
-  padding: 15px 30px 10px 20px;
+  padding: 10px 30px 10px 20px;
 }
 .lot-entry-name {
   font-weight: bolder;
@@ -972,6 +1003,38 @@ ul#marker-list {
   display: inline;
 }
 .sidebar-map-area-wrapper {
-  height: inherit;
+  min-height: inherit;
   width: 100%;
+}
+.all-parking-button-container {
+  background-color: #ffffff;
+  border-bottom: 1px solid #EDEDED;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.all-parking-button {
+  background: rgba(255, 255, 255, 0.100);
+  border: 1px solid rgba(201, 201, 201, 0.90);
+  box-shadow: 0 3px 5px rgba(232, 232, 232, 0.50) inset, 0 0 1px rgba(232, 232, 232, 0.5) inset;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  font-weight: bold;
+  color: rgba(0, 69, 163, 0.80);
+  text-align: center;
+  text-decoration: none;
+  width: 300px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.all-parking-button:hover {
+  background: rgba(132, 132, 132, 0.08);
+  border: 1px solid rgba(201, 201, 201, 0.90);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  font-weight: bold;
+  color: rgba(0, 69, 163, 0.80);
+}
+.checkbox input[type="checkbox"] {
+  margin-left: 0;
 }

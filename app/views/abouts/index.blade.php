@@ -70,8 +70,6 @@
                                     </div>
                                 </div>
                             </div>
-                        <!--</div>
-                        <div class="row">-->
                             <div class="col-xs-12 col-sm-4 col-premd-6 col-md-4">
                                 <div class="thumbnail">
                                     <div class="team-member-image img-thumbnail">

@@ -16,17 +16,6 @@
 
         if ($.browser.chrome) {
 
-            $('div.content-wrapper, div#googleMap.map-canvas').css({
-                'min-height': '800px'
-            });
-
-            $('footer.footer-wrapper').css({
-                'width': '100%',
-                'bottom': '0',
-                'position': 'relative',
-                'margin': '0px auto'
-            });
-
             $('footer.footer-wrapper ul').css({
                 'margin-top': '25px'
             });
