@@ -207,6 +207,8 @@
 @stop
 
 @section('footer-assets')
+    {{ HTML::script('assets/javascript/preload.js') }}
+
     @if(Route::currentRouteName() == 'index')
         <script>
            // Sets navbar to transparent
