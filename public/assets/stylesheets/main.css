@@ -260,6 +260,9 @@ footer {
   .team {
     margin-top: 50px;
   }
+  .all-parking-button {
+    width: 97%;
+  }
 }
 @media (min-width: 768px) {
   .content-wrapper-navbar-push {
@@ -476,8 +479,12 @@ footer {
     margin-right: -15px;
     margin-left: -5px;
   }
-  .sidebar-map-area-wrapper .map-area {
-    min-width: 300px;
+  .checkbox {
+    padding-left: 3.5px;
+    width: 320px;
+  }
+  .all-parking-button {
+    width: 300px;
   }
 }
 @media (min-width: 990px) and (max-width: 1200px) {
@@ -953,7 +960,7 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
 #map-canvas {
   margin-top: 6px;
   position: relative;
-  height: 100% !important;
+  min-height: 500px;
 }
 .index-map-canvas {
   margin-top: 6px;
@@ -1004,6 +1011,7 @@ ul#marker-list {
 }
 .sidebar-map-area-wrapper {
   min-height: inherit;
+  height: 100%;
   width: 100%;
 }
 .all-parking-button-container {
@@ -1022,7 +1030,6 @@ ul#marker-list {
   color: rgba(0, 69, 163, 0.80);
   text-align: center;
   text-decoration: none;
-  width: 300px;
   padding-bottom: 10px;
   padding-top: 10px;
 }
@@ -1037,4 +1044,8 @@ ul#marker-list {
 }
 .checkbox input[type="checkbox"] {
   margin-left: 0;
+}
+.checkbox {
+  margin-left: auto;
+  margin-right: auto;
 }

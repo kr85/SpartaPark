@@ -396,6 +396,11 @@
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'resize', function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, 'resize');
+            map.setCenter(center);
+        });
     </script>
 @stop
 
@@ -423,5 +428,14 @@
 @stop
 
 @section('footer-assets')
+    <script>
+        $(function() {
+            $(window).resize(function () {
+                var h = $(window).height(),
+                    offsetTop = 60; // Calculate the top offset
 
+                $('#map-canvas').css('height', (h - offsetTop));
+            }).resize();
+        });
+    </script>
 @stop
