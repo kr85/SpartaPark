@@ -176,23 +176,17 @@ class WebController extends BaseController
 
       $geocode = Geocoder::geocode($address);
       $destination = array(
-         'latitude'      => $geocode->getLatitude(),
-         'longitude'     => $geocode->getLongitude(),
-         'street_number' => $geocode->getStreetNumber(),
-         'street_name'   => $geocode->getStreetName(),
-         'city'          => $geocode->getCity(),
-         'zipcode'       => $geocode->getZipcode(),
-         'state'         => $geocode->getRegionCode()
-
+         'latitude'  => $geocode->getLatitude(),
+         'longitude' => $geocode->getLongitude(),
+         'address'   => $address
       );
 
-      $data = array(
-         $origin,
-         $destination
+      $directionsData = array(
+        $destination
       );
 
       return $this->layout = View::make('spartapark.getdirections')
-         ->with('data', $data);
+         ->with('directionsData', $destination);
    }
 
    /**

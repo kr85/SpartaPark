@@ -67,6 +67,7 @@ class GeoPlugin {
       $data = array();
 
       $response = $this->fetch($host);
+      $response = trim($response);
 
       $data = unserialize($response);
 

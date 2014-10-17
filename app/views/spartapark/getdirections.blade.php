@@ -2,8 +2,8 @@
 
 @section('script')
     <script>
-        var data = <?php echo json_encode($data); ?>;
-
+        var data = <?php echo json_encode($directionsData); ?>;
+        console.log(data);
         // Map variable
         var map;
 
@@ -40,11 +40,14 @@
 
         function calcRoute()
         {
-            var start = document.getElementById('start').value;
-            var end = document.getElementById('end').value;
+            //var start = document.getElementById('start').value;
+
+            //var end = document.getElementById('end').value;
+
+
             var request = {
-                origin:start,
-                destination:end,
+                origin: data[0].latitude + ', ' + data[0]longitude,
+                destination: end,
                 travelMode: google.maps.TravelMode.DRIVING
             };
             directionsService.route(request, function(response, status) {
