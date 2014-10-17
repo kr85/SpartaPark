@@ -86,6 +86,9 @@ footer {
   .sidebar-map-area-wrapper .map-area {
     min-width: 300px;
   }
+  .directions-map-area-wrapper .map-area {
+    min-width: 300px;
+  }
 }
 @media (max-width: 767px) {
   .content-wrapper-navbar-push {
@@ -262,6 +265,10 @@ footer {
   }
   .all-parking-button {
     width: 97%;
+  }
+  .side-box {
+    margin-left: 12px;
+    margin-top: 15px;
   }
 }
 @media (min-width: 768px) {
@@ -479,12 +486,25 @@ footer {
     margin-right: -15px;
     margin-left: -5px;
   }
+  .directions-map-area-wrapper .directions {
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    float: left;
+    min-width: 350px;
+    margin-right: -15px;
+    margin-left: 15px;
+  }
   .checkbox {
     padding-left: 3.5px;
     width: 320px;
   }
   .all-parking-button {
     width: 300px;
+  }
+  .side-box {
+    margin-left: 343px;
+    margin-top: 18px;
   }
 }
 @media (min-width: 990px) and (max-width: 1200px) {
@@ -1014,6 +1034,11 @@ ul#marker-list {
   height: 100%;
   width: 100%;
 }
+.directions-map-area-wrapper {
+  min-height: inherit;
+  height: 100%;
+  width: 100%;
+}
 .all-parking-button-container {
   background-color: #ffffff;
   border-bottom: 1px solid #EDEDED;
@@ -1048,4 +1073,15 @@ ul#marker-list {
 .checkbox {
   margin-left: auto;
   margin-right: auto;
+}
+.side-box {
+  position: absolute;
+  z-index: 2;
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+  background: #fcfcfc;
 }

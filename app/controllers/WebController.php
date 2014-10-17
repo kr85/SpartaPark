@@ -4,12 +4,15 @@ use SpartaPark\Repository\Owner\OwnerRepository;
 use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
 use SpartaPark\Repository\Entranxit\EntranxitRepository;
+//require_once('GeoPlugin.class.php');
+use SpartaPark\Helper\GeoPlugin;
 
 /**
  * Class MainController
  */
 class WebController extends BaseController
 {
+
    protected $ownerRepository;
 
    /**
@@ -28,6 +31,11 @@ class WebController extends BaseController
    protected $entranxitRepository;
 
    /**
+    * @var SpartaPark\Helper\GeoPlugin geo plugin
+    */
+   protected $geoPlugin;
+
+   /**
     * @var string master layout
     */
    protected $layout = 'layouts.master';
@@ -39,16 +47,19 @@ class WebController extends BaseController
     * @param RegionRepository $regionRepository region repository
     * @param EntranxitRepository $entranxitRepository entranxit repository
     * @param OwnerRepository $ownerRepository owner repository
+    * @param GeoPlugin $geoPlugin geo plugin to help get visitor's location
     */
    public function __construct(LotRepository       $lotRepository,
                                RegionRepository    $regionRepository,
                                EntranxitRepository $entranxitRepository,
-                               OwnerRepository     $ownerRepository)
+                               OwnerRepository     $ownerRepository,
+                               GeoPlugin           $geoPlugin)
    {
       $this->lotRepository       = $lotRepository;
       $this->regionRepository    = $regionRepository;
       $this->entranxitRepository = $entranxitRepository;
       $this->ownerRepository     = $ownerRepository;
+      $this->geoPlugin           = $geoPlugin;
    }
 
    /**
@@ -134,12 +145,62 @@ class WebController extends BaseController
     */
    public function getAvailableParking()
    {
-      $availableParking = $this->getAvailableNearCoordinates(37.3353235, -121.8804712);
+      $coordinatesSanJoseStateUniversity = array(
+         'latitude'  => 37.3353235,
+         'longitude' => -121.8804712
+      );
+
+      $availableParking = $this->getAvailableNearCoordinates(
+         $coordinatesSanJoseStateUniversity['latitude'],
+         $coordinatesSanJoseStateUniversity['longitude']
+      );
 
       return $this->layout = View::make('spartapark.availableparking')
          ->with('availableParking', $availableParking);
    }
 
+   public function getDirections($address)
+   {
+      $this->geoPlugin->locate('162.197.213.38');
+      $origin = array(
+         'ip'              => $this->geoPlugin->ip,
+         'city'            => $this->geoPlugin->city,
+         'region'          => $this->geoPlugin->region,
+         'area_code'       => $this->geoPlugin->areaCode,
+         'country_code'    => $this->geoPlugin->countryCode,
+         'country_name'    => $this->geoPlugin->countryName,
+         'continent_code'  => $this->geoPlugin->continentCode,
+         'latitude'        => $this->geoPlugin->latitude,
+         'longitude'       => $this->geoPlugin->longitude
+      );
+
+      $geocode = Geocoder::geocode($address);
+      $destination = array(
+         'latitude'      => $geocode->getLatitude(),
+         'longitude'     => $geocode->getLongitude(),
+         'street_number' => $geocode->getStreetNumber(),
+         'street_name'   => $geocode->getStreetName(),
+         'city'          => $geocode->getCity(),
+         'zipcode'       => $geocode->getZipcode(),
+         'state'         => $geocode->getRegionCode()
+
+      );
+
+      $data = array(
+         $origin,
+         $destination
+      );
+
+      return $this->layout = View::make('spartapark.getdirections')
+         ->with('data', $data);
+   }
+
+   /**
+    * Gets owner information by id
+    *
+    * @param $id owner id
+    * @return array|bool|mixed
+    */
    public function getOwnerInfo($id)
    {
       $owner = $this->ownerRepository->find($id, array());
@@ -203,15 +264,25 @@ class WebController extends BaseController
 
 
 
-      //$ip = \GetIP\GetIP::get();;
-      $location = GeoIP::getLocation('162.197.213.38');
-      $latitude = $location['lat'];
-      $longitude = $location['lon'];
+      //$ip = \GetIP\GetIP::get();
+      //$location = GeoIP::getLocation();
+
+
+
+      $this->geoPlugin->locate();
+
+      dd($this->geoPlugin->latitude);
+
+      $location = $this->getIpInfo($_SERVER["REMOTE_ADDR"], 'Country');
+      dd($location);
+
+      //$latitude = $location['lat'];
+      //$longitude = $location['lon'];
 
       $config['center'] = 'auto';
       $config['zoom'] = 'auto';
       $config['directions'] = TRUE;
-      $config['directionsStart'] = $latitude . ', ' . $longitude;
+      $config['directionsStart'] = $latitude = null . ', ' . $longitude = null;
       $config['directionsEnd'] = $address;
       $config['directionsDivID'] = 'directionsDiv';
       Gmaps::initialize($config);
@@ -388,11 +459,6 @@ class WebController extends BaseController
       return $results;
    }
 
-   public function getDirections($address)
-   {
-
-   }
-
    /**
     * Uploads images to the database
     *
@@ -442,6 +508,5 @@ class WebController extends BaseController
       } else {
          return Response::json('Error', 400);
       }
-      
    }
 }

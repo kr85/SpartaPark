@@ -790,12 +790,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-            "reference": "ac8b868261528c9fc56a9636aea895eef117e9dc"
+            "reference": "486d9d9c4d209720d490ac186f8493b3c0f6897c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/ac8b868261528c9fc56a9636aea895eef117e9dc",
-            "reference": "ac8b868261528c9fc56a9636aea895eef117e9dc",
+            "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/486d9d9c4d209720d490ac186f8493b3c0f6897c",
+            "reference": "486d9d9c4d209720d490ac186f8493b3c0f6897c",
             "shasum": ""
         },
         "require": {
@@ -812,7 +812,7 @@
         "suggest": {
             "doctrine/dbal": "Load information from the database about models for phpdocs (~2.3)"
         },
-        "time": "2014-10-08 14:11:38",
+        "time": "2014-10-14 08:39:02",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1425,12 +1425,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/guzzle3.git",
-            "reference": "d27346b6c8cb6a42092e763f8a2f674dfc560956"
+            "reference": "3c0ca2255751631f1dd64eb16bbe3b9440258297"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/d27346b6c8cb6a42092e763f8a2f674dfc560956",
-            "reference": "d27346b6c8cb6a42092e763f8a2f674dfc560956",
+            "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/3c0ca2255751631f1dd64eb16bbe3b9440258297",
+            "reference": "3c0ca2255751631f1dd64eb16bbe3b9440258297",
             "shasum": ""
         },
         "require": {
@@ -1471,7 +1471,7 @@
             "zendframework/zend-cache": "2.*,<2.3",
             "zendframework/zend-log": "2.*,<2.3"
         },
-        "time": "2014-09-16 21:19:27",
+        "time": "2014-10-15 19:36:56",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1720,58 +1720,6 @@
             "geocoder",
             "geocoding",
             "laravel"
-        ]
-    },
-    {
-        "name": "torann/geoip",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Torann/laravel-4-geoip.git",
-            "reference": "73bf0a07e3eab3e67ff1672a7cd2d190e168da27"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/73bf0a07e3eab3e67ff1672a7cd2d190e168da27",
-            "reference": "73bf0a07e3eab3e67ff1672a7cd2d190e168da27",
-            "shasum": ""
-        },
-        "require": {
-            "geoip2/geoip2": "0.6.*",
-            "illuminate/support": "~4.1",
-            "php": ">=5.3.0"
-        },
-        "time": "2014-09-16 14:41:31",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Torann\\GeoIP": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD 2-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Daniel Stainback",
-                "email": "daniel@lyften.com"
-            }
-        ],
-        "description": "Supports the two main GeoIP services (infoDB and Maxmind).",
-        "keywords": [
-            "geoip",
-            "geolocation",
-            "laravel",
-            "laravel4",
-            "location"
         ]
     },
     {
@@ -3291,18 +3239,70 @@
         "homepage": "http://symfony.com"
     },
     {
+        "name": "torann/geoip",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Torann/laravel-4-geoip.git",
+            "reference": "2ed00c8376abf821a8fbe4a778a3cd82bb7451cd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/2ed00c8376abf821a8fbe4a778a3cd82bb7451cd",
+            "reference": "2ed00c8376abf821a8fbe4a778a3cd82bb7451cd",
+            "shasum": ""
+        },
+        "require": {
+            "geoip2/geoip2": "0.6.*",
+            "illuminate/support": "~4.1",
+            "php": ">=5.3.0"
+        },
+        "time": "2014-10-14 14:37:33",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Torann\\GeoIP": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Daniel Stainback",
+                "email": "daniel@lyften.com"
+            }
+        ],
+        "description": "Supports the two main GeoIP services (infoDB and Maxmind).",
+        "keywords": [
+            "geoip",
+            "geolocation",
+            "laravel",
+            "laravel4",
+            "location"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "4.2.x-dev",
         "version_normalized": "4.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "42b71bec344f817b4ccc090f11446c56e167ca95"
+            "reference": "2bdd74456039f8e32cb24762ca4aa4010da3ff48"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/42b71bec344f817b4ccc090f11446c56e167ca95",
-            "reference": "42b71bec344f817b4ccc090f11446c56e167ca95",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/2bdd74456039f8e32cb24762ca4aa4010da3ff48",
+            "reference": "2bdd74456039f8e32cb24762ca4aa4010da3ff48",
             "shasum": ""
         },
         "require": {
@@ -3372,7 +3372,7 @@
         "suggest": {
             "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
         },
-        "time": "2014-10-08 22:36:11",
+        "time": "2014-10-16 14:41:04",
         "type": "library",
         "extra": {
             "branch-alias": {

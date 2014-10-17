@@ -45,12 +45,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "ac8b868261528c9fc56a9636aea895eef117e9dc"
+                "reference": "486d9d9c4d209720d490ac186f8493b3c0f6897c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/ac8b868261528c9fc56a9636aea895eef117e9dc",
-                "reference": "ac8b868261528c9fc56a9636aea895eef117e9dc",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/486d9d9c4d209720d490ac186f8493b3c0f6897c",
+                "reference": "486d9d9c4d209720d490ac186f8493b3c0f6897c",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2014-10-08 14:11:38"
+            "time": "2014-10-14 08:39:02"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -394,12 +394,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle3.git",
-                "reference": "d27346b6c8cb6a42092e763f8a2f674dfc560956"
+                "reference": "3c0ca2255751631f1dd64eb16bbe3b9440258297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/d27346b6c8cb6a42092e763f8a2f674dfc560956",
-                "reference": "d27346b6c8cb6a42092e763f8a2f674dfc560956",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/3c0ca2255751631f1dd64eb16bbe3b9440258297",
+                "reference": "3c0ca2255751631f1dd64eb16bbe3b9440258297",
                 "shasum": ""
             },
             "require": {
@@ -478,7 +478,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-09-16 21:19:27"
+            "time": "2014-10-15 19:36:56"
         },
         {
             "name": "intervention/image",
@@ -776,12 +776,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "42b71bec344f817b4ccc090f11446c56e167ca95"
+                "reference": "2bdd74456039f8e32cb24762ca4aa4010da3ff48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/42b71bec344f817b4ccc090f11446c56e167ca95",
-                "reference": "42b71bec344f817b4ccc090f11446c56e167ca95",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2bdd74456039f8e32cb24762ca4aa4010da3ff48",
+                "reference": "2bdd74456039f8e32cb24762ca4aa4010da3ff48",
                 "shasum": ""
             },
             "require": {
@@ -883,7 +883,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-10-08 22:36:11"
+            "time": "2014-10-16 14:41:04"
         },
         {
             "name": "maxmind-db/reader",
@@ -2383,12 +2383,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/laravel-4-geoip.git",
-                "reference": "73bf0a07e3eab3e67ff1672a7cd2d190e168da27"
+                "reference": "2ed00c8376abf821a8fbe4a778a3cd82bb7451cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/73bf0a07e3eab3e67ff1672a7cd2d190e168da27",
-                "reference": "73bf0a07e3eab3e67ff1672a7cd2d190e168da27",
+                "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/2ed00c8376abf821a8fbe4a778a3cd82bb7451cd",
+                "reference": "2ed00c8376abf821a8fbe4a778a3cd82bb7451cd",
                 "shasum": ""
             },
             "require": {
@@ -2425,7 +2425,7 @@
                 "laravel4",
                 "location"
             ],
-            "time": "2014-09-16 14:41:31"
+            "time": "2014-10-14 14:37:33"
         },
         {
             "name": "way/generators",
@@ -3295,9 +3295,7 @@
             "time": "2014-10-05 13:53:50"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "appitventures/phpgmaps": 20,
@@ -3309,10 +3307,6 @@
         "geoip/geoip": 20
     },
     "prefer-stable": false,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }

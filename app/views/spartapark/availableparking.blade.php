@@ -102,6 +102,8 @@
                 icon: "assets/images/parkinggarage3.png"
             });
 
+            marker.metadata = { type: "point", id: lotDataId };
+
             // Round distance to two decimal places
             var distance = Math.round(lotData.distance * 100) / 100;
 
@@ -134,7 +136,7 @@
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
                 '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
 
-            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div><a href="#">Get Directions</a></div>' +
+            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div><a href="/get_directions/address/' + lotData.address + '">Get Directions</a></div>' +
                 '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                 'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
@@ -317,6 +319,7 @@
             google.maps.event.addDomListener(li, "dblclick", function() {
                 google.maps.event.trigger(map, "click");
             });
+
         }
 
         // Create a lot entry to the sidebar for mobile
@@ -435,22 +438,28 @@
                 <ul id="marker-list"></ul>
             </div>
             <div class="map-area">
+                <div class="side-box hide" id="get-directions">
+                    <h3>Get Directions</h3>
+
+                    {{ Form::open(array('route' => 'post_directions')) }}
+
+                    {{ Form::close() }}
+                </div>
                 <div id="map-canvas"></div>
             </div>
         </div>
     </div>
-
 @stop
 
 @section('footer-assets')
     <script>
         $(function() {
             $(window).resize(function () {
-                var h = $(window).height(),
-                    offsetTop = 60; // Calculate the top offset
-
-                $('#map-canvas').css('height', (h - offsetTop));
+                var header = $(window).height(),
+                    offsetTop = 60;
+                $('#map-canvas').css('height', (header - offsetTop));
             }).resize();
+
         });
     </script>
 @stop

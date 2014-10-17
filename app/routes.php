@@ -63,6 +63,16 @@ Route::get('parking', array(
    'uses' => 'WebController@getAvailableParking'
 ));
 
+Route::get('get_directions/address/{address}', array(
+   'as'   => 'get_directions',
+   'uses' => 'WebController@getDirections'
+))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');
+
+Route::post('get_directions', array(
+   'as'   => 'post_directions',
+   'uses' => 'WebController@postDirections'
+));
+
 Route::get('address/{address}', array(
    'as'   => 'lots.near.address.web',
    'uses' => 'WebController@getLotsNearAddress'
