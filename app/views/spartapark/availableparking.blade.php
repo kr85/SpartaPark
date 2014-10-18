@@ -14,11 +14,20 @@
         // All lots
         var lots = <?php echo json_encode($availableParking); ?>;
 
-        // Map variable
-        var map;
+        // Main map variable
+        var mainMap;
+
+        // Directions map variable
+        var directionsMap;
+
+        // Array of LatLng's of each marker
+        var latLngList;
+
+        // View point bound
+        var bounds;
 
         // Array of all markers
-        var allMarkers = new Array();
+        var allMarkers;
 
         // Info window
         var infoWindow = new google.maps.InfoWindow;
@@ -26,13 +35,17 @@
         // Initialize the map
         function initialize()
         {
+            latLngList = new Array();
+            bounds = new google.maps.LatLngBounds();
+            allMarkers = new Array();
+
             // New point with latitude and longitude
             var myLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
+            // Add the point to the array
+            latLngList.push(myLatLng);
 
-            // Map options
-            var mapOptions = {
-                center: myLatLng,
-                zoom: 17,
+            // Main map options
+            var mainMapOptions = {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: true,
                 panControl: true,
@@ -51,11 +64,34 @@
                 }
             };
 
-            // New map object
-            map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            // Directions map options
+            var directionsMapOptions = {
+                center: myLatLng,
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                panControl: false,
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE,
+                    position: google.maps.ControlPosition.RIGHT_TOP
+                },
+                scaleControl: true,
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.RIGHT_TOP
+                }
+            };
+
+            // Main map object
+            mainMap = new google.maps.Map(document.getElementById("map-canvas"), mainMapOptions);
+
+            // Directions map object
+            directionsMap = new google.maps.Map(document.getElementById("map-directions-canvas"), directionsMapOptions);
 
             // SJSU marker
-            var sjsuMarker = placeMarker(myLatLng);
+            var sjsuMarker = placeMarker(mainMap, myLatLng);
+            var testMarker = placeMarker(directionsMap, myLatLng);
 
             // SJSU info window
             //var sjsuInfoWindow = new google.maps.InfoWindow;
@@ -76,13 +112,22 @@
             allMarkers.push(sjsuMarker);
 
             // Binds the info window to the marker for mouseover
-            bindInfoWindow(sjsuMarker, map, infoWindow, html, html);
+            bindInfoWindow(sjsuMarker, mainMap, infoWindow, html, html);
 
             // Initialize each lot point
             for (id in lots) {
                 initializePoint(lots[id]);
             }
 
+            // Increase the bounds (include all points)
+            var i;
+            for (i = 0; i < latLngList.length; i++) {
+                bounds.extend(latLngList[i]);
+            }
+
+            // Fit and pan bounds to map
+            mainMap.fitBounds(bounds);
+            mainMap.panToBounds(bounds);
         }
 
         // Initialize each lot
@@ -90,6 +135,7 @@
         {
             // New point with latitude and longitude
             var lotLatLng = new google.maps.LatLng(lotData.latitude, lotData.longitude);
+            latLngList.push(lotLatLng);
 
             // Lot id
             var lotDataId = lotData.id;
@@ -97,12 +143,10 @@
             // New marker
             var marker = new google.maps.Marker({
                 position: lotLatLng,
-                map: map,
+                map: mainMap,
                 title: lotData.name,
                 icon: "assets/images/parkinggarage3.png"
             });
-
-            marker.metadata = { type: "point", id: lotDataId };
 
             // Round distance to two decimal places
             var distance = Math.round(lotData.distance * 100) / 100;
@@ -136,7 +180,7 @@
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
                 '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
 
-            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div><a href="/get_directions/address/' + lotData.address + '">Get Directions</a></div>' +
+            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div><a data-toggle="modal" data-target="#directionsModal">Get Directions</a></div>' +
                 '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                 'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
@@ -168,7 +212,7 @@
             htmlMore += regionTable + '<hr>' +
                 '<div style="margin-left: 95px; margin-bottom: 0px; padding-bottom: 0px;"><small><i>Double click to close</i></small></div>';
 
-            bindInfoWindow(marker, map, infoWindow, html, htmlMore ,lotData.id);
+            bindInfoWindow(marker, mainMap, infoWindow, html, htmlMore ,lotData.id);
 
             var windowSize = $(window).width();
 
@@ -179,11 +223,11 @@
             }
 
             allMarkers.push(marker);
-            marker.setMap(map);
+            marker.setMap(mainMap);
         }
 
         // Binds info window on hover
-        function bindInfoWindow(marker, map, infoWindow, html, htmlMore ,id)
+        function bindInfoWindow(marker, mainMap, infoWindow, html, htmlMore ,id)
         {
             var id = "lot-" + id;
 
@@ -196,7 +240,7 @@
             // Add click on marker listener
             google.maps.event.addListener(marker, 'click', function() {
                 infoWindow.setContent(htmlMore);
-                infoWindow.open(map, marker);
+                infoWindow.open(mainMap, marker);
                 $("div").removeClass("lot-entry-hover");
                 $("div").removeClass("lot-entry-active");
                 $("#" + id).addClass("lot-entry-active");
@@ -209,7 +253,7 @@
             });
 
             // Add click on map listener
-            google.maps.event.addListener(map, 'click', function() {
+            google.maps.event.addListener(mainMap, 'click', function() {
                 infoWindow.close();
                 $("div").removeClass("lot-entry-active");
                 $("div").removeClass("lot-entry-hover");
@@ -240,7 +284,7 @@
             {
                 google.maps.event.addListener(marker, 'mouseover', function() {
                     infoWindow.setContent(html);
-                    infoWindow.open(map, marker);
+                    infoWindow.open(mainMap, marker);
                     $("div").removeClass("lot-entry-hover");
                     $("#" + id).addClass("lot-entry-hover");
                 });
@@ -258,7 +302,7 @@
         }
 
         // Places a new marker
-        function placeMarker(location)
+        function placeMarker(map, location)
         {
             var marker = new google.maps.Marker({
                 position: location
@@ -267,6 +311,12 @@
             marker.setMap(map);
 
             return marker;
+        }
+
+        function addLatLng(latitude, longitude)
+        {
+            var newLatLng = new google.maps.LatLng(latitude, longitude);
+            latLngList.push(newLatLng);
         }
 
         // Create a lot entry to the sidebar for web
@@ -317,7 +367,7 @@
             });
 
             google.maps.event.addDomListener(li, "dblclick", function() {
-                google.maps.event.trigger(map, "click");
+                google.maps.event.trigger(mainMap, "click");
             });
 
         }
@@ -415,9 +465,19 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
         google.maps.event.addDomListener(window, 'resize', function() {
-            var center = map.getCenter();
-            google.maps.event.trigger(map, 'resize');
-            map.setCenter(center);
+            var center = mainMap.getCenter();
+            var dirCenter = directionsMap.getCenter();
+
+            //var bounds = mainMap.getBounds();
+
+            google.maps.event.trigger(mainMap, 'resize');
+            google.maps.event.trigger(directionsMap, 'resize');
+
+            mainMap.setCenter(center);
+            directionsMap.setCenter(dirCenter);
+
+            //mainMap.fitBounds(bounds);
+            //mainMap.panToBounds(bounds);
         });
     </script>
 @stop
@@ -435,6 +495,7 @@
                         </label>
                     </div>
                 </div>
+
                 <ul id="marker-list"></ul>
             </div>
             <div class="map-area">
@@ -448,18 +509,47 @@
                 <div id="map-canvas"></div>
             </div>
         </div>
+        <div id="directionsModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <div style="display: inline; font-size: 16px;">Close </div>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="directions-map-area-wrapper">
+                            <div class="map-area">
+                                <div id="map-directions-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @stop
 
 @section('footer-assets')
     <script>
         $(function() {
-            $(window).resize(function () {
-                var header = $(window).height(),
-                    offsetTop = 60;
-                $('#map-canvas').css('height', (header - offsetTop));
-            }).resize();
 
+            $('#directionsModal').on('shown.bs.modal', function() {
+                var center = directionsMap.getCenter();
+                google.maps.event.trigger(directionsMap, 'resize');
+                directionsMap.setCenter(center);
+            });
+
+            $(window).resize(function () {
+                var widnow = $(window).height(),
+                    offsetTop = 60,
+                    offsetBottom = 300;
+                $('#map-directions-canvas').css('height', (widnow - offsetBottom));
+                $('#map-canvas').css('height', (widnow - offsetTop));
+            }).resize();
         });
     </script>
 @stop

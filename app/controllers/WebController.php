@@ -162,31 +162,29 @@ class WebController extends BaseController
    public function getDirections($address)
    {
       $this->geoPlugin->locate('162.197.213.38');
+      $originAddress = $this->geoPlugin->city . ', ' . $this->geoPlugin->region . ', ' . $this->geoPlugin->countryCode;
       $origin = array(
-         'ip'              => $this->geoPlugin->ip,
-         'city'            => $this->geoPlugin->city,
-         'region'          => $this->geoPlugin->region,
-         'area_code'       => $this->geoPlugin->areaCode,
-         'country_code'    => $this->geoPlugin->countryCode,
-         'country_name'    => $this->geoPlugin->countryName,
-         'continent_code'  => $this->geoPlugin->continentCode,
-         'latitude'        => $this->geoPlugin->latitude,
-         'longitude'       => $this->geoPlugin->longitude
+         'ip'        => $this->geoPlugin->ip,
+         'latitude'  => $this->geoPlugin->latitude,
+         'longitude' => $this->geoPlugin->longitude,
+         'address'   => $originAddress
       );
 
       $geocode = Geocoder::geocode($address);
       $destination = array(
-         'latitude'  => $geocode->getLatitude(),
-         'longitude' => $geocode->getLongitude(),
+         'ip'        => null,
+         'latitude'  => json_decode($geocode->getLatitude()),
+         'longitude' => json_decode($geocode->getLongitude()),
          'address'   => $address
       );
 
-      $directionsData = array(
-        $destination
+      $data = array(
+         'origin'      => $origin,
+         'destination' => $destination
       );
 
       return $this->layout = View::make('spartapark.getdirections')
-         ->with('directionsData', $destination);
+         ->with('data', $data);
    }
 
    /**
