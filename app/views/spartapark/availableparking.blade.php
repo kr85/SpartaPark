@@ -32,14 +32,35 @@
         // Info window
         var infoWindow = new google.maps.InfoWindow;
 
+        //var parkingMarker;
+
         // Destination marker
-        var destinationMarker;
+        //var destinationMarker;
+
+        //var originMarker;
+
+        var directionsMapMarkers;
 
         // Display directions variable
         var directionsDisplay;
 
         // New directions service
         var directionsService = new google.maps.DirectionsService();
+
+        var icons = {
+            start: new google.maps.MarkerImage(
+                'assets/images/home.png',
+                new google.maps.Size(32, 37),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(16, 37)
+            ),
+            end: new google.maps.MarkerImage(
+                'assets/images/parking.png',
+                new google.maps.Size(32, 37),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(16, 37)
+            )
+        };
 
         // Initialize the map
         function initialize()
@@ -48,6 +69,7 @@
             latLngList = new Array();
             bounds = new google.maps.LatLngBounds();
             allMarkers = new Array();
+            directionsMapMarkers = new Array();
 
             // New point with latitude and longitude
             var myLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
@@ -329,12 +351,6 @@
             return marker;
         }
 
-        function addLatLng(latitude, longitude)
-        {
-            var newLatLng = new google.maps.LatLng(latitude, longitude);
-            latLngList.push(newLatLng);
-        }
-
         // Create a lot entry to the sidebar for web
         function createLotEntryWeb(marker, lotData)
         {
@@ -496,43 +512,90 @@
             var longitude = $('#longitude').text();
             var destinationLatLng = new google.maps.LatLng(latitude, longitude);
 
+            clearDirectionsMapMarkers();
+            clearDirectionsDisplay();
+
             // New marker
-            destinationMarker = new google.maps.Marker({
+            var parkingMarker = new google.maps.Marker({
                 position: destinationLatLng,
                 map: directionsMap,
                 title: name,
                 icon: "assets/images/parkinggarage3.png"
             });
 
-            destinationMarker.setMap(directionsMap);
+            directionsMapMarkers.push(parkingMarker);
+
+            parkingMarker.setMap(directionsMap);
             directionsMap.setCenter(destinationLatLng);
+            directionsMap.setZoom(17);
         }
 
-        function calcRoute()
+        // Calculate route and pin markers
+        function calculateRoute(origin, destination)
         {
             var rendererOptions = {
-                map: directionsMap
+                map: directionsMap,
+                suppressMarkers: true
             };
 
-            if (directionsDisplay != null) {
-                directionsDisplay.setMap(null);
-                directionsDisplay = null;
-            }
+            clearDirectionsMapMarkers();
+            clearDirectionsDisplay();
 
             directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
             directionsDisplay.setMap(directionsMap);
+            $('#directions-panel').empty();
             directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
             var request = {
-                origin: 'Stanford University',
-                destination: 'San jose state university',
+                origin: origin,
+                destination: destination,
                 travelMode: google.maps.TravelMode.DRIVING
             };
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
+                    var leg = response.routes[0].legs[0];
+
+                    var originMarker = addDirectionsMarker(leg.start_location, icons.start, 'Start');
+                    directionsMapMarkers.push(originMarker);
+
+                    var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, 'End');
+                    directionsMapMarkers.push(destinationMarker);
                 }
             });
+        }
+
+        // Clear the directions route
+        function clearDirectionsDisplay()
+        {
+            // Delete the directions route
+            if (directionsDisplay != null) {
+                directionsDisplay.setMap(null);
+                directionsDisplay = null;
+            }
+        }
+
+        // Clear the markers on the directions map
+        function clearDirectionsMapMarkers()
+        {
+            while (directionsMapMarkers.length) {
+                directionsMapMarkers.pop().setMap(null);
+            }
+
+            directionsMapMarkers.length = 0;
+            directionsMapMarkers = new Array();
+        }
+
+        // Add custom directions markers
+        function addDirectionsMarker(position, icon, title)
+        {
+            var marker = new google.maps.Marker({
+                position: position,
+                map: directionsMap,
+                icon: icon,
+                title: title
+            });
+            return marker;
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
@@ -594,20 +657,20 @@
                                     <div class="get-directions-container">
                                         <h3 class="get-directions-title">Get Directions</h3>
                                         <div class="get-directions-content">
-                                            {{ Form::open(array('route' => 'post_directions')) }}
+                                            <form id="calculate-route" action="#" method="get">
                                                 <div class="origin">
-                                                    <label>From</label>
+                                                    <label for="from">From</label>
                                                     <div class="address-field">
                                                         <div class="nested-icon-text-field">
                                                             <div class="student-location">
                                                                 <span class="glyphicon glyphicon-map-marker"></span>
-                                                                <input id="" name="" type="text"></input>
+                                                                <input id="directions-origin" name="directions-origin" required="required" type="text" autocomplete="off">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="destination">
-                                                    <label>To</label>
+                                                    <label for="to">To</label>
                                                     <div class="parking-location">
                                                         <div class="glyphicon parking-icon"></div>
                                                         <div class="parking-address">
@@ -619,9 +682,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-directions">
-                                                    <a class="btn btn-primary pull-right" id="search-directions">Get Directions</a>
+                                                    <input class="btn btn-primary pull-right" id="search-directions" type="submit" value="Get Directions">
                                                 </div>
-                                            {{ Form::close() }}
+                                            </form>
                                         </div><br /><hr>
                                         <div id="directions-panel"></div>
                                     </div>
@@ -644,7 +707,14 @@
         $(function() {
 
             $('#search-directions').click(function() {
-                calcRoute();
+
+                $('#calculate-route').submit(function(event) {
+                    event.preventDefault();
+                    var origin = $('#directions-origin').val();
+                    var destination = $('#address').text();
+                    calculateRoute(origin, destination);
+                });
+
                 $('.side-box').css({
                     'height': 645
                 });
@@ -653,14 +723,13 @@
                     'height': 640,
                     'width': 360
                 });
-
-                $('.enscroll-track track').css({
-                    'top': 2
-                });
             });
 
             // On modal shown
             $('#directionsModal').on('shown.bs.modal', function() {
+
+                clearDirectionsMapMarkers();
+                clearDirectionsDisplay();
 
                 // Get center, set and resize the map
                 var center = directionsMap.getCenter();
@@ -672,18 +741,28 @@
 
                 // Display marker to directions map
                 displayDestinationMarker();
+
+                console.log(destinationMarker);
             });
 
             // On modal hidden
             $('#directionsModal').on('hidden.bs.modal', function() {
 
-                // Delete the marker from directions map
-                destinationMarker.setMap(null);
-                destinationMarker = null;
+                clearDirectionsMapMarkers();
+                clearDirectionsDisplay();
 
-                // Delete the directions route
-                directionsDisplay.setMap(null);
-                directionsDisplay = null;
+                // Clear directions panel
+                $('#directions-panel').empty();
+
+                document.getElementById('calculate-route').reset();
+
+                $('.side-box').css({
+                    'height': 270
+                });
+
+                $('#scroll-box').css({
+                    'overflow': 'hidden'
+                });
             });
 
             // Resize maps on window change
