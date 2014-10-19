@@ -1083,13 +1083,110 @@ ul#marker-list {
 .side-box {
   position: absolute;
   z-index: 2;
-  height: 200px;
-  width: 300px;
-  margin: 10px;
+  height: 270px;
+  width: 360px;
+  margin: 12px;
   border: 1px solid #b3b3b3;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
   background: #fcfcfc;
+}
+.get-directions-container {
+  padding: 15px;
+}
+.get-directions-title {
+  text-shadow: 1px 1px 2px rgba(0, 69, 163, 0.80);
+  line-height: 1.5;
+  margin: 0;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  margin-right: auto;
+  margin-left: auto;
+  width: 190px;
+  font-size: 22px;
+}
+.get-directions-content {
+
+}
+.origin {
+
+}
+.destination {
+  margin-top: 15px;
+}
+.destination label {
+  display: block;
+  margin-bottom: -8px;
+  margin-top: 15px;
+}
+.address-field {
+
+}
+.nested-icon-text-field {
+  position: relative;
+}
+.student-location {
+
+}
+.student-location input {
+  padding-left: 25px;
+  width: 326px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+.student-location .glyphicon {
+  z-index: 1;
+}
+.nested-icon-text-field .glyphicon {
+  position: absolute;
+  left: 8px;
+  top: 11px;
+}
+.parking-location {
+  display: inline;
+}
+.parking-location .glyphicon {
+  position: relative;
+  margin-left: 8px;
+  top: 10px;
+  margin-right: 5px;
+}
+.parking-icon {
+  background-image: url(../images/parking.png);
+  background-size: 20px 22px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 22px;
+  margin: 0;
+}
+.glyphicon .parking-icon {
+
+}
+.parking-location .parking-icon {
+  position: relative;
+  margin-left: 5px;
+  top: 15px;
+  margin-right: 5px;
+}
+.parking-address {
+  display: inline;
+}
+.parking-address address {
+  width: 300px;
+  margin-left: 34px;
+  font-size: 13px;
+}
+.parking-name {
+  display: inherit;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.parking-name a {
+  text-decoration: none;
+}
+.search-directions {
+  width: 324px;
 }
 .modal-header {
   padding: 15px 15px 25px;

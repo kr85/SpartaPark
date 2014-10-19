@@ -32,6 +32,8 @@
         // Info window
         var infoWindow = new google.maps.InfoWindow;
 
+        var addressDirections;
+
         // Initialize the map
         function initialize()
         {
@@ -47,6 +49,7 @@
             // Main map options
             var mainMapOptions = {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDoubleClickZoom: true,
                 mapTypeControl: true,
                 panControl: true,
                 panControlOptions: {
@@ -67,7 +70,7 @@
             // Directions map options
             var directionsMapOptions = {
                 center: myLatLng,
-                zoom: 12,
+                zoom: 17,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: false,
                 panControl: false,
@@ -91,7 +94,7 @@
 
             // SJSU marker
             var sjsuMarker = placeMarker(mainMap, myLatLng);
-            var testMarker = placeMarker(directionsMap, myLatLng);
+            //var testMarker = placeMarker(directionsMap, myLatLng);
 
             // SJSU info window
             //var sjsuInfoWindow = new google.maps.InfoWindow;
@@ -155,6 +158,7 @@
             var html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + lotData.name +
                   '</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                   '<div class="pull-right">' + distance + ' miles</div><br />';
+
             var address = lotData.address;
             var addressLine1 = address.split(",")[0];
             var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
@@ -180,7 +184,10 @@
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
                 '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
 
-            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div><a data-toggle="modal" data-target="#directionsModal">Get Directions</a></div>' +
+            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div>' +
+                '<a data-toggle="modal" data-target="#directionsModal">Get Directions</a>' +
+                '<div class="hide" id="parking-name">' + lotData.name +
+                '</div><div class="hide" id="address">' + address + '</div><div id="latitude" class="">' + lotData.latitude + '</div><div id="longitude" class="">' + lotData.longitude + '</div></div>' +
                 '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                 'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
@@ -463,6 +470,37 @@
             });
         }
 
+        // Displays destination name and address to form
+        function displayDestinationName()
+        {
+            var address = $('#address').text();
+            var name = $('#parking-name').text();
+            $('.parking-address address').html(address);
+            $('.parking-name a').html(name);
+        }
+
+        function displayDestinationMarker()
+        {
+            var name = $('#parking-name').text();
+            var latitude = $('#latitude').text();
+            var longitude = $('#longitude').text();
+            var destinationLatLng = new google.maps.LatLng(latitude, longitude);
+            console.log(destinationLatLng);
+
+            // New marker
+            var marker = new google.maps.Marker({
+                position: destinationLatLng,
+                map: directionsMap,
+                title: name,
+                icon: "assets/images/parkinggarage3.png"
+            });
+
+            marker.setMap(directionsMap);
+            directionsMap.setCenter(destinationLatLng);
+
+            return marker;
+        }
+
         google.maps.event.addDomListener(window, 'load', initialize);
         google.maps.event.addDomListener(window, 'resize', function() {
             var center = mainMap.getCenter();
@@ -495,17 +533,9 @@
                         </label>
                     </div>
                 </div>
-
                 <ul id="marker-list"></ul>
             </div>
             <div class="map-area">
-                <div class="side-box hide" id="get-directions">
-                    <h3>Get Directions</h3>
-
-                    {{ Form::open(array('route' => 'post_directions')) }}
-
-                    {{ Form::close() }}
-                </div>
                 <div id="map-canvas"></div>
             </div>
         </div>
@@ -521,6 +551,41 @@
                     <div class="modal-body">
                         <div class="directions-map-area-wrapper">
                             <div class="map-area">
+                                <div class="side-box" id="get-directions">
+                                    <div class="get-directions-container">
+                                        <h3 class="get-directions-title">Get Directions</h3>
+                                        <div class="get-directions-content">
+                                            {{ Form::open(array('route' => 'post_directions')) }}
+                                                <div class="origin">
+                                                    <label>From</label>
+                                                    <div class="address-field">
+                                                        <div class="nested-icon-text-field">
+                                                            <div class="student-location">
+                                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                                                <input id="" name="" type="text"></input>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="destination">
+                                                    <label>To</label>
+                                                    <div class="parking-location">
+                                                        <div class="glyphicon parking-icon"></div>
+                                                        <div class="parking-address">
+                                                            <div class="parking-name">
+                                                                <a></a>
+                                                            </div>
+                                                            <address></address>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="search-directions">
+                                                    <a class="btn btn-primary pull-right">Get Directions</a>
+                                                </div>
+                                            {{ Form::close() }}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div id="map-directions-canvas"></div>
                             </div>
                         </div>
@@ -537,16 +602,20 @@
     <script>
         $(function() {
 
+
+
             $('#directionsModal').on('shown.bs.modal', function() {
                 var center = directionsMap.getCenter();
                 google.maps.event.trigger(directionsMap, 'resize');
                 directionsMap.setCenter(center);
+                displayDestinationName();
+                displayDestinationMarker();
             });
 
             $(window).resize(function () {
                 var widnow = $(window).height(),
                     offsetTop = 60,
-                    offsetBottom = 300;
+                    offsetBottom = 200;
                 $('#map-directions-canvas').css('height', (widnow - offsetBottom));
                 $('#map-canvas').css('height', (widnow - offsetTop));
             }).resize();
