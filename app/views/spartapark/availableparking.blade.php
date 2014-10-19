@@ -32,11 +32,19 @@
         // Info window
         var infoWindow = new google.maps.InfoWindow;
 
-        var addressDirections;
+        // Destination marker
+        var destinationMarker;
+
+        // Display directions variable
+        var directionsDisplay;
+
+        // New directions service
+        var directionsService = new google.maps.DirectionsService();
 
         // Initialize the map
         function initialize()
         {
+            directionsDisplay = null;
             latLngList = new Array();
             bounds = new google.maps.LatLngBounds();
             allMarkers = new Array();
@@ -94,7 +102,6 @@
 
             // SJSU marker
             var sjsuMarker = placeMarker(mainMap, myLatLng);
-            //var testMarker = placeMarker(directionsMap, myLatLng);
 
             // SJSU info window
             //var sjsuInfoWindow = new google.maps.InfoWindow;
@@ -187,7 +194,9 @@
             htmlMore += addressLine1 + '<br />' + addressLine2 + '<div>' +
                 '<a data-toggle="modal" data-target="#directionsModal">Get Directions</a>' +
                 '<div class="hide" id="parking-name">' + lotData.name +
-                '</div><div class="hide" id="address">' + address + '</div><div id="latitude" class="">' + lotData.latitude + '</div><div id="longitude" class="">' + lotData.longitude + '</div></div>' +
+                '</div><div class="hide" id="address">' + address + '</div>' +
+                '<div id="latitude" class="hide">' + lotData.latitude + '</div>' +
+                '<div id="longitude" class="hide">' + lotData.longitude + '</div></div>' +
                 '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                 'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
                 lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
@@ -479,26 +488,51 @@
             $('.parking-name a').html(name);
         }
 
+        // Display destination marker
         function displayDestinationMarker()
         {
             var name = $('#parking-name').text();
             var latitude = $('#latitude').text();
             var longitude = $('#longitude').text();
             var destinationLatLng = new google.maps.LatLng(latitude, longitude);
-            console.log(destinationLatLng);
 
             // New marker
-            var marker = new google.maps.Marker({
+            destinationMarker = new google.maps.Marker({
                 position: destinationLatLng,
                 map: directionsMap,
                 title: name,
                 icon: "assets/images/parkinggarage3.png"
             });
 
-            marker.setMap(directionsMap);
+            destinationMarker.setMap(directionsMap);
             directionsMap.setCenter(destinationLatLng);
+        }
 
-            return marker;
+        function calcRoute()
+        {
+            var rendererOptions = {
+                map: directionsMap
+            };
+
+            if (directionsDisplay != null) {
+                directionsDisplay.setMap(null);
+                directionsDisplay = null;
+            }
+
+            directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+            directionsDisplay.setMap(directionsMap);
+            directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+            var request = {
+                origin: 'Stanford University',
+                destination: 'San jose state university',
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
@@ -517,6 +551,10 @@
             //mainMap.fitBounds(bounds);
             //mainMap.panToBounds(bounds);
         });
+
+        google.maps.Map.prototype.setCenterWithOffset = function(latLng, offsetX, offsetY) {
+
+        };
     </script>
 @stop
 
@@ -552,6 +590,7 @@
                         <div class="directions-map-area-wrapper">
                             <div class="map-area">
                                 <div class="side-box" id="get-directions">
+                                    <div id="scroll-box">
                                     <div class="get-directions-container">
                                         <h3 class="get-directions-title">Get Directions</h3>
                                         <div class="get-directions-content">
@@ -580,10 +619,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="search-directions">
-                                                    <a class="btn btn-primary pull-right">Get Directions</a>
+                                                    <a class="btn btn-primary pull-right" id="search-directions">Get Directions</a>
                                                 </div>
                                             {{ Form::close() }}
-                                        </div>
+                                        </div><br /><hr>
+                                        <div id="directions-panel"></div>
+                                    </div>
                                     </div>
                                 </div>
                                 <div id="map-directions-canvas"></div>
@@ -602,16 +643,50 @@
     <script>
         $(function() {
 
+            $('#search-directions').click(function() {
+                calcRoute();
+                $('.side-box').css({
+                    'height': 645
+                });
 
+                $('#scroll-box').css({
+                    'height': 640,
+                    'width': 360
+                });
 
+                $('.enscroll-track track').css({
+                    'top': 2
+                });
+            });
+
+            // On modal shown
             $('#directionsModal').on('shown.bs.modal', function() {
+
+                // Get center, set and resize the map
                 var center = directionsMap.getCenter();
                 google.maps.event.trigger(directionsMap, 'resize');
                 directionsMap.setCenter(center);
+
+                // Display destination name/info to form
                 displayDestinationName();
+
+                // Display marker to directions map
                 displayDestinationMarker();
             });
 
+            // On modal hidden
+            $('#directionsModal').on('hidden.bs.modal', function() {
+
+                // Delete the marker from directions map
+                destinationMarker.setMap(null);
+                destinationMarker = null;
+
+                // Delete the directions route
+                directionsDisplay.setMap(null);
+                directionsDisplay = null;
+            });
+
+            // Resize maps on window change
             $(window).resize(function () {
                 var widnow = $(window).height(),
                     offsetTop = 60,
@@ -619,6 +694,12 @@
                 $('#map-directions-canvas').css('height', (widnow - offsetBottom));
                 $('#map-canvas').css('height', (widnow - offsetTop));
             }).resize();
+
+            $('#scroll-box').enscroll({
+                showOnHover: false,
+                verticalTrackClass: 'track',
+                verticalHandleClass: 'handle'
+            });
         });
     </script>
 @stop

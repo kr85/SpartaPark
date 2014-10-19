@@ -59,8 +59,8 @@
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
-            }
-          });
+                }
+            });
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
