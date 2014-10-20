@@ -660,12 +660,13 @@
                                             <div class="get-directions-content">
                                                 <form id="calculate-route" action="#" method="get">
                                                     <div class="origin">
-                                                        <label for="from">From</label>
+                                                        <label for="from" class="from-label">From</label>
+                                                        <div class="current-location pull-right"><a href="#" id="current-location">Use Current Location</a></div>
                                                         <div class="address-field">
                                                             <div class="nested-icon-text-field">
                                                                 <div class="student-location">
                                                                     <div class="glyphicon home-icon"></div>
-                                                                    <input id="directions-origin" name="directions-origin" required="required" type="text" autocomplete="off">
+                                                                    <input id="directions-origin" name="directions-origin" required="required" type="text" autocomplete="off" class="textarea-style">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -711,8 +712,42 @@
     <script>
         $(function() {
 
+            // On use current location click
+            $('#current-location').click(function(event) {
+
+                // Check if browser supports geolocation
+                if (typeof navigator.geolocation == 'undefined') {
+                    alert("Your browser doesn't support the Geolocation API!");
+                    return;
+                }
+
+                event.preventDefault();
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({
+                        'location': new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+                    },
+                    function(results, status) {
+                        if (status = google.maps.GeocoderStatus.OK) {
+                            $('#directions-origin').val(results[0].formatted_address);
+                        } else {
+                            alert("Unable to retrieve your location!");
+                        }
+                    });
+                },
+                function(positionError) {
+                    alert("Error: " + positionError.message);
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10 * 1000
+                });
+            });
+
+            // On search directions click
             $('#search-directions').click(function() {
 
+                // Submit get directios form
                 $('#calculate-route').submit(function(event) {
                     event.preventDefault();
                     var origin = $('#directions-origin').val();
@@ -720,14 +755,17 @@
                     calculateRoute(origin, destination);
                 });
 
+                // Window height and offsets
                 var windowHeight = $(window).height(),
                     bottomOffset = 240,
                     scrollboxWidth = 360;
 
+                // Style side-box and sctoll-box
                 $('.side-box').css('height', (windowHeight - bottomOffset));
                 $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
                 $('#scroll-box').css('width', scrollboxWidth);
 
+                // Remove hide class
                 $('#directions-panel-break').removeClass('hide');
             });
 
@@ -752,23 +790,27 @@
             // On modal hidden
             $('#directionsModal').on('hidden.bs.modal', function() {
 
-                var boxHeight = 270;
+                // Box height
+                var boxHeight = 278;
 
+                // Clear directions map
                 clearDirectionsMapMarkers();
                 clearDirectionsDisplay();
 
                 // Clear directions panel
                 $('#directions-panel').empty();
 
+                // Reset get directions form
                 document.getElementById('calculate-route').reset();
 
+                // Style side-box and scroll-box
                 $('.side-box').css('height', boxHeight);
-
                 $('#scroll-box').css({
                     'overflow': 'hidden',
                     'height': boxHeight
                 });
 
+                // Hide break line
                 $('#directions-panel-break').addClass('hide');
             });
 
@@ -780,7 +822,7 @@
                     offsetBottomModal = 240,
                     sideboxMinHeight = 350,
                     scrollboxMinHeight = 343,
-                    boxHeight = 270;
+                    boxHeight = 278;
 
                 $('#map-directions-canvas').css('height', (widnow - offsetBottom));
                 $('#map-canvas').css('height', (widnow - offsetTop));
@@ -792,15 +834,15 @@
                     $('#scroll-box').css('height', boxHeight);
                 } else {
                     $('.side-box').css('height', (widnow - offsetBottomModal));
-                    $('.side-box').css('height', sideboxMinHeight);
+                    $('.side-box').css('min-height', sideboxMinHeight);
                     $('#scroll-box').css('height', (widnow - offsetBottomModal - 8));
-                    $('#scroll-box').css('height', scrollboxMinHeight);
+                    $('#scroll-box').css('min-height', scrollboxMinHeight);
                 }
             }).resize();
 
+            // Custom scroll
             $('#scroll-box').enscroll({
                 showOnHover: false,
-                verticalTrackClass: 'track',
                 verticalHandleClass: 'handle'
             });
         });
