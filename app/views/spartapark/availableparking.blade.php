@@ -653,42 +653,47 @@
                         <div class="directions-map-area-wrapper">
                             <div class="map-area">
                                 <div class="side-box" id="get-directions">
+                                <div class="scroll-box-container">
                                     <div id="scroll-box">
-                                    <div class="get-directions-container">
-                                        <h3 class="get-directions-title">Get Directions</h3>
-                                        <div class="get-directions-content">
-                                            <form id="calculate-route" action="#" method="get">
-                                                <div class="origin">
-                                                    <label for="from">From</label>
-                                                    <div class="address-field">
-                                                        <div class="nested-icon-text-field">
-                                                            <div class="student-location">
-                                                                <span class="glyphicon glyphicon-map-marker"></span>
-                                                                <input id="directions-origin" name="directions-origin" required="required" type="text" autocomplete="off">
+                                        <div class="get-directions-container">
+                                            <h3 class="get-directions-title">Get Directions</h3>
+                                            <div class="get-directions-content">
+                                                <form id="calculate-route" action="#" method="get">
+                                                    <div class="origin">
+                                                        <label for="from">From</label>
+                                                        <div class="address-field">
+                                                            <div class="nested-icon-text-field">
+                                                                <div class="student-location">
+                                                                    <div class="glyphicon home-icon"></div>
+                                                                    <input id="directions-origin" name="directions-origin" required="required" type="text" autocomplete="off">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="destination">
-                                                    <label for="to">To</label>
-                                                    <div class="parking-location">
-                                                        <div class="glyphicon parking-icon"></div>
-                                                        <div class="parking-address">
-                                                            <div class="parking-name">
-                                                                <a></a>
+                                                    <div class="destination">
+                                                        <label for="to">To</label>
+                                                        <div class="parking-location">
+                                                            <div class="glyphicon parking-icon"></div>
+                                                            <div class="parking-address">
+                                                                <div class="parking-name">
+                                                                    <a></a>
+                                                                </div>
+                                                                <address></address>
                                                             </div>
-                                                            <address></address>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="search-directions">
-                                                    <input class="btn btn-primary pull-right" id="search-directions" type="submit" value="Get Directions">
-                                                </div>
-                                            </form>
-                                        </div><br /><hr>
-                                        <div id="directions-panel"></div>
+                                                    <div class="search-directions">
+                                                        <input class="btn btn-primary pull-right btn-style" id="search-directions" type="submit" value="GO">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div id="directions-panel-break" class="hide">
+                                                <br /><hr>
+                                            </div>
+                                            <div id="directions-panel"></div>
+                                        </div>
                                     </div>
-                                    </div>
+                                </div>
                                 </div>
                                 <div id="map-directions-canvas"></div>
                             </div>
@@ -715,14 +720,15 @@
                     calculateRoute(origin, destination);
                 });
 
-                $('.side-box').css({
-                    'height': 645
-                });
+                var windowHeight = $(window).height(),
+                    bottomOffset = 240,
+                    scrollboxWidth = 360;
 
-                $('#scroll-box').css({
-                    'height': 640,
-                    'width': 360
-                });
+                $('.side-box').css('height', (windowHeight - bottomOffset));
+                $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
+                $('#scroll-box').css('width', scrollboxWidth);
+
+                $('#directions-panel-break').removeClass('hide');
             });
 
             // On modal shown
@@ -741,12 +747,12 @@
 
                 // Display marker to directions map
                 displayDestinationMarker();
-
-                console.log(destinationMarker);
             });
 
             // On modal hidden
             $('#directionsModal').on('hidden.bs.modal', function() {
+
+                var boxHeight = 270;
 
                 clearDirectionsMapMarkers();
                 clearDirectionsDisplay();
@@ -756,22 +762,40 @@
 
                 document.getElementById('calculate-route').reset();
 
-                $('.side-box').css({
-                    'height': 270
-                });
+                $('.side-box').css('height', boxHeight);
 
                 $('#scroll-box').css({
-                    'overflow': 'hidden'
+                    'overflow': 'hidden',
+                    'height': boxHeight
                 });
+
+                $('#directions-panel-break').addClass('hide');
             });
 
             // Resize maps on window change
             $(window).resize(function () {
                 var widnow = $(window).height(),
                     offsetTop = 60,
-                    offsetBottom = 200;
+                    offsetBottom = 200,
+                    offsetBottomModal = 240,
+                    sideboxMinHeight = 350,
+                    scrollboxMinHeight = 343,
+                    boxHeight = 270;
+
                 $('#map-directions-canvas').css('height', (widnow - offsetBottom));
                 $('#map-canvas').css('height', (widnow - offsetTop));
+                $('.side-box').css('height', (widnow - offsetBottomModal));
+                $('#scroll-box').css('height', (widnow - offsetBottomModal - 8));
+
+                if ($('#directions-panel-break').hasClass('hide')) {
+                    $('.side-box').css('height', boxHeight);
+                    $('#scroll-box').css('height', boxHeight);
+                } else {
+                    $('.side-box').css('height', (widnow - offsetBottomModal));
+                    $('.side-box').css('height', sideboxMinHeight);
+                    $('#scroll-box').css('height', (widnow - offsetBottomModal - 8));
+                    $('#scroll-box').css('height', scrollboxMinHeight);
+                }
             }).resize();
 
             $('#scroll-box').enscroll({
