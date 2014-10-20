@@ -731,12 +731,27 @@
                         if (status = google.maps.GeocoderStatus.OK) {
                             $('#directions-origin').val(results[0].formatted_address);
                         } else {
-                            alert("Unable to retrieve your location!");
+                            alert("Unable to retrieve your location.");
                         }
                     });
                 },
-                function(positionError) {
-                    alert("Error: " + positionError.message);
+                function(error) {
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("Access to Geolocation API denied by user.");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Unable to determine location.");
+                            break;
+                        case error.TIMEOUT:
+                            alert("Unable to determine location, the request timed out.");
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            alert("An unknown error occured.");
+                            break;
+                        default:
+                            alert("Error: " + positionError.message);
+                    }
                 },
                 {
                     enableHighAccuracy: true,
