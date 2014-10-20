@@ -719,44 +719,45 @@
                 if (typeof navigator.geolocation == 'undefined') {
                     alert("Your browser doesn't support the Geolocation API!");
                     return;
-                }
-
-                event.preventDefault();
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({
-                        'location': new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+                } else {
+                    event.preventDefault();
+                    var pos;
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        var geocoder = new google.maps.Geocoder();
+                        geocoder.geocode({
+                            'location': pos
+                        },
+                        function(results, status) {
+                            if (status = google.maps.GeocoderStatus.OK) {
+                                $('#directions-origin').val("My Location");
+                                var destination = $('#address').text();
+                                calculateRoute(pos, destination);
+                                setupDirectionsPanelStyles();
+                            } else {
+                                alert("Unable to retrieve your location.");
+                            }
+                        });
                     },
-                    function(results, status) {
-                        if (status = google.maps.GeocoderStatus.OK) {
-                            $('#directions-origin').val(results[0].formatted_address);
-                        } else {
-                            alert("Unable to retrieve your location.");
+                    function(error) {
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("Access to Geolocation API denied by user.");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                alert("Unable to determine location.");
+                                break;
+                            case error.TIMEOUT:
+                                alert("Unable to determine location, the request timed out.");
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                alert("An unknown error occured.");
+                                break;
+                            default:
+                                alert("Error: " + positionError.message);
                         }
                     });
-                },
-                function(error) {
-                    switch(error.code) {
-                        case error.PERMISSION_DENIED:
-                            alert("Access to Geolocation API denied by user.");
-                            break;
-                        case error.POSITION_UNAVAILABLE:
-                            alert("Unable to determine location.");
-                            break;
-                        case error.TIMEOUT:
-                            alert("Unable to determine location, the request timed out.");
-                            break;
-                        case error.UNKNOWN_ERROR:
-                            alert("An unknown error occured.");
-                            break;
-                        default:
-                            alert("Error: " + positionError.message);
-                    }
-                },
-                {
-                    enableHighAccuracy: true,
-                    timeout: 10 * 1000
-                });
+                }
             });
 
             // On search directions click
@@ -764,29 +765,21 @@
 
                 // Submit get directios form
                 $('#calculate-route').submit(function(event) {
+                    clearDirectionsMapMarkers();
+                    clearDirectionsDisplay();
                     event.preventDefault();
                     var origin = $('#directions-origin').val();
                     var destination = $('#address').text();
                     calculateRoute(origin, destination);
                 });
 
-                // Window height and offsets
-                var windowHeight = $(window).height(),
-                    bottomOffset = 240,
-                    scrollboxWidth = 360;
-
-                // Style side-box and sctoll-box
-                $('.side-box').css('height', (windowHeight - bottomOffset));
-                $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
-                $('#scroll-box').css('width', scrollboxWidth);
-
-                // Remove hide class
-                $('#directions-panel-break').removeClass('hide');
+                setupDirectionsPanelStyles();
             });
 
             // On modal shown
             $('#directionsModal').on('shown.bs.modal', function() {
 
+                // Clear directions map
                 clearDirectionsMapMarkers();
                 clearDirectionsDisplay();
 
@@ -860,6 +853,23 @@
                 showOnHover: false,
                 verticalHandleClass: 'handle'
             });
+
+            // Setup styles for directions panel
+            function setupDirectionsPanelStyles()
+            {
+                // Window height and offsets
+                var windowHeight = $(window).height(),
+                    bottomOffset = 240,
+                    scrollboxWidth = 360;
+
+                // Style side-box and sctoll-box
+                $('.side-box').css('height', (windowHeight - bottomOffset));
+                $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
+                $('#scroll-box').css('width', scrollboxWidth);
+
+                // Remove hide class
+                $('#directions-panel-break').removeClass('hide');
+            }
         });
     </script>
 @stop
