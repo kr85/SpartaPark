@@ -1017,9 +1017,6 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   color: #999;
   cursor: pointer;
 }
-.lot-entry:hover {
-  background-color: rgba(0, 141, 255, 0.18);
-}
 .lot-entry-hover {
   background-color: rgba(0, 141, 255, 0.18);
 }

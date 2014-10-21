@@ -29,16 +29,10 @@
         // Array of all markers
         var allMarkers;
 
-        // Info window
-        var infoWindow = new google.maps.InfoWindow;
+        // Info windows
+        var allInfoWindows;
 
-        //var parkingMarker;
-
-        // Destination marker
-        //var destinationMarker;
-
-        //var originMarker;
-
+        // All markers on directions map
         var directionsMapMarkers;
 
         // Display directions variable
@@ -69,6 +63,7 @@
             latLngList = new Array();
             bounds = new google.maps.LatLngBounds();
             allMarkers = new Array();
+            allInfoWindows = new Array();
             directionsMapMarkers = new Array();
 
             // New point with latitude and longitude
@@ -126,7 +121,8 @@
             var sjsuMarker = placeMarker(mainMap, myLatLng);
 
             // SJSU info window
-            //var sjsuInfoWindow = new google.maps.InfoWindow;
+            var sjsuInfoWindow = new google.maps.InfoWindow;
+            allInfoWindows.push(sjsuInfoWindow);
 
             // Creates maker's info window content
             var html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + owner.name +
@@ -144,7 +140,7 @@
             allMarkers.push(sjsuMarker);
 
             // Binds the info window to the marker for mouseover
-            bindInfoWindow(sjsuMarker, mainMap, infoWindow, html, html);
+            bindInfoWindow(sjsuMarker, mainMap, sjsuInfoWindow, html, html);
 
             // Initialize each lot point
             for (id in lots) {
@@ -179,6 +175,9 @@
                 title: lotData.name,
                 icon: "assets/images/parkinggarage3.png"
             });
+
+            var infoWindow = new google.maps.InfoWindow;
+            allInfoWindows.push(infoWindow);
 
             // Round distance to two decimal places
             var distance = Math.round(lotData.distance * 100) / 100;
@@ -250,23 +249,21 @@
             htmlMore += regionTable + '<hr>' +
                 '<div style="margin-left: 95px; margin-bottom: 0px; padding-bottom: 0px;"><small><i>Double click to close</i></small></div>';
 
-            bindInfoWindow(marker, mainMap, infoWindow, html, htmlMore ,lotData.id);
+            bindInfoWindow(marker, infoWindow, html, htmlMore ,lotData.id);
 
-            var windowSize = $(window).width();
-
-            if (windowSize > 767) {
-                createLotEntryWeb(marker, lotData);
-            } else {
-                createLotEntryMobile(marker, lotData);
-            }
+            createLotEntryWeb(marker, lotData);
 
             allMarkers.push(marker);
             marker.setMap(mainMap);
         }
 
         // Binds info window on hover
-        function bindInfoWindow(marker, mainMap, infoWindow, html, htmlMore ,id)
+        function bindInfoWindow(marker, infoWindow, html, htmlMore ,id)
         {
+            var infoWindowHover = infoWindow;
+            var infoWindowClick = infoWindow;
+
+            // Lot id
             var id = "lot-" + id;
 
             // Add mouseover listener
@@ -277,13 +274,13 @@
 
             // Add click on marker listener
             google.maps.event.addListener(marker, 'click', function() {
-                infoWindow.setContent(htmlMore);
-                infoWindow.open(mainMap, marker);
+                closeAllInfoWindows();
+                infoWindowClick.setContent(htmlMore);
+                infoWindowClick.open(mainMap, marker);
                 $("div").removeClass("lot-entry-hover");
                 $("div").removeClass("lot-entry-active");
                 $("#" + id).addClass("lot-entry-active");
-                var i;
-                for (i = 0; i < allMarkers.length; i++)
+                for (var i = 0; i < allMarkers.length; i++)
                 {
                     google.maps.event.clearListeners(allMarkers[i], 'mouseover');
                     google.maps.event.clearListeners(allMarkers[i], 'mouseout');
@@ -292,7 +289,7 @@
 
             // Add click on map listener
             google.maps.event.addListener(mainMap, 'click', function() {
-                infoWindow.close();
+                closeAllInfoWindows();
                 $("div").removeClass("lot-entry-active");
                 $("div").removeClass("lot-entry-hover");
                 mouseoutListener(marker, html);
@@ -301,7 +298,7 @@
 
             // Add double click on marker listener
             google.maps.event.addListener(marker, 'dblclick', function() {
-                infoWindow.close();
+                closeAllInfoWindows();
                 $("div").removeClass("lot-entry-active");
                 $("div").removeClass("lot-entry-hover");
                 mouseoutListener(marker, html);
@@ -309,8 +306,8 @@
             });
 
             // Add close info window listener
-            google.maps.event.addListener(infoWindow, 'closeclick', function() {
-                infoWindow.close();
+            google.maps.event.addListener(infoWindowClick, 'closeclick', function() {
+                closeAllInfoWindows();
                 $("#" + id).removeClass("lot-entry-active");
                 $("#" + id).removeClass("lot-entry-hover");
                 mouseoutListener(marker, html);
@@ -320,22 +317,31 @@
             // Helper function for marker mouseover effects
             function mouseoverListener(marker, html)
             {
-                google.maps.event.addListener(marker, 'mouseover', function() {
-                    infoWindow.setContent(html);
-                    infoWindow.open(mainMap, marker);
-                    $("div").removeClass("lot-entry-hover");
-                    $("#" + id).addClass("lot-entry-hover");
-                });
+                    google.maps.event.addListener(marker, 'mouseover', function() {
+                        infoWindowHover.setContent(html);
+                        infoWindowHover.open(mainMap, marker);
+                        $("div").removeClass("lot-entry-hover");
+                        $("#" + id).addClass("lot-entry-hover");
+                    });
             }
 
             // Helper function for marker mouseout effects
             function mouseoutListener(marker, html)
             {
                 google.maps.event.addListener(marker, 'mouseout', function() {
-                    infoWindow.close();
+                    closeAllInfoWindows();
                     $("#" + id).removeClass("lot-entry-active");
                     $("#" + id).removeClass("lot-entry-hover");
                 });
+            }
+        }
+
+        // Close any open info windows
+        function closeAllInfoWindows()
+        {
+            var i;
+            for (i = 0; i < allInfoWindows.length; i++) {
+                allInfoWindows[i].close();
             }
         }
 
@@ -386,112 +392,41 @@
             li.innerHTML = html;
             ul.appendChild(li);
 
+            addDomListenerMouseover(li, marker);
+            addDomListenerMouseout(li, marker);
+            addDomListenerClick(li, marker);
+            addDomListenerDblClick(li, mainMap);
+        }
+
+        // Add a mouseover listener to sidebar entry
+        function addDomListenerMouseover(li, marker)
+        {
             google.maps.event.addDomListener(li, "mouseover", function(){
                 google.maps.event.trigger(marker, "mouseover");
             });
+        }
 
+        // Add a mouseout listener to sidebar entry
+        function addDomListenerMouseout(li, marker)
+        {
             google.maps.event.addDomListener(li, "mouseout", function(){
                 google.maps.event.trigger(marker, "mouseout");
             });
+        }
 
+        // Add a click listener to sidebar entry
+        function addDomListenerClick(li, marker)
+        {
             google.maps.event.addDomListener(li, "click", function(){
                 google.maps.event.trigger(marker, "click");
             });
-
-            google.maps.event.addDomListener(li, "dblclick", function() {
-                google.maps.event.trigger(mainMap, "click");
-            });
-
         }
 
-        // Create a lot entry to the sidebar for mobile
-        function createLotEntryMobile(marker, lotData)
+        // Add a double click listener to sidebar entry
+        function addDomListenerDblClick(li, map)
         {
-            var ul = document.getElementById("marker-list");
-            var li = document.createElement("li");
-            li.id = "lot-" + lotData.id;
-            var liId = li.id;
-            console.log(li);
-            console.log(liId);
-
-            var distance = Math.round(lotData.distance * 100) / 100;
-
-            var html = '<div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container">' +
-                '<div class="lot-entry-name" id="lot-name">' + lotData.name + '</div>' +
-                '<div class="pull-right" id="lot-distance">' + distance + ' miles</div><br />';
-
-            var address = lotData.address;
-            var addressLine1 = address.split(",")[0];
-            var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
-
-            if (lotData.spots_available == 0) {
-                var spots = "spots";
-                var color = "red"
-            }
-            else if (lotData.spots_available == 1) {
-                var spots = "Spot";
-                var color = "green"
-            } else {
-                var spots = "Spots"
-                var color = "green";
-            }
-
-            html += addressLine1 + '<br />' + addressLine2 + '<br /><div style="display: inline; color: ' +
-                color + ';"><strong>' + lotData.spots_available + ' Available Parking ' + spots +
-                '</strong></div><div style="display: inline;" class="pull-right"><small><i>Click for more info</i></small></div>';
-
-            var regionTable = '<table style="width: 100%; padding-bottom: 30px;"><tr><td style="font-size: 14px;">' +
-                '<strong>Region</strong></td><td class="pull-right" style="font-size: 14px;"><strong>Available' +
-                '</strong></td></tr>';
-
-            var lotDataId = lotData.id;
-            var l;
-            var r;
-            var regionTableBody = '';
-
-            for (l = 0; l < lots.length; l++) {
-                var regions = lots[l].regions;
-                for (r = 0; r < regions.length; r++) {
-                    var lotId = regions[r].lot_id;
-
-                    if (lotDataId == lotId) {
-                        regionTableBody += '<tr><td>' + regions[r].name +
-                        '</td><td class="pull-right">' + regions[r].spots_available + '</td></tr>';
-                    }
-                }
-            }
-
-            regionTable += regionTableBody + '</table>';
-
-            htmlMore += addressLine1 + '<br />' + addressLine2 + '<br /><div style="display: inline; color: ' +
-                color + ';"><strong>' + lotData.spots_available + ' Available Parking ' + spots +
-                '</strong></div><div style="display: inline;" class="pull-right"><small><i>Click for more info</i></small></div>';
-
-            htmlMore += regionTable;
-
-            li.innerHTML = html;
-            ul.appendChild(liId);
-
-            google.maps.event.addDomListener(li, "mouseover", function(){
-                google.maps.event.trigger(marker, "mouseover");
-            });
-
-            google.maps.event.addDomListener(li, "mouseout", function(){
-                google.maps.event.trigger(marker, "mouseout");
-            });
-
-            google.maps.event.addDomListener(li, "click", function(){
-              if (liId == li.id) {
-                    li.innerHTML = htmlMore;
-                    ul.appendChild(li.id);
-                    google.maps.event.trigger(marker, "click");
-              }
-            });
-
-            google.maps.event.addDomListener(li, "dblclick", function(){
-                li.innerHTML = html;
-                ul.appendChild(li);
-                google.maps.event.trigger(marker, "dblclick");
+            google.maps.event.addDomListener(li, "dblclick", function() {
+                google.maps.event.trigger(map, "click");
             });
         }
 
@@ -535,7 +470,8 @@
         {
             var rendererOptions = {
                 map: directionsMap,
-                suppressMarkers: true
+                suppressMarkers: true,
+                preserveViewport: false
             };
 
             clearDirectionsMapMarkers();
@@ -555,15 +491,50 @@
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
                     var leg = response.routes[0].legs[0];
+                    //var table = document.getElementsByClassName("adp-directions");
 
-                    var originMarker = addDirectionsMarker(leg.start_location, icons.start, 'Start');
+                    //google.maps.event.addDomListener(tr, 'click', function() {
+                    //    alert('clicked');
+                    //});
+
+                    //console.log(table);
+
+                    var origin = $('#directions-origin').val();
+                    var originMarker = addDirectionsMarker(leg.start_location, icons.start, origin);
                     directionsMapMarkers.push(originMarker);
 
-                    var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, 'End');
+                    var destination = $('#address').text();
+                    var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
                     directionsMapMarkers.push(destinationMarker);
                 }
             });
         }
+
+        function showAllSteps(leg)
+        {
+            for (var i = 0; i < leg.steps.length; i++) {
+                var marker = new google.maps.Marker({
+                    position: leg.steps[i].start_location,
+                    map: directionsMap
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    directionsMap.setZoom(17);
+                    directionsMap.setCenter(marker.getPosition());
+                });
+                console.log(leg.steps[i].start_location);
+            }
+        }
+
+        function addListenerInfoWindowReady(infoWindow, html)
+        {
+            //console.log(html);
+            google.maps.event.addListener(infoWindow, 'domready', function() {
+                infoWindow.setContent(html);
+            });
+        }
+
+
 
         // Clear the directions route
         function clearDirectionsDisplay()
