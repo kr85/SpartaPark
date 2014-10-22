@@ -450,19 +450,21 @@
             clearDirectionsMapMarkers();
             clearDirectionsDisplay();
 
-            // New marker
-            var parkingMarker = new google.maps.Marker({
-                position: destinationLatLng,
-                map: directionsMap,
-                title: name,
-                icon: "assets/images/parkinggarage3.png"
-            });
 
-            directionsMapMarkers.push(parkingMarker);
+                // New marker
+                var parkingMarker = new google.maps.Marker({
+                    position: destinationLatLng,
+                    map: directionsMap,
+                    title: name,
+                    icon: "assets/images/parkinggarage3.png"
+                });
 
-            parkingMarker.setMap(directionsMap);
-            directionsMap.setCenter(destinationLatLng);
-            directionsMap.setZoom(17);
+                directionsMapMarkers.push(parkingMarker);
+
+                console.log('loaded');
+                parkingMarker.setMap(directionsMap);
+                directionsMap.setCenter(destinationLatLng);
+                directionsMap.setZoom(17);
         }
 
         // Calculate route and pin markers
