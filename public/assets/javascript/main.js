@@ -1,4 +1,6 @@
 (function ($) {
+
+    // Show loading gif on page load
     $(window).load(function() {
         $('.loader').fadeOut('slow');
     });

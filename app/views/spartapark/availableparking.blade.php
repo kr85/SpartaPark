@@ -461,7 +461,6 @@
 
                 directionsMapMarkers.push(parkingMarker);
 
-                console.log('loaded');
                 parkingMarker.setMap(directionsMap);
                 directionsMap.setCenter(destinationLatLng);
                 directionsMap.setZoom(17);
@@ -530,7 +529,6 @@
 
         function addListenerInfoWindowReady(infoWindow, html)
         {
-            //console.log(html);
             google.maps.event.addListener(infoWindow, 'domready', function() {
                 infoWindow.setContent(html);
             });
