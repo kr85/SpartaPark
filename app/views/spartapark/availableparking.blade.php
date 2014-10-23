@@ -555,18 +555,26 @@
             //table.appendChild(trEnd);
         }
 
+        // Add point to the map for each step
         function addStepPointsToRoute(stepsTable, leg)
         {
             for (var i = 0; i < leg.steps.length; i++) {
-
+                // Step position
                 var position = leg.steps[i].start_location;
+
+                // Add step as a marker to the map
                 var marker = new google.maps.Marker({
                     position: position,
                     map: directionsMap,
                 });
 
+                // Make marker invisible
                 marker.setVisible(false);
+
+                // Add a custom listener to the marker
                 addListenerMarkerClick(marker);
+
+                // Add the step to the directions text panel
                 addDirectionsSteps(stepsTable, marker, leg.steps[i], i);
             }
         }
