@@ -1278,28 +1278,22 @@ div#map-directions-canvas {
   padding-top: 3px;
   margin-left: -2px;
 }
-/*#adp-placemark img, .adp-placemark img {
-  display:none;
-}*/
 #adp-placemark {
   font-weight: bold;
   background: #f1f1f1 url(../images/home.png) no-repeat 5% center;
-  width: 100%;
+  min-width: 330px;
+  height: 55px;
   border: 1px solid #CECECE;
   padding: 10px 10px 10px 65px;
 }
 .adp-placemark {
   font-weight: bold;
   background: #f1f1f1 url(../images/parking.png) no-repeat 5% center;
-  width: 100%;
+  min-width: 330px;
+  height: 55px;
   border: 1px solid #CECECE;
   padding: 10px 10px 10px 65px;
 }
-/*td.adp-text {
-  width: 100%;
-  padding: 10px 10px 10px 55px;
-  font-weight: 500;
-}*/
 .from-label {
   display: inline;
 }
@@ -1344,7 +1338,7 @@ div#map-directions-canvas {
   white-space:nowrap;
   padding: 10px 0;
 }
-.adp-substep .adp-stepicon{
+.adp-substep .adp-stepicon {
   overflow:hidden;
   position:relative;
   top:0;
@@ -1352,65 +1346,65 @@ div#map-directions-canvas {
   width:16px;
   height:16px
 }
-.adp-substep .adp-stepicon .adp-maneuver{
+.adp-substep .adp-stepicon .adp-maneuver {
   background-size:19px 630px;
   position:absolute;
   left:0;
   width:16px;
   height:16px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-ferry{
+.adp-substep .adp-stepicon .adp-maneuver.adp-ferry {
   background-position:0 -614px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-ferry-train{
+.adp-substep .adp-stepicon .adp-maneuver.adp-ferry-train {
   background-position:0 -566px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-merge{
+.adp-substep .adp-stepicon .adp-maneuver.adp-merge {
   background-position:0 -143px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-straight{
+.adp-substep .adp-stepicon .adp-maneuver.adp-straight {
   background-position:0 -534px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-fork-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-fork-left {
   background-position:0 -550px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-left {
   background-position:0 -598px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-left {
   background-position:0 -197px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-turn-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-left {
   background-position:0 -413px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-left {
   background-position:0 0
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-left {
   background-position:0 -378px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-left{
+.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-left {
   background-position:0 -305px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-fork-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-fork-right {
   background-position:0 -499px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-right {
   background-position:0 -429px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-right {
   background-position:0 -232px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-turn-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-right {
   background-position:0 -483px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-right {
   background-position:0 -582px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-right {
   background-position:0 -51px
 }
-.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-right{
+.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-right {
   background-position:0 -35px
 }
 .adp-substep .adp-stepicon .adp-maneuver {
