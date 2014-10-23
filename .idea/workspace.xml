@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" afterPath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +48,7 @@
           <file leaf-file-name="availableparking.blade.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="643" column="70" selection-start="24659" selection-end="24659" vertical-scroll-proportion="-7.148148" vertical-offset="9452" max-vertical-offset="15225">
+                <state line="654" column="70" selection-start="24947" selection-end="24947" vertical-scroll-proportion="-7.148148" vertical-offset="9617" max-vertical-offset="15390">
                   <folding />
                 </state>
               </provider>
@@ -107,7 +106,7 @@
           <file leaf-file-name="availableparking.blade.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="558" column="28" selection-start="22031" selection-end="22031" vertical-scroll-proportion="0.13709678" vertical-offset="8268" max-vertical-offset="15225">
+                <state line="545" column="41" selection-start="21569" selection-end="21569" vertical-scroll-proportion="0.58064514" vertical-offset="7743" max-vertical-offset="15390">
                   <folding />
                 </state>
               </provider>
@@ -979,7 +978,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="558" column="28" selection-start="22031" selection-end="22031" vertical-scroll-proportion="0.13709678" vertical-offset="8268" max-vertical-offset="15225">
+        <state line="545" column="41" selection-start="21569" selection-end="21569" vertical-scroll-proportion="0.58064514" vertical-offset="7743" max-vertical-offset="15390">
           <folding />
         </state>
       </provider>

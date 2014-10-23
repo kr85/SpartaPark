@@ -522,38 +522,31 @@
             });
         }
 
+        // Add directions panel
         function addDirectionsPanel(leg)
         {
+            // Get directions panel
             var panel = document.getElementById('directions-panel');
 
+            // Create start address element
             var startTable = document.createElement('table');
             panel.appendChild(startTable);
             addStartAddress(startTable, leg);
 
+            // Create summary element
             var summary = document.createElement('table');
             panel.appendChild(summary);
             addDirectionsSummary(summary, leg);
 
+            // Create directions steps element
             var stepsTable = document.createElement('table');
             panel.appendChild(stepsTable);
             addStepPointsToRoute(stepsTable, leg);
 
+            // Create end address element
             var endTable = document.createElement('table');
             panel.appendChild(endTable);
             addEndAddress(endTable, leg);
-
-            //var table = document.getElementById('directions-panel');
-            //var trStart = document.createElement('tr');
-            //var startHtml = '' + leg.start_address + '';
-            //trStart.innerHTML = startHtml;
-            //table.appendChild(trStart);
-
-            //addStepPointsToRoute(table, leg);
-
-            //var trEnd = document.createElement('tr');
-            //var endHtml = '' + leg.end_address + '';
-            //trEnd.innerHTML = endHtml;
-            //table.appendChild(trEnd);
         }
 
         // Add start address
@@ -574,7 +567,7 @@
             // Step position
             var position = leg.start_location;
 
-            // Add step as a marker to the map
+            // Add start location as a marker to the map
             var marker = new google.maps.Marker({
                 position: position,
                 map: directionsMap,
@@ -604,6 +597,7 @@
             tr.innerHTML = html;
         }
 
+        // Add end address
         function addEndAddress(endTable, leg)
         {
             // Create new row
@@ -617,6 +611,23 @@
             // Add html to the row
             tr.innerHTML = html;
 
+            // Step position
+            var position = leg.end_location;
+
+            // Add end location as a marker to the map
+            var marker = new google.maps.Marker({
+                position: position,
+                map: directionsMap,
+            });
+
+            // Make marker invisible
+            marker.setVisible(false);
+
+            // Add a custom listener to the marker
+            addListenerMarkerClick(marker);
+
+            // Add a dom listener to the row
+            addDomListenerClick(tr, marker)
         }
 
         // Add point to the map for each step
