@@ -468,39 +468,64 @@
         // Calculate route and pin markers
         function calculateRoute(origin, destination)
         {
+            // Renderer options
             var rendererOptions = {
                 map: directionsMap,
                 suppressMarkers: true,
                 preserveViewport: false
             };
 
+            // Clear directions map
             clearDirectionsMapMarkers();
             clearDirectionsDisplay();
 
+            // Create a new directions renderer
             directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
-            directionsDisplay.setMap(directionsMap);
-            //$('#directions-panel').empty();
-            //directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
+            // Set the map for directions display
+            directionsDisplay.setMap(directionsMap);
+
+            // Request variable options
             var request = {
                 origin: origin,
                 destination: destination,
                 travelMode: google.maps.TravelMode.DRIVING
             };
+
+            // Call route on directions service
             directionsService.route(request, function(response, status) {
+
+                // Check directions status
                 if (status == google.maps.DirectionsStatus.OK) {
+
+                    // Clear directions panel
                     $('#directions-panel').empty();
+
+                    // Set the directions
                     directionsDisplay.setDirections(response);
+
+                    // The first leg of this route
                     var leg = response.routes[0].legs[0];
-                    console.log(leg);
+
+                    // Add the directions panel
                     addDirectionsPanel(leg);
 
+                    // Get directions origin value
                     var origin = $('#directions-origin').val();
+
+                    // Add the origin marker
                     var originMarker = addDirectionsMarker(leg.start_location, icons.start, origin);
+
+                    // Add the origin marker to the directions map markers array
                     directionsMapMarkers.push(originMarker);
 
+                    // Get directions destination value
                     var destination = $('#address').text();
+
+                    // Add the destination marker
                     var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
+
+                    // Add the destination marker to the directions map markers array
                     directionsMapMarkers.push(destinationMarker);
                 } else {
                     if (status == 'ZERO_RESULTS') {

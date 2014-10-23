@@ -48,7 +48,7 @@
           <file leaf-file-name="availableparking.blade.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="654" column="70" selection-start="24947" selection-end="24947" vertical-scroll-proportion="-7.148148" vertical-offset="9617" max-vertical-offset="15390">
+                <state line="679" column="70" selection-start="25640" selection-end="25640" vertical-scroll-proportion="-7.148148" vertical-offset="9992" max-vertical-offset="15765">
                   <folding />
                 </state>
               </provider>
@@ -106,7 +106,7 @@
           <file leaf-file-name="availableparking.blade.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="545" column="41" selection-start="21569" selection-end="21569" vertical-scroll-proportion="0.58064514" vertical-offset="7743" max-vertical-offset="15390">
+                <state line="506" column="50" selection-start="19324" selection-end="19324" vertical-scroll-proportion="0.39919356" vertical-offset="7293" max-vertical-offset="15765">
                   <folding />
                 </state>
               </provider>
@@ -978,7 +978,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="545" column="41" selection-start="21569" selection-end="21569" vertical-scroll-proportion="0.58064514" vertical-offset="7743" max-vertical-offset="15390">
+        <state line="506" column="50" selection-start="19324" selection-end="19324" vertical-scroll-proportion="0.39919356" vertical-offset="7293" max-vertical-offset="15765">
           <folding />
         </state>
       </provider>
