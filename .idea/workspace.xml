@@ -25,13 +25,13 @@
     <favorites_list name="spartapark" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.16924779">
+    <splitter split-orientation="vertical" split-proportion="0.109513275">
       <split-first>
         <leaf>
           <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1415" column="1" selection-start="30838" selection-end="30838" vertical-scroll-proportion="3.5408163" vertical-offset="20878" max-vertical-offset="21315">
+                <state line="1334" column="23" selection-start="28723" selection-end="28723" vertical-scroll-proportion="4.2272725" vertical-offset="19824" max-vertical-offset="21345">
                   <folding />
                 </state>
               </provider>
@@ -49,7 +49,7 @@
           <file leaf-file-name="availableparking.blade.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="623" column="70" selection-start="24018" selection-end="24018" vertical-scroll-proportion="-7.148148" vertical-offset="9152" max-vertical-offset="14925">
+                <state line="643" column="70" selection-start="24659" selection-end="24659" vertical-scroll-proportion="-7.148148" vertical-offset="9452" max-vertical-offset="15225">
                   <folding />
                 </state>
               </provider>
@@ -107,7 +107,7 @@
           <file leaf-file-name="availableparking.blade.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="573" column="28" selection-start="22418" selection-end="22418" vertical-scroll-proportion="0.34347826" vertical-offset="8358" max-vertical-offset="14925">
+                <state line="558" column="28" selection-start="22031" selection-end="22031" vertical-scroll-proportion="0.13709678" vertical-offset="8268" max-vertical-offset="15225">
                   <folding />
                 </state>
               </provider>
@@ -972,14 +972,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1415" column="1" selection-start="30838" selection-end="30838" vertical-scroll-proportion="3.5408163" vertical-offset="20878" max-vertical-offset="21315">
+        <state line="1334" column="23" selection-start="28723" selection-end="28723" vertical-scroll-proportion="4.2272725" vertical-offset="19824" max-vertical-offset="21345">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="573" column="28" selection-start="22418" selection-end="22418" vertical-scroll-proportion="0.34347826" vertical-offset="8358" max-vertical-offset="14925">
+        <state line="558" column="28" selection-start="22031" selection-end="22031" vertical-scroll-proportion="0.13709678" vertical-offset="8268" max-vertical-offset="15225">
           <folding />
         </state>
       </provider>

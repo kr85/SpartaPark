@@ -1331,6 +1331,8 @@ div#map-directions-canvas {
   margin:0;
   vertical-align:top;
   padding: 10px 10px 10px 2px;
+}
+.adp-step, .adp-substep {
   cursor: pointer;
 }
 .adp-distance {

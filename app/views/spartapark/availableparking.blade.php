@@ -556,6 +556,7 @@
             //table.appendChild(trEnd);
         }
 
+        // Add start address
         function addStartAddress(startTable, leg)
         {
             // Create new row
@@ -564,11 +565,29 @@
             // Append the row to the table
             startTable.appendChild(tr);
 
-            var html = '<td id="adp-placemark">' + leg.start_address + '</td>';
+            // Start address html
+            var html = '<td id="adp-placemark" class="adp-step">' + leg.start_address + '</td>';
 
             // Add html to the row
             tr.innerHTML = html;
 
+            // Step position
+            var position = leg.start_location;
+
+            // Add step as a marker to the map
+            var marker = new google.maps.Marker({
+                position: position,
+                map: directionsMap,
+            });
+
+            // Make marker invisible
+            marker.setVisible(false);
+
+            // Add a custom listener to the marker
+            addListenerMarkerClick(marker);
+
+            // Add a dom listener to the row
+            addDomListenerClick(tr, marker)
         }
 
         // Add route summary
@@ -580,6 +599,7 @@
             // Append the row to the table
             summary.appendChild(tr);
 
+            // Summary html
             var html = '<td class="adp-summary-duration">' + leg.distance.text + ' - about ' + leg.duration.text + '</td>';
             tr.innerHTML = html;
         }
@@ -592,7 +612,7 @@
             // Append the row to the table
             endTable.appendChild(tr);
 
-            var html = '<td class="adp-placemark">' + leg.end_address + '</td>';
+            var html = '<td class="adp-placemark adp-step">' + leg.end_address + '</td>';
 
             // Add html to the row
             tr.innerHTML = html;
