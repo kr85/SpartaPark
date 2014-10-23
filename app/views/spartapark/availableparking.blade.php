@@ -492,12 +492,7 @@
                     $('#directions-panel').empty();
                     directionsDisplay.setDirections(response);
                     var leg = response.routes[0].legs[0];
-
-                    //var steps = directionsDisplay.directions.routes[0].legs[0].steps;
                     console.log(leg);
-
-                    //var table = document.getElementById('directions-panel');
-                    //addStepPointsToRoute(table, leg);
                     addDirectionsPanel(leg);
 
                     var origin = $('#directions-origin').val();
@@ -533,6 +528,11 @@
 
             var startTable = document.createElement('table');
             panel.appendChild(startTable);
+            addStartAddress(startTable, leg);
+
+            var summary = document.createElement('table');
+            panel.appendChild(summary);
+            addDirectionsSummary(summary, leg);
 
             var stepsTable = document.createElement('table');
             panel.appendChild(stepsTable);
@@ -540,6 +540,7 @@
 
             var endTable = document.createElement('table');
             panel.appendChild(endTable);
+            addEndAddress(endTable, leg);
 
             //var table = document.getElementById('directions-panel');
             //var trStart = document.createElement('tr');
@@ -555,10 +556,55 @@
             //table.appendChild(trEnd);
         }
 
+        function addStartAddress(startTable, leg)
+        {
+            // Create new row
+            var tr = document.createElement('tr');
+
+            // Append the row to the table
+            startTable.appendChild(tr);
+
+            var html = '<td id="adp-placemark">' + leg.start_address + '</td>';
+
+            // Add html to the row
+            tr.innerHTML = html;
+
+        }
+
+        // Add route summary
+        function addDirectionsSummary(summary, leg)
+        {
+            // Create new row
+            var tr = document.createElement('tr');
+
+            // Append the row to the table
+            summary.appendChild(tr);
+
+            var html = '<td class="adp-summary-duration">' + leg.distance.text + ' - about ' + leg.duration.text + '</td>';
+            tr.innerHTML = html;
+        }
+
+        function addEndAddress(endTable, leg)
+        {
+            // Create new row
+            var tr = document.createElement('tr');
+
+            // Append the row to the table
+            endTable.appendChild(tr);
+
+            var html = '<td class="adp-placemark">' + leg.end_address + '</td>';
+
+            // Add html to the row
+            tr.innerHTML = html;
+
+        }
+
         // Add point to the map for each step
         function addStepPointsToRoute(stepsTable, leg)
         {
+            // Go through each step
             for (var i = 0; i < leg.steps.length; i++) {
+
                 // Step position
                 var position = leg.steps[i].start_location;
 
@@ -585,6 +631,9 @@
             // Create new row
             var tr = document.createElement('tr');
 
+            // Append the row to the table
+            stepsTable.appendChild(tr);
+
             // Maneuver column
             var maneuver = '<td class="adp-substep"><div id="adp-stepicon-' + i +
                 '" class="adp-stepicon"><div id="maneuver-' + i + '" class="adp-maneuver"></div></div></td>';
@@ -603,9 +652,6 @@
 
             // Add html to the row
             tr.innerHTML = html;
-
-            // Append the row to the table
-            stepsTable.appendChild(tr);
 
             // Check if teh step has a maneuver
             if (steps.maneuver === "") {
