@@ -1315,3 +1315,151 @@ td.adp-text {
 div#map-directions-canvas {
   background: url(../images/loading.gif) center center no-repeat rgb(249, 249, 249);
 }
+.tr-style {
+  border-bottom: 1px solid #cecece;
+}
+.adp-summary{
+  padding:0 3px 3px
+}
+
+.adp-step,.adp-substep{
+  border-top:1px solid #cdcdcd;
+  margin:0;
+  padding:.3em 3px;
+  vertical-align:top
+}
+
+.adp-list img,.adp-substep img{
+  width:15px;
+  height:15px;
+  position:relative;
+  top:2px;
+  margin-right:3px
+}
+
+.adp-distance{
+  white-space:nowrap
+}
+
+.adp-step,.adp-text{
+  width:100%
+}
+
+.adp-directions{
+  cursor:pointer;
+  border-collapse:collapse
+}
+
+.adp-list .gm-arrow{
+  width:8px;
+  height:9px;
+  margin:5px 0 3px
+}
+
+.adp-agencies{
+  font-size:80%;
+  margin:5px 0
+}
+
+.adp-summary-duration{
+  float:right;
+  margin-left:7px;
+  white-space:nowrap
+}
+
+.adp-substep .gm-line{
+  margin-right:4px
+}
+
+.adp-substep .adp-stepicon{
+  overflow:hidden;
+  position:relative;
+  top:0;
+  left:0;
+  width:16px;
+  height:16px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver{
+  background-size:19px 630px;
+  position:absolute;
+  left:0;
+  width:16px;
+  height:16px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-ferry{
+  background-position:0 -614px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-ferry-train{
+  background-position:0 -566px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-merge{
+  background-position:0 -143px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-straight{
+  background-position:0 -534px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-fork-left{
+  background-position:0 -550px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-left{
+  background-position:0 -598px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-left{
+  background-position:0 -197px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-left{
+  background-position:0 -413px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-left{
+  background-position:0 0
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-left{
+  background-position:0 -378px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-left{
+  background-position:0 -305px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-fork-right{
+  background-position:0 -499px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-right{
+  background-position:0 -429px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-right{
+  background-position:0 -232px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-right{
+  background-position:0 -483px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-right{
+  background-position:0 -582px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-right{
+  background-position:0 -51px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-right{
+  background-position:0 -35px
+}
+
+.adp-substep .adp-stepicon .adp-maneuver {
+  background-image: url(../images/maneuvers.png);
+}

@@ -399,33 +399,33 @@
         }
 
         // Add a mouseover listener to sidebar entry
-        function addDomListenerMouseover(li, marker)
+        function addDomListenerMouseover(dom, marker)
         {
-            google.maps.event.addDomListener(li, "mouseover", function(){
+            google.maps.event.addDomListener(dom, "mouseover", function(){
                 google.maps.event.trigger(marker, "mouseover");
             });
         }
 
         // Add a mouseout listener to sidebar entry
-        function addDomListenerMouseout(li, marker)
+        function addDomListenerMouseout(dom, marker)
         {
-            google.maps.event.addDomListener(li, "mouseout", function() {
+            google.maps.event.addDomListener(dom, "mouseout", function() {
                 google.maps.event.trigger(marker, "mouseout");
             });
         }
 
         // Add a click listener to sidebar entry
-        function addDomListenerClick(li, marker)
+        function addDomListenerClick(dom, marker)
         {
-            google.maps.event.addDomListener(li, "click", function() {
+            google.maps.event.addDomListener(dom, "click", function() {
                 google.maps.event.trigger(marker, "click");
             });
         }
 
         // Add a double click listener to sidebar entry
-        function addDomListenerDblClick(li, map)
+        function addDomListenerDblClick(dom, map)
         {
-            google.maps.event.addDomListener(li, "dblclick", function() {
+            google.maps.event.addDomListener(dom, "dblclick", function() {
                 google.maps.event.trigger(map, "click");
             });
         }
@@ -479,8 +479,8 @@
 
             directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
             directionsDisplay.setMap(directionsMap);
-            $('#directions-panel').empty();
-            directionsDisplay.setPanel(document.getElementById('directions-panel'));
+            //$('#directions-panel').empty();
+            //directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
             var request = {
                 origin: origin,
@@ -493,20 +493,12 @@
                     directionsDisplay.setDirections(response);
                     var leg = response.routes[0].legs[0];
 
-                    var steps = directionsDisplay.directions.routes[0].legs[0].steps;
-                    console.log(steps);
+                    //var steps = directionsDisplay.directions.routes[0].legs[0].steps;
+                    console.log(leg);
 
-
-                    showAllSteps(steps);
-
-                    //var table = document.getElementsByClassName("adp-directions");
-                    //var row = table.getElementsByTagName("tr");
-
-                    //google.maps.event.addDomListener(tr, 'click', function() {
-                    //    alert('clicked');
-                    //});
-                    //var row = table[0];
-                    //console.log(row);
+                    //var table = document.getElementById('directions-panel');
+                    //addStepPointsToRoute(table, leg);
+                    addDirectionsPanel(leg);
 
                     var origin = $('#directions-origin').val();
                     var originMarker = addDirectionsMarker(leg.start_location, icons.start, origin);
@@ -516,52 +508,115 @@
                     var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
                     directionsMapMarkers.push(destinationMarker);
                 } else {
-                  if (status == 'ZERO_RESULTS') {
-                    alert('No route found between the origin and destination points.');
-                  } else if (status == 'UNKNOWN_ERROR') {
-                    alert('The request could not be processed due to a server error. Please try again.');
-                  } else if (status == 'REQUEST_DENIED') {
-                    alert('The directions service was denied for this webpage.');
-                  } else if (status == 'OVER_QUERY_LIMIT') {
-                    alert('The webpage has gone over the requests limit in too short a period of time.');
-                  } else if (status == 'NOT_FOUND') {
-                    alert('Either origin, destination or both could not be geocoded.');
-                  } else if (status == 'INVALID_REQUEST') {
-                    alert('The request provided was invalid.');
-                  } else {
-                    alert('There was an unknown error in your request. Request status: ' + status);
+                    if (status == 'ZERO_RESULTS') {
+                        alert('No route found between the origin and destination points.');
+                    } else if (status == 'UNKNOWN_ERROR') {
+                        alert('The request could not be processed due to a server error. Please try again.');
+                    } else if (status == 'REQUEST_DENIED') {
+                        alert('The directions service was denied for this webpage.');
+                    } else if (status == 'OVER_QUERY_LIMIT') {
+                        alert('The webpage has gone over the requests limit in too short a period of time.');
+                    } else if (status == 'NOT_FOUND') {
+                        alert('Either origin, destination or both could not be geocoded.');
+                    } else if (status == 'INVALID_REQUEST') {
+                        alert('The request provided was invalid.');
+                    } else {
+                        alert('There was an unknown error in your request. Request status: ' + status);
+                  }
                 }
             });
         }
 
-        function showAllSteps(steps)
+        function addDirectionsPanel(leg)
         {
-            for (var i = 0; i < steps.length; i++) {
+            var panel = document.getElementById('directions-panel');
+
+            var startTable = document.createElement('table');
+            panel.appendChild(startTable);
+
+            var stepsTable = document.createElement('table');
+            panel.appendChild(stepsTable);
+            addStepPointsToRoute(stepsTable, leg);
+
+            var endTable = document.createElement('table');
+            panel.appendChild(endTable);
+
+            //var table = document.getElementById('directions-panel');
+            //var trStart = document.createElement('tr');
+            //var startHtml = '' + leg.start_address + '';
+            //trStart.innerHTML = startHtml;
+            //table.appendChild(trStart);
+
+            //addStepPointsToRoute(table, leg);
+
+            //var trEnd = document.createElement('tr');
+            //var endHtml = '' + leg.end_address + '';
+            //trEnd.innerHTML = endHtml;
+            //table.appendChild(trEnd);
+        }
+
+        function addStepPointsToRoute(stepsTable, leg)
+        {
+            for (var i = 0; i < leg.steps.length; i++) {
+
+                var position = leg.steps[i].start_location;
                 var marker = new google.maps.Marker({
-                    position: steps[i].start_location,
-                    map: directionsMap
+                    position: position,
+                    map: directionsMap,
                 });
 
-                console.log(steps[i].instructions);
+                marker.setVisible(false);
+                addListenerMarkerClick(marker);
+                addDirectionsSteps(stepsTable, marker, leg.steps[i], i);
+            }
+        }
 
-                google.maps.event.addListener(marker, 'click', function() {
-                    directionsMap.setZoom(17);
-                    directionsMap.setCenter(marker.getPosition());
-                });
+        // Add the directions steps
+        function addDirectionsSteps(stepsTable, marker, steps, i)
+        {
+            // Create new row
+            var tr = document.createElement('tr');
 
-                //google.maps.event.addDomListener(tr, "click", function() {
-                //    google.maps.event.trigger(marker, "click");
-                //});
+            // Maneuver column
+            var maneuver = '<td class="adp-substep"><div id="adp-stepicon-' + i +
+                '" class="adp-stepicon"><div id="maneuver-' + i + '" class="adp-maneuver"></div></div></td>';
 
-                //console.log(tr);
-                //console.log(leg.steps[i].start_location);
+            // Step number column
+            var stepNumber = '<td class="adp-substep">' + (i + 1) + '.</td>';
+
+            // Instructions column
+            var instructions = '<td class="adp-substep">' + steps.instructions + '</td>';
+
+            // Distance column
+            var distance = '<td class="adp-substep"><div class="adp-distance">' + steps.distance.text + '</div></td>';
+
+            // Bind together all columns
+            var html = maneuver + stepNumber + instructions + distance;
+
+            // Add html to the row
+            tr.innerHTML = html;
+
+            // Append the row to the table
+            stepsTable.appendChild(tr);
+
+            // Check if teh step has a maneuver
+            if (steps.maneuver === "") {
+                $("#adp-stepicon-" + i).addClass("hide");
+            } else {
+                $("#maneuver-" + i).addClass("adp-" + steps.maneuver);
             }
 
-                //var tr = document.getElementsByTagName("tr");
+            // Add a dom listener to the row
+            addDomListenerClick(tr, marker)
+        }
 
-                //for (var i = 0; i < tr.length; i++) {
-               //     console.log(tr[i]);
-               // }
+        // Add a custom marker click listener
+        function addListenerMarkerClick(marker)
+        {
+            google.maps.event.addListener(marker, 'click', function() {
+                directionsMap.setZoom(17);
+                directionsMap.setCenter(marker.getPosition());
+            });
         }
 
         function addListenerInfoWindowReady(infoWindow, html)
@@ -570,8 +625,6 @@
                 infoWindow.setContent(html);
             });
         }
-
-
 
         // Clear the directions route
         function clearDirectionsDisplay()
@@ -719,11 +772,6 @@
 @section('footer-assets')
     <script>
         $(function() {
-
-            //$('tr').mouseover(function() {
-            //    var tdId = $(this).find('td:first-child').text();
-            //    alert(tdId);
-            //});
 
             // On use current location click
             $('#current-location').click(function(event) {
