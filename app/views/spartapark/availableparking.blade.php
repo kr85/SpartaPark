@@ -409,7 +409,7 @@
         // Add a mouseout listener to sidebar entry
         function addDomListenerMouseout(li, marker)
         {
-            google.maps.event.addDomListener(li, "mouseout", function(){
+            google.maps.event.addDomListener(li, "mouseout", function() {
                 google.maps.event.trigger(marker, "mouseout");
             });
         }
@@ -417,7 +417,7 @@
         // Add a click listener to sidebar entry
         function addDomListenerClick(li, marker)
         {
-            google.maps.event.addDomListener(li, "click", function(){
+            google.maps.event.addDomListener(li, "click", function() {
                 google.maps.event.trigger(marker, "click");
             });
         }
@@ -449,7 +449,6 @@
 
             clearDirectionsMapMarkers();
             clearDirectionsDisplay();
-
 
                 // New marker
                 var parkingMarker = new google.maps.Marker({
@@ -490,15 +489,24 @@
             };
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
+                    $('#directions-panel').empty();
                     directionsDisplay.setDirections(response);
                     var leg = response.routes[0].legs[0];
+
+                    var steps = directionsDisplay.directions.routes[0].legs[0].steps;
+                    console.log(steps);
+
+
+                    showAllSteps(steps);
+
                     //var table = document.getElementsByClassName("adp-directions");
+                    //var row = table.getElementsByTagName("tr");
 
                     //google.maps.event.addDomListener(tr, 'click', function() {
                     //    alert('clicked');
                     //});
-
-                    //console.log(table);
+                    //var row = table[0];
+                    //console.log(row);
 
                     var origin = $('#directions-origin').val();
                     var originMarker = addDirectionsMarker(leg.start_location, icons.start, origin);
@@ -507,24 +515,53 @@
                     var destination = $('#address').text();
                     var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
                     directionsMapMarkers.push(destinationMarker);
+                } else {
+                  if (status == 'ZERO_RESULTS') {
+                    alert('No route found between the origin and destination points.');
+                  } else if (status == 'UNKNOWN_ERROR') {
+                    alert('The request could not be processed due to a server error. Please try again.');
+                  } else if (status == 'REQUEST_DENIED') {
+                    alert('The directions service was denied for this webpage.');
+                  } else if (status == 'OVER_QUERY_LIMIT') {
+                    alert('The webpage has gone over the requests limit in too short a period of time.');
+                  } else if (status == 'NOT_FOUND') {
+                    alert('Either origin, destination or both could not be geocoded.');
+                  } else if (status == 'INVALID_REQUEST') {
+                    alert('The request provided was invalid.');
+                  } else {
+                    alert('There was an unknown error in your request. Request status: ' + status);
                 }
             });
         }
 
-        function showAllSteps(leg)
+        function showAllSteps(steps)
         {
-            for (var i = 0; i < leg.steps.length; i++) {
+            for (var i = 0; i < steps.length; i++) {
                 var marker = new google.maps.Marker({
-                    position: leg.steps[i].start_location,
+                    position: steps[i].start_location,
                     map: directionsMap
                 });
+
+                console.log(steps[i].instructions);
 
                 google.maps.event.addListener(marker, 'click', function() {
                     directionsMap.setZoom(17);
                     directionsMap.setCenter(marker.getPosition());
                 });
-                console.log(leg.steps[i].start_location);
+
+                //google.maps.event.addDomListener(tr, "click", function() {
+                //    google.maps.event.trigger(marker, "click");
+                //});
+
+                //console.log(tr);
+                //console.log(leg.steps[i].start_location);
             }
+
+                //var tr = document.getElementsByTagName("tr");
+
+                //for (var i = 0; i < tr.length; i++) {
+               //     console.log(tr[i]);
+               // }
         }
 
         function addListenerInfoWindowReady(infoWindow, html)
@@ -682,6 +719,11 @@
 @section('footer-assets')
     <script>
         $(function() {
+
+            //$('tr').mouseover(function() {
+            //    var tdId = $(this).find('td:first-child').text();
+            //    alert(tdId);
+            //});
 
             // On use current location click
             $('#current-location').click(function(event) {
