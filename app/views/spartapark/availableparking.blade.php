@@ -38,6 +38,9 @@
         // All markers on directions map
         var directionsMapMarkers;
 
+        // Add additional markers
+        var additionalMarkers;
+
         // Display directions variable
         var directionsDisplay;
 
@@ -70,6 +73,7 @@
             allInfoWindowsMainMap       = new Array();
             allInfoWindowsDirectionsMap = new Array();
             directionsMapMarkers        = new Array();
+            additionalMarkers           = new Array();
 
             // New point with latitude and longitude
             var myLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
@@ -174,13 +178,8 @@
             // Lot id
             var lotDataId = lotData.id;
 
-            // New marker
-            var marker = new google.maps.Marker({
-                position: lotLatLng,
-                map: mainMap,
-                title: lotData.name,
-                icon: "assets/images/parkinggarage3.png"
-            });
+            // Place marker on each point
+            var marker = placeMarker(mainMap, lotLatLng, true, "assets/images/parkinggarage3.png", lotData.name);
 
             var infoWindow = new google.maps.InfoWindow;
             allInfoWindowsMainMap.push(infoWindow);
@@ -372,6 +371,54 @@
             }
 
             return marker;
+        }
+
+        function addAdditionalMarkers()
+        {
+            // San Carlos Plaza marker
+            var location = new google.maps.LatLng(37.335067, -121.879700);
+            var marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "San Carlos Plaza");
+            additionalMarkers.push(marker);
+            var data = {
+                'id': 4,
+                'distance': '---',
+                'address': 'San Carlos Plaza',
+                'name': 'Bicycle Enclosure Site',
+                'spots_available': null
+
+            };
+            createLotEntryWeb(marker, data);
+
+            // MacQuarrie Quad marker
+            location = new google.maps.LatLng(37.333473, -121.881512);
+            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "MacQuarrie Quad");
+            additionalMarkers.push(marker);
+
+            // Spartan Memorial Paseo marker
+            location = new google.maps.LatLng(37.333999, -121.883829);
+            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "Spartan Memorial Paseo");
+            additionalMarkers.push(marker);
+
+            // 7th Street Plaza marker
+            location = new google.maps.LatLng(37.336621, -121.882415);
+            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "7th Street Plaza");
+            additionalMarkers.push(marker);
+
+            // 9th Street Plaza marker
+            location = new google.maps.LatLng(37.337231, -121.880186);
+            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "9th Street Plaza");
+            additionalMarkers.push(marker);
+        }
+
+        // Remove additional markers
+        function removeAdditionalMarkers()
+        {
+            while (additionalMarkers.length) {
+                additionalMarkers.pop().setMap(null);
+            }
+
+            additionalMarkers.length = 0;
+            additionalMarkers = new Array();
         }
 
         // Create a lot entry to the sidebar for web
@@ -815,7 +862,7 @@
                     <div class="checkbox">
                         <label>
                             <div class="btn all-parking-button">
-                                <input type="checkbox">All Parking
+                                <input type="checkbox" id="all-parking">Additional Parking
                             </div>
                         </label>
                     </div>
@@ -898,7 +945,16 @@
     <script>
         $(function() {
 
-            // On use current location click
+            // On click show or remove additional markers
+            $('#all-parking').click(function() {
+                if ($('#all-parking').is(':checked')) {
+                    addAdditionalMarkers();
+                } else {
+                    removeAdditionalMarkers();
+                }
+            });
+
+            // On click use current location
             $('#current-location').click(function(event) {
 
                 // Check if browser supports geolocation
@@ -946,7 +1002,7 @@
                 }
             });
 
-            // On search directions click
+            // On click search directions
             $('#search-directions').click(function() {
 
                 // Submit get directios form

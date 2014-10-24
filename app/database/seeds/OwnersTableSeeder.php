@@ -13,6 +13,12 @@ class OwnersTableSeeder extends Seeder
          'email_address' => 'admin@sjsu.edu'
       ));
 
+      Owner::create(array(
+         'name'          => 'Public',
+         'phone_number'  => '',
+         'email_address' => ''
+      ));
+
       // Uncomment to use Faker
 		/*$faker = Faker::create();
 
