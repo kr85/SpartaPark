@@ -76,10 +76,10 @@
             additionalMarkers           = new Array();
 
             // New point with latitude and longitude
-            var myLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
+            var centerLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
 
             // Add the point to the array
-            latLngList.push(myLatLng);
+            latLngList.push(centerLatLng);
 
             // Main map options
             var mainMapOptions = {
@@ -104,7 +104,7 @@
 
             // Directions map options
             var directionsMapOptions = {
-                center: myLatLng,
+                center: centerLatLng,
                 zoom: 17,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: false,
@@ -128,7 +128,7 @@
             directionsMap = new google.maps.Map(document.getElementById("map-directions-canvas"), directionsMapOptions);
 
             // SJSU marker
-            var sjsuMarker = placeMarker(mainMap, myLatLng, true);
+            var sjsuMarker = placeMarker(mainMap, centerLatLng, true);
 
             // SJSU info window
             var sjsuInfoWindow = new google.maps.InfoWindow;
@@ -154,8 +154,11 @@
 
             // Initialize each lot point
             for (id in lots) {
-                initializePoint(lots[id]);
+                initializeMainParking(lots[id]);
             }
+
+            // Initialize additional parking
+            initializeAdditionalParking();
 
             // Increase the bounds (include all points)
             var i;
@@ -169,97 +172,185 @@
         }
 
         // Initialize each lot
-        function initializePoint(lotData)
+        function initializeMainParking(lotData)
         {
-            // New point with latitude and longitude
-            var lotLatLng = new google.maps.LatLng(lotData.latitude, lotData.longitude);
-            latLngList.push(lotLatLng);
+            // Check if the lot has regions
+            if (lotData.regions.length > 0) {
 
-            // Lot id
-            var lotDataId = lotData.id;
+                // New point with latitude and longitude
+                var lotLatLng = new google.maps.LatLng(lotData.latitude, lotData.longitude);
+                latLngList.push(lotLatLng);
 
-            // Place marker on each point
-            var marker = placeMarker(mainMap, lotLatLng, true, "assets/images/parkinggarage3.png", lotData.name);
+                // Lot id
+                var lotDataId = lotData.id;
 
-            var infoWindow = new google.maps.InfoWindow;
-            allInfoWindowsMainMap.push(infoWindow);
+                // Place marker on each point
+                var marker = placeMarker(mainMap, lotLatLng, true, "assets/images/parkinggarage3.png", lotData.name);
 
-            // Round distance to two decimal places
-            var distance = Math.round(lotData.distance * 100) / 100;
+                var infoWindow = new google.maps.InfoWindow;
+                allInfoWindowsMainMap.push(infoWindow);
 
-            // Info window content
-            var html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + lotData.name +
-                  '</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                  '<div class="pull-right">' + distance + ' miles</div><br />';
+                // Round distance to two decimal places
+                var distance = Math.round(lotData.distance * 100) / 100;
 
-            var address = lotData.address;
-            var addressLine1 = address.split(",")[0];
-            var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
+                // Info window content
+                var html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + lotData.name +
+                      '</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                      '<div class="pull-right">' + distance + ' miles</div><br />';
 
-            // Conditions whether available parking should be green or red and spots singular or plural
-            if (lotData.spots_available == 0) {
-                var spots = "Spots";
-                var color = "red"
-            }
-            else if (lotData.spots_available == 1) {
-                var spots = "Spot";
-                var color = "green"
-            } else {
-                var spots = "Spots"
-                var color = "green";
-            }
+                var address = lotData.address;
+                var addressLine1 = address.split(",")[0];
+                var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
+
+                // Conditions whether available parking should be green or red and spots singular or plural
+                if (lotData.spots_available == 0) {
+                    var spots = "Spots";
+                    var color = "red"
+                }
+                else if (lotData.spots_available == 1) {
+                    var spots = "Spot";
+                    var color = "green"
+                } else {
+                    var spots = "Spots"
+                    var color = "green";
+                }
 
 
-            htmlMore = html;
-            html += addressLine1 + '<br />' + addressLine2 +
-                '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
-                'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
-                lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
-                '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
+                htmlMore = html;
+                html += addressLine1 + '<br />' + addressLine2 +
+                    '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
+                    'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
+                    lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
+                    '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
 
-            htmlMore += addressLine1 + '<br />' + addressLine2 + '<div>' +
-                '<a data-toggle="modal" data-target="#directionsModal">Get Directions</a>' +
-                '<div class="hide" id="parking-name">' + lotData.name +
-                '</div><div class="hide" id="address">' + address + '</div>' +
-                '<div id="latitude" class="hide">' + lotData.latitude + '</div>' +
-                '<div id="longitude" class="hide">' + lotData.longitude + '</div></div>' +
-                '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
-                'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
-                lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
+                htmlMore += addressLine1 + '<br />' + addressLine2 + '<div>' +
+                    '<a data-toggle="modal" data-target="#directionsModal">Get Directions</a>' +
+                    '<div class="hide" id="parking-name">' + lotData.name +
+                    '</div><div class="hide" id="address">' + address + '</div>' +
+                    '<div id="latitude" class="hide">' + lotData.latitude + '</div>' +
+                    '<div id="longitude" class="hide">' + lotData.longitude + '</div></div>' +
+                    '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
+                    'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
+                    lotData.spots_available + ' Available Parking ' + spots + '</strong></div>';
 
-            htmlMore += '<hr style="margin-top: 6px;">';
+                htmlMore += '<hr style="margin-top: 6px;">';
 
-            var regionTable = '<table style="width: 100%; padding-bottom: 30px;"><tr><td style="font-size: 14px;">' +
-                '<strong>Region</strong></td><td class="pull-right" style="font-size: 14px;"><strong>Available' +
-                '</strong></td></tr>';
+                var regionTable = '<table style="width: 100%; padding-bottom: 30px;"><tr><td style="font-size: 14px;">' +
+                    '<strong>Region</strong></td><td class="pull-right" style="font-size: 14px;"><strong>Available' +
+                    '</strong></td></tr>';
 
-            var l;
-            var r;
-            var regionTableBody = '';
+                var regionTableBody = '';
 
-            for (l = 0; l < lots.length; l++) {
-                var regions = lots[l].regions;
-                for (r = 0; r < regions.length; r++) {
-                    var lotId = regions[r].lot_id;
+                for (var l = 0; l < lots.length; l++) {
+                    var regions = lots[l].regions;
+                    for (var r = 0; r < regions.length; r++) {
+                        var lotId = regions[r].lot_id;
 
-                    if (lotDataId == lotId) {
-                        regionTableBody += '<tr><td>' + regions[r].name +
-                        '</td><td class="pull-right">' + regions[r].spots_available + '</td></tr>';
+                        if (lotDataId == lotId) {
+                            regionTableBody += '<tr><td>' + regions[r].name +
+                            '</td><td class="pull-right">' + regions[r].spots_available + '</td></tr>';
+                        }
                     }
                 }
+
+                regionTable += regionTableBody + '</table>';
+
+                htmlMore += regionTable + '<hr>' +
+                    '<div style="margin-left: 95px; margin-bottom: 0px; padding-bottom: 0px;"><small><i>Double click to close</i></small></div>';
+
+                bindInfoWindow(marker, infoWindow, html, htmlMore ,lotData.id);
+
+                createLotEntryWeb(marker, lotData);
+
+                allMarkers.push(marker);
+                marker.setMap(mainMap);
             }
+        }
 
-            regionTable += regionTableBody + '</table>';
+        function initializeAdditionalParking()
+        {
+            console.log(lots[18]);
 
-            htmlMore += regionTable + '<hr>' +
-                '<div style="margin-left: 95px; margin-bottom: 0px; padding-bottom: 0px;"><small><i>Double click to close</i></small></div>';
+            // San Carlos Plaza marker
+            var location = new google.maps.LatLng(lots[0].latitude, lots[0].longitude);
+            var marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "San Carlos Plaza");
+            additionalMarkers.push(marker);
+            //createLotEntryWeb(marker, data);
 
-            bindInfoWindow(marker, infoWindow, html, htmlMore ,lotData.id);
+            // MacQuarrie Quad marker
+            location = new google.maps.LatLng(lots[3].latitude, lots[3].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "MacQuarrie Quad");
+            additionalMarkers.push(marker);
 
-            createLotEntryWeb(marker, lotData);
+            // Spartan Memorial Paseo marker
+            location = new google.maps.LatLng(lots[7].latitude, lots[7].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "Spartan Memorial Paseo");
+            additionalMarkers.push(marker);
 
-            allMarkers.push(marker);
-            marker.setMap(mainMap);
+            // 7th Street Plaza marker
+            location = new google.maps.LatLng(lots[2].latitude, lots[2].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "7th Street Plaza");
+            additionalMarkers.push(marker);
+
+            // 9th Street Plaza marker
+            location = new google.maps.LatLng(lots[1].latitude, lots[1].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "9th Street Plaza");
+            additionalMarkers.push(marker);
+
+            // Street Parking
+            location = new google.maps.LatLng(lots[5].latitude, lots[5].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            additionalMarkers.push(marker);
+
+            // Street Parking
+            location = new google.maps.LatLng(lots[6].latitude, lots[6].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            additionalMarkers.push(marker);
+
+            // Street Parking
+            location = new google.maps.LatLng(lots[8].latitude, lots[8].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            additionalMarkers.push(marker);
+
+            // Street Parking
+            location = new google.maps.LatLng(lots[9].latitude, lots[9].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            additionalMarkers.push(marker);
+
+            // Public Parking
+            location = new google.maps.LatLng(lots[11].latitude, lots[11].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            additionalMarkers.push(marker);
+
+            // Public Parking
+            location = new google.maps.LatLng(lots[13].latitude, lots[13].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            additionalMarkers.push(marker);
+
+            // Public Parking
+            location = new google.maps.LatLng(lots[14].latitude, lots[14].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            additionalMarkers.push(marker);
+
+            // Public Parking
+            location = new google.maps.LatLng(lots[15].latitude, lots[15].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            additionalMarkers.push(marker);
+
+            // Public Parking
+            location = new google.maps.LatLng(lots[16].latitude, lots[16].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            additionalMarkers.push(marker);
+
+            // Public Parking
+            location = new google.maps.LatLng(lots[17].latitude, lots[17].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            additionalMarkers.push(marker);
+
+            // Park $ Ride
+            location = new google.maps.LatLng(lots[18].latitude, lots[18].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parkandride.png", "Park & Ride");
+            additionalMarkers.push(marker);
         }
 
         // Binds info window on hover
@@ -373,52 +464,32 @@
             return marker;
         }
 
+        // Show additional parking
         function addAdditionalMarkers()
         {
-            // San Carlos Plaza marker
-            var location = new google.maps.LatLng(37.335067, -121.879700);
-            var marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "San Carlos Plaza");
-            additionalMarkers.push(marker);
-            var data = {
-                'id': 4,
-                'distance': '---',
-                'address': 'San Carlos Plaza',
-                'name': 'Bicycle Enclosure Site',
-                'spots_available': null
-
-            };
-            createLotEntryWeb(marker, data);
-
-            // MacQuarrie Quad marker
-            location = new google.maps.LatLng(37.333473, -121.881512);
-            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "MacQuarrie Quad");
-            additionalMarkers.push(marker);
-
-            // Spartan Memorial Paseo marker
-            location = new google.maps.LatLng(37.333999, -121.883829);
-            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "Spartan Memorial Paseo");
-            additionalMarkers.push(marker);
-
-            // 7th Street Plaza marker
-            location = new google.maps.LatLng(37.336621, -121.882415);
-            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "7th Street Plaza");
-            additionalMarkers.push(marker);
-
-            // 9th Street Plaza marker
-            location = new google.maps.LatLng(37.337231, -121.880186);
-            marker = placeMarker(mainMap, location, true, "assets/images/parking_bicycle.png", "9th Street Plaza");
-            additionalMarkers.push(marker);
-        }
-
-        // Remove additional markers
-        function removeAdditionalMarkers()
-        {
-            while (additionalMarkers.length) {
-                additionalMarkers.pop().setMap(null);
+            // Go through each one
+            for (var i = 0; i < additionalMarkers.length; i++) {
+                additionalMarkers[i].setVisible(true);
             }
 
-            additionalMarkers.length = 0;
-            additionalMarkers = new Array();
+            // Set center and zoom
+            var centerLatLng = new google.maps.LatLng(37.329676, -121.876394);
+            mainMap.setCenter(centerLatLng);
+            mainMap.setZoom(15);
+        }
+
+        // Hide additional parking
+        function removeAdditionalMarkers()
+        {
+            // Go through each one
+            for (var i = 0; i < additionalMarkers.length; i++) {
+                additionalMarkers[i].setVisible(false);
+            }
+
+            // Set center and zoom
+            var centerLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
+            mainMap.setCenter(centerLatLng);
+            mainMap.setZoom(16);
         }
 
         // Create a lot entry to the sidebar for web
@@ -858,11 +929,11 @@
     <div class="content-wrapper">
         <div class="sidebar-map-area-wrapper">
             <div class="sidebar" id="sidebar">
-                <div class="all-parking-button-container">
+                <div class="additional-parking-button-container">
                     <div class="checkbox">
                         <label>
-                            <div class="btn all-parking-button">
-                                <input type="checkbox" id="all-parking">Additional Parking
+                            <div class="btn additional-parking-button">
+                                <input type="checkbox" id="additional-parking">Additional Parking
                             </div>
                         </label>
                     </div>
@@ -946,8 +1017,8 @@
         $(function() {
 
             // On click show or remove additional markers
-            $('#all-parking').click(function() {
-                if ($('#all-parking').is(':checked')) {
+            $('#additional-parking').click(function() {
+                if ($('#additional-parking').is(':checked')) {
                     addAdditionalMarkers();
                 } else {
                     removeAdditionalMarkers();

@@ -445,7 +445,7 @@ class WebController extends BaseController
                              ) AS d
                              WHERE distance <= radius
                              ORDER BY distance ASC
-                             LIMIT 15'
+                             LIMIT 50'
       );
 
       return $results;

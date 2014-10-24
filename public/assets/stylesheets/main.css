@@ -263,7 +263,7 @@ footer {
   .team {
     margin-top: 50px;
   }
-  .all-parking-button {
+  .additional-parking-button {
     width: 97%;
   }
   .side-box {
@@ -505,7 +505,7 @@ footer {
     padding-left: 3.5px;
     width: 320px;
   }
-  .all-parking-button {
+  .additional-parking-button {
     width: 300px;
   }
   .side-box {
@@ -1051,13 +1051,13 @@ ul#marker-list {
   height: 100%;
   width: 100%;
 }
-.all-parking-button-container {
+.additional-parking-button-container {
   background-color: #ffffff;
   border-bottom: 1px solid #EDEDED;
   padding-top: 10px;
   padding-bottom: 5px;
 }
-.all-parking-button {
+.additional-parking-button {
   background: rgba(255, 255, 255, 0.100);
   border: 1px solid rgba(201, 201, 201, 0.90);
   box-shadow: 0 3px 5px rgba(232, 232, 232, 0.50) inset, 0 0 1px rgba(232, 232, 232, 0.5) inset;
@@ -1070,7 +1070,7 @@ ul#marker-list {
   padding-bottom: 10px;
   padding-top: 10px;
 }
-.all-parking-button:hover {
+.additional-parking-button:hover {
   background: rgba(132, 132, 132, 0.08);
   border: 1px solid rgba(201, 201, 201, 0.90);
   box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
