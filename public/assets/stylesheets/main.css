@@ -1313,9 +1313,6 @@ div#map-directions-canvas {
 #map-directions-canvas {
   background: url(../images/loading.gif) center center no-repeat rgb(249, 249, 249);
 }
-#map-canvas {
-  background: url(../images/loading.gif) center center no-repeat rgb(249, 249, 249);
-}
 .adp-summary {
   padding:0 3px 3px
 }

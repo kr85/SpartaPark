@@ -4,10 +4,10 @@
     <script>
         // SJSU information
         var owner = {
-            'name': 'San Jose State University',
-            'address': '1 Washington Square, San Jose, CA 95192',
-            'phone': '(408) 924-1000',
-            'latitude': 37.3353235,
+            'name':      'San Jose State University',
+            'address':   '1 Washington Square, San Jose, CA 95192',
+            'phone':     '(408) 924-1000',
+            'latitude':  37.3353235,
             'longitude': -121.8804712
         };
 
@@ -29,8 +29,11 @@
         // Array of all markers
         var allMarkers;
 
-        // Info windows
-        var allInfoWindows;
+        // Info windows main map
+        var allInfoWindowsMainMap;
+
+        // Info windows directions map
+        var allInfoWindowsDirectionsMap;
 
         // All markers on directions map
         var directionsMapMarkers;
@@ -41,6 +44,7 @@
         // New directions service
         var directionsService = new google.maps.DirectionsService();
 
+        // Directions origin and destination marker icons
         var icons = {
             start: new google.maps.MarkerImage(
                 'assets/images/home.png',
@@ -59,15 +63,17 @@
         // Initialize the map
         function initialize()
         {
-            directionsDisplay = null;
-            latLngList = new Array();
-            bounds = new google.maps.LatLngBounds();
-            allMarkers = new Array();
-            allInfoWindows = new Array();
-            directionsMapMarkers = new Array();
+            directionsDisplay           = null;
+            latLngList                  = new Array();
+            bounds                      = new google.maps.LatLngBounds();
+            allMarkers                  = new Array();
+            allInfoWindowsMainMap       = new Array();
+            allInfoWindowsDirectionsMap = new Array();
+            directionsMapMarkers        = new Array();
 
             // New point with latitude and longitude
             var myLatLng = new google.maps.LatLng(owner.latitude, owner.longitude);
+
             // Add the point to the array
             latLngList.push(myLatLng);
 
@@ -118,11 +124,11 @@
             directionsMap = new google.maps.Map(document.getElementById("map-directions-canvas"), directionsMapOptions);
 
             // SJSU marker
-            var sjsuMarker = placeMarker(mainMap, myLatLng);
+            var sjsuMarker = placeMarker(mainMap, myLatLng, true);
 
             // SJSU info window
             var sjsuInfoWindow = new google.maps.InfoWindow;
-            allInfoWindows.push(sjsuInfoWindow);
+            allInfoWindowsMainMap.push(sjsuInfoWindow);
 
             // Creates maker's info window content
             var html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + owner.name +
@@ -140,7 +146,7 @@
             allMarkers.push(sjsuMarker);
 
             // Binds the info window to the marker for mouseover
-            bindInfoWindow(sjsuMarker, mainMap, sjsuInfoWindow, html, html);
+            bindInfoWindow(sjsuMarker, sjsuInfoWindow, html, html, null);
 
             // Initialize each lot point
             for (id in lots) {
@@ -177,7 +183,7 @@
             });
 
             var infoWindow = new google.maps.InfoWindow;
-            allInfoWindows.push(infoWindow);
+            allInfoWindowsMainMap.push(infoWindow);
 
             // Round distance to two decimal places
             var distance = Math.round(lotData.distance * 100) / 100;
@@ -258,13 +264,15 @@
         }
 
         // Binds info window on hover
-        function bindInfoWindow(marker, infoWindow, html, htmlMore ,id)
+        function bindInfoWindow(marker, infoWindow, html, htmlMore, id)
         {
             var infoWindowHover = infoWindow;
             var infoWindowClick = infoWindow;
 
-            // Lot id
-            var id = "lot-" + id;
+            if (id != null) {
+                // Lot id
+                var id = "lot-" + id;
+            }
 
             // Add mouseover listener
             mouseoverListener(marker, html);
@@ -274,7 +282,7 @@
 
             // Add click on marker listener
             google.maps.event.addListener(marker, 'click', function() {
-                closeAllInfoWindows();
+                closeAllInfoWindows(allInfoWindowsMainMap);
                 infoWindowClick.setContent(htmlMore);
                 infoWindowClick.open(mainMap, marker);
                 $("div").removeClass("lot-entry-hover");
@@ -289,7 +297,7 @@
 
             // Add click on map listener
             google.maps.event.addListener(mainMap, 'click', function() {
-                closeAllInfoWindows();
+                closeAllInfoWindows(allInfoWindowsMainMap);
                 $("div").removeClass("lot-entry-active");
                 $("div").removeClass("lot-entry-hover");
                 mouseoutListener(marker, html);
@@ -298,7 +306,7 @@
 
             // Add double click on marker listener
             google.maps.event.addListener(marker, 'dblclick', function() {
-                closeAllInfoWindows();
+                closeAllInfoWindows(allInfoWindowsMainMap);
                 $("div").removeClass("lot-entry-active");
                 $("div").removeClass("lot-entry-hover");
                 mouseoutListener(marker, html);
@@ -307,7 +315,7 @@
 
             // Add close info window listener
             google.maps.event.addListener(infoWindowClick, 'closeclick', function() {
-                closeAllInfoWindows();
+                closeAllInfoWindows(allInfoWindowsMainMap);
                 $("#" + id).removeClass("lot-entry-active");
                 $("#" + id).removeClass("lot-entry-hover");
                 mouseoutListener(marker, html);
@@ -317,19 +325,19 @@
             // Helper function for marker mouseover effects
             function mouseoverListener(marker, html)
             {
-                    google.maps.event.addListener(marker, 'mouseover', function() {
-                        infoWindowHover.setContent(html);
-                        infoWindowHover.open(mainMap, marker);
-                        $("div").removeClass("lot-entry-hover");
-                        $("#" + id).addClass("lot-entry-hover");
-                    });
+                google.maps.event.addListener(marker, 'mouseover', function() {
+                    infoWindowHover.setContent(html);
+                    infoWindowHover.open(mainMap, marker);
+                    $("div").removeClass("lot-entry-hover");
+                    $("#" + id).addClass("lot-entry-hover");
+                });
             }
 
             // Helper function for marker mouseout effects
             function mouseoutListener(marker, html)
             {
                 google.maps.event.addListener(marker, 'mouseout', function() {
-                    closeAllInfoWindows();
+                    closeAllInfoWindows(allInfoWindowsMainMap);
                     $("#" + id).removeClass("lot-entry-active");
                     $("#" + id).removeClass("lot-entry-hover");
                 });
@@ -337,22 +345,31 @@
         }
 
         // Close any open info windows
-        function closeAllInfoWindows()
+        function closeAllInfoWindows(infoWindowList)
         {
-            var i;
-            for (i = 0; i < allInfoWindows.length; i++) {
-                allInfoWindows[i].close();
+            for (var i = 0; i < infoWindowList.length; i++) {
+                infoWindowList[i].close();
             }
         }
 
         // Places a new marker
-        function placeMarker(map, location)
+        function placeMarker(map, location, isVisible, icon, name)
         {
             var marker = new google.maps.Marker({
-                position: location
+                position: location,
+                map: map,
+                visible: isVisible
             });
 
-            marker.setMap(map);
+            // Check if icon is null
+            if (icon != null) {
+                marker.setIcon(icon);
+            }
+
+            // Check if name is null
+            if (name != null) {
+                marker.setTitle(name);
+            }
 
             return marker;
         }
@@ -392,6 +409,7 @@
             li.innerHTML = html;
             ul.appendChild(li);
 
+            // Add dom listeners
             addDomListenerMouseover(li, marker);
             addDomListenerMouseout(li, marker);
             addDomListenerClick(li, marker);
@@ -439,6 +457,14 @@
             $('.parking-name a').html(name);
         }
 
+        // Clear directions map
+        function clearDirectionsMap()
+        {
+            clearDirectionsMapMarkers();
+            clearDirectionsDisplay();
+            closeAllInfoWindows(allInfoWindowsDirectionsMap);
+        }
+
         // Display destination marker
         function displayDestinationMarker()
         {
@@ -447,22 +473,17 @@
             var longitude = $('#longitude').text();
             var destinationLatLng = new google.maps.LatLng(latitude, longitude);
 
-            clearDirectionsMapMarkers();
-            clearDirectionsDisplay();
+            // Clear directions map
+            clearDirectionsMap();
 
-                // New marker
-                var parkingMarker = new google.maps.Marker({
-                    position: destinationLatLng,
-                    map: directionsMap,
-                    title: name,
-                    icon: "assets/images/parkinggarage3.png"
-                });
+            // Destination marker
+            var parkingMarker = placeMarker(directionsMap, destinationLatLng, true, "assets/images/parkinggarage3.png", name);
 
-                directionsMapMarkers.push(parkingMarker);
+            directionsMapMarkers.push(parkingMarker);
 
-                parkingMarker.setMap(directionsMap);
-                directionsMap.setCenter(destinationLatLng);
-                directionsMap.setZoom(17);
+            parkingMarker.setMap(directionsMap);
+            directionsMap.setCenter(destinationLatLng);
+            directionsMap.setZoom(17);
         }
 
         // Calculate route and pin markers
@@ -476,8 +497,7 @@
             };
 
             // Clear directions map
-            clearDirectionsMapMarkers();
-            clearDirectionsDisplay();
+            clearDirectionsMap()
 
             // Create a new directions renderer
             directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
@@ -527,6 +547,7 @@
 
                     // Add the destination marker to the directions map markers array
                     directionsMapMarkers.push(destinationMarker);
+
                 } else {
                     if (status == 'ZERO_RESULTS') {
                         alert('No route found between the origin and destination points.');
@@ -593,16 +614,13 @@
             var position = leg.start_location;
 
             // Add start location as a marker to the map
-            var marker = new google.maps.Marker({
-                position: position,
-                map: directionsMap,
-            });
+            var marker = placeMarker(directionsMap, position, false, null, null);
 
-            // Make marker invisible
-            marker.setVisible(false);
+            var infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsDirectionsMap.push(infoWindow);
 
             // Add a custom listener to the marker
-            addListenerMarkerClick(marker);
+            addListenerMarkerClick(marker, infoWindow, leg.start_address);
 
             // Add a dom listener to the row
             addDomListenerClick(tr, marker)
@@ -640,16 +658,13 @@
             var position = leg.end_location;
 
             // Add end location as a marker to the map
-            var marker = new google.maps.Marker({
-                position: position,
-                map: directionsMap,
-            });
+            var marker = placeMarker(directionsMap, position, false, null, null);
 
-            // Make marker invisible
-            marker.setVisible(false);
+            var infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsDirectionsMap.push(infoWindow);
 
             // Add a custom listener to the marker
-            addListenerMarkerClick(marker);
+            addListenerMarkerClick(marker, infoWindow, leg.end_address);
 
             // Add a dom listener to the row
             addDomListenerClick(tr, marker)
@@ -665,16 +680,13 @@
                 var position = leg.steps[i].start_location;
 
                 // Add step as a marker to the map
-                var marker = new google.maps.Marker({
-                    position: position,
-                    map: directionsMap,
-                });
+                var marker = placeMarker(directionsMap, position, false, null, null);
 
-                // Make marker invisible
-                marker.setVisible(false);
+                var infoWindow = new google.maps.InfoWindow;
+                allInfoWindowsDirectionsMap.push(infoWindow);
 
                 // Add a custom listener to the marker
-                addListenerMarkerClick(marker);
+                addListenerMarkerClick(marker, infoWindow, leg.steps[i].instructions);
 
                 // Add the step to the directions text panel
                 addDirectionsSteps(stepsTable, marker, leg.steps[i], i);
@@ -717,15 +729,18 @@
             }
 
             // Add a dom listener to the row
-            addDomListenerClick(tr, marker)
+            addDomListenerClick(tr, marker);
         }
 
         // Add a custom marker click listener
-        function addListenerMarkerClick(marker)
+        function addListenerMarkerClick(marker, infoWindow, html)
         {
             google.maps.event.addListener(marker, 'click', function() {
-                directionsMap.setZoom(17);
+                closeAllInfoWindows(allInfoWindowsDirectionsMap);
+                infoWindow.setContent(html);
+                infoWindow.open(directionsMap, marker);
                 directionsMap.setCenter(marker.getPosition());
+                directionsMap.setZoom(17);
             });
         }
 
@@ -936,8 +951,7 @@
 
                 // Submit get directios form
                 $('#calculate-route').submit(function(event) {
-                    clearDirectionsMapMarkers();
-                    clearDirectionsDisplay();
+                    clearDirectionsMap();
                     event.preventDefault();
                     var origin = $('#directions-origin').val();
                     var destination = $('#address').text();
@@ -951,8 +965,7 @@
             $('#directionsModal').on('shown.bs.modal', function() {
 
                 // Clear directions map
-                clearDirectionsMapMarkers();
-                clearDirectionsDisplay();
+                clearDirectionsMap();
 
                 // Get center, set and resize the map
                 var center = directionsMap.getCenter();
@@ -973,8 +986,7 @@
                 var boxHeight = 278;
 
                 // Clear directions map
-                clearDirectionsMapMarkers();
-                clearDirectionsDisplay();
+                clearDirectionsMap();
 
                 // Clear directions panel
                 $('#directions-panel').empty();
