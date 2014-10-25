@@ -153,7 +153,7 @@ class LotsTableSeeder extends Seeder
 
       Lot::create(array(
          'name'      => 'Street Parking',
-         'address'   => '150-450 E San Salvador Street (between S 4th St and S 10th St), San Jose, CA 95112',
+         'address'   => '150-450 E San Salvador St (between S 4th St and S 10th St), San Jose, CA 95112',
          'owner_id'  => '2',
          'longitude' => '-121.877987',
          'latitude'  => '37.333839'

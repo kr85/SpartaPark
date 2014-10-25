@@ -187,6 +187,7 @@
                 // Place marker on each point
                 var marker = placeMarker(mainMap, lotLatLng, true, "assets/images/parkinggarage3.png", lotData.name);
 
+                // Marker's info window
                 var infoWindow = new google.maps.InfoWindow;
                 allInfoWindowsMainMap.push(infoWindow);
 
@@ -221,7 +222,7 @@
                     '<hr><div style="color: ' + color + '; font-size: 16px; font-weight: bolder; ' +
                     'vertical-align: middle; text-align: center; padding-bottom: 14px;"><strong>' +
                     lotData.spots_available + ' Available Parking ' + spots + '</strong></div>' +
-                    '<div style="text-align: center;"><small><i>Click for more info</i></small></div>';
+                    '<div style="text-align: center; padding-left: 20px;"><small><i>Click for more info</i></small></div>';
 
                 htmlMore += addressLine1 + '<br />' + addressLine2 + '<div>' +
                     '<a data-toggle="modal" data-target="#directionsModal">Get Directions</a>' +
@@ -267,105 +268,266 @@
             }
         }
 
+        // Initialize additional parking
         function initializeAdditionalParking()
         {
-            console.log(lots[18]);
-
-            // San Carlos Plaza marker
-            var location = new google.maps.LatLng(lots[0].latitude, lots[0].longitude);
-            var marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "San Carlos Plaza");
+            // Park & Ride
+            var location = new google.maps.LatLng(lots[18].latitude, lots[18].longitude);
+            var marker = placeMarker(mainMap, location, false, "assets/images/parkandride.png", "Park & Ride");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
-            createLotEntryWeb(marker, lots[0]);
-
-            // MacQuarrie Quad marker
-            location = new google.maps.LatLng(lots[3].latitude, lots[3].longitude);
-            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "MacQuarrie Quad");
-            additionalMarkers.push(marker);
-            createLotEntryWeb(marker, lots[3]);
-
-            // Spartan Memorial Paseo marker
-            location = new google.maps.LatLng(lots[7].latitude, lots[7].longitude);
-            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "Spartan Memorial Paseo");
-            additionalMarkers.push(marker);
-            createLotEntryWeb(marker, lots[7]);
-
-            // 7th Street Plaza marker
-            location = new google.maps.LatLng(lots[2].latitude, lots[2].longitude);
-            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "7th Street Plaza");
-            additionalMarkers.push(marker);
-            createLotEntryWeb(marker, lots[2]);
-
-            // 9th Street Plaza marker
-            location = new google.maps.LatLng(lots[1].latitude, lots[1].longitude);
-            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "9th Street Plaza");
-            additionalMarkers.push(marker);
-            createLotEntryWeb(marker, lots[1]);
+            var infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            var html = createInfoWindowPublicParkingContent(lots[18], false);
+            var htmlMore = createInfoWindowPublicParkingContent(lots[18], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[18].id);
+            createLotEntryWeb(marker, lots[18]);
 
             // Street Parking
             location = new google.maps.LatLng(lots[5].latitude, lots[5].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[5], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[5], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[5].id);
             createLotEntryWeb(marker, lots[5]);
 
             // Street Parking
             location = new google.maps.LatLng(lots[6].latitude, lots[6].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[6], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[6], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[6].id);
             createLotEntryWeb(marker, lots[6]);
 
             // Street Parking
             location = new google.maps.LatLng(lots[8].latitude, lots[8].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[8], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[8], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[8].id);
             createLotEntryWeb(marker, lots[8]);
 
             // Street Parking
             location = new google.maps.LatLng(lots[9].latitude, lots[9].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking-meter-export.png", "Street Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[9], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[9], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[9].id);
             createLotEntryWeb(marker, lots[9]);
 
             // Public Parking
             location = new google.maps.LatLng(lots[11].latitude, lots[11].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[11], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[11], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[11].id);
             createLotEntryWeb(marker, lots[11]);
 
             // Public Parking
             location = new google.maps.LatLng(lots[13].latitude, lots[13].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[13], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[13], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[13].id);
             createLotEntryWeb(marker, lots[13]);
 
             // Public Parking
             location = new google.maps.LatLng(lots[14].latitude, lots[14].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[14], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[14], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[14].id);
             createLotEntryWeb(marker, lots[14]);
 
             // Public Parking
             location = new google.maps.LatLng(lots[15].latitude, lots[15].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[15], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[15], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[15].id);
             createLotEntryWeb(marker, lots[15]);
 
             // Public Parking
             location = new google.maps.LatLng(lots[16].latitude, lots[16].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[16], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[16], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[16].id);
             createLotEntryWeb(marker, lots[16]);
 
             // Public Parking
             location = new google.maps.LatLng(lots[17].latitude, lots[17].longitude);
             marker = placeMarker(mainMap, location, false, "assets/images/parking.png", "Public Parking");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowPublicParkingContent(lots[17], false);
+            htmlMore = createInfoWindowPublicParkingContent(lots[17], true);
+            bindInfoWindow(marker, infoWindow, html, htmlMore, lots[17].id);
             createLotEntryWeb(marker, lots[17]);
 
-            // Park $ Ride
-            location = new google.maps.LatLng(lots[18].latitude, lots[18].longitude);
-            marker = placeMarker(mainMap, location, false, "assets/images/parkandride.png", "Park & Ride");
+            // San Carlos Plaza marker
+            location = new google.maps.LatLng(lots[0].latitude, lots[0].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "San Carlos Plaza");
+            allMarkers.push(marker);
             additionalMarkers.push(marker);
-            createLotEntryWeb(marker, lots[18]);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            var html = createInfoWindowBesContent(lots[0]);
+            bindInfoWindow(marker, infoWindow, html, html, lots[0].id);
+            createLotEntryWeb(marker, lots[0]);
+
+            // MacQuarrie Quad marker
+            location = new google.maps.LatLng(lots[3].latitude, lots[3].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "MacQuarrie Quad");
+            allMarkers.push(marker);
+            additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowBesContent(lots[3]);
+            bindInfoWindow(marker, infoWindow, html, html ,lots[3].id);
+            createLotEntryWeb(marker, lots[3]);
+
+            // Spartan Memorial Paseo marker
+            location = new google.maps.LatLng(lots[7].latitude, lots[7].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "Spartan Memorial Paseo");
+            allMarkers.push(marker);
+            additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowBesContent(lots[7]);
+            bindInfoWindow(marker, infoWindow, html, html ,lots[7].id);
+            createLotEntryWeb(marker, lots[7]);
+
+            // 7th Street Plaza marker
+            location = new google.maps.LatLng(lots[2].latitude, lots[2].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "7th Street Plaza");
+            allMarkers.push(marker);
+            additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowBesContent(lots[2]);
+            bindInfoWindow(marker, infoWindow, html, html ,lots[2].id);
+            createLotEntryWeb(marker, lots[2]);
+
+            // 9th Street Plaza marker
+            location = new google.maps.LatLng(lots[1].latitude, lots[1].longitude);
+            marker = placeMarker(mainMap, location, false, "assets/images/parking_bicycle.png", "9th Street Plaza");
+            allMarkers.push(marker);
+            additionalMarkers.push(marker);
+            infoWindow = new google.maps.InfoWindow;
+            allInfoWindowsMainMap.push(infoWindow);
+            html = createInfoWindowBesContent(lots[1]);
+            bindInfoWindow(marker, infoWindow, html, html ,lots[1].id);
+            createLotEntryWeb(marker, lots[1]);
+        }
+
+        // Create info window content for bicycle enclosure sites
+        function createInfoWindowBesContent(lotData)
+        {
+            // Info window content
+            var html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + lotData.name +
+                '</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<div class="pull-right"></div><br />';
+
+            var address = lotData.address;
+            var addressLine1 = address.split(",")[0];
+            if (address.split(",")[2]) {
+                var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
+            } else {
+                var addressLine2 = address.split(",")[1];
+            }
+
+            html += addressLine1 + '<br />' + addressLine2;
+
+            return html;
+        }
+
+        function createInfoWindowPublicParkingContent(lotData, isClicked)
+        {
+            // Html content variable
+            var html;
+
+            // Round distance to two decimal places
+            var distance = Math.round(lotData.distance * 100) / 100;
+
+            // Info window content
+            html = '<strong style="font-size: 15px; line-height: 1.5; margin-bottom: 10px;">' + lotData.name +
+                '</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<div class="pull-right">' + distance + ' miles</div><br />';
+
+            // Formats the address
+            var address = lotData.address;
+            if (address.split(",")[0].indexOf('(') === -1) {
+                var addressLine1 = address.split(",")[0];
+            } else {
+                var addressLine1 = address.split(",")[0];
+                addressLine1 = addressLine1.split("(")[0] + '<br />(' + addressLine1.split("(")[1];
+            }
+            if (address.split(",")[2]) {
+                var addressLine2 = address.split(",")[1] + ", " + address.split(",")[2];
+            } else {
+                var addressLine2 = address.split(",")[1];
+            }
+
+            // Check if isClicked is true or false
+            if (!isClicked) {
+
+                html += addressLine1 + '<br />' + addressLine2 +
+                    '<hr><div style="text-align: center; padding-left: 20px;"><small><i>Click for more info</i></small></div>';
+
+            } else {
+
+                html += addressLine1 + '<br />' + addressLine2 + '<div>' +
+                    '<a data-toggle="modal" data-target="#directionsModal">Get Directions</a>' +
+                    '<div class="hide" id="parking-name">' + lotData.name +
+                    '</div><div class="hide" id="address">' + address + '</div>' +
+                    '<div id="latitude" class="hide">' + lotData.latitude + '</div>' +
+                    '<div id="longitude" class="hide">' + lotData.longitude + '</div></div>' +
+                    '<hr><div style="text-align: center; padding-left: 20px;"><small><i>Double click to close</i></small></div>';
+            }
+
+
+            return html;
         }
 
         // Binds info window on hover
@@ -521,7 +683,7 @@
 
                 var distance = Math.round(lotData.distance * 100) / 100;
 
-                var html = '<div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container">' +
+                var html = '<div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container unselectable">' +
                     '<div class="lot-entry-name" id="lot-name">' + lotData.name + '</div>' +
                     '<div class="pull-right" id="lot-distance">' + distance + ' miles</div><br />';
 
@@ -547,10 +709,20 @@
             } else {
 
                 var distance = Math.round(lotData.distance * 100) / 100;
+                var moreInfo;
 
-                var html = '<div id="additional-sidebar-' + (lotData.id - 4) + '" class="hide"><div class="lot-entry" id="lot-' + lotData.id + '"><div class="lot-entry-container">' +
+                if (lotData.name === "Bicycle Enclosure Site") {
+                    distance = '&mdash;';
+                    moreInfo = '';
+                } else {
+                    distance = distance + ' miles';
+                    moreInfo = 'Click for more info';
+                }
+
+                var html = '<div id="additional-sidebar-' + (lotData.id - 4) + '" class="hide"><div class="lot-entry" id="lot-' +
+                    lotData.id + '"><div class="lot-entry-container unselectable">' +
                     '<div class="lot-entry-name" id="lot-name">' + lotData.name + '</div>' +
-                    '<div class="pull-right" id="lot-distance">' + distance + ' miles</div><br />';
+                    '<div class="pull-right" id="lot-distance">' + distance + '</div><br />';
 
                 var address = lotData.address;
                 if (address.split(",")[0].indexOf('(') === -1) {
@@ -565,7 +737,7 @@
                     var addressLine2 = address.split(",")[1];
                 }
 
-                html += addressLine1 + '<br />' + addressLine2 + '<div style="display: inline;" class="pull-right"><small><i>Click for more info</i></small></div></div>';
+                html += addressLine1 + '<br />' + addressLine2 + '<div style="display: inline;" class="pull-right"><small><i>' + moreInfo + '</i></small></div></div>';
             }
 
             li.innerHTML = html;
@@ -612,7 +784,18 @@
         // Displays destination name and address to form
         function displayDestinationName()
         {
-            var address = $('#address').text();
+            var address;
+            // Format the address
+            if ($('#address').text().indexOf('(') === -1) {
+                address = $('#address').text();
+            } else {
+                var a = $('#address').text();
+                var a1 = a.split("(")[0];
+                var a2 = a.split(")")[1];
+
+                address = a1 + a2;
+            }
+
             var name = $('#parking-name').text();
             $('.parking-address address').html(address);
             $('.parking-name a').html(name);
@@ -638,7 +821,7 @@
             clearDirectionsMap();
 
             // Destination marker
-            var parkingMarker = placeMarker(directionsMap, destinationLatLng, true, "assets/images/parkinggarage3.png", name);
+            var parkingMarker = placeMarker(directionsMap, destinationLatLng, true, "assets/images/parking.png", name);
 
             directionsMapMarkers.push(parkingMarker);
 
@@ -658,7 +841,7 @@
             };
 
             // Clear directions map
-            clearDirectionsMap()
+            clearDirectionsMap();
 
             // Create a new directions renderer
             directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
@@ -700,11 +883,22 @@
                     // Add the origin marker to the directions map markers array
                     directionsMapMarkers.push(originMarker);
 
-                    // Get directions destination value
-                    var destination = $('#address').text();
+                    // Destination value
+                    var destination;
+                    // Destination marker
+                    var destinationMarker;
+                    if ($('#parking-name').text() === "Street Parking") {
+                        var latitude = $('#latitude').text();
+                        var longitude = $('#longitude').text();
+                        destination = new google.maps.LatLng(latitude, longitude);
+                        destinationMarker = addDirectionsMarker(destination, icons.end, $('#parking-name').text());
+                    } else {
+                        destination = $('#address').text();
+                        destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
+                    }
 
                     // Add the destination marker
-                    var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
+                    //var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
 
                     // Add the destination marker to the directions map markers array
                     directionsMapMarkers.push(destinationMarker);
@@ -1089,7 +1283,14 @@
                         function(results, status) {
                             if (status = google.maps.GeocoderStatus.OK) {
                                 $('#directions-origin').val("My Location");
-                                var destination = $('#address').text();
+                                var destination;
+                                if ($('#parking-name').text() === "Street Parking") {
+                                    var latitude = $('#latitude').text();
+                                    var longitude = $('#longitude').text();
+                                    destination = new google.maps.LatLng(latitude, longitude);
+                                } else {
+                                    destination = $('#address').text();
+                                }
                                 calculateRoute(pos, destination);
                                 setupDirectionsPanelStyles();
                             } else {
@@ -1126,7 +1327,15 @@
                     clearDirectionsMap();
                     event.preventDefault();
                     var origin = $('#directions-origin').val();
-                    var destination = $('#address').text();
+                    var destination;
+                    if ($('#parking-name').text() === "Street Parking") {
+                        var latitude = $('#latitude').text();
+                        var longitude = $('#longitude').text();
+                        destination = new google.maps.LatLng(latitude, longitude);
+                    } else {
+                        destination = $('#address').text();
+                    }
+
                     calculateRoute(origin, destination);
                 });
 

@@ -1416,3 +1416,10 @@ div#map-directions-canvas {
 .adp-substep .adp-stepicon .adp-maneuver {
   background-image: url(../images/maneuvers.png);
 }
+.unselectable {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  -o-user-select: none;
+  user-select: none;
+}
