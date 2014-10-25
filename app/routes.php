@@ -8,9 +8,11 @@
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-/**
- * General Exceptions
- */
+/*
+ |--------------------------------------------------------------------------
+ |  General Exceptions
+ |--------------------------------------------------------------------------
+*/
 App::error(function(Exception $exception)
 {
    if(Config::get('app.debug') === true) {
@@ -20,8 +22,10 @@ App::error(function(Exception $exception)
    return View::make('error');
 });
 
-/**
- * 404 Exception
+/*
+ |--------------------------------------------------------------------------
+ | 404 Exception
+ |--------------------------------------------------------------------------
  */
 App::error(function(NotFoundHttpException $exception)
 {
@@ -33,10 +37,10 @@ App::error(function(NotFoundHttpException $exception)
 });
 
 /*
-|--------------------------------------------------------------------------
-| Web Service Routes
-|--------------------------------------------------------------------------
-*/
+ |--------------------------------------------------------------------------
+ | Web Service Routes
+ |--------------------------------------------------------------------------
+ */
 
 Route::get('/', array(
    'as'   => 'index',
