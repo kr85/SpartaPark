@@ -1430,12 +1430,15 @@
                     scrollboxWidth = 360;
 
                 // Style side-box and sctoll-box
-                $('.side-box').css('height', (windowHeight - bottomOffset));
-                $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
-                $('#scroll-box').css('width', scrollboxWidth);
+                if ($('#directions-origin').val() !== "") {
+                    $('.side-box').css('height', (windowHeight - bottomOffset));
+                    $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
+                    $('#scroll-box').css('width', scrollboxWidth);
 
-                // Remove hide class
-                $('#directions-panel-break').removeClass('hide');
+
+                    // Remove hide class
+                    $('#directions-panel-break').removeClass('hide');
+                }
             }
         });
     </script>

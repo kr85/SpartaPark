@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/LotsTableSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" afterPath="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +46,7 @@
       <file leaf-file-name="availableparking.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="886" column="36" selection-start="38495" selection-end="38495" vertical-scroll-proportion="0.38588235" vertical-offset="12962" max-vertical-offset="21705">
+            <state line="1437" column="0" selection-start="62031" selection-end="62031" vertical-scroll-proportion="0.85882354" vertical-offset="20825" max-vertical-offset="21750">
               <folding />
             </state>
           </provider>
@@ -830,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="886" column="36" selection-start="38495" selection-end="38495" vertical-scroll-proportion="0.38588235" vertical-offset="12962" max-vertical-offset="21705">
+        <state line="1437" column="0" selection-start="62031" selection-end="62031" vertical-scroll-proportion="0.85882354" vertical-offset="20825" max-vertical-offset="21750">
           <folding />
         </state>
       </provider>
