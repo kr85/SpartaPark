@@ -25,4 +25,28 @@ class EloquentRegionRepository extends AbstractEloquentRepository implements Reg
       parent::__construct($region);
       $this->region = $region;
    }
+
+   /**
+    * Update region
+    *
+    * @param $id region id
+    * @param array $data new data
+    * @return Region updated region or false
+    */
+   public function update($id, array $data)
+   {
+      // Finds the region by id
+      $region = $this->region->find($id);
+
+      // If region doesn't exist return false
+      if (!$region) {
+         return false;
+      }
+
+      // Updates occupied spots
+      $region->spots_occupied = $data['spots_occupied'];
+      $region->save();
+
+      return $region;
+   }
 }

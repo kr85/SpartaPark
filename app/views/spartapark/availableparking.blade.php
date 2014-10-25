@@ -1429,12 +1429,13 @@
                     bottomOffset = 240,
                     scrollboxWidth = 360;
 
-                // Style side-box and sctoll-box
+                // Check if origin field is empty
                 if ($('#directions-origin').val() !== "") {
+
+                    // Style side-box and sctoll-box
                     $('.side-box').css('height', (windowHeight - bottomOffset));
                     $('#scroll-box').css('height', (windowHeight - bottomOffset - 8));
                     $('#scroll-box').css('width', scrollboxWidth);
-
 
                     // Remove hide class
                     $('#directions-panel-break').removeClass('hide');

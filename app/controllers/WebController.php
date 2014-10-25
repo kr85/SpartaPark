@@ -479,7 +479,7 @@ class WebController extends BaseController
       // Get image
       $image = Input::file('image');
       // Destination
-      $destinationPath = 'uploads';
+      $destinationPath = 'uploads/new';
       // Image name
       $filename = str_random(12);
 
@@ -494,11 +494,51 @@ class WebController extends BaseController
          'image'       => $uploadSuccess->getPath() . '/' . $uploadSuccess->getFilename()
       ));
 
+      $this->updateSpotsAvailable($newEntry);
+
       // Checks if image was stored successfully
       if ($uploadSuccess && $newEntry) {
          return Response::json('Success', 200);
       } else {
          return Response::json('Error', 400);
       }
+   }
+
+   public function updateSpotsAvailable($entry)
+   {
+      $image = $entry->image;
+      $lot_id = $entry->lot_id;
+      $region_id = $entry->region_id;
+      $orientation = $entry->orientation;
+
+      if ($this->isCar($image)) {
+
+         $region = $this->regionRepository->find($region_id, array());
+         $spotsOccupied = json_decode($region->spots_occupied);
+
+         if ($region) {
+            if (strcasecmp(strtolower($orientation), 'entrance') == 0) {
+
+               $this->regionRepository->update($region->id, array(
+                  'spots_occupied' => ($spotsOccupied - 1)
+               ));
+            } else if (strcasecmp(strtolower($orientation), 'exit') == 0) {
+               $this->regionRepository->update($region->id, array(
+                  'spots_occupied' => ($spotsOccupied + 1)
+               ));
+            }
+         }
+      }
+   }
+
+   /**
+    * Check if the object in the picture is a car
+    *
+    * @param $image image
+    * @return bool return true or false
+    */
+   public function isCar($image)
+   {
+      return true;
    }
 }
