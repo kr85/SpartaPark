@@ -10,7 +10,9 @@ use SpartaPark\Repository\Entranxit\EntranxitRepository;
  */
 class WebController extends BaseController
 {
-
+   /**
+    * @var SpartaPark\Repository\Owner\OwnerRepository owner repository
+    */
    protected $ownerRepository;
 
    /**
