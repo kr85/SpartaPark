@@ -518,6 +518,16 @@ footer {
     margin-left: 343px;
     margin-top: 18px;
   }
+  .static-map {
+    background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=37.336,-121.881&zoom=16&size=500x500&scale=2&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3323731,-121.8830326&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3331113,-121.8808485&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.339324,-121.880713);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 500px 500px;
+    height: 500px;
+    width: 500px;
+    padding: 0;
+    margin: 0;
+  }
 }
 @media (min-width: 990px) and (max-width: 1200px) {
   .about {

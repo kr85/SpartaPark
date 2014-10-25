@@ -897,9 +897,6 @@
                         destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
                     }
 
-                    // Add the destination marker
-                    //var destinationMarker = addDirectionsMarker(leg.end_location, icons.end, destination);
-
                     // Add the destination marker to the directions map markers array
                     directionsMapMarkers.push(destinationMarker);
 
