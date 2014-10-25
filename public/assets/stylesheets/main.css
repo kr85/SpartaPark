@@ -488,9 +488,15 @@ footer {
     padding-right: 0;
     padding-left: 0;
     float: left;
-    min-width: 350px;
+    min-width: 385px;
     margin-right: -15px;
-    margin-left: -5px;
+    margin-left: 0;
+    min-height: 500px;
+    overflow: auto;
+  }
+  .sidebar-container {
+    overflow: auto;
+    overflow-x: hidden;
   }
   .directions-map-area-wrapper .directions {
     position: relative;
@@ -502,7 +508,7 @@ footer {
     margin-left: 15px;
   }
   .checkbox {
-    padding-left: 3.5px;
+    padding-left: 8px;
     width: 320px;
   }
   .additional-parking-button {
@@ -1027,7 +1033,7 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   background-color: rgba(0, 141, 255, 0.30);
 }
 .lot-entry-container {
-  padding: 10px 30px 10px 20px;
+  padding: 10px 25px 10px 20px;
 }
 .lot-entry-name {
   font-weight: bolder;
@@ -1037,6 +1043,9 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
 ul#marker-list {
   list-style-type: none;
   margin-left: -40px;
+  min-height: 500px;
+  overflow: auto;
+  overflow-x: hidden;
 }
 #lot-name, #lot-distance {
   display: inline;
