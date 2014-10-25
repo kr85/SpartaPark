@@ -35,7 +35,7 @@
     </div><!-- End carousel-inner -->
     <div class="container carousel-overlay text-center z-index-10">
         <h1>SpartaPark</h1>
-        <p class="lead">Guidance Parking System For San Jose State University</p>
+        <p class="lead">Guidance Parking System for San José State University</p>
     </div>
     <!-- Carousel controls -->
     <a class="carousel-control left z-index-10" href="#bg-fade-carousel" data-slide="prev">
