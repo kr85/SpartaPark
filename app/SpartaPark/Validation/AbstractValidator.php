@@ -8,24 +8,29 @@
 abstract class AbstractValidator
 {
    /**
-    * @var Validation instance
-    */
-   protected $validator;
-
-   /**
-    * @var Validation rules
+    * @var array Validation rules
     */
    protected $rules;
 
    /**
     * @var array input to be validated
     */
-   protected $input = array();
+   protected $input;
 
    /**
     * @var array Validation errors
     */
-   protected $errors = array();
+   protected $errors;
+
+   /**
+    * Constructor
+    */
+   public function __construct()
+   {
+      $this->rules = array();
+      $this->input = array();
+      $this->errors = array();
+   }
 
    /**
     * Passes the validation rules with input
