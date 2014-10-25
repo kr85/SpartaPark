@@ -63,31 +63,6 @@ Route::get('parking', array(
    'uses' => 'WebController@getAvailableParking'
 ));
 
-Route::get('get_directions/address/{address}', array(
-   'as'   => 'get_directions',
-   'uses' => 'WebController@getDirections'
-))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');
-
-Route::post('get_directions', array(
-   'as'   => 'post_directions',
-   'uses' => 'WebController@postDirections'
-));
-
-Route::get('address/{address}', array(
-   'as'   => 'lots.near.address.web',
-   'uses' => 'WebController@getLotsNearAddress'
-))->where('address', '[0-9a-zA-Z\-\,\_\ \+]+');
-
-Route::get('current_location', array(
-   'as'   => 'current.location',
-   'uses' => 'WebController@getCoordinates'
-));
-
-Route::get('current_location/latitude/{latitude}/longitude/{longitude}', array(
-   'as'   => 'lots.near.current.location',
-   'uses' => 'WebController@getLotsNearCoordinates'
-))->where('longitude', '[0-9\.\-]+', 'latitude', '[0-9\.\-]+');
-
 Route::post('api/upload_image/lot_id/{lot_id}/region_id/{region_id}/orientation/{orientation}', array(
    'as'     => 'upload.images',
    'before' => 'raspberry_pi',
