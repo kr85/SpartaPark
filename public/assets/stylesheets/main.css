@@ -628,6 +628,9 @@ footer {
   right: 0;
   left: 0;
 }
+.z-index-10 {
+  z-index: 10;
+}
 .navbar-default .navbar-brand {
   color: rgb(28, 138, 251);
 }

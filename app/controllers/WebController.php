@@ -111,7 +111,7 @@ class WebController extends BaseController
 
       // Check if validator passes
       if ($validation->passes()) {
-         
+
          // Send email
          Mail::send('emails.notify', $data, function($message) use ($data)
          {

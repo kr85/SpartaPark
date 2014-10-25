@@ -33,15 +33,15 @@
             <div class="slide10"></div>
         </div>
     </div><!-- End carousel-inner -->
-    <div class="container carousel-overlay text-center">
+    <div class="container carousel-overlay text-center z-index-10">
         <h1>SpartaPark</h1>
         <p class="lead">Guidance Parking System For San Jose State University</p>
     </div>
     <!-- Carousel controls -->
-    <a class="carousel-control left" href="#bg-fade-carousel" data-slide="prev">
+    <a class="carousel-control left z-index-10" href="#bg-fade-carousel" data-slide="prev">
        <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    <a class="carousel-control right" href="#bg-fade-carousel" data-slide="next">
+    <a class="carousel-control right z-index-10" href="#bg-fade-carousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 </div><!-- End carousel -->
