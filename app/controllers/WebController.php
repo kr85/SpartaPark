@@ -4,8 +4,6 @@ use SpartaPark\Repository\Owner\OwnerRepository;
 use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
 use SpartaPark\Repository\Entranxit\EntranxitRepository;
-//require_once('GeoPlugin.class.php');
-use SpartaPark\Helper\GeoPlugin;
 
 /**
  * Class MainController
@@ -31,11 +29,6 @@ class WebController extends BaseController
    protected $entranxitRepository;
 
    /**
-    * @var SpartaPark\Helper\GeoPlugin geo plugin
-    */
-   protected $geoPlugin;
-
-   /**
     * @var string master layout
     */
    protected $layout = 'layouts.master';
@@ -47,19 +40,16 @@ class WebController extends BaseController
     * @param RegionRepository $regionRepository region repository
     * @param EntranxitRepository $entranxitRepository entranxit repository
     * @param OwnerRepository $ownerRepository owner repository
-    * @param GeoPlugin $geoPlugin geo plugin to help get visitor's location
     */
    public function __construct(LotRepository       $lotRepository,
                                RegionRepository    $regionRepository,
                                EntranxitRepository $entranxitRepository,
-                               OwnerRepository     $ownerRepository,
-                               GeoPlugin           $geoPlugin)
+                               OwnerRepository     $ownerRepository)
    {
       $this->lotRepository       = $lotRepository;
       $this->regionRepository    = $regionRepository;
       $this->entranxitRepository = $entranxitRepository;
       $this->ownerRepository     = $ownerRepository;
-      $this->geoPlugin           = $geoPlugin;
    }
 
    /**
@@ -145,11 +135,13 @@ class WebController extends BaseController
     */
    public function getAvailableParking()
    {
+      // San Jose State University coordinates
       $coordinatesSanJoseStateUniversity = array(
          'latitude'  => 37.3353235,
          'longitude' => -121.8804712
       );
 
+      // Gets all available parking near the coordinates
       $availableParking = $this->getAvailableNearCoordinates(
          $coordinatesSanJoseStateUniversity['latitude'],
          $coordinatesSanJoseStateUniversity['longitude']
@@ -157,34 +149,6 @@ class WebController extends BaseController
 
       return $this->layout = View::make('spartapark.availableparking')
          ->with('availableParking', $availableParking);
-   }
-
-   public function getDirections($address)
-   {
-      $this->geoPlugin->locate('162.197.213.38');
-      $originAddress = $this->geoPlugin->city . ', ' . $this->geoPlugin->region . ', ' . $this->geoPlugin->countryCode;
-      $origin = array(
-         'ip'        => $this->geoPlugin->ip,
-         'latitude'  => $this->geoPlugin->latitude,
-         'longitude' => $this->geoPlugin->longitude,
-         'address'   => $originAddress
-      );
-
-      $geocode = Geocoder::geocode($address);
-      $destination = array(
-         'ip'        => null,
-         'latitude'  => json_decode($geocode->getLatitude()),
-         'longitude' => json_decode($geocode->getLongitude()),
-         'address'   => $address
-      );
-
-      $data = array(
-         'origin'      => $origin,
-         'destination' => $destination
-      );
-
-      return $this->layout = View::make('spartapark.getdirections')
-         ->with('data', $data);
    }
 
    /**
@@ -195,11 +159,15 @@ class WebController extends BaseController
     */
    public function getOwnerInfo($id)
    {
+      // Finds owner by id
       $owner = $this->ownerRepository->find($id, array());
+
+      // Checks if owner exists
       if (!$owner) {
          return false;
       }
 
+      // Owner entry
       $owner = array(
          'id'            => $owner->id,
          'name'          => $owner->name,
@@ -218,11 +186,15 @@ class WebController extends BaseController
     */
    public function getLotInfo($id)
    {
+      // Finds lot with regions by id
       $lot = $this->lotRepository->find($id, array('regions'));
+
+      // Checks if lot exists
       if (!$lot) {
          return false;
       }
 
+      // Lot entry
       $lot = array(
          'id'        => $lot->id,
          'name'      => $lot->name,
@@ -243,79 +215,15 @@ class WebController extends BaseController
     */
    public function getRegionInfo($id)
    {
+      // Finds region by id
       $region = $this->regionRepository->find($id, array());
+
+      // Checks if region exists
       if (!$region) {
          return false;
       }
 
       return $region;
-   }
-
-   public function getLotsNearAddress($address = null)
-   {
-
-
-
-      //$ip = \GetIP\GetIP::get();
-      //$location = GeoIP::getLocation();
-
-
-
-      $this->geoPlugin->locate();
-
-      dd($this->geoPlugin->latitude);
-
-      $location = $this->getIpInfo($_SERVER["REMOTE_ADDR"], 'Country');
-      dd($location);
-
-      //$latitude = $location['lat'];
-      //$longitude = $location['lon'];
-
-      $config['center'] = 'auto';
-      $config['zoom'] = 'auto';
-      $config['directions'] = TRUE;
-      $config['directionsStart'] = $latitude = null . ', ' . $longitude = null;
-      $config['directionsEnd'] = $address;
-      $config['directionsDivID'] = 'directionsDiv';
-      Gmaps::initialize($config);
-      $data['map'] = Gmaps::create_map();
-      return $this->layout = View::make('spartapark.index', $data);
-   }
-
-   public function getCoordinates()
-   {
-      /*echo '<script type="text/javascript">
-         var mapCentre = map.getCenter();
-	      var latitude = mapCentre.lat();
-	      var longitude = mapCentre.lng();
-	      window.location.href = "current_location/latitude/" + latitude + "/longitude/" + longitude;
-      </script>';*/
-
-      $config = array();
-      $config['center'] = 'auto';
-      $config['onboundschanged'] = 'if (!centreGot) {
-	      var mapCentre = map.getCenter();
-	      var latitude = mapCentre.lat();
-	      var longitude = mapCentre.lng();
-	      marker_0.setOptions({
-		      position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
-	      });
-	      window.location.href = "current_location/latitude/" + latitude + "/longitude/" + longitude;
-      }
-      centreGot = true;';
-      Gmaps::initialize($config);
-
-      $marker = array();
-      Gmaps::add_marker($marker);
-      $data['map'] = Gmaps::create_map();
-
-      return $this->layout = View::make('spartapark.index', $data);
-   }
-
-   public function getLotsNearCoordinates($latitude, $longitude)
-   {
-      $coords = array($latitude, $longitude);
-      //dd($coords);
    }
 
    /**
@@ -364,6 +272,7 @@ class WebController extends BaseController
             }
          }
 
+         // Lot entry
          $lot = array(
             'id'              => $lot->id,
             'name'            => $lot->name,
@@ -479,7 +388,7 @@ class WebController extends BaseController
       // Get image
       $image = Input::file('image');
       // Destination
-      $destinationPath = 'uploads/new';
+      $destinationPath = 'uploads';
       // Image name
       $filename = str_random(12);
 
@@ -494,6 +403,7 @@ class WebController extends BaseController
          'image'       => $uploadSuccess->getPath() . '/' . $uploadSuccess->getFilename()
       ));
 
+      // Update database
       $this->updateSpotsAvailable($newEntry);
 
       // Checks if image was stored successfully
@@ -504,28 +414,57 @@ class WebController extends BaseController
       }
    }
 
+   /**
+    * Update available parking spots
+    *
+    * @param $entry Entranxit entry
+    */
    public function updateSpotsAvailable($entry)
    {
+      // Image path
       $image = $entry->image;
-      $lot_id = $entry->lot_id;
+      // Region id
       $region_id = $entry->region_id;
+      // Car orientation
       $orientation = $entry->orientation;
 
+      // Check if the object in the image is a car
       if ($this->isCar($image)) {
 
+         // Finds the region by id
          $region = $this->regionRepository->find($region_id, array());
+         // Saves occupied spots
          $spotsOccupied = json_decode($region->spots_occupied);
+         // Saves region capacity
+         $capacity = json_decode($region->capacity);
 
+         // Checks if the region exists
          if ($region) {
+
+            // Checks if orientation is entrance
             if (strcasecmp(strtolower($orientation), 'entrance') == 0) {
 
-               $this->regionRepository->update($region->id, array(
-                  'spots_occupied' => ($spotsOccupied - 1)
-               ));
+               // Checks if capacity is greater than occupied spots
+               if ($capacity > $spotsOccupied) {
+
+                  // Decrements occupied spots
+                  $this->regionRepository->update($region->id, array(
+                     'spots_occupied' => ($spotsOccupied + 1)
+                  ));
+               }
+
+            // Checks if orientation is exit
             } else if (strcasecmp(strtolower($orientation), 'exit') == 0) {
-               $this->regionRepository->update($region->id, array(
-                  'spots_occupied' => ($spotsOccupied + 1)
-               ));
+
+               // Checks if capacity is greater and equal than occupied spots
+               // and occupied spots are greater than zero
+               if ($capacity >= $spotsOccupied && $spotsOccupied > 0) {
+
+                  // Increments occupied spots
+                  $this->regionRepository->update($region->id, array(
+                     'spots_occupied' => ($spotsOccupied - 1)
+                  ));
+               }
             }
          }
       }
