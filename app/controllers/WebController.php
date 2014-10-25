@@ -372,14 +372,46 @@ class WebController extends BaseController
     */
    public function uploadImage($lot_id, $region_id, $orientation)
    {
-      // Check lot id
-      if (!$this->getLotInfo($lot_id)) {
-         return Response::json('Lot not found', 404);
-      }
+      // Finds lot with regions by id
+      $lot = $this->lotRepository->find($lot_id, array('regions'));
 
-      // Check region id
-      if (!$this->getRegionInfo($region_id)) {
-         return Response::json('Region not found', 404);
+      // Checks if the lot exists
+      if ($lot) {
+
+         // Saves lot's regions
+         $regions = $lot->regions;
+
+         // Checks if the count of the regions is greater than 0
+         if (count($regions) > 0) {
+
+            // Sets found to false
+            $isFound = false;
+
+            // Goes through each lot's region
+            foreach ($regions as $region) {
+
+               // Compares lot's region ids with the region id
+               if ($region->id == $region_id) {
+
+                  // Sets found to true if found
+                  $isFound = true;
+               }
+            }
+
+            // If not found returns a region not found response
+            if (!$isFound) {
+               return Response::json('Region not found', 404);
+            }
+
+         // If region count less than zero
+         // returns region not found response
+         } else {
+            return Response::json('Region not found', 404);
+         }
+
+      // If lot not found returns a lot not found response
+      } else {
+         return Response::json('Lot not found', 404);
       }
 
       // Check orientation
@@ -398,7 +430,7 @@ class WebController extends BaseController
       $uploadSuccess = $image->move($destinationPath, $filename);
 
       // Creates a new entry in the database
-      $newEntry = Entranxit::create(array(
+      $newEntry = $this->entranxitRepository->create(array(
          'lot_id'      => $lot_id,
          'region_id'   => $region_id,
          'orientation' => $orientation,
