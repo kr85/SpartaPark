@@ -4,6 +4,7 @@ use SpartaPark\Repository\Owner\OwnerRepository;
 use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
 use SpartaPark\Repository\Entranxit\EntranxitRepository;
+use SpartaPark\Validation\Contact\ContactUsFormValidator;
 
 /**
  * Class MainController
@@ -31,6 +32,11 @@ class WebController extends BaseController
    protected $entranxitRepository;
 
    /**
+    * @var SpartaPark\Validation\Contact\ContactUsFormValidator contact us form validator
+    */
+   protected $validatorContactUs;
+
+   /**
     * @var string master layout
     */
    protected $layout = 'layouts.master';
@@ -42,16 +48,19 @@ class WebController extends BaseController
     * @param RegionRepository $regionRepository region repository
     * @param EntranxitRepository $entranxitRepository entranxit repository
     * @param OwnerRepository $ownerRepository owner repository
+    * @param ContactUsFormValidator $contactUsFormValidator contact us form validator
     */
-   public function __construct(LotRepository       $lotRepository,
-                               RegionRepository    $regionRepository,
-                               EntranxitRepository $entranxitRepository,
-                               OwnerRepository     $ownerRepository)
+   public function __construct(LotRepository          $lotRepository,
+                               RegionRepository       $regionRepository,
+                               EntranxitRepository    $entranxitRepository,
+                               OwnerRepository        $ownerRepository,
+                               ContactUsFormValidator $contactUsFormValidator)
    {
       $this->lotRepository       = $lotRepository;
       $this->regionRepository    = $regionRepository;
       $this->entranxitRepository = $entranxitRepository;
       $this->ownerRepository     = $ownerRepository;
+      $this->validatorContactUs  = $contactUsFormValidator;
    }
 
    /**
@@ -97,20 +106,12 @@ class WebController extends BaseController
       // Get all contact form data
       $data = Input::all();
 
-      // Validation rules
-      $rules = array(
-         'first_name' => 'required|alpha',
-         'last_name'  => 'required|alpha',
-         'email'      => 'required|email',
-         'subject'    => 'required|min:3',
-         'message'    => 'required|min:20'
-      );
-
       // Validate the data
-      $validator = Validator::make($data, $rules);
+      $validation = $this->validatorContactUs->with($data);
 
       // Check if validator passes
-      if ($validator->passes()) {
+      if ($validation->passes()) {
+         
          // Send email
          Mail::send('emails.notify', $data, function($message) use ($data)
          {
@@ -126,7 +127,7 @@ class WebController extends BaseController
       } else {
          return Redirect::route('contact')
             ->withInput()
-            ->withErrors($validator);
+            ->withErrors($validation->errors());
       }
    }
 
