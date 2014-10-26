@@ -276,6 +276,9 @@ footer {
     margin-right: auto;
     margin-bottom: 50px;
   }
+  .sidebar-container {
+    height: 200px;
+  }
 }
 @media (min-width: 768px) {
   .content-wrapper-navbar-push {
@@ -492,11 +495,6 @@ footer {
     margin-right: -15px;
     margin-left: 0;
     min-height: 500px;
-    overflow: auto;
-  }
-  .sidebar-container {
-    overflow: auto;
-    overflow-x: hidden;
   }
   .directions-map-area-wrapper .directions {
     position: relative;
@@ -527,6 +525,22 @@ footer {
     width: 500px;
     padding: 0;
     margin: 0;
+  }
+  .main-map-loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    margin-left: 370px;
+    margin-top: 55px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(229, 227, 223);
+  }
+  .marker-list {
+    min-height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
   }
 }
 @media (min-width: 990px) and (max-width: 1200px) {
@@ -1056,9 +1070,6 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
 ul#marker-list {
   list-style-type: none;
   margin-left: -40px;
-  min-height: 500px;
-  overflow: auto;
-  overflow-x: hidden;
 }
 #lot-name, #lot-distance {
   display: inline;
@@ -1435,4 +1446,8 @@ div#map-directions-canvas {
   -ms-user-select: none; /* IE10+ */
   -o-user-select: none;
   user-select: none;
+}
+.sidebar-container {
+  overflow: auto;
+  overflow-x: hidden;
 }

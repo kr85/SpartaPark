@@ -35,6 +35,7 @@
         <![endif]-->
         <!-- Page loader -->
         <div class="loader"></div>
+        <!-- Page wrapper -->
         <div class="wrapper">
             <!-- Header -->
             @include('headers.main')

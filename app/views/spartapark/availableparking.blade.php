@@ -111,14 +111,11 @@
                 panControl: false,
                 zoomControl: true,
                 zoomControlOptions: {
-                    style: google.maps.ZoomControlStyle.LARGE,
+                    style: google.maps.ZoomControlStyle.SMALL,
                     position: google.maps.ControlPosition.RIGHT_TOP
                 },
                 scaleControl: true,
-                streetViewControl: true,
-                streetViewControlOptions: {
-                    position: google.maps.ControlPosition.RIGHT_TOP
-                }
+                streetViewControl: false
             };
 
             // Main map object
@@ -742,11 +739,14 @@
 
             li.innerHTML = html;
 
-            // Add dom listeners
-            addDomListenerMouseover(li, marker);
-            addDomListenerMouseout(li, marker);
-            addDomListenerClick(li, marker);
-            addDomListenerDblClick(li, mainMap);
+            // Waits 2 seconds until adds sidebar dom listeners
+            setTimeout(function() {
+                // Add dom listeners
+                addDomListenerMouseover(li, marker);
+                addDomListenerMouseout(li, marker);
+                addDomListenerClick(li, marker);
+                addDomListenerDblClick(li, mainMap);
+            }, 1500);
         }
 
         // Add a mouseover listener to sidebar entry
@@ -1096,13 +1096,6 @@
             });
         }
 
-        function addListenerInfoWindowReady(infoWindow, html)
-        {
-            google.maps.event.addListener(infoWindow, 'domready', function() {
-                infoWindow.setContent(html);
-            });
-        }
-
         // Clear the directions route
         function clearDirectionsDisplay()
         {
@@ -1138,19 +1131,17 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
         google.maps.event.addDomListener(window, 'resize', function() {
+            // Gets maps centers
             var center = mainMap.getCenter();
             var dirCenter = directionsMap.getCenter();
 
-            //var bounds = mainMap.getBounds();
-
+            // Trigger resize
             google.maps.event.trigger(mainMap, 'resize');
             google.maps.event.trigger(directionsMap, 'resize');
 
+            // Sets the maps centers
             mainMap.setCenter(center);
             directionsMap.setCenter(dirCenter);
-
-            //mainMap.fitBounds(bounds);
-            //mainMap.panToBounds(bounds);
         });
 
         google.maps.Map.prototype.setCenterWithOffset = function(latLng, offsetX, offsetY) {
@@ -1173,10 +1164,11 @@
                     </div>
                 </div>
                 <div class="sidebar-container">
-                    <ul id="marker-list"></ul>
+                    <ul id="marker-list" class="marker-list"></ul>
                 </div>
             </div>
             <div class="map-area">
+                <div class="main-map-loader"></div>
                 <div id="map-canvas"></div>
             </div>
         </div>
@@ -1385,7 +1377,8 @@
 
             // Resize maps on window change
             $(window).resize(function () {
-                var widnow = $(window).height(),
+                var windowHeight = $(window).height(),
+                    windowWidth = $(window).width(),
                     offsetTop = 60,
                     offsetBottom = 200,
                     offsetBottomModal = 240,
@@ -1394,12 +1387,18 @@
                     boxHeight = 278,
                     additionalParkingButtonOffset = 138;
 
-                $('#map-directions-canvas').css('height', (widnow - offsetBottom));
-                $('#map-canvas').css('height', (widnow - offsetTop));
-                $('#sidebar').css('height', (widnow - offsetTop));
-                $('#marker-list').css('height', (widnow - additionalParkingButtonOffset));
-                $('.side-box').css('height', (widnow - offsetBottomModal));
-                $('#scroll-box').css('height', (widnow - offsetBottomModal - 8));
+                if (windowWidth > 750 ) {
+                    $('#map-directions-canvas').css('height', (windowHeight - offsetBottom));
+                    $('#map-canvas').css('height', (windowHeight - offsetTop));
+                    $('.sidebar').css('height', (windowHeight - offsetTop));
+                    $('.sidebar').css('overflow', 'auto');
+                    $('.marker-list').css('height', (windowHeight - additionalParkingButtonOffset));
+                    $('.side-box').css('height', (windowHeight - offsetBottomModal));
+                    $('#scroll-box').css('height', (windowHeight - offsetBottomModal - 8));
+                } else {
+                    $('.sidebar').css('height', boxHeight);
+                    $('.marker-list').css('height', offsetBottom);
+                }
 
                 if ($('#directions-panel-break').hasClass('hide')) {
                     $('.side-box').css('height', boxHeight);
@@ -1437,6 +1436,41 @@
                     // Remove hide class
                     $('#directions-panel-break').removeClass('hide');
                 }
+            }
+
+            //setStaticMap();
+
+            // Show show a static map
+            $(window).load(function() {
+                setTimeout(function() {
+                    //$('.main-map-loader').fadeOut('fast');
+                    $('.loader').fadeOut('slow');
+                }, 3000);
+            });
+
+            function setStaticMap()
+            {
+                var windowWidth = $(window).width(),
+                    windowHeight = $(window).height(),
+                    headerOffset = 13,
+                    sidebarOffset = 252;
+
+                var width = windowWidth - sidebarOffset;
+                var height = windowHeight - headerOffset;
+                var size = width + 'x' + height;
+
+                var url = "https://maps.googleapis.com/maps/api/staticmap?center=37.33536,-121.880482&zoom=16&size=" + size +
+                    "&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:" +
+                    "http://spartapark.cloudapp.net/assets/images/parkinggarage3.png|37.3323731,-121.8830326&markers=icon:" +
+                    "http://spartapark.cloudapp.net/assets/images/parkinggarage3.png|37.3331113,-121.8808485&markers=icon:" +
+                    "http://spartapark.cloudapp.net/assets/images/parkinggarage3.png|37.339324,-121.880713";
+
+                $('.main-map-loader').css({
+                    'width': width,
+                    'height': height
+                });
+
+                $('.main-map-loader').css('background-image', 'url(' + url + ')');
             }
         });
     </script>
