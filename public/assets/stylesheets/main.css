@@ -1363,7 +1363,7 @@ div#map-directions-canvas {
   white-space:nowrap
 }
 .adp-summary-duration {
-  float:right;
+  float:left;
   margin-left:7px;
   white-space:nowrap;
   padding: 10px 0;

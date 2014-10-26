@@ -1394,20 +1394,30 @@
                     $('.sidebar').css('overflow', 'auto');
                     $('.marker-list').css('height', (windowHeight - additionalParkingButtonOffset));
                     $('.side-box').css('height', (windowHeight - offsetBottomModal));
+                    $('.side-box').css('position', 'absolute');
+                    $('.side-box').css('width', '360px');
                     $('#scroll-box').css('height', (windowHeight - offsetBottomModal - 8));
+
+                    if ($('#directions-panel-break').hasClass('hide')) {
+                        $('.side-box').css('height', boxHeight);
+                        $('#scroll-box').css('height', boxHeight);
+                    } else {
+                        $('.side-box').css('height', (windowHeight - offsetBottomModal));
+                        $('.side-box').css('min-height', sideboxMinHeight);
+                        $('#scroll-box').css('height', (windowHeight - offsetBottomModal - 8));
+                        $('#scroll-box').css('min-height', scrollboxMinHeight);
+                    }
+
                 } else {
                     $('.sidebar').css('height', boxHeight);
                     $('.marker-list').css('height', offsetBottom);
-                }
-
-                if ($('#directions-panel-break').hasClass('hide')) {
-                    $('.side-box').css('height', boxHeight);
-                    $('#scroll-box').css('height', boxHeight);
-                } else {
-                    $('.side-box').css('height', (widnow - offsetBottomModal));
-                    $('.side-box').css('min-height', sideboxMinHeight);
-                    $('#scroll-box').css('height', (widnow - offsetBottomModal - 8));
-                    $('#scroll-box').css('min-height', scrollboxMinHeight);
+                    $('.side-box').css('position', 'relative');
+                    $('.side-box').css('width', '96.5%');
+                    $('#scroll-box').css('width', '100%');
+                    $('.student-location input').css('width', '100%');
+                    $('.parking-address address').css('width', '100%');
+                    $('.search-directions').css('width', '100%');
+                    $('table').css('width', '100%');
                 }
             }).resize();
 
