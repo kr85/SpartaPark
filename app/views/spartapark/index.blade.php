@@ -5,23 +5,40 @@
 @stop
 
 @section('content')
-    <div class="container">
+    <div class="">
         <div class="content-wrapper">
-            <h3>Content Here Soon...</h3>
-            <div class="row">
-                <div class="col-md-6 col-lg-5">
-                </div>
-                <div class="col-md-6 col-lg-7">
-                    <div class="index-map-canvas">
-                        <a href="/parking">
-                            <div class="static-map"></div>
-                        </a>
+            <div class="container">
+                <hr><h3 class="text-center">Some title here</h3><hr>
+                <div class="row row-padding">
+                    <div class="col-md-8 col-lg-8">
+                        <ul>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="index-map-canvas">
+                            <a href="/parking">
+                                <div class="static-map"></div>
+                                <div class="view-full-map-container">
+                                    <div class="view-full-map">
+                                        <span>View Map</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="container">
+                <hr><h3 class="text-center">Some other stuff here</h3><hr>
+                <div class="row row-padding">
+                </div>
+            </div>
+            <div class="follow-us-wrapper">
                 <div class="container">
-                    <h3>Some other content here...</h3>
                 </div>
             </div>
         </div>

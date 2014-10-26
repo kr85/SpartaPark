@@ -22,6 +22,9 @@
         <!-- Custom CSS -->
         {{ HTML::style('assets/stylesheets/main.css') }}
 
+        <!-- Font Awesome -->
+        {{ HTML::style('assets/fonts/font-awesome/css/font-awesome.min.css') }}
+
         <!-- Modernizr JS -->
         {{ HTML::script('assets/javascript/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
 
