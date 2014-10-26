@@ -29,6 +29,7 @@
 @stop
 
 @section('footer-assets')
+    <!-- Preloader script -->
     {{ HTML::script('assets/javascript/preload.js') }}
 
     @if(Route::currentRouteName() == 'index')

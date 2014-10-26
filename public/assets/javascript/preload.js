@@ -34,6 +34,16 @@
             new Image().src = '/assets/images/carousel-mobile-8.jpg';
             new Image().src = '/assets/images/carousel-mobile-9.jpg';
             new Image().src = '/assets/images/carousel-mobile-10.jpg';
+            new Image().src = '/assets/images/home.png';
+            new Image().src = '/assets/images/loading.gif';
+            new Image().src = '/assets/images/maneuvers.png';
+            new Image().src = '/assets/images/parkandride.png';
+            new Image().src = '/assets/images/parking.png';
+            new Image().src = '/assets/images/parking-meter-export.png';
+            new Image().src = '/assets/images/parking_bicycle.png';
+            new Image().src = '/assets/images/parking_disabled.png';
+            new Image().src = '/assets/images/parkinggarage.png';
+            new Image().src = '/assets/images/parkinggarage3.png';
 
             // Preload JS and CSS
             var xhr = new XMLHttpRequest();
@@ -44,6 +54,9 @@
             xhr.send('');
             xhr = new XMLHttpRequest();
             xhr.open('GET', '/assets/javascript/vendor/bootstrap.min.js');
+            xhr.send('');
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', '/assets/javascript/vendor/enscroll-0.6.1.min.js');
             xhr.send('');
             xhr = new XMLHttpRequest();
             xhr.open('GET', '/assets/javascript/plugins.js');
