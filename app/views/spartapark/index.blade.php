@@ -37,10 +37,10 @@
                 <div class="row row-padding">
                 </div>
             </div>
-            <div class="follow-us-wrapper">
+            <div class="follow-us-wrapper unselectable">
                 <div class="container">
                     <div class="follow-us-title-container">
-                        <div class="follow-us-title">
+                        <div class="follow-us-title unselectable">
                             Follow us:
                         </div>
                     </div>

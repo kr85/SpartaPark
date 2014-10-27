@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/follow-us-facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/follow-us-google-plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/follow-us-linkedin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/follow-us-pinterest.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/follow-us-twitter.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/spartapark/index.blade.php" afterPath="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -32,19 +27,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1532" column="1" selection-start="33772" selection-end="33772" vertical-scroll-proportion="0.78494626" vertical-offset="22323" max-vertical-offset="23160">
+            <state line="1470" column="9" selection-start="32484" selection-end="32496" vertical-scroll-proportion="-6.5555553" vertical-offset="21873" max-vertical-offset="23520">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="29" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1980">
+            <state line="21" column="52" selection-start="688" selection-end="688" vertical-scroll-proportion="0.25655645" vertical-offset="90" max-vertical-offset="1980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="9" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1335">
               <folding />
             </state>
           </provider>
@@ -110,10 +114,10 @@
         <option value="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/javascript/main.js" />
         <option value="$PROJECT_DIR$/public/assets/javascript/preload.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/bootstrap.css" />
-        <option value="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
+        <option value="$PROJECT_DIR$/app/views/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
       </list>
     </option>
   </component>
@@ -706,23 +710,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1470" column="9" selection-start="32484" selection-end="32496" vertical-scroll-proportion="-6.5555553" vertical-offset="21873" max-vertical-offset="23520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="74" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
+        <state line="34" column="9" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="29" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1980">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1532" column="1" selection-start="33772" selection-end="33772" vertical-scroll-proportion="0.78494626" vertical-offset="22323" max-vertical-offset="23160">
+        <state line="21" column="52" selection-start="688" selection-end="688" vertical-scroll-proportion="0.25655645" vertical-offset="90" max-vertical-offset="1980">
           <folding />
         </state>
       </provider>
