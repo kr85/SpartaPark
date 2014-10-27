@@ -80,5 +80,11 @@
 @stop
 
 @section('footer-assets')
+    <script>
+        $(function() {
 
+            // Style the footer
+            $('.footer-wrapper').css('box-shadow', '0 0 10px grey');
+        });
+    </script>
 @stop

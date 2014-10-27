@@ -111,6 +111,7 @@
 @section('footer-assets')
     <script>
         $(function() {
+            // Show about tab on click
             $("#about").click(function() {
                 $(".about").show();
                 $(".team").hide();
@@ -118,12 +119,16 @@
                 $("li#about").addClass("active");
             });
 
+            // Show meet the team tab on click
             $("#team").click(function() {
                 $(".team").show();
                 $(".about").hide();
                 $("li#about").removeClass("active");
                 $("li#team").addClass("active");
             });
+
+            // Style the footer
+            $('.footer-wrapper').css('box-shadow', '0 0 10px grey');
         });
     </script>
 @stop

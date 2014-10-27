@@ -30,14 +30,14 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -185px;
-  padding: 0 0 185px;
+  margin: 0 auto -265px;
+  padding: 0 0 265px;
 }
 .wrapper > .container {
 
 }
 footer, .push {
-  height: 185px;
+  height: 265px;
 }
 footer {
   position: absolute;
@@ -172,8 +172,7 @@ footer {
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: rgba(204, 204, 204, 0.24);
-    border-top-style: solid;
-    border-color: rgba(54, 54, 54, 0.40);
+    border: 1px solid rgba(54, 54, 54, 0.40);
   }
   .footer-nav {
     padding-left: 10px;
@@ -208,24 +207,26 @@ footer {
     list-style-type: none;
   }
   .back-to-top {
-    background-image: url(../images/top.png);
+    background-image: url(../images/back-to-top.png);
     background-size: 60px 60px;
     background-position: center center;
     background-repeat: no-repeat;
     width: 60px;
     height: 60px;
     margin: 0;
+    opacity: 0.5;
   }
   .back-to-top:hover,
   .back-to-top:focus {
-    background-image: url(../images/backTopOff.png);
-    background-size: 60px 60px;
+    background-image: url(../images/back-to-top-hover.png);
+    background-size: 67px 68px;
     background-position: center center;
     background-repeat: no-repeat;
     width: 60px;
     height: 60px;
     margin: 0;
     padding: 0;
+    opacity: 1;
   }
   .footer-logo {
     background-image: url(../images/SpartaParkFooterHead.png);
@@ -364,11 +365,10 @@ footer {
     font-size: 2.6em;
   }
   .footer-wrapper {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: rgba(204, 204, 204, 0.24);
-    border-top-style: solid;
-    border-color: rgba(54, 54, 54, 0.40);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgba(204, 204, 204, 0.15);
+    border: 1px solid rgba(54, 54, 54, 0.40);
   }
   .footer-nav {
     padding-left: 10px;
@@ -402,7 +402,7 @@ footer {
     list-style-type: none;
   }
   .back-to-top {
-    background-image: url(../images/top.png);
+    background-image: url(../images/back-to-top.png);
     background-size: 60px 60px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -410,17 +410,19 @@ footer {
     height: 60px;
     margin: 0;
     padding: 0;
+    opacity: 0.5;
   }
   .back-to-top:hover,
   .back-to-top:focus {
-    background-image: url(../images/backTopOff.png);
-    background-size: 60px 60px;
+    background-image: url(../images/back-to-top-hover.png);
+    background-size: 67px 68px;
     background-position: center center;
     background-repeat: no-repeat;
     width: 60px;
     height: 60px;
     margin: 0;
     padding: 0;
+    opacity: 1;
   }
   .footer-logo {
     background-image: url(../images/SpartaParkFooterLogo.png);
