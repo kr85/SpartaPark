@@ -4,6 +4,9 @@
 * {
   margin: 0;
 }
+a {
+  outline: 0;
+}
 html, body {
   height: 100%;
   width: 100%;
@@ -717,7 +720,7 @@ footer {
   width: 100%;
   color: #000000;
   background-color: #000000;
-  box-shadow: 2px 2px 2px #000000;
+  box-shadow: 0 0 11px #000000;
 }
 .logo {
   background-image: url(../images/SpartaParkLogoWhite.png);
@@ -1472,4 +1475,65 @@ div#map-directions-canvas {
   background: url(../images/icon-zoom.png) left center no-repeat transparent;
   padding-left: 21px;
   font-size: 13px;
+}
+.follow-us-wrapper {
+  background-color: #000000;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  box-shadow: 0 0 10px black;
+}
+.follow-us-title-container {
+  border: 1px solid #ffffff;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+.follow-us-title {
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+.follow-us-icon-container {
+  width: 435px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.follow-us-icon-container > span > a {
+  color: #ffffff;
+}
+.follow-us-icon-container > span > a:hover {
+  color: transparent;
+}
+.follow-us-icon {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  height: 72px;
+  width: 72px;
+  margin: 0 6px 0 0;
+  display: inline;
+  padding-top: 50px;
+  padding-left: 3px;
+}
+.facebook:hover {
+  background-image: url(../images/follow-us-facebook.png);
+}
+.linkedin:hover {
+  background-image: url(../images/follow-us-linkedin.png);
+}
+.google-plus:hover {
+  background-image: url(../images/follow-us-google-plus.png);
+}
+.twitter:hover {
+  background-image: url(../images/follow-us-twitter.png);
+}
+.pinterest:hover {
+  background-image: url(../images/follow-us-pinterest.png);
+}
+.follow-us-icon-wrapper {
+  padding: 5px;
+}
+.fa-5-5x {
+  font-size: 5.5em !important;
 }

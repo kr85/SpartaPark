@@ -39,6 +39,48 @@
             </div>
             <div class="follow-us-wrapper">
                 <div class="container">
+                    <div class="follow-us-title-container">
+                        <div class="follow-us-title">
+                            Follow us:
+                        </div>
+                    </div>
+                    <div class="follow-us-icon-container">
+                        <span class="follow-us-icon-wrapper">
+                            <a href="https://www.facebook.com/SpartaPark.SJSU/">
+                                <div class="follow-us-icon facebook">
+                                    <i class="fa fa-facebook-square fa-5-5x"></i>
+                                </div>
+                            </a>
+                        </span>
+                        <span class="follow-us-icon-wrapper">
+                            <a href="https://plus.google.com/101953367211116361515/about/">
+                                <div class="follow-us-icon google-plus">
+                                    <i class="fa fa-google-plus-square fa-5-5x"></i>
+                                </div>
+                            </a>
+                        </span>
+                        <span class="follow-us-icon-wrapper">
+                            <a href="https://www.linkedin.com/in/spartapark/">
+                                <div class="follow-us-icon linkedin">
+                                    <i class="fa fa-linkedin-square fa-5-5x"></i>
+                                </div>
+                            </a>
+                        </span>
+                        <span class="follow-us-icon-wrapper">
+                            <a href="http://www.pinterest.com/spartapark/">
+                                <div class="follow-us-icon pinterest">
+                                    <i class="fa fa-pinterest-square fa-5-5x"></i>
+                                </div>
+                            </a>
+                        </span>
+                        <span class="follow-us-icon-wrapper">
+                            <a href="https://twitter.com/SpartaParkSJSU/">
+                                <div class="follow-us-icon twitter">
+                                    <i class="fa fa-twitter-square fa-5-5x"></i>
+                                </div>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
