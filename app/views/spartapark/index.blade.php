@@ -8,7 +8,17 @@
     <div class="">
         <div class="content-wrapper">
             <div class="container">
-                <hr><h3 class="text-center">Some title here</h3><hr>
+                <hr><h3 class="text-center">Our Story</h3><hr>
+                <div class="row row-padding">
+                </div>
+            </div>
+            <div class="container">
+                <hr><h3 class="text-center">Our Design</h3><hr>
+                <div class="row row-padding">
+                </div>
+            </div>
+            <div class="container">
+                <hr><h3 class="text-center">Our Service</h3><hr>
                 <div class="row row-padding">
                     <div class="col-md-8 col-lg-8">
                         <ul>
@@ -31,11 +41,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <hr><h3 class="text-center">Some other stuff here</h3><hr>
-                <div class="row row-padding">
-                </div>
+                <div class="row-padding"></div>
+                <div class="row-padding"></div>
             </div>
             <div class="follow-us-wrapper unselectable">
                 <div class="container">

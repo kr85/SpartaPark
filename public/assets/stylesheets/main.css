@@ -1563,3 +1563,6 @@ div#map-directions-canvas {
 .fa-5-5x {
   font-size: 5.5em !important;
 }
+#about, #team {
+  cursor: pointer;
+}
