@@ -40,10 +40,13 @@ class MobileController extends BaseController
    {
       // Find lot by id
       $lot = $this->lotRepository->find($id, array('regions'));
+
       // Check if lot exists
       if (!$lot) {
          return 'Lot does not exist';
       }
+
+      // Set lot array
       $lot = array(
          'id'        => $lot->id,
          'name'      => $lot->name,
@@ -53,6 +56,7 @@ class MobileController extends BaseController
          'regions'   => $lot->regions
       );
 
+      // Return the lot
       return  $lot;
    }
 
@@ -66,10 +70,13 @@ class MobileController extends BaseController
    {
       // Find region by id
       $region = $this->regionRepository->find($id, array());
+
       // Check if region exists
       if (!$region) {
          return 'Region does not exist';
       }
+
+      // Return the region
       return $region;
    }
 
@@ -83,22 +90,34 @@ class MobileController extends BaseController
    {
       // Get address information from Google Maps API
       $geocode = Geocoder::geocode($address);
+
       // Get address latitude
       $latitude = $geocode->getLatitude();
+
       // Get address longitude
       $longitude = $geocode->getLongitude();
+
       // Check database for nearest locations based on address's latitude and longitude
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+
       // Check if there are any locations within 5 miles
       if (empty($locations)) {
          return 'There are no parking lots within 5 miles';
       }
+
+      // New lots array
       $lots = array();
+
+      // Index
       $i = 0;
 
+      // Go through each location
       foreach ($locations as $location) {
+
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
+
+         // Set lot array
          $lot = array(
             'id'        => $lot->id,
             'name'      => $lot->name,
@@ -108,10 +127,15 @@ class MobileController extends BaseController
             'latitude'  => $lot->latitude,
             'regions'   => $lot->regions
          );
+
+         // Save each lot in the lots array
          $lots[$i] = $lot;
+
+         // Increment the index
          $i++;
       }
 
+      // Return the lots array
       return $lots;
    }
 
@@ -125,32 +149,55 @@ class MobileController extends BaseController
    {
       // Get address information from Google Maps API
       $geocode = Geocoder::geocode($address);
+
       // Get address latitude
       $latitude = $geocode->getLatitude();
+
       // Get address longitude
       $longitude = $geocode->getLongitude();
+
       // Check database for nearest locations based on address's latitude and longitude
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+
       // Check if there are any locations within 5 miles
       if (empty($locations)) {
          return 'There are no parking lots within 5 miles';
       }
+
+      // New lots array
       $lots = array();
+
+      // Index
       $i = 0;
 
+      // Go through each location
       foreach ($locations as $location) {
+
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
+
+         // Store the lot's regions
          $regions = $lot->regions;
+
+         // New lot regions array
          $lotRegions = array();
+
+         // Index
          $j = 0;
+
+         // Lot available spots variable
          $lotAvailableSpots = 0;
 
+         // Go through each region
          foreach ($regions as $region) {
+
             // Check if region capacity is greater than spots occupied
             if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+
                // Calculate available spots
                $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+
+               // Set filtered region array
                $filteredRegion = array(
                   'id'              => $region->id,
                   'name'            => $region->name,
@@ -159,13 +206,19 @@ class MobileController extends BaseController
                   'spots_available' => json_encode($availableSpots),
                   'lot_id'          => $region->lot_id
                );
+
                // Calculate lot's available spots
                $lotAvailableSpots += $availableSpots;
+
+               // Save each filtered region array to the lot regions array
                $lotRegions[$j] = $filteredRegion;
+
+               // Increment the index
                $j++;
             }
          }
 
+         // Set the lot array
          $lot = array(
             'id'              => $lot->id,
             'name'            => $lot->name,
@@ -176,10 +229,15 @@ class MobileController extends BaseController
             'latitude'        => $lot->latitude,
             'regions'         => $lotRegions
          );
+
+         // Save each lot in the lots array
          $lots[$i] = $lot;
+
+         // Increment the index
          $i++;
       }
 
+      // Return the lots array
       return $lots;
    }
 
@@ -194,16 +252,25 @@ class MobileController extends BaseController
    {
       // Check database for nearest locations based on address's latitude and longitude
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+
       // Check if there are any locations within 5 miles
       if (empty($locations)) {
          return 'There are no parking lots within 5 miles';
       }
+
+      // New lots array
       $lots = array();
+
+      // Index
       $i = 0;
 
+      // Go through each location
       foreach ($locations as $location) {
+
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
+
+         // Set the lot array
          $lot = array(
             'id'        => $lot->id,
             'name'      => $lot->name,
@@ -213,10 +280,15 @@ class MobileController extends BaseController
             'latitude'  => $lot->latitude,
             'regions'   => $lot->regions
          );
+
+         // Save each lot in the lots array
          $lots[$i] = $lot;
+
+         // Increment the index
          $i++;
       }
 
+      // Return the lots array
       return $lots;
    }
 
@@ -231,26 +303,46 @@ class MobileController extends BaseController
    {
       // Check database for nearest locations based on address's latitude and longitude
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+
       // Check if there are any locations within 5 miles
       if (empty($locations)) {
          return 'There are no parking lots within 5 miles';
       }
+
+      // New lots array
       $lots = array();
+
+      // Index
       $i = 0;
 
+      // Go through each location
       foreach ($locations as $location) {
+
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
+
+         // Store the lot's regions
          $regions = $lot->regions;
+
+         // New lot regions array
          $lotRegions = array();
+
+         // Index
          $j = 0;
+
+         // Lot's available spots variable
          $lotAvailableSpots = 0;
 
+         // Go through each region
          foreach ($regions as $region) {
+
             // Check if region capacity is greater than spots occupied
             if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+
                // Calculate available spots
                $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+
+               // Set filtered region array
                $filteredRegion = array(
                   'id'              => $region->id,
                   'name'            => $region->name,
@@ -259,13 +351,19 @@ class MobileController extends BaseController
                   'spots_available' => json_encode($availableSpots),
                   'lot_id'          => $region->lot_id
                );
+
                // Calculate lot's available spots
                $lotAvailableSpots += $availableSpots;
+
+               // Save each filtered region array into the lot regions array
                $lotRegions[$j] = $filteredRegion;
+
+               // Increment the index
                $j++;
             }
          }
 
+         // Set the lot array
          $lot = array(
             'id'              => $lot->id,
             'name'            => $lot->name,
@@ -276,10 +374,15 @@ class MobileController extends BaseController
             'latitude'        => $lot->latitude,
             'regions'         => $lotRegions
          );
+
+         // Save each lot into the lots array
          $lots[$i] = $lot;
+
+         // Increment the index
          $i++;
       }
 
+      // Return the lots array
       return $lots;
    }
 
@@ -351,6 +454,7 @@ class MobileController extends BaseController
                              LIMIT 15'
       );
 
+      // Return the results
       return $results;
    }
 }
