@@ -70,10 +70,7 @@ class WebController extends BaseController
     */
    public function getIndex()
    {
-      $availableParking = $this->getAvailableNearCoordinates(37.3353235, -121.8804712);
-
-      return $this->layout = View::make('spartapark.index')
-         ->with('availableParking', $availableParking);
+      return $this->layout = View::make('spartapark.index');
    }
 
    /**
@@ -150,6 +147,7 @@ class WebController extends BaseController
          $coordinatesSanJoseStateUniversity['longitude']
       );
 
+      // Return the available parking view with available parking
       return $this->layout = View::make('spartapark.availableparking')
          ->with('availableParking', $availableParking);
    }
@@ -178,6 +176,7 @@ class WebController extends BaseController
          'email_address' => $owner->email_address
       );
 
+      // Return owner
       return $owner;
    }
 
@@ -207,6 +206,7 @@ class WebController extends BaseController
          'regions'   => $lot->regions
       );
 
+      // Return lot
       return  $lot;
    }
 
@@ -226,6 +226,7 @@ class WebController extends BaseController
          return false;
       }
 
+      // Return region
       return $region;
    }
 
@@ -240,26 +241,45 @@ class WebController extends BaseController
    {
       // Check database for nearest locations based on address's latitude and longitude
       $locations = $this->getNearestLocationsFromDB($latitude, $longitude);
+
       // Check if there are any locations within 5 miles
       if (empty($locations)) {
          return 'There are no parking lots within 5 miles';
       }
+
+      // New lots array
       $lots = array();
+
+      // Index
       $i = 0;
 
+      // Go through each location
       foreach ($locations as $location) {
+
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
+
+         // Store the lot's regions
          $regions = $lot->regions;
+
+         // New lot regions array
          $lotRegions = array();
+
+         // Index
          $j = 0;
+
+         // Lot's available spots variable
          $lotAvailableSpots = 0;
 
          foreach ($regions as $region) {
+
             // Check if region capacity is greater than spots occupied
             if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+
                // Calculate available spots
                $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+
+               // Set filtered region array
                $filteredRegion = array(
                   'id'              => $region->id,
                   'name'            => $region->name,
@@ -268,9 +288,14 @@ class WebController extends BaseController
                   'spots_available' => json_decode($availableSpots),
                   'lot_id'          => $region->lot_id
                );
+
                // Calculate lot's available spots
                $lotAvailableSpots += $availableSpots;
+
+               // Save each filtered region array into the lot regions array
                $lotRegions[$j] = $filteredRegion;
+
+               // Increment the index
                $j++;
             }
          }
@@ -286,10 +311,15 @@ class WebController extends BaseController
             'latitude'        => $lot->latitude,
             'regions'         => $lotRegions
          );
+
+         // Save each lot into the lots array
          $lots[$i] = $lot;
+
+         // Increment the index
          $i++;
       }
 
+      // Return the lots array
       return $lots;
    }
 
@@ -317,6 +347,7 @@ class WebController extends BaseController
          $distanceUnit = 69.0;
       }
 
+      // Return all lots from database that are within 5 miles of the search coordinates
       $results = DB::select('SELECT
                                 id,
                                 name,
@@ -360,6 +391,7 @@ class WebController extends BaseController
                              LIMIT 50'
       );
 
+      // Return the results
       return $results;
    }
 
@@ -401,13 +433,13 @@ class WebController extends BaseController
 
             // If not found returns a region not found response
             if (!$isFound) {
-               return Response::json('Region not found', 404);
+               return Response::json('Region not found or wrong region id', 404);
             }
 
          // If region count less than zero
          // returns region not found response
          } else {
-            return Response::json('Region not found', 404);
+            return Response::json('Lot does not have any regions', 404);
          }
 
       // If lot not found returns a lot not found response

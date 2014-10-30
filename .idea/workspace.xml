@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MobileController.php" afterPath="$PROJECT_DIR$/app/controllers/MobileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/WebController.php" afterPath="$PROJECT_DIR$/app/controllers/WebController.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,19 +43,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MobileController.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
+      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="384" column="30" selection-start="10969" selection-end="10969" vertical-scroll-proportion="6.7350526" vertical-offset="0" max-vertical-offset="6960">
+            <state line="34" column="9" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1335">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
+      <file leaf-file-name="WebController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="9" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1335">
+            <state line="393" column="27" selection-start="12357" selection-end="12357" vertical-scroll-proportion="-1.3212192" vertical-offset="6962" max-vertical-offset="8265">
               <folding />
             </state>
           </provider>
@@ -112,7 +112,6 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Validation/Contact/ContactUsFormValidator.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Validation/ValidationServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/config/mail.php" />
-        <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
         <option value="$PROJECT_DIR$/app/views/partials/carousels/main.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
@@ -125,6 +124,7 @@
         <option value="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/app/controllers/MobileController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
       </list>
     </option>
   </component>
@@ -673,11 +673,6 @@
         <state line="17" column="20" selection-start="290" selection-end="290" vertical-scroll-proportion="0.2989449" vertical-offset="0" max-vertical-offset="1035" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="3207" selection-end="3207" vertical-scroll-proportion="1.9871043" vertical-offset="0" max-vertical-offset="7845" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -731,16 +726,16 @@
         <state line="129" column="12" selection-start="7489" selection-end="7508" vertical-scroll-proportion="0.0" vertical-offset="1148" max-vertical-offset="2100" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="9" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="31" selection-start="3699" selection-end="3699" vertical-scroll-proportion="0.0" vertical-offset="563" max-vertical-offset="1440" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="456" column="6" selection-start="14163" selection-end="14184" vertical-scroll-proportion="0.83928573" vertical-offset="6120" max-vertical-offset="6960">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
@@ -757,9 +752,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="384" column="30" selection-start="10969" selection-end="10969" vertical-scroll-proportion="6.7350526" vertical-offset="0" max-vertical-offset="6960">
+        <state line="34" column="9" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="27" selection-start="12357" selection-end="12357" vertical-scroll-proportion="-1.3212192" vertical-offset="6962" max-vertical-offset="8265">
           <folding />
         </state>
       </provider>
