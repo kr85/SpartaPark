@@ -15,6 +15,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   border: 0;
   outline: 0 !important;
   -webkit-appearance:none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+
 }
 html, body {
   height: 100%;
@@ -1505,9 +1509,9 @@ div#map-directions-canvas {
 }
 .follow-us-wrapper {
   background-color: #000000;
-  padding-top: 100px;
-  padding-bottom: 100px;
   box-shadow: 0 0 10px black;
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 .follow-us-title-container {
   border: 1px solid #ffffff;
@@ -1565,4 +1569,99 @@ div#map-directions-canvas {
 }
 #about, #team {
   cursor: pointer;
+}
+.story-icon-box i {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  line-height: 76px;
+  text-align: center;
+  display: block;
+  border: 2px solid #DAD7D7;
+  margin: 0 auto 20px;
+  color: #DAD7D7;
+  font-size: 40px;
+}
+.story-icon-box:hover i {
+  background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.story-icon-box h3,
+.story-icon-box i {
+  -webkit-transition: all 0.6s ease 0s;
+  -moz-transition: all 0.6s ease 0s;
+  -ms-transition: all 0.6s ease 0s;
+  -o-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.story-icon-box h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #DAD7D7;
+  letter-spacing: -1px;
+}
+.story-icon-box:hover h3 {
+  color: #6a6767;
+}
+.story-icon-box p {
+  text-align: center;
+  color: #A6A6A6;
+}
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -ms-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+}
+#problem-subsection.col-xs-12.col-sm-6.col-md-3.col-lg-3,
+#vision-subsection.col-xs-12.col-sm-6.col-md-3.col-lg-3,
+#goal-subsection.col-xs-12.col-sm-6.col-md-3.col-lg-3,
+#solution-subsection.col-xs-12.col-sm-6.col-md-3.col-lg-3 {
+  padding-bottom: 50px;
+}
+
+.section-title h1 {
+  font-size: 50px;
+  color: #202020;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+.section-title h1 span {
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 0;
+  padding-left: 5px;
+  color: rgba(0, 69, 163, 0.80);
+}
+.section-title .title-bullet {
+  margin-bottom: 60px;
+}
+.title-bullet {
+  height: 0;
+  width: 100%;
+  display: block;
+  margin: 30px 0;
+  border: 1px solid #dddddd;
+}
+.title-bullet span {
+  height: 6px;
+  width: 70px;
+  display: table;
+  margin-top: -3px;
+  background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
+}
+.design-section-wrapper {
+  background: url(../images/design-section-background.jpg) repeat scroll 0 0 #f0f0f0;
+}
+.story-section-wrapper,
+.design-section-wrapper,
+.service-section-wrapper {
+  padding-bottom: 100px;
+  padding-top: 100px;
+  border-bottom: 1px solid #dddddd;
+  box-shadow: 0 0 10px #dddddd;
 }

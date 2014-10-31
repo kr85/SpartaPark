@@ -19,6 +19,9 @@
         {{ HTML::style('assets/stylesheets/bootstrap.min.css') }}
         {{ HTML::style('assets/stylesheets/bootstrap-theme.min.css') }}
 
+        <!-- Animate CSS -->
+        {{ HTML::style('assets/stylesheets/animate.css') }}
+
         <!-- Custom CSS -->
         {{ HTML::style('assets/stylesheets/main.css') }}
 

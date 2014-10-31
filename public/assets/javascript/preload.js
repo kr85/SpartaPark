@@ -13,8 +13,8 @@
             new Image().src = '/assets/images/carousel-web-8.jpg';
             new Image().src = '/assets/images/carousel-web-9.jpg';
             new Image().src = '/assets/images/carousel-web-10.jpg';
-            new Image().src = '/assets/images/backTopOff.png';
-            new Image().src = '/assets/images/top.png';
+            new Image().src = '/assets/images/back-to-top.png';
+            new Image().src = '/assets/images/back-to-top-hover.png';
             new Image().src = '/assets/images/favicon.ico';
             new Image().src = '/assets/images/SpartaParkFooterHead.png';
             new Image().src = '/assets/images/SpartaParkFooterLogo.png';
@@ -44,6 +44,8 @@
             new Image().src = '/assets/images/parking_disabled.png';
             new Image().src = '/assets/images/parkinggarage.png';
             new Image().src = '/assets/images/parkinggarage3.png';
+            new Image().src = '/assets/images/design-section-background.jpg';
+            new Image().src = '/assets/images/icon-zoom.png';
 
             // Preload JS and CSS
             var xhr = new XMLHttpRequest();
