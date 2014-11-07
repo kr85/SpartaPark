@@ -6,38 +6,47 @@
 
 @section('content')
     <div class="story-section-wrapper" id="story-section">
+        <!--a href="#story-section" class="scroll-arrow-carousel-wrapper half-circle-scroll">
+            <div class="scroll-arrow"></div>
+        </a-->
         <div class="container">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-story">
                 <h1>
-                    The Story
-                    <span>
-                        created by us
-                    </span>
+                    <span id="bullet-left"></span>
+                    Story
+                    <span id="bullet-right"></span>
                 </h1>
-                <div class="title-bullet">
-                    <span></span>
-                </div>
             </div>
             <div class="row row-padding">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="problem-subsection">
                     <div class="story-icon-box animated rotateInUpRight">
                         <i class="fa fa-exclamation-triangle"></i>
                         <h3>Problem</h3>
-                        <p>A short paragraph (two or three sentences) describing the problem.</p>
+                        <p>A short paragraph (a few sentences) describing the problem.
+                           Pretty much looking for that length of stuff stuff stuff.
+                           Stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff.
+                           And some more stuff stuff stuff stuff stuff stuff stuff stuff stuff.
+                           And even more stuff stuff stuff stuff stuff stuff stuff stuff stuff.
+                           And even if you wrote more stuff stuff stuff stuff if would be fine...
+                        </p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="vision-subsection">
                     <div class="story-icon-box animated rotateInUpRight">
                         <i class="fa fa-eye"></i>
                         <h3>Vision</h3>
-                        <p>A short paragraph (two or three sentences) describing our vision or the big picture.</p>
+                        <p>A short paragraph (a few sentences) describing our vision or the big picture.
+                           Around same length as previous one.
+                        </p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="goal-subsection">
                     <div class="story-icon-box animated rotateInUpRight">
                         <i class="fa fa-flag-checkered"></i>
                         <h3>Goal</h3>
-                        <p>A short paragraph (two or three sentences) describing our goal or the steps we needed to take.</p>
+                        <p>A short paragraph (a few sentences) describing our goal or the steps we needed to take.
+                           Around same length as the first one.
+                        </p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="solution-subsection">
@@ -51,34 +60,59 @@
         </div>
     </div>
     <div class="design-section-wrapper" id="design-section">
+        <a href="#design-section" class="scroll-arrow-wrapper-design-section">
+            <div class="scroll-arrow"></div>
+        </a>
         <div class="container">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-design">
                 <h1>
-                    The Design
-                    <span>
-                        used to reach our goal
-                    </span>
+                    <span id="bullet-left"></span>
+                    Design
+                    <span id="bullet-right"></span>
                 </h1>
-                <div class="title-bullet">
-                    <span></span>
-                </div>
             </div>
             <div class="row row-padding">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="thumbnail" id="raspberry-pi">
+                        <div class="raspberry-pi-image img-thumbnail"></div>
+                        <div class="caption">
+                            <p>Raspberry Pi Ultimate Starter Kit</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="thumbnail" id="object-recognition">
+                        <div class="object-recognition-image img-thumbnail"></div>
+                        <div class="caption">
+                            <p>Object Recognition</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="thumbnail" id="web-service">
+                        <div class="web-service-image img-thumbnail"></div>
+                        <div class="caption">
+                            <p>Web & Mobile Service</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="service-section-wrapper" id="service-section">
+        <a href="#service-section" class="scroll-arrow-wrapper-service-section">
+            <div class="scroll-arrow"></div>
+        </a>
         <div class="container">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-service">
                     <h1>
-                        The Service
-                        <span>
-                            that brings comfort to students
-                        </span>
+                        <span id="bullet-left"></span>
+                        Service
+                        <span id="bullet-right"></span>
                     </h1>
-                    <div class="title-bullet">
-                        <span></span>
-                    </div>
             </div>
             <div class="row row-padding">
                 <div class="col-md-8 col-lg-8">
@@ -104,7 +138,7 @@
             </div>
         </div>
     </div>
-    <div class="follow-us-wrapper unselectable">
+    <div class="follow-us-wrapper unselectable" id="follow-us-section">
         <div class="container">
             <div class="follow-us-title-container">
                 <div class="follow-us-title unselectable">
@@ -114,7 +148,7 @@
             <div class="follow-us-icon-container">
                 <span class="follow-us-icon-wrapper">
                     <a href="https://www.facebook.com/SpartaPark.SJSU/">
-                        <div class="follow-us-icon facebook">
+                        <div class="follow-us-icon facebook" id="facebook-follow-us">
                             <i class="fa fa-facebook-square fa-5-5x"></i>
                         </div>
                     </a>
@@ -160,6 +194,7 @@
         <script>
            // Sets navbar to transparent
            $(function() {
+
               $('.navbar').css({
                   'background': 'transparent',
                   'border': 'transparent'
@@ -176,6 +211,11 @@
                           'border': 'black',
                           'box-shadow': '2px 2px 2px black'
                       });
+
+                      $('#scene-navigation').removeClass('hide');
+                      $('#scene-navigation').removeClass('bounceOutLeft');
+                      $('#scene-navigation').addClass('bounceInLeft');
+
                   } else {
                       // Sets navbar to transparent
                       $('.navbar').css({
@@ -183,8 +223,22 @@
                           'border': 'transparent',
                           'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
                       });
+
+                      $('#scene-navigation').removeClass('bounceInLeft');
+                      $('#scene-navigation').addClass('bounceOutLeft');
+
                   }
               });
+
+              $('#facebook-follow-us')
+                .mouseenter(function() {
+                    //$('#facebook-follow-us').removeClass('animated fadeOut');
+                    //$('#facebook-follow-us').addClass('animated fadeIn');
+                })
+                .mouseleave(function() {
+                    //$('#facebook-follow-us').removeClass('animated fadeIn');
+                    //$('#facebook-follow-us').addClass('animated fadeOut');
+                });
            });
         </script>
     @endif

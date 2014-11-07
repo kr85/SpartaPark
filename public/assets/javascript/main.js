@@ -7,13 +7,68 @@
 
     // Smooth scrolling
     $(function() {
+        var offsetNavbar = 55;
+
+        // For back to top
         $("a[href='#top']").on('click', function() {
             $("html, body").animate({
                 scrollTop: 0
             }, "slow");
             return false;
         });
+
+        // For got to story section
+        $("a[href='#story-section']").on('click', function() {
+            $("html, body").animate({
+                scrollTop: ($('#story-section').offset().top - offsetNavbar)
+            }, "slow");
+            return false;
+        });
+
+        // For go to design section
+        $("a[href='#design-section']").on('click', function() {
+            $("html, body").animate({
+                scrollTop: ($('#design-section').offset().top - offsetNavbar)
+            }, "slow");
+            return false;
+        });
+
+        // For go to service section
+        $("a[href='#service-section']").on('click', function() {
+            $("html, body").animate({
+                scrollTop: ($('#service-section').offset().top - offsetNavbar)
+            }, "slow");
+            return false;
+        });
     });
+
+    /*$(window).scroll(function() {
+        var offsetStorySection = $('#story-section').offset().top - 100;
+        var topWindow = $(window).scrollTop() - (offsetStorySection / 2);
+        var halfWindow = topWindow *  1.5;
+
+        var windowHeight = $(window).height();
+
+        var position = halfWindow / windowHeight;
+        position = 1 - position;
+
+        //console.log('First -- Offset: ' + offsetStorySection + ', topWindow: ' + topWindow + ', halfWindow: ' + halfWindow + ', windowHeight: ' + windowHeight + ', position: ' + position);
+
+        $('.scroll-arrow-wrapper-design-section').css('opacity', position);
+    });
+
+    $(window).scroll(function() {
+        var offsetDesignSection = $('#design-section').offset().top;
+        var topWindow = $(window).scrollTop() - (offsetDesignSection / 2);
+        var halfWindow = topWindow *  1.5;
+        var windowHeight = $(window).height();
+        var position = halfWindow / windowHeight;
+        position = 1 - position;
+
+        console.log('Second -- Offset: ' + offsetDesignSection + ', topWindow: ' + topWindow + ', halfWindow: ' + halfWindow + ', windowHeight: ' + windowHeight + ', position: ' + position);
+
+        $('.scroll-arrow-wrapper-service-section').css('opacity', position);
+    });*/
 
     // Chrome CSS fixes
     $(function() {
