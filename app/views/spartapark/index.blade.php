@@ -224,37 +224,75 @@
                     }
                 });
 
-                  // Smooth scrolling for go to story section
-                  $("a[href='#story-section']").on('click', function() {
-                      $("html, body").animate({
-                          scrollTop: ($('#story-section').offset().top - offsetNavbar)
-                      }, "slow");
-                      return false;
-                  });
+                // Smooth scrolling for go to story section
+                $("a[href='#story-section']").on('click', function() {
+                    $("html, body").animate({
+                        scrollTop: ($('#story-section').offset().top - offsetNavbar)
+                    }, "slow");
+                    return false;
+                });
 
-                  // Smooth scrolling for go to design section
-                  $("a[href='#design-section']").on('click', function() {
-                      $("html, body").animate({
-                          scrollTop: ($('#design-section').offset().top - offsetNavbar)
-                      }, "slow");
-                      return false;
-                  });
+                // Smooth scrolling for go to design section
+                $("a[href='#design-section']").on('click', function() {
+                    $("html, body").animate({
+                        scrollTop: ($('#design-section').offset().top - offsetNavbar)
+                    }, "slow");
+                    return false;
+                });
 
-                  // Smooth scrolling for go to service section
-                  $("a[href='#service-section']").on('click', function() {
-                      $("html, body").animate({
-                          scrollTop: ($('#service-section').offset().top - offsetNavbar)
-                      }, "slow");
-                      return false;
-                  });
+                // Smooth scrolling for go to service section
+                $("a[href='#service-section']").on('click', function() {
+                    $("html, body").animate({
+                        scrollTop: ($('#service-section').offset().top - offsetNavbar)
+                    }, "slow");
+                    return false;
+                });
 
-                  // Smooth scrolling for go to service section
-                  $("a[href='#follow-us-section']").on('click', function() {
-                      $("html, body").animate({
-                          scrollTop: ($('#follow-us-section').offset().top - offsetNavbar)
-                      }, "slow");
-                      return false;
-                  });
+                // Smooth scrolling for go to service section
+                $("a[href='#follow-us-section']").on('click', function() {
+                    $("html, body").animate({
+                        scrollTop: ($('#follow-us-section').offset().top - offsetNavbar)
+                    }, "slow");
+                    return false;
+                });
+
+                // On window scroll add active class to scene navigator
+                $(window).scroll(function() {
+
+                    if ( $(window).scrollTop() > ($('#story-section').offset().top - (2 * offsetNavbar)) && $(window).scrollTop() < ($('#design-section').offset().top - offsetNavbar) ) {
+
+                        $('#scene-navigator-design').removeClass('active');
+                        $('#scene-navigator-service').removeClass('active');
+                        $('#scene-navigator-follow-us').removeClass('active');
+                        $('#scene-navigator-story').addClass('active');
+
+                    }
+
+                    if ( $(window).scrollTop() > ($('#design-section').offset().top - (2 * offsetNavbar))  && $(window).scrollTop() < ($('#service-section').offset().top - offsetNavbar) ) {
+
+                        $('#scene-navigator-story').removeClass('active');
+                        $('#scene-navigator-service').removeClass('active');
+                        $('#scene-navigator-follow-us').removeClass('active');
+                        $('#scene-navigator-design').addClass('active');
+                    }
+
+                    if ( $(window).scrollTop() > ($('#service-section').offset().top - (2 * offsetNavbar)) && $(window).scrollTop() < ($('#follow-us-section').offset().top - offsetNavbar) ) {
+
+                        $('#scene-navigator-story').removeClass('active');
+                        $('#scene-navigator-design').removeClass('active');
+                        $('#scene-navigator-follow-us').removeClass('active');
+                        $('#scene-navigator-service').addClass('active');
+
+                    }
+
+                    if ( $(window).scrollTop() > ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
+
+                        $('#scene-navigator-story').removeClass('active');
+                        $('#scene-navigator-design').removeClass('active');
+                        $('#scene-navigator-service').removeClass('active');
+                        $('#scene-navigator-follow-us').addClass('active');
+                    }
+                });
 
 
                 //$('#facebook-follow-us')
