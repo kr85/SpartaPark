@@ -6,9 +6,6 @@
 
 @section('content')
     <div class="story-section-wrapper" id="story-section">
-        <!--a href="#story-section" class="scroll-arrow-carousel-wrapper half-circle-scroll">
-            <div class="scroll-arrow"></div>
-        </a-->
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-story">
                 <h1>
@@ -60,9 +57,6 @@
         </div>
     </div>
     <div class="design-section-wrapper" id="design-section">
-        <a href="#design-section" class="scroll-arrow-wrapper-design-section">
-            <div class="scroll-arrow"></div>
-        </a>
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-design">
                 <h1>
@@ -103,9 +97,6 @@
         </div>
     </div>
     <div class="service-section-wrapper" id="service-section">
-        <a href="#service-section" class="scroll-arrow-wrapper-service-section">
-            <div class="scroll-arrow"></div>
-        </a>
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-service">
                     <h1>
@@ -192,54 +183,90 @@
 
     @if(Route::currentRouteName() == 'index')
         <script>
-           // Sets navbar to transparent
-           $(function() {
 
-              $('.navbar').css({
+            $(function() {
+
+                var offsetNavbar = 55;
+
+                // Sets navbar to transparent
+                $('.navbar').css({
                   'background': 'transparent',
                   'border': 'transparent'
-              });
-              $('.navbar-default').css({
+                });
+                $('.navbar-default').css({
                   'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
-              });
+                });
 
-              $(window).scroll(function() {
-                  // Sets navbar to black after scroll
-                  if ($(this).scrollTop() > 150) {
-                      $('.navbar').css({
-                          'background': 'black',
-                          'border': 'black',
-                          'box-shadow': '2px 2px 2px black'
-                      });
+                $(window).scroll(function() {
+                    // Sets navbar to black after scroll
+                    if ($(this).scrollTop() > 150) {
+                        $('.navbar').css({
+                            'background': 'black',
+                            'border': 'black',
+                            'box-shadow': '2px 2px 2px black'
+                        });
 
-                      $('#scene-navigation').removeClass('hide');
-                      $('#scene-navigation').removeClass('bounceOutLeft');
-                      $('#scene-navigation').addClass('bounceInLeft');
+                        $('#scene-navigation').removeClass('hide');
+                        $('#scene-navigation').removeClass('bounceOutLeft');
+                        $('#scene-navigation').addClass('bounceInLeft');
 
-                  } else {
-                      // Sets navbar to transparent
-                      $('.navbar').css({
-                          'background': 'transparent',
-                          'border': 'transparent',
-                          'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
-                      });
+                    } else {
+                        // Sets navbar to transparent
+                        $('.navbar').css({
+                            'background': 'transparent',
+                            'border': 'transparent',
+                            'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
+                        });
 
-                      $('#scene-navigation').removeClass('bounceInLeft');
-                      $('#scene-navigation').addClass('bounceOutLeft');
+                        $('#scene-navigation').removeClass('bounceInLeft');
+                        $('#scene-navigation').addClass('bounceOutLeft');
 
-                  }
-              });
+                    }
+                });
 
-              $('#facebook-follow-us')
-                .mouseenter(function() {
+                  // Smooth scrolling for go to story section
+                  $("a[href='#story-section']").on('click', function() {
+                      $("html, body").animate({
+                          scrollTop: ($('#story-section').offset().top - offsetNavbar)
+                      }, "slow");
+                      return false;
+                  });
+
+                  // Smooth scrolling for go to design section
+                  $("a[href='#design-section']").on('click', function() {
+                      $("html, body").animate({
+                          scrollTop: ($('#design-section').offset().top - offsetNavbar)
+                      }, "slow");
+                      return false;
+                  });
+
+                  // Smooth scrolling for go to service section
+                  $("a[href='#service-section']").on('click', function() {
+                      $("html, body").animate({
+                          scrollTop: ($('#service-section').offset().top - offsetNavbar)
+                      }, "slow");
+                      return false;
+                  });
+
+                  // Smooth scrolling for go to service section
+                  $("a[href='#follow-us-section']").on('click', function() {
+                      $("html, body").animate({
+                          scrollTop: ($('#follow-us-section').offset().top - offsetNavbar)
+                      }, "slow");
+                      return false;
+                  });
+
+
+                //$('#facebook-follow-us')
+                //  .mouseenter(function() {
                     //$('#facebook-follow-us').removeClass('animated fadeOut');
                     //$('#facebook-follow-us').addClass('animated fadeIn');
-                })
-                .mouseleave(function() {
+                //  })
+                //  .mouseleave(function() {
                     //$('#facebook-follow-us').removeClass('animated fadeIn');
                     //$('#facebook-follow-us').addClass('animated fadeOut');
-                });
-           });
+                //  });
+            });
         </script>
     @endif
 @stop

@@ -7,36 +7,11 @@
 
     // Smooth scrolling
     $(function() {
-        var offsetNavbar = 55;
 
         // For back to top
         $("a[href='#top']").on('click', function() {
             $("html, body").animate({
                 scrollTop: 0
-            }, "slow");
-            return false;
-        });
-
-        // For got to story section
-        $("a[href='#story-section']").on('click', function() {
-            $("html, body").animate({
-                scrollTop: ($('#story-section').offset().top - offsetNavbar)
-            }, "slow");
-            return false;
-        });
-
-        // For go to design section
-        $("a[href='#design-section']").on('click', function() {
-            $("html, body").animate({
-                scrollTop: ($('#design-section').offset().top - offsetNavbar)
-            }, "slow");
-            return false;
-        });
-
-        // For go to service section
-        $("a[href='#service-section']").on('click', function() {
-            $("html, body").animate({
-                scrollTop: ($('#service-section').offset().top - offsetNavbar)
             }, "slow");
             return false;
         });

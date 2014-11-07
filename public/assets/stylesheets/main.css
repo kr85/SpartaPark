@@ -682,6 +682,16 @@ footer {
   font-family: signal-regular,sans-serif;
   white-space: nowrap;
   text-transform: uppercase;
+  opacity: 1;
+  text-shadow:
+    1px  1px 1px white,
+    1px -1px 1px white,
+    -1px  1px 1px white,
+    -1px -1px 1px white;
+  font-weight: 700;
+}
+.scene-navigation .scene-navigator:hover .tooltip {
+  display: inline-block;
 }
 .slide1,
 .slide2,
@@ -1760,7 +1770,7 @@ div#map-directions-canvas {
 .story-section-wrapper {
   box-shadow: none;
 }
-.scroll-arrow-wrapper {
+/*.scroll-arrow-wrapper {
   position: absolute;
   left: 50%;
   top: -53px;
@@ -1836,7 +1846,7 @@ div#map-directions-canvas {
 }
 .scroll-arrow-carousel-wrapper {
 
-}
+}*/
 .raspberry-pi-image {
   background-image: url(../images/raspberry-pi-image.jpg);
   background-repeat: no-repeat;
