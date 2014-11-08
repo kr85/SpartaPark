@@ -15,11 +15,11 @@
                 </h1>
             </div>
             <div class="row row-padding">
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="problem-subsection">
-                    <div class="story-icon-box animated rotateInUpRight">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="problem-subsection">
+                    <div class="story-icon-box">
                         <i class="fa fa-exclamation-triangle"></i>
                         <h3>Problem</h3>
-                        <p>A short paragraph (a few sentences) describing the problem.
+                        <p class="p-padding">A short paragraph (a few sentences) describing the problem.
                            Pretty much looking for that length of stuff stuff stuff.
                            Stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff.
                            And some more stuff stuff stuff stuff stuff stuff stuff stuff stuff.
@@ -28,29 +28,30 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="vision-subsection">
-                    <div class="story-icon-box animated rotateInUpRight">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="vision-subsection">
+                    <div class="story-icon-box">
                         <i class="fa fa-eye"></i>
                         <h3>Vision</h3>
-                        <p>A short paragraph (a few sentences) describing our vision or the big picture.
+                        <p class="p-padding" id="vision-subsection-p">A short paragraph (a few sentences) describing our vision or the big picture.
                            Around same length as previous one.
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="goal-subsection">
-                    <div class="story-icon-box animated rotateInUpRight">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="goal-subsection">
+                    <div class="story-icon-box">
                         <i class="fa fa-flag-checkered"></i>
                         <h3>Goal</h3>
-                        <p>A short paragraph (a few sentences) describing our goal or the steps we needed to take.
+                        <p class="p-padding">A short paragraph (a few sentences) describing our goal or the steps we needed to take.
                            Around same length as the first one.
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="solution-subsection">
-                    <div class="story-icon-box animated rotateInUpRight">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="solution-subsection">
+                    <div class="story-icon-box">
                         <i class="fa fa-users"></i>
                         <h3>Solution</h3>
-                        <p>...And SpartaPark was born.</p>
+                        <p class="p-padding">...And SpartaPark was born.</p>
+                        <p class="p-padding">Or something like that... whatever you guys think we should write here...</p>
                     </div>
                 </div>
             </div>
@@ -67,29 +68,44 @@
             </div>
             <div class="row row-padding">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="thumbnail" id="raspberry-pi">
+                    <div class="thumbnail hide animated" id="raspberry-pi">
                         <div class="raspberry-pi-image img-thumbnail"></div>
                         <div class="caption">
-                            <p>Raspberry Pi Ultimate Starter Kit</p>
-                            <p></p>
+                            <p class="design-subsection-title">
+                                Raspberry Pi  Ultimate Starter Kit
+                            </p>
+                            <p class="design-subsection-text">
+                                Here we should write something about the Raspberry Pi kit
+                                and how cool it is, cheap, easy to use and stuff like that or whatever you want to write.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="thumbnail" id="object-recognition">
+                    <div class="thumbnail hide animated" id="object-recognition">
                         <div class="object-recognition-image img-thumbnail"></div>
                         <div class="caption">
-                            <p>Object Recognition</p>
-                            <p></p>
+                            <p class="design-subsection-title">
+                                Object Recognition
+                            </p>
+                            <p class="design-subsection-text">
+                                Here we should write something about the super fancy object recognition
+                                algorithms that we use to distinguish cars from other objects and stuff like that.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="thumbnail" id="web-service">
+                    <div class="thumbnail hide animated" id="web-service">
                         <div class="web-service-image img-thumbnail"></div>
                         <div class="caption">
-                            <p>Web & Mobile Service</p>
-                            <p></p>
+                            <p class="design-subsection-title">
+                                Web & Mobile Service
+                            </p>
+                            <p class="design-subsection-text">
+                                Here we should write something about our service... that it is super cool, browser
+                                responsive and available to everyone or whatever you guys want.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -130,48 +146,50 @@
         </div>
     </div>
     <div class="follow-us-wrapper unselectable" id="follow-us-section">
-        <div class="container">
+        <div class="container follow-us-container-center">
             <div class="follow-us-title-container">
                 <div class="follow-us-title unselectable">
                     Follow us:
                 </div>
             </div>
             <div class="follow-us-icon-container">
-                <span class="follow-us-icon-wrapper">
+            <div class="follow-us-icon-wrapper-center">
+                <div class="follow-us-icon-wrapper hide animated" id="facebook-icon-animation">
                     <a href="https://www.facebook.com/SpartaPark.SJSU/">
                         <div class="follow-us-icon facebook" id="facebook-follow-us">
                             <i class="fa fa-facebook-square fa-5-5x"></i>
                         </div>
                     </a>
-                </span>
-                <span class="follow-us-icon-wrapper">
+                </div>
+                <div class="follow-us-icon-wrapper hide animated" id="google-icon-animation">
                     <a href="https://plus.google.com/101953367211116361515/about/">
                         <div class="follow-us-icon google-plus">
                             <i class="fa fa-google-plus-square fa-5-5x"></i>
                         </div>
                     </a>
-                </span>
-                <span class="follow-us-icon-wrapper">
+                </div>
+                <div class="follow-us-icon-wrapper hide animated" id="linkedin-icon-animation">
                     <a href="https://www.linkedin.com/in/spartapark/">
                         <div class="follow-us-icon linkedin">
                             <i class="fa fa-linkedin-square fa-5-5x"></i>
                         </div>
                     </a>
-                </span>
-                <span class="follow-us-icon-wrapper">
+                </div>
+                <div class="follow-us-icon-wrapper hide animated" id="pinterest-icon-animation">
                     <a href="http://www.pinterest.com/spartapark/">
                         <div class="follow-us-icon pinterest">
                             <i class="fa fa-pinterest-square fa-5-5x"></i>
                         </div>
                     </a>
-                </span>
-                <span class="follow-us-icon-wrapper">
+                </div>
+                <div class="follow-us-icon-wrapper hide animated" id="twitter-icon-animation">
                     <a href="https://twitter.com/SpartaParkSJSU/">
                         <div class="follow-us-icon twitter">
                             <i class="fa fa-twitter-square fa-5-5x"></i>
                         </div>
                     </a>
-                </span>
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -186,31 +204,134 @@
 
             $(function() {
 
-                var offsetNavbar = 55;
+                var windowHeight = $(window).height(),
+                    windowWidth = $(window).width(),
+                    visibleNavbar = 300,
+                    offsetNavbar = 55,
+                    mobileDeviceMaxWidth = 985,
+                    mobileDeviceSideNavigationHidden = 585,
+                    storySectionRowLength = 1200,
+                    storySectionOffsetTop = $('#story-section').offset().top,
+                    designSectionOffsetTop = $('#design-section').offset().top,
+                    serviceSectionOffsetTop = $('#service-section').offset().top,
+                    followUsSectionOffsetTop = $('#follow-us-section').offset().top;
+
+                $('div.container.follow-us-container-center').centerElement();
+
+                // Reset window height and width on resize
+                $(window).resize(function () {
+
+                    windowHeight = $(window).height(),
+                    windowWidth = $(window).width(),
+                    storySectionOffsetTop = $('#story-section').offset().top,
+                    designSectionOffsetTop = $('#design-section').offset().top,
+                    serviceSectionOffsetTop = $('#service-section').offset().top,
+                    followUsSectionOffsetTop = $('#follow-us-section').offset().top;
+
+                }).resize();
 
                 // Sets navbar to transparent
                 $('.navbar').css({
                   'background': 'transparent',
                   'border': 'transparent'
                 });
+
                 $('.navbar-default').css({
                   'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
                 });
 
+                // Set CSS rules on ready
+                if (windowWidth < mobileDeviceSideNavigationHidden) {
+                    $('#scene-navigation').addClass('hide');
+                }
+
+                if (windowWidth > storySectionRowLength) {
+
+                    // Set CSS rules on ready
+                    $('.story-section-wrapper').css('height', (windowHeight - offsetNavbar));
+                    $('.design-section-wrapper').css('height', (windowHeight - offsetNavbar));
+                    $('.service-section-wrapper').css('height', (windowHeight - offsetNavbar));
+                    $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2) ));
+
+                    // Reset padding
+                    $('.p-padding').css({
+                        'padding': '0px'
+                    });
+
+                } else if (windowWidth <= storySectionRowLength && windowWidth >= mobileDeviceMaxWidth) {
+
+                    $('.story-section-wrapper').css('height', 'auto');
+                    $('.design-section-wrapper').css('height', 'auto');
+                    $('.service-section-wrapper').css('height', 'auto');
+                    $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
+
+                    // Reset padding
+                    $('.p-padding').css({
+                        'padding': '0px'
+                    });
+
+                    $('.p-padding').css({
+                        'padding-left': '50px',
+                        'padding-right': '50px'
+                    });
+
+                    $('.p-padding#vision-subsection-p').css({
+                        'padding-bottom': '130px'
+                    });
+
+                } else if (windowWidth < mobileDeviceMaxWidth) {
+
+                    $('.story-section-wrapper').css('height', 'auto');
+                    $('.design-section-wrapper').css('height', 'auto');
+                    $('.service-section-wrapper').css('height', 'auto');
+                    $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
+
+                    // Reset padding
+                    $('.p-padding#vision-subsection-p').css({
+                        'padding-bottom': '0px'
+                    });
+
+                    $('.p-padding').css({
+                        'padding-left': '50px',
+                        'padding-right': '50px',
+                        'padding-bottom': '50px'
+                    });
+
+                }
+
+
                 $(window).scroll(function() {
-                    // Sets navbar to black after scroll
-                    if ($(this).scrollTop() > 150) {
+
+                    if ( ($(this).scrollTop() + windowHeight) > $('.footer-wrapper').offset().top ) {
+
+                        // Add animation effects to side navigation
+                        $('#scene-navigation').removeClass('bounceInLeft');
+                        $('#scene-navigation').addClass('bounceOutLeft');
+
+                    } else if ( $(this).scrollTop() > visibleNavbar ) {
+
+                        // Sets navbar to black after scroll
                         $('.navbar').css({
                             'background': 'black',
                             'border': 'black',
                             'box-shadow': '2px 2px 2px black'
                         });
 
+                        // Add animation effects to side navigation
                         $('#scene-navigation').removeClass('hide');
                         $('#scene-navigation').removeClass('bounceOutLeft');
                         $('#scene-navigation').addClass('bounceInLeft');
 
+                        //if (width < mobileDeviceSideNavigationHidden) {
+                            //$('#scene-navigation').css('display', 'none');
+                        //} else {
+                            //$('#scene-navigation').css('display', 'block');
+                        //}
+
+                        //$('#scene-navigation').css('display', 'block');
+
                     } else {
+
                         // Sets navbar to transparent
                         $('.navbar').css({
                             'background': 'transparent',
@@ -218,10 +339,12 @@
                             'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
                         });
 
+                        // Add animation effects to side navigation
                         $('#scene-navigation').removeClass('bounceInLeft');
                         $('#scene-navigation').addClass('bounceOutLeft');
 
                     }
+
                 });
 
                 // Smooth scrolling for go to story section
@@ -251,7 +374,7 @@
                 // Smooth scrolling for go to service section
                 $("a[href='#follow-us-section']").on('click', function() {
                     $("html, body").animate({
-                        scrollTop: ($('#follow-us-section').offset().top - offsetNavbar)
+                        scrollTop: ($('#follow-us-section').offset().top - (offsetNavbar - 5 ))
                     }, "slow");
                     return false;
                 });
@@ -259,41 +382,133 @@
                 // On window scroll add active class to scene navigator
                 $(window).scroll(function() {
 
-                    if ( $(window).scrollTop() > ($('#story-section').offset().top - (2 * offsetNavbar)) && $(window).scrollTop() < ($('#design-section').offset().top - offsetNavbar) ) {
+                    if ( $(window).scrollTop() > ($('#story-section').offset().top - (2 * offsetNavbar))
+                        && $(window).scrollTop() < ($('#design-section').offset().top - offsetNavbar) ) {
 
                         $('#scene-navigator-design').removeClass('active');
                         $('#scene-navigator-service').removeClass('active');
                         $('#scene-navigator-follow-us').removeClass('active');
                         $('#scene-navigator-story').addClass('active');
 
-                    }
+                        $('#problem-subsection').removeClass('hide');
+                        $('#vision-subsection').removeClass('hide');
+                        $('#goal-subsection').removeClass('hide');
+                        $('#solution-subsection').removeClass('hide');
 
-                    if ( $(window).scrollTop() > ($('#design-section').offset().top - (2 * offsetNavbar))  && $(window).scrollTop() < ($('#service-section').offset().top - offsetNavbar) ) {
+                        $('#problem-subsection').addClass('fadeInLeft');
+                        $('#vision-subsection').addClass('fadeInDown');
+                        $('#goal-subsection').addClass('fadeInUp');
+                        $('#solution-subsection').addClass('fadeInRight');
+
+                    } else if ( $(window).scrollTop() > ($('#design-section').offset().top - (2 * offsetNavbar))
+                        && $(window).scrollTop() < ($('#service-section').offset().top - offsetNavbar) ) {
 
                         $('#scene-navigator-story').removeClass('active');
                         $('#scene-navigator-service').removeClass('active');
                         $('#scene-navigator-follow-us').removeClass('active');
                         $('#scene-navigator-design').addClass('active');
-                    }
 
-                    if ( $(window).scrollTop() > ($('#service-section').offset().top - (2 * offsetNavbar)) && $(window).scrollTop() < ($('#follow-us-section').offset().top - offsetNavbar) ) {
+                        $('#raspberry-pi').removeClass('hide');
+                        $('#object-recognition').removeClass('hide');
+                        $('#web-service').removeClass('hide');
+
+                        $('#raspberry-pi').addClass('bounceInLeft');
+                        $('#object-recognition').addClass('rotateIn');
+                        $('#web-service').addClass('bounceInRight');
+;
+
+                    } else if ( $(window).scrollTop() > ($('#service-section').offset().top - (2 * offsetNavbar))
+                        && $(window).scrollTop() < ($('#follow-us-section').offset().top - offsetNavbar) ) {
 
                         $('#scene-navigator-story').removeClass('active');
                         $('#scene-navigator-design').removeClass('active');
                         $('#scene-navigator-follow-us').removeClass('active');
                         $('#scene-navigator-service').addClass('active');
 
-                    }
-
-                    if ( $(window).scrollTop() > ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
+                    } else if ( $(window).scrollTop() > ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
 
                         $('#scene-navigator-story').removeClass('active');
                         $('#scene-navigator-design').removeClass('active');
                         $('#scene-navigator-service').removeClass('active');
                         $('#scene-navigator-follow-us').addClass('active');
+
+                        $('#facebook-icon-animation').removeClass('hide');
+                        $('#google-icon-animation').removeClass('hide');
+                        $('#linkedin-icon-animation').removeClass('hide');
+                        $('#pinterest-icon-animation').removeClass('hide');
+                        $('#twitter-icon-animation').removeClass('hide');
+
+                        $('#facebook-icon-animation').addClass('bounceInLeft');
+                        $('#google-icon-animation').addClass('fadeInDownBig');
+                        $('#linkedin-icon-animation').addClass('zoomIn');
+                        $('#pinterest-icon-animation').addClass('fadeInUpBig');
+                        $('#twitter-icon-animation').addClass('bounceInRight');
                     }
+
                 });
 
+                // Change the height of the main page's sectio wrappers on resize
+                $(window).resize(function () {
+
+                    var height = $(window).height(),
+                        width = $(window).width();
+
+
+                    if (width > storySectionRowLength) {
+
+                        // Set CSS rules on ready
+                        $('.story-section-wrapper').css('height', (height - offsetNavbar));
+                        $('.design-section-wrapper').css('height', (height - offsetNavbar));
+                        $('.service-section-wrapper').css('height', (height - offsetNavbar));
+                        $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
+
+                        // Reset padding
+                        $('.p-padding').css({
+                            'padding': '0px'
+                        });
+
+                    } else if (width <= storySectionRowLength && width >= mobileDeviceMaxWidth) {
+
+                        $('.story-section-wrapper').css('height', 'auto');
+                        $('.design-section-wrapper').css('height', (height - offsetNavbar));
+                        $('.service-section-wrapper').css('height', (height - offsetNavbar));
+                        $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
+
+                        // Reset padding
+                        $('.p-padding').css({
+                            'padding': '0px'
+                        });
+
+                        $('.p-padding').css({
+                            'padding-left': '50px',
+                            'padding-right': '50px'
+                        });
+
+                        $('.p-padding#vision-subsection-p').css({
+                            'padding-bottom': '130px'
+                        });
+
+                    } else if (width < mobileDeviceMaxWidth) {
+
+                        $('.story-section-wrapper').css('height', 'auto');
+                        $('.design-section-wrapper').css('height', 'auto');
+                        $('.service-section-wrapper').css('height', 'auto');
+                        $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
+
+                        // Reset padding
+                        $('.p-padding#vision-subsection-p').css({
+                            'padding-bottom': '0px'
+                        });
+
+                        $('.p-padding').css({
+                            'padding-left': '50px',
+                            'padding-right': '50px',
+                            'padding-bottom': '50px'
+                        });
+
+                    }
+
+                }).resize();
 
                 //$('#facebook-follow-us')
                 //  .mouseenter(function() {
@@ -304,6 +519,7 @@
                     //$('#facebook-follow-us').removeClass('animated fadeIn');
                     //$('#facebook-follow-us').addClass('animated fadeOut');
                 //  });
+
             });
         </script>
     @endif

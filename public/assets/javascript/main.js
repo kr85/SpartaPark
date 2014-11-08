@@ -51,6 +51,10 @@
 
         if ($.browser.chrome) {
 
+            $('footer').css({
+                'position': 'relative'
+            });
+
             $('footer.footer-wrapper ul').css({
                 'margin-top': '25px'
             });
@@ -58,6 +62,11 @@
             $('li.vertical-align-back-to-top').css({
                 'margin-top': '-25px'
             });
+
+            $('.follow-us-icon-wrapper-center').css({
+                'padding-left': '0px'
+            });
         }
     });
+
 }(jQuery));

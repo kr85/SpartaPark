@@ -20,3 +20,24 @@
         }
     }
 }());
+
+(function() {
+    jQuery.fn.centerElement = function () {
+
+        var $self = $(this), _self = this;
+        var window_resize = function(){
+            var window_obj = $(window);
+            $self.css({
+                "position": "absolute",
+                "top": (( window_obj.height() - _self.outerHeight()) / 2.5),
+                "left": (( window_obj.width() - _self.outerWidth()) / 2)
+            });
+        }
+        $self.bind('centerit', window_resize).trigger('centerit');
+        $(window).bind('resize', function(){
+            $self.trigger('centerit');
+        });
+        return _self;
+
+    }
+}());
