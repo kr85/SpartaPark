@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <div class="story-section-wrapper" id="story-section">
+    <div class="story-section-wrapper unselectable" id="story-section">
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-story">
                 <h1>
@@ -19,7 +19,7 @@
                     <div class="story-icon-box">
                         <i class="fa fa-exclamation-triangle"></i>
                         <h3>Problem</h3>
-                        <p class="p-padding">A short paragraph (a few sentences) describing the problem.
+                        <p class="story-subsection-text">A short paragraph (or maybe long) describing the problem.
                            Pretty much looking for that length of stuff stuff stuff.
                            Stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff.
                            And some more stuff stuff stuff stuff stuff stuff stuff stuff stuff.
@@ -32,7 +32,7 @@
                     <div class="story-icon-box">
                         <i class="fa fa-eye"></i>
                         <h3>Vision</h3>
-                        <p class="p-padding" id="vision-subsection-p">A short paragraph (a few sentences) describing our vision or the big picture.
+                        <p class="story-subsection-text" id="vision-subsection-p">A short paragraph (a few sentences) describing our vision or the big picture.
                            Around same length as previous one.
                         </p>
                     </div>
@@ -41,7 +41,7 @@
                     <div class="story-icon-box">
                         <i class="fa fa-flag-checkered"></i>
                         <h3>Goal</h3>
-                        <p class="p-padding">A short paragraph (a few sentences) describing our goal or the steps we needed to take.
+                        <p class="story-subsection-text">A short paragraph (a few sentences) describing our goal or the steps we needed to take.
                            Around same length as the first one.
                         </p>
                     </div>
@@ -50,14 +50,14 @@
                     <div class="story-icon-box">
                         <i class="fa fa-users"></i>
                         <h3>Solution</h3>
-                        <p class="p-padding">...And SpartaPark was born.</p>
-                        <p class="p-padding">Or something like that... whatever you guys think we should write here...</p>
+                        <p class="story-subsection-text">...And SpartaPark was born.</p>
+                        <p class="story-subsection-text">Or something like that... whatever you guys think we should write here...</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="design-section-wrapper" id="design-section">
+    <div class="design-section-wrapper unselectable" id="design-section">
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-design">
                 <h1>
@@ -79,6 +79,7 @@
                                 and how cool it is, cheap, easy to use and stuff like that or whatever you want to write.
                             </p>
                         </div>
+                        <div id="raspberry-pi-dim"></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -93,6 +94,7 @@
                                 algorithms that we use to distinguish cars from other objects and stuff like that.
                             </p>
                         </div>
+                        <div id="object-recognition-dim"></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -107,6 +109,7 @@
                                 responsive and available to everyone or whatever you guys want.
                             </p>
                         </div>
+                        <div id="web-service-dim"></div>
                     </div>
                 </div>
             </div>
@@ -148,7 +151,7 @@
     <div class="follow-us-wrapper unselectable" id="follow-us-section">
         <div class="container follow-us-container-center">
             <div class="follow-us-title-container">
-                <div class="follow-us-title unselectable">
+                <div class="follow-us-title">
                     Follow us:
                 </div>
             </div>
@@ -253,8 +256,8 @@
                     $('.service-section-wrapper').css('height', (windowHeight - offsetNavbar));
                     $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2) ));
 
-                    // Reset padding
-                    $('.p-padding').css({
+                    // Reset styles
+                    $('.story-subsection-text').css({
                         'padding': '0px'
                     });
 
@@ -265,17 +268,17 @@
                     $('.service-section-wrapper').css('height', 'auto');
                     $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
-                    // Reset padding
-                    $('.p-padding').css({
+                    // Reset styles
+                    $('.story-subsection-text').css({
                         'padding': '0px'
                     });
 
-                    $('.p-padding').css({
+                    $('.story-subsection-text').css({
                         'padding-left': '50px',
                         'padding-right': '50px'
                     });
 
-                    $('.p-padding#vision-subsection-p').css({
+                    $('.story-subsection-text#vision-subsection-p').css({
                         'padding-bottom': '130px'
                     });
 
@@ -286,12 +289,12 @@
                     $('.service-section-wrapper').css('height', 'auto');
                     $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
-                    // Reset padding
-                    $('.p-padding#vision-subsection-p').css({
+                    // Reset styles
+                    $('.story-subsection-text#vision-subsection-p').css({
                         'padding-bottom': '0px'
                     });
 
-                    $('.p-padding').css({
+                    $('.story-subsection-text').css({
                         'padding-left': '50px',
                         'padding-right': '50px',
                         'padding-bottom': '50px'
@@ -462,8 +465,8 @@
                         $('.service-section-wrapper').css('height', (height - offsetNavbar));
                         $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
-                        // Reset padding
-                        $('.p-padding').css({
+                        // Reset styles
+                        $('.story-subsection-text').css({
                             'padding': '0px'
                         });
 
@@ -475,16 +478,16 @@
                         $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
                         // Reset padding
-                        $('.p-padding').css({
+                        $('.story-subsection-text').css({
                             'padding': '0px'
                         });
 
-                        $('.p-padding').css({
+                        $('.story-subsection-textg').css({
                             'padding-left': '50px',
                             'padding-right': '50px'
                         });
 
-                        $('.p-padding#vision-subsection-p').css({
+                        $('.story-subsection-text#vision-subsection-p').css({
                             'padding-bottom': '130px'
                         });
 
@@ -495,12 +498,12 @@
                         $('.service-section-wrapper').css('height', 'auto');
                         $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
-                        // Reset padding
-                        $('.p-padding#vision-subsection-p').css({
+                        // Reset styles
+                        $('.story-subsection-text#vision-subsection-p').css({
                             'padding-bottom': '0px'
                         });
 
-                        $('.p-padding').css({
+                        $('.story-subsection-text').css({
                             'padding-left': '50px',
                             'padding-right': '50px',
                             'padding-bottom': '50px'
@@ -510,15 +513,35 @@
 
                 }).resize();
 
-                //$('#facebook-follow-us')
-                //  .mouseenter(function() {
-                    //$('#facebook-follow-us').removeClass('animated fadeOut');
-                    //$('#facebook-follow-us').addClass('animated fadeIn');
-                //  })
-                //  .mouseleave(function() {
-                    //$('#facebook-follow-us').removeClass('animated fadeIn');
-                    //$('#facebook-follow-us').addClass('animated fadeOut');
-                //  });
+                $('#raspberry-pi')
+                    .mouseenter(function() {
+                        $('#object-recognition-dim').addClass('dim');
+                        $('#web-service-dim').addClass('dim');
+                    })
+                    .mouseleave(function() {
+                        $('#object-recognition-dim').removeClass('dim');
+                        $('#web-service-dim').removeClass('dim');
+                });
+
+                $('#object-recognition')
+                    .mouseenter(function() {
+                        $('#raspberry-pi-dim').addClass('dim');
+                        $('#web-service-dim').addClass('dim');
+                    })
+                    .mouseleave(function() {
+                        $('#raspberry-pi-dim').removeClass('dim');
+                        $('#web-service-dim').removeClass('dim');
+                });
+
+                $('#web-service')
+                    .mouseenter(function() {
+                        $('#raspberry-pi-dim').addClass('dim');
+                        $('#object-recognition-dim').addClass('dim');
+                    })
+                    .mouseleave(function() {
+                        $('#raspberry-pi-dim').removeClass('dim');
+                        $('#object-recognition-dim').removeClass('dim');
+                });
 
             });
         </script>
