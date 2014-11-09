@@ -7,7 +7,7 @@
 @section('content')
     <div class="story-section-wrapper unselectable" id="story-section">
         <div class="container">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-story">
+            <div class="z-index-1000 col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-story">
                 <h1>
                     <span id="bullet-left"></span>
                     Story
@@ -15,8 +15,8 @@
                 </h1>
             </div>
             <div class="row row-padding">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="problem-subsection">
-                    <div class="story-icon-box">
+                <div class="z-index-1000 col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="problem-subsection">
+                    <div class="story-icon-box animated" id="story-icon-box-problem">
                         <i class="fa fa-exclamation-triangle"></i>
                         <h3>Problem</h3>
                         <p class="story-subsection-text">A short paragraph (or maybe long) describing the problem.
@@ -28,26 +28,26 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="vision-subsection">
-                    <div class="story-icon-box">
+                <div class="z-index-1000 col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="vision-subsection">
+                    <div class="story-icon-box animated" id="story-icon-box-vision">
                         <i class="fa fa-eye"></i>
                         <h3>Vision</h3>
                         <p class="story-subsection-text" id="vision-subsection-p">A short paragraph (a few sentences) describing our vision or the big picture.
-                           Around same length as previous one.
+                           Maybe something about senior project. Around same length as previous one.
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="goal-subsection">
-                    <div class="story-icon-box">
+                <div class="z-index-1000 col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="goal-subsection">
+                    <div class="story-icon-box animated" id="story-icon-box-goal">
                         <i class="fa fa-flag-checkered"></i>
                         <h3>Goal</h3>
                         <p class="story-subsection-text">A short paragraph (a few sentences) describing our goal or the steps we needed to take.
-                           Around same length as the first one.
+                           Maybe say something that it is our senior project. Around same length as the first one.
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="solution-subsection">
-                    <div class="story-icon-box">
+                <div class="z-index-1000 col-xs-12 col-sm-12 col-md-6 col-lg-3 hide animated" id="solution-subsection">
+                    <div class="story-icon-box animated" id="story-icon-box-solution">
                         <i class="fa fa-users"></i>
                         <h3>Solution</h3>
                         <p class="story-subsection-text">...And SpartaPark was born.</p>
@@ -56,6 +56,7 @@
                 </div>
             </div>
         </div>
+        <div class="dim-white"></div>
     </div>
     <div class="design-section-wrapper unselectable" id="design-section">
         <div class="container">
@@ -125,15 +126,17 @@
                     </h1>
             </div>
             <div class="row row-padding">
-                <div class="col-md-8 col-lg-8">
+                <div class="col-md-8 col-lg-8 hide animated" id="service-section-text">
                     <ul>
-                        <li>Stuff</li>
-                        <li>Stuff</li>
-                        <li>Stuff</li>
-                        <li>Stuff</li>
+                        <li>Here we should write something about SpartaPark's service</li>
+                        <li>It can be bullet points or paragraphs...</li>
+                        <li>I don't know, maybe come up with a bunch of marketing stuff or whatever you guys decide</li>
+                        <li>We have a whole section to fill so we can put a bunch of things...</li>
+                        <li>More stuff</li>
+                        <li>And more stuff</li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hide animated" id="service-section-map">
                     <div class="index-map-canvas">
                         <a href="/parking">
                             <div class="static-map"></div>
@@ -287,7 +290,7 @@
                     $('.story-section-wrapper').css('height', 'auto');
                     $('.design-section-wrapper').css('height', 'auto');
                     $('.service-section-wrapper').css('height', 'auto');
-                    $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
+                    $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2)));
 
                     // Reset styles
                     $('.story-subsection-text#vision-subsection-p').css({
@@ -324,14 +327,6 @@
                         $('#scene-navigation').removeClass('hide');
                         $('#scene-navigation').removeClass('bounceOutLeft');
                         $('#scene-navigation').addClass('bounceInLeft');
-
-                        //if (width < mobileDeviceSideNavigationHidden) {
-                            //$('#scene-navigation').css('display', 'none');
-                        //} else {
-                            //$('#scene-navigation').css('display', 'block');
-                        //}
-
-                        //$('#scene-navigation').css('display', 'block');
 
                     } else {
 
@@ -388,10 +383,7 @@
                     if ( $(window).scrollTop() > ($('#story-section').offset().top - (2 * offsetNavbar))
                         && $(window).scrollTop() < ($('#design-section').offset().top - offsetNavbar) ) {
 
-                        $('#scene-navigator-design').removeClass('active');
-                        $('#scene-navigator-service').removeClass('active');
-                        $('#scene-navigator-follow-us').removeClass('active');
-                        $('#scene-navigator-story').addClass('active');
+                        setActiveSceneNavigator('#scene-navigator-design', '#scene-navigator-service', '#scene-navigator-follow-us', '#scene-navigator-story');
 
                         $('#problem-subsection').removeClass('hide');
                         $('#vision-subsection').removeClass('hide');
@@ -406,10 +398,7 @@
                     } else if ( $(window).scrollTop() > ($('#design-section').offset().top - (2 * offsetNavbar))
                         && $(window).scrollTop() < ($('#service-section').offset().top - offsetNavbar) ) {
 
-                        $('#scene-navigator-story').removeClass('active');
-                        $('#scene-navigator-service').removeClass('active');
-                        $('#scene-navigator-follow-us').removeClass('active');
-                        $('#scene-navigator-design').addClass('active');
+                        setActiveSceneNavigator('#scene-navigator-story', '#scene-navigator-service', '#scene-navigator-follow-us', '#scene-navigator-design');
 
                         $('#raspberry-pi').removeClass('hide');
                         $('#object-recognition').removeClass('hide');
@@ -418,22 +407,22 @@
                         $('#raspberry-pi').addClass('bounceInLeft');
                         $('#object-recognition').addClass('rotateIn');
                         $('#web-service').addClass('bounceInRight');
-;
+
 
                     } else if ( $(window).scrollTop() > ($('#service-section').offset().top - (2 * offsetNavbar))
                         && $(window).scrollTop() < ($('#follow-us-section').offset().top - offsetNavbar) ) {
 
-                        $('#scene-navigator-story').removeClass('active');
-                        $('#scene-navigator-design').removeClass('active');
-                        $('#scene-navigator-follow-us').removeClass('active');
-                        $('#scene-navigator-service').addClass('active');
+                        setActiveSceneNavigator('#scene-navigator-story', '#scene-navigator-design', '#scene-navigator-follow-us', '#scene-navigator-service');
+
+                        $('#service-section-text').removeClass('hide');
+                        $('#service-section-map').removeClass('hide');
+
+                        $('#service-section-text').addClass('rotateInUpLeft');
+                        $('#service-section-map').addClass('bounceInRight');
 
                     } else if ( $(window).scrollTop() > ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
 
-                        $('#scene-navigator-story').removeClass('active');
-                        $('#scene-navigator-design').removeClass('active');
-                        $('#scene-navigator-service').removeClass('active');
-                        $('#scene-navigator-follow-us').addClass('active');
+                        setActiveSceneNavigator('#scene-navigator-story', '#scene-navigator-design', '#scene-navigator-service', '#scene-navigator-follow-us');
 
                         $('#facebook-icon-animation').removeClass('hide');
                         $('#google-icon-animation').removeClass('hide');
@@ -513,35 +502,59 @@
 
                 }).resize();
 
-                $('#raspberry-pi')
-                    .mouseenter(function() {
-                        $('#object-recognition-dim').addClass('dim');
-                        $('#web-service-dim').addClass('dim');
-                    })
-                    .mouseleave(function() {
-                        $('#object-recognition-dim').removeClass('dim');
-                        $('#web-service-dim').removeClass('dim');
-                });
+                // Add flip effect to story section elements
+                $('#problem-subsection').flipElements(
+                    '#story-icon-box-vision',
+                    '#story-icon-box-goal',
+                    '#story-icon-box-solution'
+                );
 
-                $('#object-recognition')
-                    .mouseenter(function() {
-                        $('#raspberry-pi-dim').addClass('dim');
-                        $('#web-service-dim').addClass('dim');
-                    })
-                    .mouseleave(function() {
-                        $('#raspberry-pi-dim').removeClass('dim');
-                        $('#web-service-dim').removeClass('dim');
-                });
+                $('#vision-subsection').flipElements(
+                    '#story-icon-box-problem',
+                    '#story-icon-box-goal',
+                    '#story-icon-box-solution'
+                );
 
-                $('#web-service')
-                    .mouseenter(function() {
-                        $('#raspberry-pi-dim').addClass('dim');
-                        $('#object-recognition-dim').addClass('dim');
-                    })
-                    .mouseleave(function() {
-                        $('#raspberry-pi-dim').removeClass('dim');
-                        $('#object-recognition-dim').removeClass('dim');
-                });
+                $('#goal-subsection').flipElements(
+                    '#story-icon-box-problem',
+                    '#story-icon-box-vision',
+                    '#story-icon-box-solution'
+                );
+
+                $('#solution-subsection').flipElements(
+                    '#story-icon-box-problem',
+                    '#story-icon-box-vision',
+                    '#story-icon-box-goal'
+                );
+
+                // Add dim effect to design section elements
+                $('#raspberry-pi').dimElements(
+                    '#object-recognition-dim',
+                    '#web-service-dim'
+                );
+
+                $('#object-recognition').dimElements(
+                    '#raspberry-pi-dim',
+                    '#web-service-dim'
+                )
+
+                $('#web-service').dimElements(
+                    '#raspberry-pi-dim',
+                    '#object-recognition-dim'
+                )
+
+                function setActiveSceneNavigator(notActiveOne, notActiveTwo, notActiveThree, active)
+                {
+                        var $notActiveOne = $(notActiveOne),
+                            $notActiveTwo = $(notActiveTwo),
+                            $notActiveThree = $(notActiveThree),
+                            $active = $(active);
+
+                        $notActiveOne.removeClass('active');
+                        $notActiveTwo.removeClass('active');
+                        $notActiveThree.removeClass('active');
+                        $active.addClass('active');
+                }
 
             });
         </script>

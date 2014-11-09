@@ -49,7 +49,7 @@
 
             // Preload JS and CSS
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/assets/javascrpt/vendor/jquery-1.10.2.min.js');
+            xhr.open('GET', '/assets/javascript/vendor/jquery-1.11.0.min.js');
             xhr.send('');
             xhr = new XMLHttpRequest();
             xhr.open('GET', '/assets/javascript/vendor/jquery.browser.min.js');

@@ -41,3 +41,67 @@
 
     }
 }());
+
+(function() {
+    jQuery.fn.flipElements = function (elementOne, elementTwo, elementThree) {
+
+        var $self = $(this),
+            $elementOne = $(elementOne),
+            $elementTwo = $(elementTwo),
+            $elementThree = $(elementThree);
+
+        $self
+            .mouseenter(function() {
+                $elementOne.removeClass('flipInY');
+                $elementOne.addClass('flipOutY');
+
+                $elementTwo.removeClass('flipInY');
+                $elementTwo.addClass('flipOutY');
+
+                $elementThree.removeClass('flipInY');
+                $elementThree.addClass('flipOutY');
+
+                /*$('.dim-white').css({
+                    'opacity': '0.8',
+                    '-ms-filter': 'alpha(opacity=80)',
+                    'filter': 'alpha(opacity=80)'
+                });*/
+
+            })
+            .mouseleave(function() {
+                $elementOne.removeClass('flipOutY');
+                $elementOne.addClass('flipInY');
+
+                $elementTwo.removeClass('flipOutY');
+                $elementTwo.addClass('flipInY');
+
+                $elementThree.removeClass('flipOutY');
+                $elementThree.addClass('flipInY');
+
+                /*$('.dim-white').css({
+                    'opacity': '0.95',
+                    '-ms-filter': 'alpha(opacity=95)',
+                    'filter': 'alpha(opacity=95)'
+                });*/
+            });
+    }
+}());
+
+(function() {
+    jQuery.fn.dimElements = function (elementOne, elementTwo) {
+
+        var $self = $(this),
+            $elementOne = $(elementOne),
+            $elementTwo = $(elementTwo);
+
+        $self
+            .mouseenter(function() {
+                $elementOne.addClass('dim-black');
+                $elementTwo.addClass('dim-black');
+            })
+            .mouseleave(function() {
+                $elementOne.removeClass('dim-black');
+                $elementTwo.removeClass('dim-black');
+            });
+    }
+}());
