@@ -214,7 +214,8 @@
                     windowWidth = $(window).width(),
                     visibleNavbar = 300,
                     offsetNavbar = 55,
-                    mobileDeviceMaxWidth = 985,
+                    offsetFooter = 265,
+                    mobileDeviceMaxWidth = 990,
                     mobileDeviceSideNavigationHidden = 585,
                     storySectionRowLength = 1200,
                     storySectionOffsetTop = $('#story-section').offset().top,
@@ -222,19 +223,8 @@
                     serviceSectionOffsetTop = $('#service-section').offset().top,
                     followUsSectionOffsetTop = $('#follow-us-section').offset().top;
 
+                // Center follow us container
                 $('div.container.follow-us-container-center').centerElement();
-
-                // Reset window height and width on resize
-                $(window).resize(function () {
-
-                    windowHeight = $(window).height(),
-                    windowWidth = $(window).width(),
-                    storySectionOffsetTop = $('#story-section').offset().top,
-                    designSectionOffsetTop = $('#design-section').offset().top,
-                    serviceSectionOffsetTop = $('#service-section').offset().top,
-                    followUsSectionOffsetTop = $('#follow-us-section').offset().top;
-
-                }).resize();
 
                 // Sets navbar to transparent
                 $('.navbar').css({
@@ -246,9 +236,9 @@
                   'box-shadow': '0px 0px 0px rgba(255, 255, 255, 0)'
                 });
 
-                // Set CSS rules on ready
+                // Hide scene navigation if browser size is mobile
                 if (windowWidth < mobileDeviceSideNavigationHidden) {
-                    $('#scene-navigation').addClass('hide');
+                    $('.scene-navigation').css('display', 'none');
                 }
 
                 if (windowWidth > storySectionRowLength) {
@@ -259,31 +249,12 @@
                     $('.service-section-wrapper').css('height', (windowHeight - offsetNavbar));
                     $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2) ));
 
-                    // Reset styles
-                    $('.story-subsection-text').css({
-                        'padding': '0px'
-                    });
-
                 } else if (windowWidth <= storySectionRowLength && windowWidth >= mobileDeviceMaxWidth) {
 
                     $('.story-section-wrapper').css('height', 'auto');
                     $('.design-section-wrapper').css('height', 'auto');
                     $('.service-section-wrapper').css('height', 'auto');
-                    $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
-
-                    // Reset styles
-                    $('.story-subsection-text').css({
-                        'padding': '0px'
-                    });
-
-                    $('.story-subsection-text').css({
-                        'padding-left': '50px',
-                        'padding-right': '50px'
-                    });
-
-                    $('.story-subsection-text#vision-subsection-p').css({
-                        'padding-bottom': '130px'
-                    });
+                    $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2)));
 
                 } else if (windowWidth < mobileDeviceMaxWidth) {
 
@@ -292,23 +263,11 @@
                     $('.service-section-wrapper').css('height', 'auto');
                     $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2)));
 
-                    // Reset styles
-                    $('.story-subsection-text#vision-subsection-p').css({
-                        'padding-bottom': '0px'
-                    });
-
-                    $('.story-subsection-text').css({
-                        'padding-left': '50px',
-                        'padding-right': '50px',
-                        'padding-bottom': '50px'
-                    });
-
                 }
-
 
                 $(window).scroll(function() {
 
-                    if ( ($(this).scrollTop() + windowHeight) > $('.footer-wrapper').offset().top ) {
+                    if ( ($(this).scrollTop() + windowHeight) > ($('.footer-wrapper').offset().top + (offsetFooter / 2) ) ) {
 
                         // Add animation effects to side navigation
                         $('#scene-navigation').removeClass('bounceInLeft');
@@ -445,7 +404,6 @@
                     var height = $(window).height(),
                         width = $(window).width();
 
-
                     if (width > storySectionRowLength) {
 
                         // Set CSS rules on ready
@@ -454,31 +412,12 @@
                         $('.service-section-wrapper').css('height', (height - offsetNavbar));
                         $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
-                        // Reset styles
-                        $('.story-subsection-text').css({
-                            'padding': '0px'
-                        });
-
                     } else if (width <= storySectionRowLength && width >= mobileDeviceMaxWidth) {
 
                         $('.story-section-wrapper').css('height', 'auto');
                         $('.design-section-wrapper').css('height', (height - offsetNavbar));
                         $('.service-section-wrapper').css('height', (height - offsetNavbar));
                         $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
-
-                        // Reset padding
-                        $('.story-subsection-text').css({
-                            'padding': '0px'
-                        });
-
-                        $('.story-subsection-textg').css({
-                            'padding-left': '50px',
-                            'padding-right': '50px'
-                        });
-
-                        $('.story-subsection-text#vision-subsection-p').css({
-                            'padding-bottom': '130px'
-                        });
 
                     } else if (width < mobileDeviceMaxWidth) {
 
@@ -487,61 +426,13 @@
                         $('.service-section-wrapper').css('height', 'auto');
                         $('.follow-us-wrapper').css('height', (height - (offsetNavbar / 2)));
 
-                        // Reset styles
-                        $('.story-subsection-text#vision-subsection-p').css({
-                            'padding-bottom': '0px'
-                        });
-
-                        $('.story-subsection-text').css({
-                            'padding-left': '50px',
-                            'padding-right': '50px',
-                            'padding-bottom': '50px'
-                        });
-
                     }
 
                 }).resize();
 
-                // Add flip effect to story section elements
-                $('#problem-subsection').flipElements(
-                    '#story-icon-box-vision',
-                    '#story-icon-box-goal',
-                    '#story-icon-box-solution'
-                );
-
-                $('#vision-subsection').flipElements(
-                    '#story-icon-box-problem',
-                    '#story-icon-box-goal',
-                    '#story-icon-box-solution'
-                );
-
-                $('#goal-subsection').flipElements(
-                    '#story-icon-box-problem',
-                    '#story-icon-box-vision',
-                    '#story-icon-box-solution'
-                );
-
-                $('#solution-subsection').flipElements(
-                    '#story-icon-box-problem',
-                    '#story-icon-box-vision',
-                    '#story-icon-box-goal'
-                );
-
-                // Add dim effect to design section elements
-                $('#raspberry-pi').dimElements(
-                    '#object-recognition-dim',
-                    '#web-service-dim'
-                );
-
-                $('#object-recognition').dimElements(
-                    '#raspberry-pi-dim',
-                    '#web-service-dim'
-                )
-
-                $('#web-service').dimElements(
-                    '#raspberry-pi-dim',
-                    '#object-recognition-dim'
-                )
+                if (windowWidth > mobileDeviceMaxWidth ) {
+                    setEffectElements();
+                }
 
                 function setActiveSceneNavigator(notActiveOne, notActiveTwo, notActiveThree, active)
                 {
@@ -554,6 +445,50 @@
                         $notActiveTwo.removeClass('active');
                         $notActiveThree.removeClass('active');
                         $active.addClass('active');
+                }
+
+                function setEffectElements()
+                {
+                    // Add flip effect to story section elements
+                    $('#problem-subsection').setFlipElements(
+                        '#story-icon-box-vision',
+                        '#story-icon-box-goal',
+                        '#story-icon-box-solution'
+                    );
+
+                    $('#vision-subsection').setFlipElements(
+                        '#story-icon-box-problem',
+                        '#story-icon-box-goal',
+                        '#story-icon-box-solution'
+                    );
+
+                    $('#goal-subsection').setFlipElements(
+                        '#story-icon-box-problem',
+                        '#story-icon-box-vision',
+                        '#story-icon-box-solution'
+                    );
+
+                    $('#solution-subsection').setFlipElements(
+                        '#story-icon-box-problem',
+                        '#story-icon-box-vision',
+                        '#story-icon-box-goal'
+                    );
+
+                    // Add dim effect to design section elements
+                    $('#raspberry-pi').setDimElements(
+                        '#object-recognition-dim',
+                        '#web-service-dim'
+                    );
+
+                    $('#object-recognition').setDimElements(
+                        '#raspberry-pi-dim',
+                        '#web-service-dim'
+                    )
+
+                    $('#web-service').setDimElements(
+                        '#raspberry-pi-dim',
+                        '#object-recognition-dim'
+                    )
                 }
 
             });

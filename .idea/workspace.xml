@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/story-section-bachground-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/story-section-bachground.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/story-section-bachground.jpeg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/story-section-bachground-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/story-section-bachground.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/spartapark/index.blade.php" afterPath="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/master.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/javascript/plugins.js" afterPath="$PROJECT_DIR$/public/assets/javascript/plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/javascript/preload.js" afterPath="$PROJECT_DIR$/public/assets/javascript/preload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
@@ -31,61 +30,26 @@
     <favorites_list name="spartapark" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.9">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="1699" column="25" selection-start="37392" selection-end="37392" vertical-scroll-proportion="-6.814815" vertical-offset="25301" max-vertical-offset="32865">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="420" column="73" selection-start="20653" selection-end="20653" vertical-scroll-proportion="0.6305733" vertical-offset="5805" max-vertical-offset="8505">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="plugins.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/assets/javascript/plugins.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="84" column="21" selection-start="2701" selection-end="2701" vertical-scroll-proportion="0.0" vertical-offset="691" max-vertical-offset="1680">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="104" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.0" vertical-offset="533" max-vertical-offset="1410">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="2052" column="20" selection-start="45758" selection-end="45758" vertical-scroll-proportion="15.9375" vertical-offset="30525" max-vertical-offset="32865">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2008" column="24" selection-start="44807" selection-end="44811" vertical-scroll-proportion="-10.333333" vertical-offset="29841" max-vertical-offset="36315">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="269" column="117" selection-start="13741" selection-end="13741" vertical-scroll-proportion="0.24705882" vertical-offset="3825" max-vertical-offset="7530">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -873,11 +837,6 @@
         <state line="12" column="18" selection-start="483" selection-end="483" vertical-scroll-proportion="0.2387268" vertical-offset="0" max-vertical-offset="754" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="50" selection-start="3284" selection-end="3300" vertical-scroll-proportion="0.35528332" vertical-offset="473" max-vertical-offset="2100" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/animate.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="47460">
@@ -943,30 +902,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="104" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.0" vertical-offset="533" max-vertical-offset="1410">
+        <state line="52" column="49" selection-start="3597" selection-end="3597" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="2100">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/javascript/plugins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="21" selection-start="2701" selection-end="2701" vertical-scroll-proportion="0.0" vertical-offset="691" max-vertical-offset="1680">
+        <state line="59" column="0" selection-start="1820" selection-end="1820" vertical-scroll-proportion="1.009122" vertical-offset="0" max-vertical-offset="1515">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="104" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.55530214" vertical-offset="533" max-vertical-offset="1410">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1699" column="25" selection-start="37392" selection-end="37392" vertical-scroll-proportion="-6.814815" vertical-offset="25301" max-vertical-offset="32865">
+        <state line="2008" column="24" selection-start="44807" selection-end="44811" vertical-scroll-proportion="-10.333333" vertical-offset="29841" max-vertical-offset="36315">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="73" selection-start="20653" selection-end="20653" vertical-scroll-proportion="0.6305733" vertical-offset="5805" max-vertical-offset="8505">
+        <state line="269" column="117" selection-start="13741" selection-end="13741" vertical-scroll-proportion="0.24705882" vertical-offset="3825" max-vertical-offset="7530">
           <folding />
         </state>
       </provider>

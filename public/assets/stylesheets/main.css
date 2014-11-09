@@ -1654,6 +1654,8 @@ div#map-directions-canvas {
 }
 .story-icon-box {
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 .story-icon-box i {
   width: 80px;
@@ -1834,15 +1836,6 @@ div#map-directions-canvas {
 .design-section-wrapper {
   background: url(../images/design-section-background.jpg) repeat scroll 0 0 #f0f0f0;
 }
-.story-section-wrapper,
-.design-section-wrapper,
-.service-section-wrapper {
-  padding-bottom: 100px;
-  padding-top: 100px;
-  border-bottom: 1px solid #dddddd;
-  box-shadow: 0 0 10px #dddddd;
-  position: relative;
-}
 .story-section-wrapper {
  min-height: 600px;
 }
@@ -1985,6 +1978,15 @@ div#map-directions-canvas {
   text-align: justify;
 }
 @media (min-width: 1625px) {
+  .story-section-wrapper,
+  .design-section-wrapper,
+  .service-section-wrapper {
+    padding-bottom: 100px;
+    padding-top: 100px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 0 10px #dddddd;
+    position: relative;
+  }
   .section-title h1:before,
   .section-title h1:after {
     content: " ";
@@ -2019,6 +2021,11 @@ div#map-directions-canvas {
   .section-title h1 span#bullet-right {
     left: 682px;
   }
+  #raspberry-pi.thumbnail,
+  #object-recognition.thumbnail,
+  #web-service.thumbnail {
+    width: 359px;
+  }
   .raspberry-pi-image {
     background-size: 327px 205px;
     height: 205px;
@@ -2038,8 +2045,6 @@ div#map-directions-canvas {
     border: 1px solid #B3B3B3;
     padding: 20px;
     width: 290px;
-    margin-top: -10px;
-    margin-left: -10px;
     border-radius: 20px;
     background-color: white;
   }
@@ -2050,18 +2055,25 @@ div#map-directions-canvas {
     z-index: 1000;
     padding: 20px;
     width: 290px;
-    margin-left: -10px;
     background-color: #ffffff;
   }
   .story-section-wrapper {
-    background-image: url(../images/story-section-bachground.png);
-    background-color: #ffffff;
+    background-image: url(../images/story-section-bachground.jpeg);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 1900px 400px;
   }
 }
 @media (min-width: 1280px) and (max-width: 1624px) {
+  .story-section-wrapper,
+  .design-section-wrapper,
+  .service-section-wrapper {
+    padding-bottom: 100px;
+    padding-top: 100px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 0 10px #dddddd;
+    position: relative;
+  }
   .section-title h1:before,
   .section-title h1:after {
     content: " ";
@@ -2096,6 +2108,11 @@ div#map-directions-canvas {
   .section-title h1 span#bullet-right {
     left: 682px;
   }
+  #raspberry-pi.thumbnail,
+  #object-recognition.thumbnail,
+  #web-service.thumbnail {
+    width: 332px;
+  }
   .raspberry-pi-image {
     background-size: 300px 192px;
     height: 192px;
@@ -2111,12 +2128,77 @@ div#map-directions-canvas {
     height: 192px;
     width: 300px;
   }
-  .story-icon-box:hover {
+  .story-icon-box {
+    border: 1px solid #B3B3B3;
+    padding: 20px;
     width: 290px;
-    margin-left: -15px;
+    border-radius: 20px;
+    background-color: white;
+  }
+  .story-icon-box:hover {
+    box-shadow: 0 1px 10px #A7A7A7, 0 1px 0 #FFF inset;
+    border: 1px solid #B3B3B3;
+    border-radius: 20px;
+    z-index: 1000;
+    padding: 20px;
+    width: 290px;
+    background-color: #ffffff;
+  }
+  .story-section-wrapper {
+    background-image: url(../images/story-section-bachground.jpeg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 1624px 300px;
   }
 }
 @media (min-width: 990px) and (max-width: 1279px) {
+  .story-section-wrapper,
+  .design-section-wrapper,
+  .service-section-wrapper {
+    padding-bottom: 100px;
+    padding-top: 100px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 0 10px #dddddd;
+    position: relative;
+  }
+  #raspberry-pi.thumbnail,
+  #object-recognition.thumbnail,
+  #web-service.thumbnail {
+    width: 282px;
+  }
+  .raspberry-pi-image {
+    background-size: 250px 160px;
+    height: 160px;
+    width: 250px;
+  }
+  .object-recognition-image {
+    background-size: 250px 160px;
+    height: 160px;
+    width: 250px;
+  }
+  .web-service-image {
+    background-size: 250px 160px;
+    height: 160px;
+    width: 250px;
+  }
+  .story-icon-box {
+    border: 1px solid #B3B3B3;
+    padding: 20px;
+    width: 290px;
+    border-radius: 20px;
+    background-color: white;
+  }
+  .story-icon-box:hover {
+    box-shadow: 0 1px 10px #A7A7A7, 0 1px 0 #FFF inset;
+    border: 1px solid #B3B3B3;
+    border-radius: 20px;
+    z-index: 1000;
+    padding: 20px;
+    width: 290px;
+    background-color: #ffffff;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1279px) {
   .section-title h1:before,
   .section-title h1:after {
     content: " ";
@@ -2146,28 +2228,111 @@ div#map-directions-canvas {
     z-index: 2;
   }
   .section-title h1 span#bullet-left {
-    left: 265px;
+    left: 365px;
   }
   .section-title h1 span#bullet-right {
-    left: 580px;
+    left: 680px;
   }
-  .raspberry-pi-image {
-    background-size: 250px 160px;
-    height: 160px;
-    width: 250px;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #story-icon-box-vision {
+    margin-bottom: 150px;
   }
-  .object-recognition-image {
-    background-size: 250px 160px;
-    height: 160px;
-    width: 250px;
+  .section-title h1:before,
+  .section-title h1:after {
+    content: " ";
+    width: 40%;
+    position: absolute;
+    top: 47%;
+    z-index: 1;
+    display: block;
+    height: 1px;
   }
-  .web-service-image {
-    background-size: 250px 160px;
-    height: 160px;
-    width: 250px;
+  .section-title h1:before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
+    left: -37px;
+  }
+  .section-title h1:after {
+    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
+    right: -42px;
+    left: auto;
+  }
+  .section-title h1:before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
+    left: -77px;
+  }
+  .section-title h1:after {
+    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
+    right: -75px;
+    left: auto;
+  }
+  .section-title h1 span {
+    position: absolute;
+    top: 42%;
+    height: 7px;
+    width: 65px;
+    display: table;
+    background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
+    z-index: 2;
+  }
+  .section-title h1 span#bullet-left {
+    left: 262px;
+  }
+  .section-title h1 span#bullet-right {
+    left: 578px;
+  }
+}
+@media (min-width: 445px) and (max-width: 991px) {
+  .section-title h1:before,
+  .section-title h1:after {
+    content: " ";
+    width: 40%;
+    position: absolute;
+    top: 47%;
+    z-index: 1;
+    display: block;
+    height: 1px;
+  }
+  .section-title h1:before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
+    left: -77px;
+  }
+  .section-title h1:after {
+    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
+    right: -75px;
+    left: auto;
+  }
+  .section-title h1 span {
+    position: absolute;
+    top: 42%;
+    height: 7px;
+    width: 65px;
+    display: table;
+    background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
+    z-index: 2;
+  }
+  .section-title h1 span#bullet-left {
+    left: 156px;
+  }
+  .section-title h1 span#bullet-right {
+    left: 468px;
   }
 }
 @media (min-width: 445px) and (max-width: 989px) {
+  .story-section-wrapper,
+  .design-section-wrapper,
+  .service-section-wrapper {
+    padding-bottom: 100px;
+    padding-top: 100px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 0 10px #dddddd;
+    position: relative;
+  }
+  #raspberry-pi.thumbnail,
+  #object-recognition.thumbnail,
+  #web-service.thumbnail {
+    width: 332px;
+  }
   .raspberry-pi-image {
     background-size: 327px 205px;
     height: 205px;
@@ -2182,5 +2347,70 @@ div#map-directions-canvas {
     background-size: 327px 205px;
     height: 205px;
     width: 327px;
+  }
+  .story-icon-box {
+    border: 1px solid #B3B3B3;
+    padding: 20px;
+    width: 290px;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 25px;
+  }
+  .story-icon-box:hover {
+    box-shadow: 0 1px 10px #A7A7A7, 0 1px 0 #FFF inset;
+    border: 1px solid #B3B3B3;
+    border-radius: 20px;
+    z-index: 1000;
+    padding: 20px;
+    width: 290px;
+    background-color: #ffffff;
+  }
+}
+@media (max-width: 444px) {
+  #raspberry-pi.thumbnail,
+  #object-recognition.thumbnail,
+  #web-service.thumbnail {
+    width: 305px;
+  }
+  .raspberry-pi-image {
+    background-size: 272px 205px;
+    height: 205px;
+    width: 272px;
+  }
+  .object-recognition-image {
+    background-size: 272px 205px;
+    height: 205px;
+    width: 272px;
+  }
+  .web-service-image {
+    background-size: 272px 205px;
+    height: 205px;
+    width: 272px;
+  }
+  .story-section-wrapper,
+  .design-section-wrapper,
+  .service-section-wrapper {
+    padding-bottom: 0;
+    padding-top: 50px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 0 10px #dddddd;
+    position: relative;
+  }
+  .story-icon-box {
+    border: 1px solid #B3B3B3;
+    padding: 20px;
+    width: 255px;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 25px;
+  }
+  .story-icon-box:hover {
+    box-shadow: 0 1px 10px #A7A7A7, 0 1px 0 #FFF inset;
+    border: 1px solid #B3B3B3;
+    border-radius: 20px;
+    z-index: 1000;
+    padding: 20px;
+    width: 255px;
+    background-color: #ffffff;
   }
 }

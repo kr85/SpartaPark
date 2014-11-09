@@ -43,7 +43,7 @@
 }());
 
 (function() {
-    jQuery.fn.flipElements = function (elementOne, elementTwo, elementThree) {
+    jQuery.fn.setFlipElements = function (elementOne, elementTwo, elementThree) {
 
         var $self = $(this),
             $elementOne = $(elementOne),
@@ -61,12 +61,6 @@
                 $elementThree.removeClass('flipInY');
                 $elementThree.addClass('flipOutY');
 
-                /*$('.dim-white').css({
-                    'opacity': '0.8',
-                    '-ms-filter': 'alpha(opacity=80)',
-                    'filter': 'alpha(opacity=80)'
-                });*/
-
             })
             .mouseleave(function() {
                 $elementOne.removeClass('flipOutY');
@@ -78,17 +72,12 @@
                 $elementThree.removeClass('flipOutY');
                 $elementThree.addClass('flipInY');
 
-                /*$('.dim-white').css({
-                    'opacity': '0.95',
-                    '-ms-filter': 'alpha(opacity=95)',
-                    'filter': 'alpha(opacity=95)'
-                });*/
             });
     }
 }());
 
 (function() {
-    jQuery.fn.dimElements = function (elementOne, elementTwo) {
+    jQuery.fn.setDimElements = function (elementOne, elementTwo) {
 
         var $self = $(this),
             $elementOne = $(elementOne),
