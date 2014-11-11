@@ -735,8 +735,9 @@ footer {
 .carousel-overlay {
   position: absolute;
   bottom: 100px;
-  right: 0;
   left: 0;
+  width: 100%;
+  text-align: center;
 }
 .z-index-0 {
   z-index: 0;
