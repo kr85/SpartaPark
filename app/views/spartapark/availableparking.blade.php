@@ -530,9 +530,6 @@
         // Binds info window on hover
         function bindInfoWindow(marker, infoWindow, html, htmlMore, id)
         {
-            var infoWindowHover = infoWindow;
-            var infoWindowClick = infoWindow;
-
             if (id != null) {
                 // Lot id
                 var id = "lot-" + id;
@@ -547,8 +544,8 @@
             // Add click on marker listener
             google.maps.event.addListener(marker, 'click', function() {
                 closeAllInfoWindows(allInfoWindowsMainMap);
-                infoWindowClick.setContent(htmlMore);
-                infoWindowClick.open(mainMap, marker);
+                infoWindow.setContent(htmlMore);
+                infoWindow.open(mainMap, marker);
                 $("div").removeClass("lot-entry-hover");
                 $("div").removeClass("lot-entry-active");
                 $("#" + id).addClass("lot-entry-active");
@@ -570,28 +567,20 @@
 
             // Add double click on marker listener
             google.maps.event.addListener(marker, 'dblclick', function() {
-                closeAllInfoWindows(allInfoWindowsMainMap);
-                $("div").removeClass("lot-entry-active");
-                $("div").removeClass("lot-entry-hover");
-                mouseoutListener(marker, html);
-                mouseoverListener(marker, html);
+                google.maps.event.trigger(mainMap, "click");
             });
 
             // Add close info window listener
-            google.maps.event.addListener(infoWindowClick, 'closeclick', function() {
-                closeAllInfoWindows(allInfoWindowsMainMap);
-                $("#" + id).removeClass("lot-entry-active");
-                $("#" + id).removeClass("lot-entry-hover");
-                mouseoutListener(marker, html);
-                mouseoverListener(marker, html);
+            google.maps.event.addListener(infoWindow, 'closeclick', function() {
+                google.maps.event.trigger(mainMap, "click");
             });
 
             // Helper function for marker mouseover effects
             function mouseoverListener(marker, html)
             {
                 google.maps.event.addListener(marker, 'mouseover', function() {
-                    infoWindowHover.setContent(html);
-                    infoWindowHover.open(mainMap, marker);
+                    infoWindow.setContent(html);
+                    infoWindow.open(mainMap, marker);
                     $("div").removeClass("lot-entry-hover");
                     $("#" + id).addClass("lot-entry-hover");
                 });
@@ -739,7 +728,7 @@
 
             li.innerHTML = html;
 
-            // Waits 2 seconds until adds sidebar dom listeners
+            // Waits 1.5 seconds until adds sidebar dom listeners
             setTimeout(function() {
                 // Add dom listeners
                 addDomListenerMouseover(li, marker);
@@ -1144,9 +1133,6 @@
             directionsMap.setCenter(dirCenter);
         });
 
-        google.maps.Map.prototype.setCenterWithOffset = function(latLng, offsetX, offsetY) {
-
-        };
     </script>
 @stop
 
@@ -1448,40 +1434,6 @@
                 }
             }
 
-            //setStaticMap();
-
-            // Show show a static map
-            $(window).load(function() {
-                setTimeout(function() {
-                    //$('.main-map-loader').fadeOut('fast');
-                    $('.loader').fadeOut('slow');
-                }, 3000);
-            });
-
-            function setStaticMap()
-            {
-                var windowWidth = $(window).width(),
-                    windowHeight = $(window).height(),
-                    headerOffset = 13,
-                    sidebarOffset = 252;
-
-                var width = windowWidth - sidebarOffset;
-                var height = windowHeight - headerOffset;
-                var size = width + 'x' + height;
-
-                var url = "https://maps.googleapis.com/maps/api/staticmap?center=37.33536,-121.880482&zoom=16&size=" + size +
-                    "&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:" +
-                    "http://spartapark.cloudapp.net/assets/images/parkinggarage3.png|37.3323731,-121.8830326&markers=icon:" +
-                    "http://spartapark.cloudapp.net/assets/images/parkinggarage3.png|37.3331113,-121.8808485&markers=icon:" +
-                    "http://spartapark.cloudapp.net/assets/images/parkinggarage3.png|37.339324,-121.880713";
-
-                $('.main-map-loader').css({
-                    'width': width,
-                    'height': height
-                });
-
-                $('.main-map-loader').css('background-image', 'url(' + url + ')');
-            }
         });
     </script>
 @stop
