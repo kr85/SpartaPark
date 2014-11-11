@@ -117,22 +117,25 @@ class MobileController extends BaseController
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
 
-         // Set lot array
-         $lot = array(
-            'id'        => $lot->id,
-            'name'      => $lot->name,
-            'address'   => $lot->address,
-            'distance'  => $location->distance,
-            'longitude' => $lot->longitude,
-            'latitude'  => $lot->latitude,
-            'regions'   => $lot->regions
-         );
+         if (count($lot->regions)) {
 
-         // Save each lot in the lots array
-         $lots[$i] = $lot;
+            // Set lot array
+            $lot = array(
+               'id'        => $lot->id,
+               'name'      => $lot->name,
+               'address'   => $lot->address,
+               'distance'  => $location->distance,
+               'longitude' => $lot->longitude,
+               'latitude'  => $lot->latitude,
+               'regions'   => $lot->regions
+            );
 
-         // Increment the index
-         $i++;
+            // Save each lot in the lots array
+            $lots[$i] = $lot;
+
+            // Increment the index
+            $i++;
+         }
       }
 
       // Return the lots array
@@ -188,53 +191,56 @@ class MobileController extends BaseController
          // Lot available spots variable
          $lotAvailableSpots = 0;
 
-         // Go through each region
-         foreach ($regions as $region) {
+         if (count($regions)) {
 
-            // Check if region capacity is greater than spots occupied
-            if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+            // Go through each region
+            foreach ($regions as $region) {
 
-               // Calculate available spots
-               $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+               // Check if region capacity is greater than spots occupied
+               if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
 
-               // Set filtered region array
-               $filteredRegion = array(
-                  'id'              => $region->id,
-                  'name'            => $region->name,
-                  'capacity'        => $region->capacity,
-                  'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => json_encode($availableSpots),
-                  'lot_id'          => $region->lot_id
-               );
+                  // Calculate available spots
+                  $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
 
-               // Calculate lot's available spots
-               $lotAvailableSpots += $availableSpots;
+                  // Set filtered region array
+                  $filteredRegion = array(
+                     'id'              => $region->id,
+                     'name'            => $region->name,
+                     'capacity'        => $region->capacity,
+                     'spots_occupied'  => $region->spots_occupied,
+                     'spots_available' => json_encode($availableSpots),
+                     'lot_id'          => $region->lot_id
+                  );
 
-               // Save each filtered region array to the lot regions array
-               $lotRegions[$j] = $filteredRegion;
+                  // Calculate lot's available spots
+                  $lotAvailableSpots += $availableSpots;
 
-               // Increment the index
-               $j++;
+                  // Save each filtered region array to the lot regions array
+                  $lotRegions[$j] = $filteredRegion;
+
+                  // Increment the index
+                  $j++;
+               }
             }
+
+            // Set the lot array
+            $lot = array(
+               'id'              => $lot->id,
+               'name'            => $lot->name,
+               'address'         => $lot->address,
+               'spots_available' => json_encode($lotAvailableSpots),
+               'distance'        => $location->distance,
+               'longitude'       => $lot->longitude,
+               'latitude'        => $lot->latitude,
+               'regions'         => $lotRegions
+            );
+
+            // Save each lot in the lots array
+            $lots[$i] = $lot;
+
+            // Increment the index
+            $i++;
          }
-
-         // Set the lot array
-         $lot = array(
-            'id'              => $lot->id,
-            'name'            => $lot->name,
-            'address'         => $lot->address,
-            'spots_available' => json_encode($lotAvailableSpots),
-            'distance'        => $location->distance,
-            'longitude'       => $lot->longitude,
-            'latitude'        => $lot->latitude,
-            'regions'         => $lotRegions
-         );
-
-         // Save each lot in the lots array
-         $lots[$i] = $lot;
-
-         // Increment the index
-         $i++;
       }
 
       // Return the lots array
@@ -270,22 +276,25 @@ class MobileController extends BaseController
          // Find lot by id
          $lot = $this->lotRepository->find($location->id, array('regions'));
 
-         // Set the lot array
-         $lot = array(
-            'id'        => $lot->id,
-            'name'      => $lot->name,
-            'address'   => $lot->address,
-            'distance'  => $location->distance,
-            'longitude' => $lot->longitude,
-            'latitude'  => $lot->latitude,
-            'regions'   => $lot->regions
-         );
+         if (count($lot->regions)) {
 
-         // Save each lot in the lots array
-         $lots[$i] = $lot;
+            // Set the lot array
+            $lot = array(
+               'id'        => $lot->id,
+               'name'      => $lot->name,
+               'address'   => $lot->address,
+               'distance'  => $location->distance,
+               'longitude' => $lot->longitude,
+               'latitude'  => $lot->latitude,
+               'regions'   => $lot->regions
+            );
 
-         // Increment the index
-         $i++;
+            // Save each lot in the lots array
+            $lots[$i] = $lot;
+
+            // Increment the index
+            $i++;
+         }
       }
 
       // Return the lots array
@@ -333,53 +342,56 @@ class MobileController extends BaseController
          // Lot's available spots variable
          $lotAvailableSpots = 0;
 
-         // Go through each region
-         foreach ($regions as $region) {
+         if (count($regions)) {
 
-            // Check if region capacity is greater than spots occupied
-            if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
+            // Go through each region
+            foreach ($regions as $region) {
 
-               // Calculate available spots
-               $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
+               // Check if region capacity is greater than spots occupied
+               if (json_decode($region['capacity']) > json_decode($region['spots_occupied'])) {
 
-               // Set filtered region array
-               $filteredRegion = array(
-                  'id'              => $region->id,
-                  'name'            => $region->name,
-                  'capacity'        => $region->capacity,
-                  'spots_occupied'  => $region->spots_occupied,
-                  'spots_available' => json_encode($availableSpots),
-                  'lot_id'          => $region->lot_id
-               );
+                  // Calculate available spots
+                  $availableSpots = json_decode($region['capacity']) - json_decode($region['spots_occupied']);
 
-               // Calculate lot's available spots
-               $lotAvailableSpots += $availableSpots;
+                  // Set filtered region array
+                  $filteredRegion = array(
+                     'id'              => $region->id,
+                     'name'            => $region->name,
+                     'capacity'        => $region->capacity,
+                     'spots_occupied'  => $region->spots_occupied,
+                     'spots_available' => json_encode($availableSpots),
+                     'lot_id'          => $region->lot_id
+                  );
 
-               // Save each filtered region array into the lot regions array
-               $lotRegions[$j] = $filteredRegion;
+                  // Calculate lot's available spots
+                  $lotAvailableSpots += $availableSpots;
 
-               // Increment the index
-               $j++;
+                  // Save each filtered region array into the lot regions array
+                  $lotRegions[$j] = $filteredRegion;
+
+                  // Increment the index
+                  $j++;
+               }
             }
+
+            // Set the lot array
+            $lot = array(
+               'id'              => $lot->id,
+               'name'            => $lot->name,
+               'address'         => $lot->address,
+               'spots_available' => json_encode($lotAvailableSpots),
+               'distance'        => $location->distance,
+               'longitude'       => $lot->longitude,
+               'latitude'        => $lot->latitude,
+               'regions'         => $lotRegions
+            );
+
+            // Save each lot into the lots array
+            $lots[$i] = $lot;
+
+            // Increment the index
+            $i++;
          }
-
-         // Set the lot array
-         $lot = array(
-            'id'              => $lot->id,
-            'name'            => $lot->name,
-            'address'         => $lot->address,
-            'spots_available' => json_encode($lotAvailableSpots),
-            'distance'        => $location->distance,
-            'longitude'       => $lot->longitude,
-            'latitude'        => $lot->latitude,
-            'regions'         => $lotRegions
-         );
-
-         // Save each lot into the lots array
-         $lots[$i] = $lot;
-
-         // Increment the index
-         $i++;
       }
 
       // Return the lots array

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/story-section-bachground.jpeg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/story-section-bachground-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/story-section-bachground.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/spartapark/index.blade.php" afterPath="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/javascript/plugins.js" afterPath="$PROJECT_DIR$/public/assets/javascript/plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MobileController.php" afterPath="$PROJECT_DIR$/app/controllers/MobileController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
@@ -34,16 +29,25 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2008" column="24" selection-start="44807" selection-end="44811" vertical-scroll-proportion="-10.333333" vertical-offset="29841" max-vertical-offset="36315">
+            <state line="2008" column="24" selection-start="44807" selection-end="44811" vertical-scroll-proportion="0.0" vertical-offset="29841" max-vertical-offset="36315">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="269" column="117" selection-start="13741" selection-end="13741" vertical-scroll-proportion="0.24705882" vertical-offset="3825" max-vertical-offset="7530">
+            <state line="302" column="21" selection-start="15208" selection-end="15208" vertical-scroll-proportion="0.0" vertical-offset="3825" max-vertical-offset="7530">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MobileController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="392" column="17" selection-start="11416" selection-end="11416" vertical-scroll-proportion="-0.4947245" vertical-offset="6287" max-vertical-offset="7140">
               <folding />
             </state>
           </provider>
@@ -102,7 +106,6 @@
         <option value="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
         <option value="$PROJECT_DIR$/app/views/abouts/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/MobileController.php" />
         <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/bootstrap.css" />
         <option value="$PROJECT_DIR$/public/assets/javascript/main.js" />
@@ -113,6 +116,7 @@
         <option value="$PROJECT_DIR$/public/assets/javascript/plugins.js" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/app/views/spartapark/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/MobileController.php" />
       </list>
     </option>
   </component>
@@ -149,6 +153,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -537,7 +542,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -615,7 +619,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903326" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20553781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20766774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -623,11 +627,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -822,16 +826,6 @@
         <state line="85" column="31" selection-start="3699" selection-end="3699" vertical-scroll-proportion="0.0" vertical-offset="563" max-vertical-offset="1440" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="456" column="6" selection-start="14163" selection-end="14184" vertical-scroll-proportion="0.83928573" vertical-offset="6120" max-vertical-offset="6960" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="393" column="27" selection-start="12357" selection-end="12357" vertical-scroll-proportion="-1.3212192" vertical-offset="6962" max-vertical-offset="8265" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/navigations/scene-navigation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="18" selection-start="483" selection-end="483" vertical-scroll-proportion="0.2387268" vertical-offset="0" max-vertical-offset="754" />
@@ -839,100 +833,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/animate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="47460">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="47460" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="350" column="15" selection-start="5459" selection-end="5460" vertical-scroll-proportion="0.33105803" vertical-offset="5153" max-vertical-offset="86895">
-          <folding />
-        </state>
+        <state line="350" column="15" selection-start="5459" selection-end="5460" vertical-scroll-proportion="0.33105803" vertical-offset="5153" max-vertical-offset="86895" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/javascript/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="37" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.89694655" vertical-offset="340" max-vertical-offset="1155">
-          <folding />
-        </state>
+        <state line="54" column="37" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.89694655" vertical-offset="340" max-vertical-offset="1155" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/footers/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="26" selection-start="15" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877">
-          <folding />
-        </state>
+        <state line="0" column="26" selection-start="15" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1460" column="9" selection-start="63213" selection-end="63213" vertical-scroll-proportion="0.84351146" vertical-offset="21458" max-vertical-offset="22380">
-          <folding />
-        </state>
+        <state line="1460" column="9" selection-start="63213" selection-end="63213" vertical-scroll-proportion="0.84351146" vertical-offset="21458" max-vertical-offset="22380" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/headers/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/javascript/vendor/jquery-1.11.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="155145">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="155145" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/javascript/vendor/jquery-1.11.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/javascript/preload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="66" selection-start="3180" selection-end="3180" vertical-scroll-proportion="0.8722919" vertical-offset="0" max-vertical-offset="1335">
-          <folding />
-        </state>
+        <state line="51" column="66" selection-start="3180" selection-end="3180" vertical-scroll-proportion="0.8722919" vertical-offset="0" max-vertical-offset="1335" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/abouts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="49" selection-start="3597" selection-end="3597" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="2100">
-          <folding />
-        </state>
+        <state line="52" column="49" selection-start="3597" selection-end="3597" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="2100" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/javascript/plugins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1820" selection-end="1820" vertical-scroll-proportion="1.009122" vertical-offset="0" max-vertical-offset="1515">
-          <folding />
-        </state>
+        <state line="59" column="0" selection-start="1820" selection-end="1820" vertical-scroll-proportion="1.009122" vertical-offset="0" max-vertical-offset="1515" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="104" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.55530214" vertical-offset="533" max-vertical-offset="1410">
-          <folding />
-        </state>
+        <state line="68" column="104" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.55530214" vertical-offset="533" max-vertical-offset="1410" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2008" column="24" selection-start="44807" selection-end="44811" vertical-scroll-proportion="-10.333333" vertical-offset="29841" max-vertical-offset="36315">
+        <state line="2008" column="24" selection-start="44807" selection-end="44811" vertical-scroll-proportion="0.0" vertical-offset="29841" max-vertical-offset="36315">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="117" selection-start="13741" selection-end="13741" vertical-scroll-proportion="0.24705882" vertical-offset="3825" max-vertical-offset="7530">
+        <state line="302" column="21" selection-start="15208" selection-end="15208" vertical-scroll-proportion="0.0" vertical-offset="3825" max-vertical-offset="7530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="27" selection-start="12357" selection-end="12357" vertical-scroll-proportion="-104.916664" vertical-offset="3317" max-vertical-offset="8265">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/MobileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="392" column="17" selection-start="11416" selection-end="11416" vertical-scroll-proportion="-0.4947245" vertical-offset="6287" max-vertical-offset="7140">
           <folding />
         </state>
       </provider>
