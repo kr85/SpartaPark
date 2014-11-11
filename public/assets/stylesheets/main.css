@@ -49,6 +49,7 @@ footer {
   margin: 0 auto;
   width: 100%;
   bottom: 0;
+  z-index: 0;
 }
 .content-wrapper {
   margin-top: 50px;
@@ -176,7 +177,7 @@ footer {
   .footer-wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: rgba(204, 204, 204, 0.24);
+    background: url(../images/design-section-background.jpg) 0 0 repeat scroll rgb(240, 240, 240);
     border: 1px solid rgba(54, 54, 54, 0.40);
   }
   .footer-nav {
@@ -372,7 +373,7 @@ footer {
   .footer-wrapper {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: rgba(204, 204, 204, 0.15);
+    background: url(../images/design-section-background.jpg) 0 0 repeat scroll rgb(240, 240, 240);
     border: 1px solid rgba(54, 54, 54, 0.40);
   }
   .footer-nav {
@@ -508,7 +509,9 @@ footer {
     margin-bottom: 50px;
   }
   .about-title {
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: -2px;
   }
   .about-text {
     font-size: 20px;
@@ -919,7 +922,6 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   display: block;
 }
 .about-title {
-  text-shadow: 2px 2px 2px rgba(0, 69, 163, 0.80);
   line-height: 1.5;
   margin-bottom: 30px;
 }
@@ -1586,6 +1588,7 @@ div#map-directions-canvas {
   padding-top: 100px;
   position: relative;
   min-height: 600px;
+  z-index: 100;
 }
 .follow-us-container-center {
 
@@ -1725,8 +1728,8 @@ div#map-directions-canvas {
   height: 600px;
   background-color: #ffffff;
   opacity: 0.8;
-  -ms-filter: alpha(opacity=95);
-  filter:  alpha(opacity=95);
+  -ms-filter: alpha(opacity=80);
+  filter:  alpha(opacity=80);
   border-radius: 2px;
 }
 .rotateInUpRight {
@@ -1812,6 +1815,20 @@ div#map-directions-canvas {
   -ms-animation-name: zoomIn;
   -o-animation-name: zoomIn;
   animation-name: zoomIn;
+}
+.flipInY {
+  -webkit-animation-name: flipInY;
+  -moz-animation-name: flipInY;
+  -ms-animation-name: flipInY;
+  -o-animation-name: flipInY;
+  animation-name: flipInY;
+}
+.flipOutY {
+  -webkit-animation-name: flipOutY;
+  -moz-animation-name: flipOutY;
+  -ms-animation-name: flipOutY;
+  -o-animation-name: flipOutY;
+  animation-name: flipOutY;
 }
 #problem-subsection.col-xs-12.col-sm-6.col-md-3.col-lg-3,
 #vision-subsection.col-xs-12.col-sm-6.col-md-3.col-lg-3,

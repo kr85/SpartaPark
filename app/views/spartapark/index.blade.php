@@ -267,7 +267,7 @@
 
                 $(window).scroll(function() {
 
-                    if ( ($(this).scrollTop() + windowHeight) > ($('.footer-wrapper').offset().top + (offsetFooter / 2) ) ) {
+                    if (($(this).scrollTop() + windowHeight) > ($('.footer-wrapper').offset().top + (offsetFooter / 2))) {
 
                         // Add animation effects to side navigation
                         $('#scene-navigation').removeClass('bounceInLeft');
@@ -342,7 +342,12 @@
                     if ( $(window).scrollTop() > ($('#story-section').offset().top - (2 * offsetNavbar))
                         && $(window).scrollTop() < ($('#design-section').offset().top - offsetNavbar) ) {
 
-                        setActiveSceneNavigator('#scene-navigator-design', '#scene-navigator-service', '#scene-navigator-follow-us', '#scene-navigator-story');
+                        setActiveSceneNavigator(
+                            '#scene-navigator-design',
+                            '#scene-navigator-service',
+                            '#scene-navigator-follow-us',
+                            '#scene-navigator-story'
+                        );
 
                         $('#problem-subsection').removeClass('hide');
                         $('#vision-subsection').removeClass('hide');
@@ -357,7 +362,12 @@
                     } else if ( $(window).scrollTop() > ($('#design-section').offset().top - (2 * offsetNavbar))
                         && $(window).scrollTop() < ($('#service-section').offset().top - offsetNavbar) ) {
 
-                        setActiveSceneNavigator('#scene-navigator-story', '#scene-navigator-service', '#scene-navigator-follow-us', '#scene-navigator-design');
+                        setActiveSceneNavigator(
+                            '#scene-navigator-story',
+                            '#scene-navigator-service',
+                            '#scene-navigator-follow-us',
+                            '#scene-navigator-design'
+                        );
 
                         $('#raspberry-pi').removeClass('hide');
                         $('#object-recognition').removeClass('hide');
@@ -371,7 +381,12 @@
                     } else if ( $(window).scrollTop() > ($('#service-section').offset().top - (2 * offsetNavbar))
                         && $(window).scrollTop() < ($('#follow-us-section').offset().top - offsetNavbar) ) {
 
-                        setActiveSceneNavigator('#scene-navigator-story', '#scene-navigator-design', '#scene-navigator-follow-us', '#scene-navigator-service');
+                        setActiveSceneNavigator(
+                            '#scene-navigator-story',
+                            '#scene-navigator-design',
+                            '#scene-navigator-follow-us',
+                            '#scene-navigator-service'
+                        );
 
                         $('#service-section-text').removeClass('hide');
                         $('#service-section-map').removeClass('hide');
@@ -381,7 +396,12 @@
 
                     } else if ( $(window).scrollTop() > ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
 
-                        setActiveSceneNavigator('#scene-navigator-story', '#scene-navigator-design', '#scene-navigator-service', '#scene-navigator-follow-us');
+                        setActiveSceneNavigator(
+                            '#scene-navigator-story',
+                            '#scene-navigator-design',
+                            '#scene-navigator-service',
+                            '#scene-navigator-follow-us'
+                        );
 
                         $('#facebook-icon-animation').removeClass('hide');
                         $('#google-icon-animation').removeClass('hide');
