@@ -46,6 +46,15 @@
             new Image().src = '/assets/images/parkinggarage3.png';
             new Image().src = '/assets/images/design-section-background.jpg';
             new Image().src = '/assets/images/icon-zoom.png';
+            new Image().src = '/assets/images/follow-us-facebook.png';
+            new Image().src = '/assets/images/follow-us-google-plus.png';
+            new Image().src = '/assets/images/follow-us-linkedin.png';
+            new Image().src = '/assets/images/follow-us-pinterest.png';
+            new Image().src = '/assets/images/follow-us-twitter.png';
+            new Image().src = '/assets/images/object-recognition-image.jpg';
+            new Image().src = '/assets/images/raspberry-pi-image.jpg';
+            new Image().src = '/assets/images/web-service-image.png';
+            new Image().src = '/assets/images/story-section-bachground.jpeg';
 
             // Preload JS and CSS
             var xhr = new XMLHttpRequest();
@@ -74,6 +83,9 @@
             xhr.send('');
             xhr = new XMLHttpRequest();
             xhr.open('GET', '/assets/stylesheets/bootstrap-theme.min.css');
+            xhr.send('');
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', '/assets/stylesheets/animate.css');
             xhr.send('');
             xhr = new XMLHttpRequest();
             xhr.open('GET', '/assets/stylesheets/main.css');
