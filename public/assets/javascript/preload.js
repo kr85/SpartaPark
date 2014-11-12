@@ -1,60 +1,78 @@
 (function ($) {
-    window.onload = function() {
-        setTimeout(function() {
 
-            // Preload images
-            new Image().src = '/assets/images/carousel-web-1.jpg';
-            new Image().src = '/assets/images/carousel-web-2.jpg';
-            new Image().src = '/assets/images/carousel-web-3.jpg';
-            new Image().src = '/assets/images/carousel-web-4.jpg';
-            new Image().src = '/assets/images/carousel-web-5.jpg';
-            new Image().src = '/assets/images/carousel-web-6.jpg';
-            new Image().src = '/assets/images/carousel-web-7.jpg';
-            new Image().src = '/assets/images/carousel-web-8.jpg';
-            new Image().src = '/assets/images/carousel-web-9.jpg';
-            new Image().src = '/assets/images/carousel-web-10.jpg';
-            new Image().src = '/assets/images/back-to-top.png';
-            new Image().src = '/assets/images/back-to-top-hover.png';
-            new Image().src = '/assets/images/favicon.ico';
-            new Image().src = '/assets/images/SpartaParkFooterHead.png';
-            new Image().src = '/assets/images/SpartaParkFooterLogo.png';
-            new Image().src = '/assets/images/SpartaParkLogoWhite.png';
-            new Image().src = '/assets/images/header-image-contact.jpg';
-            new Image().src = '/assets/images/header-image-contact-1.jpg';
-            new Image().src = '/assets/images/header-image-contact-2.jpg';
-            new Image().src = '/assets/images/header-image-contact-3.jpg';
-            new Image().src = '/assets/images/me.png';
-            new Image().src = '/assets/images/carousel-mobile-1.jpg';
-            new Image().src = '/assets/images/carousel-mobile-2.jpg';
-            new Image().src = '/assets/images/carousel-mobile-3.jpg';
-            new Image().src = '/assets/images/carousel-mobile-4.jpg';
-            new Image().src = '/assets/images/carousel-mobile-5.jpg';
-            new Image().src = '/assets/images/carousel-mobile-6.jpg';
-            new Image().src = '/assets/images/carousel-mobile-7.jpg';
-            new Image().src = '/assets/images/carousel-mobile-8.jpg';
-            new Image().src = '/assets/images/carousel-mobile-9.jpg';
-            new Image().src = '/assets/images/carousel-mobile-10.jpg';
-            new Image().src = '/assets/images/home.png';
-            new Image().src = '/assets/images/loading.gif';
-            new Image().src = '/assets/images/maneuvers.png';
-            new Image().src = '/assets/images/parkandride.png';
-            new Image().src = '/assets/images/parking.png';
-            new Image().src = '/assets/images/parking-meter-export.png';
-            new Image().src = '/assets/images/parking_bicycle.png';
-            new Image().src = '/assets/images/parking_disabled.png';
-            new Image().src = '/assets/images/parkinggarage.png';
-            new Image().src = '/assets/images/parkinggarage3.png';
-            new Image().src = '/assets/images/design-section-background.jpg';
-            new Image().src = '/assets/images/icon-zoom.png';
-            new Image().src = '/assets/images/follow-us-facebook.png';
-            new Image().src = '/assets/images/follow-us-google-plus.png';
-            new Image().src = '/assets/images/follow-us-linkedin.png';
-            new Image().src = '/assets/images/follow-us-pinterest.png';
-            new Image().src = '/assets/images/follow-us-twitter.png';
-            new Image().src = '/assets/images/object-recognition-image.jpg';
-            new Image().src = '/assets/images/raspberry-pi-image.jpg';
-            new Image().src = '/assets/images/web-service-image.png';
-            new Image().src = '/assets/images/story-section-bachground.jpeg';
+    // SpartaPark image resources
+    var webImages = [];
+    webImages.push('/assets/images/carousel-web-1.jpg');
+    webImages.push('/assets/images/carousel-web-2.jpg');
+    webImages.push('/assets/images/carousel-web-3.jpg');
+    webImages.push('/assets/images/carousel-web-4.jpg');
+    webImages.push('/assets/images/carousel-web-5.jpg');
+    webImages.push('/assets/images/carousel-web-6.jpg');
+    webImages.push('/assets/images/carousel-web-7.jpg');
+    webImages.push('/assets/images/carousel-web-8.jpg');
+    webImages.push('/assets/images/carousel-web-9.jpg');
+    webImages.push('/assets/images/carousel-web-10.jpg');
+    webImages.push('/assets/images/follow-us-facebook.png');
+    webImages.push('/assets/images/follow-us-google-plus.png');
+    webImages.push('/assets/images/follow-us-linkedin.png');
+    webImages.push('/assets/images/follow-us-pinterest.png');
+    webImages.push('/assets/images/follow-us-twitter.png');
+    webImages.push('/assets/images/object-recognition-image.jpg');
+    webImages.push('/assets/images/raspberry-pi-image.jpg');
+    webImages.push('/assets/images/web-service-image.png');
+    webImages.push('/assets/images/story-section-background.jpeg');
+    webImages.push('/assets/images/back-to-top.png');
+    webImages.push('/assets/images/back-to-top-hover.png');
+    webImages.push('/assets/images/favicon.ico');
+    webImages.push('/assets/images/SpartaParkFooterHead.png');
+    webImages.push('/assets/images/SpartaParkFooterLogo.png');
+    webImages.push('/assets/images/SpartaParkLogoWhite.png');
+    webImages.push('/assets/images/header-image-contact.jpg');
+    webImages.push('/assets/images/header-image-contact-1.jpg');
+    webImages.push('/assets/images/header-image-contact-2.jpg');
+    webImages.push('/assets/images/header-image-contact-3.jpg');
+    webImages.push('/assets/images/me.png');
+    webImages.push('/assets/images/carousel-mobile-1.jpg');
+    webImages.push('/assets/images/carousel-mobile-2.jpg');
+    webImages.push('/assets/images/carousel-mobile-3.jpg');
+    webImages.push('/assets/images/carousel-mobile-4.jpg');
+    webImages.push('/assets/images/carousel-mobile-5.jpg');
+    webImages.push('/assets/images/carousel-mobile-6.jpg');
+    webImages.push('/assets/images/carousel-mobile-7.jpg');
+    webImages.push('/assets/images/carousel-mobile-8.jpg');
+    webImages.push('/assets/images/carousel-mobile-9.jpg');
+    webImages.push('/assets/images/carousel-mobile-10.jpg');
+    webImages.push('/assets/images/home.png');
+    webImages.push('/assets/images/loading.gif');
+    webImages.push('/assets/images/maneuvers.png');
+    webImages.push('/assets/images/parkandride.png');
+    webImages.push('/assets/images/parking.png');
+    webImages.push('/assets/images/parking-meter-export.png');
+    webImages.push('/assets/images/parking_bicycle.png');
+    webImages.push('/assets/images/parking_disabled.png');
+    webImages.push('/assets/images/parkinggarage.png');
+    webImages.push('/assets/images/parkinggarage3.png');
+    webImages.push('/assets/images/design-section-background.jpg');
+    webImages.push('/assets/images/icon-zoom.png');
+
+    // Preload images
+    jQuery.imgpreload(webImages,
+    {
+        each: function()
+        {
+            var status = $(this).data('loaded')?'success':'error';
+            console.log(status);
+        },
+        all: function()
+        {
+            console.log('all loaded');
+        }
+
+    });
+
+    window.onload = function() {
+
+        setTimeout(function() {
 
             // Preload JS and CSS
             var xhr = new XMLHttpRequest();
@@ -90,7 +108,7 @@
             xhr = new XMLHttpRequest();
             xhr.open('GET', '/assets/stylesheets/main.css');
             xhr.send('');
-        }, 1000);
+        }, 0);
     };
 
 }(jQuery));

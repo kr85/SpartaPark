@@ -65,8 +65,11 @@
         </div>
 
         <!-- Javascript -->
-        {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
-        <script>window.jQuery || document.write('{{ HTML::script('assets/javascript/vendor/jquery-1.11.0.min.js\' }}')</script>
+        {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
+        <script>window.jQuery ||
+            document.write('<scr'+'ipt type="text/javascript" src="assets/javascript/vendor/jquery-1.11.0.min.js"><\/scr'+'ipt>')
+        </script>
+        {{ HTML::script('assets/javascript/vendor/jquery.imgpreload.min.js') }}
         {{ HTML::script('assets/javascript/vendor/jquery.browser.min.js') }}
         {{ HTML::script('assets/javascript/vendor/bootstrap.min.js') }}
         {{ HTML::script('assets/javascript/vendor/enscroll-0.6.1.min.js') }}
