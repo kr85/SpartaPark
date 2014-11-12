@@ -1,6 +1,6 @@
 <footer class="footer-wrapper">
     <div class="container">
-        <div class="row">
+        <div class="row vertical-align">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-push-1">
                 <div class="pull-left">
                     <div class="footer-logo">
