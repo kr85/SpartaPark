@@ -8,10 +8,10 @@
     <div class="story-section-wrapper unselectable" id="story-section">
         <div class="container">
             <div class="z-index-1000 col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-story">
-                <h1>
-                    <span id="bullet-left"></span>
+                <h1 class="title-underline">
+                    <span id="bullet-left-story"></span>
                     Story
-                    <span id="bullet-right"></span>
+                    <span id="bullet-right-story"></span>
                 </h1>
             </div>
             <div class="row row-padding">
@@ -61,10 +61,10 @@
     <div class="design-section-wrapper unselectable" id="design-section">
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-design">
-                <h1>
-                    <span id="bullet-left"></span>
+                <h1 class="title-underline">
+                    <span id="bullet-left-design"></span>
                     Design
-                    <span id="bullet-right"></span>
+                    <span id="bullet-right-design"></span>
                 </h1>
             </div>
             <div class="row row-padding">
@@ -119,10 +119,10 @@
     <div class="service-section-wrapper" id="service-section">
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 section-title" id="section-title-service">
-                    <h1>
-                        <span id="bullet-left"></span>
+                    <h1 class="title-underline">
+                        <span id="bullet-left-service"></span>
                         Service
-                        <span id="bullet-right"></span>
+                        <span id="bullet-right-service"></span>
                     </h1>
             </div>
             <div class="row row-padding">
@@ -210,18 +210,12 @@
 
             $(function() {
 
-                var windowHeight = $(window).height(),
-                    windowWidth = $(window).width(),
-                    visibleNavbar = 300,
+                var visibleNavbar = 300,
                     offsetNavbar = 55,
                     offsetFooter = 265,
                     mobileDeviceMaxWidth = 990,
                     mobileDeviceSideNavigationHidden = 585,
-                    storySectionRowLength = 1200,
-                    storySectionOffsetTop = $('#story-section').offset().top,
-                    designSectionOffsetTop = $('#design-section').offset().top,
-                    serviceSectionOffsetTop = $('#service-section').offset().top,
-                    followUsSectionOffsetTop = $('#follow-us-section').offset().top;
+                    storySectionRowLength = 1200;
 
                 // Center follow us container
                 $('div.container.follow-us-container-center').centerElement();
@@ -237,37 +231,37 @@
                 });
 
                 // Hide scene navigation if browser size is mobile
-                if (windowWidth < mobileDeviceSideNavigationHidden) {
+                if ($(window).width() < mobileDeviceSideNavigationHidden) {
                     $('.scene-navigation').css('display', 'none');
                 }
 
-                if (windowWidth > storySectionRowLength) {
+                if ($(window).width() > storySectionRowLength) {
 
                     // Set CSS rules on ready
-                    $('.story-section-wrapper').css('height', (windowHeight - offsetNavbar));
-                    $('.design-section-wrapper').css('height', (windowHeight - offsetNavbar));
-                    $('.service-section-wrapper').css('height', (windowHeight - offsetNavbar));
-                    $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2) ));
+                    $('.story-section-wrapper').css('height', ($(window).height() - offsetNavbar));
+                    $('.design-section-wrapper').css('height', ($(window).height() - offsetNavbar));
+                    $('.service-section-wrapper').css('height', ($(window).height() - offsetNavbar));
+                    $('.follow-us-wrapper').css('height', ($(window).height() - (offsetNavbar / 2) ));
 
-                } else if (windowWidth <= storySectionRowLength && windowWidth >= mobileDeviceMaxWidth) {
-
-                    $('.story-section-wrapper').css('height', 'auto');
-                    $('.design-section-wrapper').css('height', 'auto');
-                    $('.service-section-wrapper').css('height', 'auto');
-                    $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2)));
-
-                } else if (windowWidth < mobileDeviceMaxWidth) {
+                } else if ($(window).width() <= storySectionRowLength && $(window).width() >= mobileDeviceMaxWidth) {
 
                     $('.story-section-wrapper').css('height', 'auto');
                     $('.design-section-wrapper').css('height', 'auto');
                     $('.service-section-wrapper').css('height', 'auto');
-                    $('.follow-us-wrapper').css('height', (windowHeight - (offsetNavbar / 2)));
+                    $('.follow-us-wrapper').css('height', ($(window).height() - (offsetNavbar / 2)));
+
+                } else if ($(window).width() < mobileDeviceMaxWidth) {
+
+                    $('.story-section-wrapper').css('height', 'auto');
+                    $('.design-section-wrapper').css('height', 'auto');
+                    $('.service-section-wrapper').css('height', 'auto');
+                    $('.follow-us-wrapper').css('height', ($(window).height() - (offsetNavbar / 2)));
 
                 }
 
                 $(window).scroll(function() {
 
-                    if (($(this).scrollTop() + windowHeight) > ($('.footer-wrapper').offset().top + (offsetFooter / 2))) {
+                    if (($(this).scrollTop() + $(window).height()) > ($('.footer-wrapper').offset().top + (offsetFooter / 2))) {
 
                         // Add animation effects to side navigation
                         $('#scene-navigation').removeClass('bounceInLeft');
@@ -450,7 +444,7 @@
 
                 }).resize();
 
-                if (windowWidth > mobileDeviceMaxWidth ) {
+                if ($(window).width() > mobileDeviceMaxWidth ) {
                     setEffectElements();
                 }
 

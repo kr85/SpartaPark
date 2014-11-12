@@ -175,8 +175,8 @@ footer {
     font-size: 1.5em;
   }
   .footer-wrapper {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     background: url(../images/design-section-background.jpg) 0 0 repeat scroll rgb(240, 240, 240);
     border: 1px solid rgba(54, 54, 54, 0.40);
   }
@@ -2021,11 +2021,9 @@ div#map-directions-canvas {
     height: 1px;
   }
   .section-title h1:before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
     left: -200px;
   }
   .section-title h1:after {
-    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
     right: -192px;
     left: auto;
   }
@@ -2038,11 +2036,23 @@ div#map-directions-canvas {
     background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
     z-index: 2;
   }
-  .section-title h1 span#bullet-left {
+  .section-title h1 span#bullet-left-story {
     left: 355px;
   }
-  .section-title h1 span#bullet-right {
+  .section-title h1 span#bullet-left-design {
+    left: 355px;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 336px;
+  }
+  .section-title h1 span#bullet-right-story {
     left: 682px;
+  }
+  .section-title h1 span#bullet-right-design {
+    left: 695px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: 711px;
   }
   #raspberry-pi.thumbnail,
   #object-recognition.thumbnail,
@@ -2113,11 +2123,9 @@ div#map-directions-canvas {
     height: 1px;
   }
   .section-title h1:before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
     left: -37px;
   }
   .section-title h1:after {
-    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
     right: -42px;
     left: auto;
   }
@@ -2130,11 +2138,23 @@ div#map-directions-canvas {
     background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
     z-index: 2;
   }
-  .section-title h1 span#bullet-left {
-    left: 365px;
+  .section-title h1 span#bullet-left-story {
+    left: 360px;
   }
-  .section-title h1 span#bullet-right {
-    left: 682px;
+  .section-title h1 span#bullet-left-design {
+    left: 354px;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 342px;
+  }
+  .section-title h1 span#bullet-right-story {
+    left: 687px;
+  }
+  .section-title h1 span#bullet-right-design {
+    left: 696px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: 709px;
   }
   #raspberry-pi.thumbnail,
   #object-recognition.thumbnail,
@@ -2243,11 +2263,9 @@ div#map-directions-canvas {
     height: 1px;
   }
   .section-title h1:before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
     left: -37px;
   }
   .section-title h1:after {
-    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
     right: -42px;
     left: auto;
   }
@@ -2260,11 +2278,23 @@ div#map-directions-canvas {
     background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
     z-index: 2;
   }
-  .section-title h1 span#bullet-left {
-    left: 365px;
+  .section-title h1 span#bullet-left-story {
+    left: 362px;
   }
-  .section-title h1 span#bullet-right {
+  .section-title h1 span#bullet-left-design {
+    left: 355px;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 342px;
+  }
+  .section-title h1 span#bullet-right-story {
     left: 680px;
+  }
+  .section-title h1 span#bullet-right-design {
+    left: 698px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: 708px;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -2282,20 +2312,16 @@ div#map-directions-canvas {
     height: 1px;
   }
   .section-title h1:before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
     left: -37px;
   }
   .section-title h1:after {
-    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
     right: -42px;
     left: auto;
   }
   .section-title h1:before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
     left: -77px;
   }
   .section-title h1:after {
-    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
     right: -75px;
     left: auto;
   }
@@ -2308,14 +2334,26 @@ div#map-directions-canvas {
     background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
     z-index: 2;
   }
-  .section-title h1 span#bullet-left {
+  .section-title h1 span#bullet-left-story {
     left: 262px;
   }
-  .section-title h1 span#bullet-right {
+  .section-title h1 span#bullet-left-design {
+    left: 256px;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 238px;
+  }
+  .section-title h1 span#bullet-right-story {
     left: 578px;
   }
+  .section-title h1 span#bullet-right-design {
+    left: 594px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: 612px;
+  }
 }
-@media (min-width: 445px) and (max-width: 991px) {
+@media (min-width: 765px) and (max-width: 991px) {
   .section-title h1:before,
   .section-title h1:after {
     content: " ";
@@ -2327,12 +2365,10 @@ div#map-directions-canvas {
     height: 1px;
   }
   .section-title h1:before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%) repeat scroll 0 0 transparent;
     left: -77px;
   }
   .section-title h1:after {
-    background: linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0 0 transparent;
-    right: -75px;
+    right: -81px;
     left: auto;
   }
   .section-title h1 span {
@@ -2344,11 +2380,56 @@ div#map-directions-canvas {
     background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
     z-index: 2;
   }
-  .section-title h1 span#bullet-left {
+  .section-title h1 span#bullet-left-story {
     left: 156px;
   }
-  .section-title h1 span#bullet-right {
+  .section-title h1 span#bullet-left-design {
+    left: 145px;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 134px;
+  }
+  .section-title h1 span#bullet-right-story {
     left: 468px;
+  }
+  .section-title h1 span#bullet-right-design {
+    left: 487px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: 494px;
+  }
+}
+@media (min-width: 445px) and (max-width: 764px) {
+  .title-underline {
+    border-bottom: 2px solid #B4B4B4 !important;
+    padding-bottom: 15px;
+  }
+  .section-title h1 span {
+    position: absolute;
+    top: 96%;
+    height: 7px;
+    width: 65px;
+    display: table;
+    background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
+    z-index: 2;
+  }
+  .section-title h1 span#bullet-left-story {
+    left: 0;
+  }
+  .section-title h1 span#bullet-left-design {
+    left: 0;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 0;
+  }
+  .section-title h1 span#bullet-right-story {
+    left: -9999px;
+  }
+  .section-title h1 span#bullet-right-design {
+    left: -9999px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: -9999px;
   }
 }
 @media (min-width: 445px) and (max-width: 989px) {
@@ -2456,4 +2537,104 @@ div#map-directions-canvas {
     width: 255px;
     background-color: #ffffff;
   }
+  .title-underline {
+    border-bottom: 2px solid #B4B4B4 !important;
+    padding-bottom: 15px;
+  }
+  .section-title h1 span {
+    position: absolute;
+    top: 96%;
+    height: 7px;
+    width: 65px;
+    display: table;
+    background: none repeat scroll 0 0 rgba(0, 69, 163, 0.80);
+    z-index: 2;
+  }
+  .section-title h1 span#bullet-left-story {
+    left: 0;
+  }
+  .section-title h1 span#bullet-left-design {
+    left: 0;
+  }
+  .section-title h1 span#bullet-left-service {
+    left: 0;
+  }
+  .section-title h1 span#bullet-right-story {
+    left: -9999px;
+  }
+  .section-title h1 span#bullet-right-design {
+    left: -9999px;
+  }
+  .section-title h1 span#bullet-right-service {
+    left: -9999px;
+  }
+}
+.section-title h1:before {
+  background-color: #B4B4B4;
+
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%);
+
+  /* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+  background-image:
+    -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.07)), to(#B4B4B4));
+
+  /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+  background-image:
+    -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.07)  0%), color-stop(#B4B4B4 100%));
+
+  /* Firefox 3.6 - 15 */
+  background-image:
+    -moz-linear-gradient(left, rgba(0, 0, 0, 0.07)  0%, #B4B4B4 100%);
+
+  /* Opera 11.1 - 12 */
+  background-image:
+    -o-linear-gradient(left, rgba(0, 0, 0, 0.07)  0%, #B4B4B4 100%);
+
+  /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.07) 0%, #B4B4B4 100%);
+
+  /* "Invalid", but works in IE 6-8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=rgba(0, 0, 0, 0.07), endColorstr=#B4B4B4, GradientType=1);
+
+  /* Valid, works in EI 8-9 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=rgba(0, 0, 0, 0.07), endColorstr=#B4B4B4)";
+}
+.section-title h1:after {
+  background-color: #B4B4B4;
+
+  background-image: -ms-linear-gradient(left, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%);
+
+  /* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+  background-image:
+    -webkit-gradient(linear, left top, right top, from(#B4B4B4), to(rgba(0, 0, 0, 0.07)));
+
+  /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+  background-image:
+    -webkit-linear-gradient(left, color-stop(#B4B4B4  0%), color-stop(rgba(0, 0, 0, 0.07) 100%));
+
+  /* Firefox 3.6 - 15 */
+  background-image:
+    -moz-linear-gradient(left, #B4B4B4  0%, rgba(0, 0, 0, 0.07) 100%);
+
+  /* Opera 11.1 - 12 */
+  background-image:
+    -o-linear-gradient(left, #B4B4B4  0%, rgba(0, 0, 0, 0.07) 100%);
+
+  /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+  background-image:
+    linear-gradient(to right, #B4B4B4 0%, rgba(0, 0, 0, 0.07) 100%);
+
+  /* "Invalid", but works in IE 6-8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=rgba(0, 0, 0, 0.07), endColorstr=#B4B4B4, GradientType=1);
+
+  /* Valid, works in EI 8-9 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=rgba(0, 0, 0, 0.07), endColorstr=#B4B4B4)";
+}
+.section-title h1:before,
+.section-title h1:after {
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-color: transparent;
+  background-attachment: scroll;
 }

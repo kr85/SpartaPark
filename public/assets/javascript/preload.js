@@ -12,6 +12,11 @@
     webImages.push('/assets/images/carousel-web-8.jpg');
     webImages.push('/assets/images/carousel-web-9.jpg');
     webImages.push('/assets/images/carousel-web-10.jpg');
+    webImages.push('https://maps.googleapis.com/maps/api/staticmap?center=37.336,-121.881&zoom=15&size=347x339' +
+        '&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:http://spartapark' +
+        '.cloudapp.net/assets/images/parking.png|37.3323731,-121.8830326&markers=icon:http://spartapark.cloudapp.net' +
+        '/assets/images/parking.png|37.3331113,-121.8808485&markers=icon:http://spartapark.cloudapp.net/assets/' +
+        'images/parking.png|37.339324,-121.880713');
     webImages.push('/assets/images/follow-us-facebook.png');
     webImages.push('/assets/images/follow-us-google-plus.png');
     webImages.push('/assets/images/follow-us-linkedin.png');
