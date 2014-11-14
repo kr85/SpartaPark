@@ -10,6 +10,7 @@ class RegionTest extends PHPUnit_Framework_TestCase
     */
    public static function setupBeforeClass()
    {
+      FactoryMuff::setSaveMethod('save');
       FactoryMuff::loadFactories(__DIR__ . '/../factories');
    }
 
@@ -27,6 +28,7 @@ class RegionTest extends PHPUnit_Framework_TestCase
     */
    public static function tearDownAfterClass()
    {
+      FactoryMuff::setDeleteMethod('delete');
       FactoryMuff::deleteSaved();
    }
 }

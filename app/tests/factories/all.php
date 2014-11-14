@@ -18,11 +18,16 @@ FactoryMuff::define('Lot', array(
 
 FactoryMuff::define('Region', array(
    'name'           => 'name',
-   'capacity'       => 'numberBetween($min = 200, $max = 210)',
-   'spots_occupied' => 'numberBetween($min = 0, $max = 210)',
+   'capacity'       => 'numberBetween|200;210',
+   'spots_occupied' => 'numberBetween|0;210',
    'lot_id'         => 'factory|Lot'
 ));
 
 FactoryMuff::define('Entranxit', array(
-
+   'image'       => 'file($sourceDir = \'/tmp\', $targetDir = \'uploads\')',
+   'created_at'  => 'date|Ymd h:s',
+   'updated_at'  => 'date|Ymd h:s',
+   'orientation' => 'string',
+   'lot_id'      => 'factory|Lot',
+   'region_id'   => 'factory|Region'
 ));

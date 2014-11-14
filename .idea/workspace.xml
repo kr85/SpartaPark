@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/tests/models/RegionTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/models/LotTest.php" afterPath="$PROJECT_DIR$/app/tests/models/LotTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/models/RegionTest.php" afterPath="$PROJECT_DIR$/app/tests/models/RegionTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/factories/all.php" afterPath="$PROJECT_DIR$/app/tests/factories/all.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
@@ -26,46 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestCase.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tests/TestCase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="26" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="630">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Owner.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="33" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="555">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lot.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="4" selection-start="468" selection-end="468" vertical-scroll-proportion="-17.416666" vertical-offset="2" max-vertical-offset="855">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tests/factories/all.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="80" selection-end="80" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="495">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LotTest.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LotTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/tests/models/LotTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="4" selection-start="473" selection-end="473" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="645">
+            <state line="26" column="40" selection-start="556" selection-end="556" vertical-scroll-proportion="0.45720986" vertical-offset="0" max-vertical-offset="853">
               <folding>
                 <element signature="e#25#72#0" expanded="true" />
               </folding>
@@ -73,10 +39,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegionTest.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RegionTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tests/models/RegionTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="28" selection-start="372" selection-end="372" vertical-scroll-proportion="0.2813599" vertical-offset="0" max-vertical-offset="853">
+            <state line="21" column="46" selection-start="514" selection-end="514" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="600">
               <folding>
                 <element signature="e#25#72#0" expanded="true" />
               </folding>
@@ -97,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/vendor/torann/geoip/src/Torann/GeoIP/GeoIP.php" />
         <option value="$PROJECT_DIR$/app/config/packages/toin0u/geocoder-laravel/config.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Helper/GeoPlugin.php" />
@@ -145,9 +110,10 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php" />
         <option value="$PROJECT_DIR$/app/tests/TestCase.php" />
         <option value="$PROJECT_DIR$/app/models/Lot.php" />
-        <option value="$PROJECT_DIR$/app/tests/factories/all.php" />
-        <option value="$PROJECT_DIR$/app/tests/models/LotTest.php" />
         <option value="$PROJECT_DIR$/app/tests/models/RegionTest.php" />
+        <option value="$PROJECT_DIR$/app/tests/factories/all.php" />
+        <option value="$PROJECT_DIR$/app/tests/models/EntranxitTest.php" />
+        <option value="$PROJECT_DIR$/app/tests/models/LotTest.php" />
       </list>
     </option>
   </component>
@@ -287,8 +253,22 @@
               <option name="myItemId" value="SpartaPark" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Validation" />
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spartapark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,7 +286,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SpartaPark" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -387,20 +367,20 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903326" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15335463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -425,49 +405,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="18" selection-start="3135" selection-end="3135" vertical-scroll-proportion="0.96483004" vertical-offset="602" max-vertical-offset="1950" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Validation/SpartaParkValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="9" selection-start="527" selection-end="527" vertical-scroll-proportion="0.48736462" vertical-offset="0" max-vertical-offset="831" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Validation/Contact/ContactUsFormValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="234" selection-end="256" vertical-scroll-proportion="0.17584994" vertical-offset="0" max-vertical-offset="853" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Validation/ValidationServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="40" selection-start="453" selection-end="453" vertical-scroll-proportion="0.36928487" vertical-offset="0" max-vertical-offset="853" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Validation/AbstractValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="20" selection-start="290" selection-end="290" vertical-scroll-proportion="0.2989449" vertical-offset="0" max-vertical-offset="1035" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/fonts/font-awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-30.344957" vertical-offset="24367" max-vertical-offset="25170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contacts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="31" selection-start="3699" selection-end="3699" vertical-scroll-proportion="0.0" vertical-offset="563" max-vertical-offset="1440" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/navigations/scene-navigation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="18" selection-start="483" selection-end="483" vertical-scroll-proportion="0.2387268" vertical-offset="0" max-vertical-offset="754" />
@@ -600,11 +537,6 @@
         <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.018050542" vertical-offset="0" max-vertical-offset="831" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_25_175640_add_image_to_entranxits_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="9" selection-start="283" selection-end="316" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="720" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_18_132302_update_latitude_from_lots_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="42" selection-start="777" selection-end="777" vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="870" />
@@ -623,11 +555,6 @@
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_12_192902_remove_timestamps_from_lots_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="42" selection-start="642" selection-end="642" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="231" selection-end="269" vertical-scroll-proportion="-1.2083334" vertical-offset="166" max-vertical-offset="975" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_182432_create_lots_table.php">
@@ -650,51 +577,114 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="822" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="26" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/EntranxitsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="468" selection-end="468" vertical-scroll-proportion="-17.416666" vertical-offset="2" max-vertical-offset="855">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_25_175640_add_image_to_entranxits_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="9" selection-start="283" selection-end="316" vertical-scroll-proportion="0.3258427" vertical-offset="94" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_11_185144_create_entranxits_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="37" selection-start="421" selection-end="421" vertical-scroll-proportion="-0.30952382" vertical-offset="372" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EloquentEntranxitRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.26984128" vertical-offset="102" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Entranxit/EntranxitRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="402">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Crudable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.9047619" vertical-offset="342" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.984127" vertical-offset="372" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tests/factories/all.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="80" selection-end="80" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="495">
+        <state line="25" column="30" selection-start="617" selection-end="617" vertical-scroll-proportion="0.5125" vertical-offset="170" max-vertical-offset="570">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/models/LotTest.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="4" selection-start="473" selection-end="473" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="645">
+        <state line="39" column="32" selection-start="717" selection-end="726" vertical-scroll-proportion="0.6858148" vertical-offset="0" max-vertical-offset="853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Lot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="25" selection-start="695" selection-end="695" vertical-scroll-proportion="0.325" vertical-offset="455" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Entranxit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="1" selection-start="763" selection-end="763" vertical-scroll-proportion="0.72098476" vertical-offset="0" max-vertical-offset="853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tests/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="26" selection-start="512" selection-end="512" vertical-scroll-proportion="0.49237984" vertical-offset="0" max-vertical-offset="853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Owner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="33" selection-start="329" selection-end="329" vertical-scroll-proportion="0.3516999" vertical-offset="0" max-vertical-offset="853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tests/models/RegionTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="46" selection-start="514" selection-end="514" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="600">
           <folding>
             <element signature="e#25#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/models/RegionTest.php">
+    <entry file="file://$PROJECT_DIR$/app/tests/models/LotTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="28" selection-start="372" selection-end="372" vertical-scroll-proportion="0.2813599" vertical-offset="0" max-vertical-offset="853">
+        <state line="26" column="40" selection-start="556" selection-end="556" vertical-scroll-proportion="0.45720986" vertical-offset="0" max-vertical-offset="853">
           <folding>
             <element signature="e#25#72#0" expanded="true" />
           </folding>
