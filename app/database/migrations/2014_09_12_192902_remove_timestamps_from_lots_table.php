@@ -12,10 +12,14 @@ class RemoveTimestampsFromLotsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('lots', function(Blueprint $table)
-		{
-			$table->dropTimestamps();
-		});
+      if (App::environment() == 'testing') {
+         // No need in testing environment
+      } else {
+         Schema::table('lots', function(Blueprint $table)
+         {
+            $table->dropTimestamps();
+         });
+      }
 	}
 
 
@@ -26,10 +30,14 @@ class RemoveTimestampsFromLotsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('lots', function(Blueprint $table)
-		{
-			$table->timestamps();
-		});
+      if (App::environment() == 'testing') {
+         // No need in testing environment
+      } else {
+         Schema::table('lots', function(Blueprint $table)
+         {
+            $table->timestamps();
+         });
+      }
 	}
 
 }

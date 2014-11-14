@@ -12,18 +12,32 @@ class CreateRegionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('regions', function(Blueprint $table)
-		{
-			$table->increments('id');
-         $table->string('name');
-         $table->integer('capacity');
-         $table->integer('spots_occupied');
-         $table->unsignedInteger('lot_id')->default(0);
-         $table->foreign('lot_id')
-            ->references('id')->on('lots')
-            ->onDelete('cascade');
-			$table->timestamps();
-		});
+      if (App::environment() == 'testing') {
+         Schema::create('regions', function(Blueprint $table)
+         {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('capacity');
+            $table->integer('spots_occupied');
+            $table->unsignedInteger('lot_id')->default(0);
+            $table->foreign('lot_id')
+               ->references('id')->on('lots')
+               ->onDelete('cascade');
+         });
+      } else {
+         Schema::create('regions', function(Blueprint $table)
+         {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('capacity');
+            $table->integer('spots_occupied');
+            $table->unsignedInteger('lot_id')->default(0);
+            $table->foreign('lot_id')
+               ->references('id')->on('lots')
+               ->onDelete('cascade');
+            $table->timestamps();
+         });
+      }
 	}
 
 

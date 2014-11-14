@@ -14,10 +14,10 @@
  *
  * @category   Mockery
  * @package    Mockery
- * @copyright  Copyright (c) 2010 Pádraic Brady (http://blog.astrumfutura.com)
+ * @copyright  Copyright (c) 2010-2014 Pádraic Brady (http://blog.astrumfutura.com)
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
- 
+
 namespace Mockery;
 
 class ExpectationDirector
@@ -29,35 +29,35 @@ class ExpectationDirector
      * @var string
      */
     protected $_name = null;
-    
+
     /**
      * Mock object the director is attached to
      *
      * @var \Mockery\MockInterface
      */
     protected $_mock = null;
-    
+
     /**
      * Stores an array of all expectations for this mock
      *
      * @var array
      */
     protected $_expectations = array();
-    
+
     /**
      * The expected order of next call
      *
      * @var int
      */
     protected $_expectedOrder = null;
-    
+
     /**
      * Stores an array of all default expectations for this mock
      *
      * @var array
      */
     protected $_defaults = array();
-    
+
     /**
      * Constructor
      *
@@ -69,7 +69,7 @@ class ExpectationDirector
         $this->_name = $name;
         $this->_mock = $mock;
     }
-    
+
     /**
      * Add a new expectation to the director
      *
@@ -79,7 +79,7 @@ class ExpectationDirector
     {
         $this->_expectations[] = $expectation;
     }
-    
+
     /**
      * Handle a method call being directed by this instance
      *
@@ -90,17 +90,23 @@ class ExpectationDirector
     {
         $expectation = $this->findExpectation($args);
         if (is_null($expectation)) {
-            throw new \Mockery\Exception(
+            $exception = new \Mockery\Exception\NoMatchingExpectationException(
                 'No matching handler found for '
                 . $this->_mock->mockery_getName() . '::'
                 . \Mockery::formatArgs($this->_name, $args)
                 . '. Either the method was unexpected or its arguments matched'
                 . ' no expected argument list for this method'
+                . PHP_EOL . PHP_EOL
+                . \Mockery::formatObjects($args)
             );
+            $exception->setMock($this->_mock)
+                ->setMethodName($this->_name)
+                ->setActualArguments($args);
+            throw $exception;
         }
         return $expectation->verifyCall($args);
     }
-    
+
     /**
      * Verify all expectations of the director
      *
@@ -119,9 +125,9 @@ class ExpectationDirector
             }
         }
     }
-    
+
     /**
-     * Attempt to locate an expecatation matching the provided args
+     * Attempt to locate an expectation matching the provided args
      *
      * @param array $args
      * @return mixed
@@ -134,7 +140,7 @@ class ExpectationDirector
             return $this->_findExpectationIn($this->_defaults, $args);
         }
     }
-    
+
     /**
      * Make the given expectation a default for all others assuming it was
      * correctly created last
@@ -146,14 +152,14 @@ class ExpectationDirector
         $last = end($this->_expectations);
         if ($last === $expectation) {
             array_pop($this->_expectations);
-            $this->_defaults[] = $expectation;
+            array_unshift($this->_defaults, $expectation);
         } else {
             throw new \Mockery\Exception(
                 'Cannot turn a previously defined expectation into a default'
             );
         }
     }
-    
+
     /**
      * Search current array of expectations for a match
      *
@@ -174,7 +180,7 @@ class ExpectationDirector
             }
         }
     }
-    
+
     /**
      * Return all expectations assigned to this director
      *
@@ -183,6 +189,16 @@ class ExpectationDirector
     public function getExpectations()
     {
         return $this->_expectations;
+    }
+
+    /**
+     * Return the number of expectations assigned to this director.
+     *
+     * @return int
+     */
+    public function getExpectationCount()
+    {
+        return count($this->getExpectations());
     }
 
 }

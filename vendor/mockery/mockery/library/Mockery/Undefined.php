@@ -14,10 +14,10 @@
  *
  * @category   Mockery
  * @package    Mockery
- * @copyright  Copyright (c) 2010 Pádraic Brady (http://blog.astrumfutura.com)
+ * @copyright  Copyright (c) 2010-2014 Pádraic Brady (http://blog.astrumfutura.com)
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
- 
+
 namespace Mockery;
 
 class Undefined
@@ -33,6 +33,16 @@ class Undefined
     public function __call($method, array $args)
     {
         return $this;
-    }  
+    }
+
+    /**
+     * Return a string, avoiding E_RECOVERABLE_ERROR
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return __CLASS__ . ":" . spl_object_hash($this);
+    }
 
 }

@@ -12,15 +12,19 @@ class UpdateLongitudeFromLotsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('lots', function(Blueprint $table)
-		{
-			$table->dropColumn('longitude');
-		});
+      if (App::environment() == 'testing') {
+         // No need in testing environment
+      } else {
+         Schema::table('lots', function(Blueprint $table)
+         {
+            $table->dropColumn('longitude');
+         });
 
-      Schema::table('lots', function(Blueprint $table)
-      {
-         $table->decimal('longitude', 12, 8);
-      });
+         Schema::table('lots', function(Blueprint $table)
+         {
+            $table->decimal('longitude', 12, 8);
+         });
+      }
 	}
 
 
@@ -31,15 +35,19 @@ class UpdateLongitudeFromLotsTable extends Migration {
 	 */
 	public function down()
 	{
-      Schema::table('lots', function(Blueprint $table)
-      {
-         $table->dropColumn('longitude');
-      });
+      if (App::environment() == 'testing') {
+         // No need in testing environment
+      } else {
+         Schema::table('lots', function(Blueprint $table)
+         {
+            $table->dropColumn('longitude');
+         });
 
-      Schema::table('lots', function(Blueprint $table)
-      {
-         $table->decimal('longitude', 10, 8);
-      });
+         Schema::table('lots', function(Blueprint $table)
+         {
+            $table->decimal('longitude', 10, 8);
+         });
+      }
 	}
 
 }

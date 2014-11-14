@@ -12,10 +12,14 @@ class AddImageToEntranxitsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('entranxits', function(Blueprint $table)
-		{
-			$table->string('image');
-		});
+      if (App::environment() == 'testing') {
+         // No need in testing environment
+      } else {
+         Schema::table('entranxits', function(Blueprint $table)
+         {
+            $table->string('image');
+         });
+      }
 	}
 
 
@@ -26,10 +30,14 @@ class AddImageToEntranxitsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('entranxits', function(Blueprint $table)
-		{
-			$table->dropColumn('image');
-		});
+      if (App::environment() == 'testing') {
+         // No need in testing environment
+      } else {
+         Schema::table('entranxits', function(Blueprint $table)
+         {
+            $table->dropColumn('image');
+         });
+      }
 	}
 
 }
