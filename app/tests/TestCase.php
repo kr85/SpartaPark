@@ -2,6 +2,9 @@
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
+   /**
+    * Default preparation for each test
+    */
    public function setUp()
    {
       parent::setUp();
@@ -9,7 +12,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
    }
 
 	/**
-	 * Creates the application.
+	 * Creates the application
 	 *
 	 * @return \Symfony\Component\HttpKernel\HttpKernelInterface
 	 */
@@ -22,6 +25,9 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 		return require __DIR__.'/../../bootstrap/start.php';
 	}
 
+   /**
+    * Migrate the database
+    */
    private function prepareForTests()
    {
       Artisan::call('migrate');
