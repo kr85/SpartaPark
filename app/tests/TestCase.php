@@ -30,8 +30,10 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
     */
    private function prepareForTests()
    {
+      /* Uncomment if SQLite is used
       Artisan::call('migrate');
       $this->seed();
+      */
    }
 
 }
