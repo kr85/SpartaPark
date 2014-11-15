@@ -1,9 +1,9 @@
 <?php namespace models;
 
 use League\FactoryMuffin\Facade as FactoryMuff;
-use PHPUnit_Framework_TestCase;
+use TestCase;
 
-class RegionTest extends PHPUnit_Framework_TestCase
+class RegionTest extends TestCase
 {
    /**
     * Load all the factories before the tests

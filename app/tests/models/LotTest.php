@@ -1,14 +1,14 @@
 <?php namespace models;
 
 use League\FactoryMuffin\Facade as FactoryMuff;
-use PHPUnit_Framework_TestCase;
+use TestCase;
 
 /**
  * Class LotTest
  *
  * @package models
  */
-class LotTest extends PHPUnit_Framework_TestCase
+class LotTest extends TestCase
 {
    /**
     * Load all the factories before the tests
