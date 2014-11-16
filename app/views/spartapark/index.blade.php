@@ -334,7 +334,7 @@
                 $(window).scroll(function() {
 
                     if ( $(window).scrollTop() > ($('#story-section').offset().top - (2 * offsetNavbar))
-                        && $(window).scrollTop() < ($('#design-section').offset().top - offsetNavbar) ) {
+                        && $(window).scrollTop() < ($('#design-section').offset().top - (2 * offsetNavbar)) ) {
 
                         setActiveSceneNavigator(
                             '#scene-navigator-design',
@@ -353,8 +353,8 @@
                         $('#goal-subsection').addClass('fadeInUp');
                         $('#solution-subsection').addClass('fadeInRight');
 
-                    } else if ( $(window).scrollTop() > ($('#design-section').offset().top - (2 * offsetNavbar))
-                        && $(window).scrollTop() < ($('#service-section').offset().top - offsetNavbar) ) {
+                    } else if ( $(window).scrollTop() >= ($('#design-section').offset().top - (2 * offsetNavbar))
+                        && $(window).scrollTop() < ($('#service-section').offset().top - (2 * offsetNavbar)) ) {
 
                         setActiveSceneNavigator(
                             '#scene-navigator-story',
@@ -372,8 +372,8 @@
                         $('#web-service').addClass('bounceInRight');
 
 
-                    } else if ( $(window).scrollTop() > ($('#service-section').offset().top - (2 * offsetNavbar))
-                        && $(window).scrollTop() < ($('#follow-us-section').offset().top - offsetNavbar) ) {
+                    } else if ( $(window).scrollTop() >= ($('#service-section').offset().top - (2 * offsetNavbar))
+                        && $(window).scrollTop() < ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
 
                         setActiveSceneNavigator(
                             '#scene-navigator-story',
@@ -388,7 +388,7 @@
                         $('#service-section-text').addClass('rotateInUpLeft');
                         $('#service-section-map').addClass('bounceInRight');
 
-                    } else if ( $(window).scrollTop() > ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
+                    } else if ( $(window).scrollTop() >= ($('#follow-us-section').offset().top - (2 * offsetNavbar)) ) {
 
                         setActiveSceneNavigator(
                             '#scene-navigator-story',
