@@ -75,11 +75,6 @@ Route::post('api/upload_image/lot_id/{lot_id}/region_id/{region_id}/orientation/
                 'region_id'   => '[0-9]+',
                 'orientation' => '[a-zA-Z]+'));
 
-Route::get('api/upload_image', array(
-   'as'   => 'getUpload',
-   'uses' => 'WebController@getIndex'
-));
-
 /*
  \--------------------------------------------------------------------------
  | Mobile Service Routes
