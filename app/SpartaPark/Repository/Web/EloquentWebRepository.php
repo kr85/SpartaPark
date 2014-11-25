@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: ni6to
- * Date: 11/25/14
- * Time: 1:54 PM
- */ 
+<?php namespace SpartaPark\Repository\Web;
+
+use SpartaPark\Repository\AbstractEloquentRepository;
+
+class EloquentWebRepository extends AbstractEloquentRepository implements WebRepository
+{
+   public function isImage($image)
+   {
+      return true;
+   }
+}

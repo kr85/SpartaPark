@@ -5,10 +5,10 @@ use SpartaPark\Repository\Repository;
 
 /**
  * Interface WebRepository
- * 
+ *
  * @package SpartaPark\Repository\Web
  */
 interface WebRepository extends Repository, Crudable
 {
-
+   public function isImage($image);
 }
