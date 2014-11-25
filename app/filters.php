@@ -15,7 +15,6 @@ App::before(function($request)
 {
 	if (Request::getMethod() == "OPTIONS") {
       $headers = array(
-         'Access-Control-Allow-Origin'      => '*',
          'Access-Control-Allow-Credentials' => 'true',
          'Access-Control-Allow-Methods'     => 'POST, GET, OPTIONS, PUT, DELETE',
          'Access-Control-Allow-Headers'     => 'X-Requested-With, content-type'
