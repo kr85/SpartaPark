@@ -497,6 +497,8 @@ class WebController extends BaseController
     */
    public function updateSpotsAvailable($entry)
    {
+      // Find entry with id
+      $entry  = $this->entranxitRepository->find($entry->id, array());
       // Image path
       $image = $entry->image;
       // Region id
