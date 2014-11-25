@@ -7,7 +7,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  | Web App header for CORPS Requests
  |--------------------------------------------------------------------------
  */
-header('Access-Control-Allow-Origin: http://spartapark.cloudapp.net');
+header('Access-Control-Allow-Origin: *');
 
 /*
 |--------------------------------------------------------------------------
