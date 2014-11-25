@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/Web/EloquentWebRepository.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/Web/EloquentWebRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SpartaPark/Repository/Web/WebRepository.php" afterPath="$PROJECT_DIR$/app/SpartaPark/Repository/Web/WebRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/WebController.php" afterPath="$PROJECT_DIR$/app/controllers/WebController.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,30 +27,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="WebController.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="WebController.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="498" column="20" selection-start="15422" selection-end="15422" vertical-scroll-proportion="-9.291667" vertical-offset="7187" max-vertical-offset="8265">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WebRepository.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Web/WebRepository.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="47" selection-start="304" selection-end="304" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="375">
+                <state line="507" column="44" selection-start="15779" selection-end="15779" vertical-scroll-proportion="0.15647922" vertical-offset="7477" max-vertical-offset="8295">
                   <folding>
-                    <element signature="e#44#79#0" expanded="true" />
+                    <element signature="e#7#55#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RepositoryServiceProvider.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="RepositoryServiceProvider.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="29" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.7472924" vertical-offset="339" max-vertical-offset="1170">
+                <state line="60" column="4" selection-start="1600" selection-end="1600" vertical-scroll-proportion="-31.875" vertical-offset="0" max-vertical-offset="1170">
                   <folding />
                 </state>
               </provider>
@@ -136,7 +121,6 @@
         <option value="$PROJECT_DIR$/app/views/partials/carousels/main.blade.php" />
         <option value="$PROJECT_DIR$/app/views/abouts/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/contacts/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
         <option value="$PROJECT_DIR$/public/assets/stylesheets/bootstrap.css" />
         <option value="$PROJECT_DIR$/public/assets/javascript/main.js" />
         <option value="$PROJECT_DIR$/app/views/partials/navigations/scene-navigation.php" />
@@ -176,6 +160,7 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Web/EloquentWebRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Web/WebRepository.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
       </list>
     </option>
   </component>
@@ -903,26 +888,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
+    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="498" column="20" selection-start="15422" selection-end="15422" vertical-scroll-proportion="-9.291667" vertical-offset="7187" max-vertical-offset="8265">
+        <state line="60" column="4" selection-start="1600" selection-end="1600" vertical-scroll-proportion="-31.875" vertical-offset="0" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/Web/WebRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="47" selection-start="304" selection-end="304" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="375">
+        <state line="13" column="47" selection-start="304" selection-end="304" vertical-scroll-proportion="0.23465703" vertical-offset="0" max-vertical-offset="831">
           <folding>
             <element signature="e#44#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/SpartaPark/Repository/RepositoryServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="29" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.7472924" vertical-offset="339" max-vertical-offset="1170">
-          <folding />
+        <state line="507" column="44" selection-start="15779" selection-end="15779" vertical-scroll-proportion="0.15647922" vertical-offset="7477" max-vertical-offset="8295">
+          <folding>
+            <element signature="e#7#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

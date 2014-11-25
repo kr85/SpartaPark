@@ -5,6 +5,7 @@ use SpartaPark\Repository\Lot\LotRepository;
 use SpartaPark\Repository\Region\RegionRepository;
 use SpartaPark\Repository\Entranxit\EntranxitRepository;
 use SpartaPark\Validation\Contact\ContactUsFormValidator;
+use SpartaPark\Repository\Web\WebRepository;
 
 /**
  * Class MainController
@@ -37,6 +38,11 @@ class WebController extends BaseController
    protected $validatorContactUs;
 
    /**
+    * @var SpartaPark\Repository\Web\WebRepository web repository
+    */
+   protected $webRepository;
+
+   /**
     * @var string master layout
     */
    protected $layout = 'layouts.master';
@@ -49,18 +55,21 @@ class WebController extends BaseController
     * @param EntranxitRepository $entranxitRepository entranxit repository
     * @param OwnerRepository $ownerRepository owner repository
     * @param ContactUsFormValidator $contactUsFormValidator contact us form validator
+    * @param WebRepository $webRepository web repository
     */
    public function __construct(LotRepository          $lotRepository,
                                RegionRepository       $regionRepository,
                                EntranxitRepository    $entranxitRepository,
                                OwnerRepository        $ownerRepository,
-                               ContactUsFormValidator $contactUsFormValidator)
+                               ContactUsFormValidator $contactUsFormValidator,
+                               WebRepository          $webRepository)
    {
       $this->lotRepository       = $lotRepository;
       $this->regionRepository    = $regionRepository;
       $this->entranxitRepository = $entranxitRepository;
       $this->ownerRepository     = $ownerRepository;
       $this->validatorContactUs  = $contactUsFormValidator;
+      $this->webRepository       = $webRepository;
    }
 
    /**
@@ -496,7 +505,7 @@ class WebController extends BaseController
       $orientation = $entry->orientation;
 
       // Check if the object in the image is a car
-      if ($this->isCar($image)) {
+      if ($this->webRepository->isCar($image)) {
 
          // Finds the region by id
          $region = $this->regionRepository->find($region_id, array());
@@ -535,16 +544,5 @@ class WebController extends BaseController
             }
          }
       }
-   }
-
-   /**
-    * Check if the object in the picture is a car
-    *
-    * @param $image image
-    * @return bool return true or false
-    */
-   public function isCar($image)
-   {
-      return true;
    }
 }
