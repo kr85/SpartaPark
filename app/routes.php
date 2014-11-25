@@ -10,7 +10,14 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /*
  |--------------------------------------------------------------------------
- |  General Exceptions
+ | Web App header for CORPS Requests
+ |--------------------------------------------------------------------------
+ */
+header('Access-Control-Allow-Origin: http://spartapark.cloudapp.net');
+
+/*
+ |--------------------------------------------------------------------------
+ | General Exceptions
  |--------------------------------------------------------------------------
 */
 App::error(function(Exception $exception)
