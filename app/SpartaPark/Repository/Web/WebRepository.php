@@ -10,5 +10,11 @@ use SpartaPark\Repository\Repository;
  */
 interface WebRepository extends Repository, Crudable
 {
-   public function isImage($image);
+   /**
+    * Checks whether the object is a car or not
+    *
+    * @param $image path to an image
+    * @return mixed
+    */
+   public function isCar($image);
 }

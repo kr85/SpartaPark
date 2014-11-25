@@ -2500,6 +2500,8 @@ return array(
     'SpartaPark\\Repository\\Region\\RegionRepository' => $baseDir . '/app/SpartaPark/Repository/Region/RegionRepository.php',
     'SpartaPark\\Repository\\Repository' => $baseDir . '/app/SpartaPark/Repository/Repository.php',
     'SpartaPark\\Repository\\RepositoryServiceProvider' => $baseDir . '/app/SpartaPark/Repository/RepositoryServiceProvider.php',
+    'SpartaPark\\Repository\\Web\\EloquentWebRepository' => $baseDir . '/app/SpartaPark/Repository/Web/EloquentWebRepository.php',
+    'SpartaPark\\Repository\\Web\\WebRepository' => $baseDir . '/app/SpartaPark/Repository/Web/WebRepository.php',
     'SpartaPark\\Validation\\AbstractValidator' => $baseDir . '/app/SpartaPark/Validation/AbstractValidator.php',
     'SpartaPark\\Validation\\Contact\\ContactUsFormValidator' => $baseDir . '/app/SpartaPark/Validation/Contact/ContactUsFormValidator.php',
     'SpartaPark\\Validation\\SpartaParkValidator' => $baseDir . '/app/SpartaPark/Validation/SpartaParkValidator.php',

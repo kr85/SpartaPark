@@ -9,6 +9,7 @@ use Owner;
 use Lot;
 use Region;
 use Entranxit;
+use SpartaPark\Repository\Web\EloquentWebRepository;
 
 /**
  * Class RepositoryServiceProvider
@@ -26,6 +27,7 @@ class RepositoryServiceProvider extends ServiceProvider
       $this->registerLotRepository();
       $this->registerRegionRepository();
       $this->registerEntranxitRepository();
+      $this->registerWebRepository();
    }
 
    /**
@@ -65,6 +67,16 @@ class RepositoryServiceProvider extends ServiceProvider
    {
       $this->app->bind('SpartaPark\Repository\Entranxit\EntranxitRepository', function($app) {
          return new EloquentEntranxitRepository(new Entranxit());
+      });
+   }
+
+   /**
+    * Register web repository
+    */
+   public function registerWebRepository()
+   {
+      $this->app->bind('SpartaPark\Repository\Web\WebRepository', function($app) {
+         return new EloquentWebRepository(new Entranxit());
       });
    }
 }
