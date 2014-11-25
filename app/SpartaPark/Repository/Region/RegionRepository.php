@@ -8,7 +8,4 @@ use SpartaPark\Repository\Repository;
  *
  * @package SpartaPark\Repository\Region
  */
-interface RegionRepository extends Repository, Crudable
-{
-
-}
+interface RegionRepository extends Repository, Crudable {}

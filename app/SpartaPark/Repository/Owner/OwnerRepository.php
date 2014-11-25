@@ -8,7 +8,4 @@ use SpartaPark\Repository\Repository;
  *
  * @package SpartaPark\Repository\Owner
  */
-interface OwnerRepository extends Repository, Crudable
-{
-
-}
+interface OwnerRepository extends Repository, Crudable {}

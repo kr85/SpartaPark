@@ -8,7 +8,4 @@ use SpartaPark\Repository\Repository;
  *
  * @package SpartaPark\Repository\Lot
  */
-interface LotRepository extends Repository, Crudable
-{
-
-}
+interface LotRepository extends Repository, Crudable {}

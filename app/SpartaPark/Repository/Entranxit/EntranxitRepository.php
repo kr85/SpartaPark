@@ -8,7 +8,4 @@ use SpartaPark\Repository\Repository;
  *
  * @package SpartaPark\Entranxit
  */
-interface EntranxitRepository extends Repository, Crudable
-{
-
-}
+interface EntranxitRepository extends Repository, Crudable {}

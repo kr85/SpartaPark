@@ -34,6 +34,7 @@ class EloquentWebRepository extends AbstractEloquentRepository implements WebRep
     */
    public function isCar($image)
    {
+      // Default value until object recognition module provides a post url
       return true;
    }
 }
