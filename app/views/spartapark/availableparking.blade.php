@@ -728,14 +728,14 @@
 
             li.innerHTML = html;
 
-            // Waits 1.5 seconds until adds sidebar dom listeners
+            // Waits 3 seconds until adds sidebar dom listeners
             setTimeout(function() {
                 // Add dom listeners
                 addDomListenerMouseover(li, marker);
                 addDomListenerMouseout(li, marker);
                 addDomListenerClick(li, marker);
                 addDomListenerDblClick(li, mainMap);
-            }, 1500);
+            }, 3000);
         }
 
         // Add a mouseover listener to sidebar entry
