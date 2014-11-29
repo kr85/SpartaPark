@@ -500,7 +500,7 @@ class WebController extends BaseController
       // Find entry with id
       $entry  = $this->entranxitRepository->find($entry->id, array());
       // Image path
-      $image = $entry->image;
+      $image = public_path() . '/' . $entry->image;
       // Region id
       $region_id = $entry->region_id;
       // Car orientation
@@ -545,6 +545,20 @@ class WebController extends BaseController
                }
             }
          }
+      }
+
+      // Delete the image
+      if (File::exists($image)) {
+         $delete = File::delete($image);
+         if ($delete) {
+            Response::make('Not deleted', 400, array());
+         }
+      }
+
+      // Delete the record from the database
+      $delete = $this->entranxitRepository->destroy($entry->id);
+      if (!$delete) {
+         Response::make('Not deleted', 400, array());
       }
    }
 }
