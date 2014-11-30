@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/WebController.php" afterPath="$PROJECT_DIR$/app/controllers/WebController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spartapark.iws" />
@@ -26,10 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WebController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WebController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="553" column="56" selection-start="17487" selection-end="17487" vertical-scroll-proportion="0.7186401" vertical-offset="7607" max-vertical-offset="8460">
+            <state line="517" column="0" selection-start="16196" selection-end="16196" vertical-scroll-proportion="-3.9166667" vertical-offset="7586" max-vertical-offset="8460">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="19" selection-start="280" selection-end="280" vertical-scroll-proportion="0.29076397" vertical-offset="0" max-vertical-offset="877">
               <folding />
             </state>
           </provider>
@@ -48,7 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/SpartaPark/Validation/SpartaParkValidator.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Validation/Contact/ContactUsFormValidator.php" />
         <option value="$PROJECT_DIR$/app/SpartaPark/Validation/ValidationServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/config/mail.php" />
@@ -99,6 +106,7 @@
         <option value="$PROJECT_DIR$/app/SpartaPark/Repository/Region/RegionRepository.php" />
         <option value="$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/WebController.php" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -135,6 +143,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -187,7 +196,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,7 +274,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903326" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16027689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16187434" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -274,11 +282,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -300,11 +308,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/partials/carousels/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="36" selection-start="66" selection-end="74" vertical-scroll-proportion="0.017103763" vertical-offset="0" max-vertical-offset="877" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/footers/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="24" selection-start="84" selection-end="98" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585" />
@@ -549,14 +552,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/spartapark/availableparking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="669" column="34" selection-start="29927" selection-end="29968" vertical-scroll-proportion="0.5131129" vertical-offset="9585" max-vertical-offset="21660">
-          <folding />
-        </state>
+        <state line="669" column="34" selection-start="29927" selection-end="29968" vertical-scroll-proportion="0.5131129" vertical-offset="9585" max-vertical-offset="21660" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/WebController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="553" column="56" selection-start="17487" selection-end="17487" vertical-scroll-proportion="0.7186401" vertical-offset="7607" max-vertical-offset="8460">
+        <state line="517" column="0" selection-start="16196" selection-end="16196" vertical-scroll-proportion="-3.9166667" vertical-offset="7586" max-vertical-offset="8460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="19" selection-start="280" selection-end="280" vertical-scroll-proportion="0.29076397" vertical-offset="0" max-vertical-offset="877">
           <folding />
         </state>
       </provider>
