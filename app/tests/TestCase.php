@@ -8,7 +8,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
    public function setUp()
    {
       parent::setUp();
-      //$this->prepareForTests();
+      $this->prepareForTests();
    }
 
 	/**

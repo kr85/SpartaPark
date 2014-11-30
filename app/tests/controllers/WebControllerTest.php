@@ -14,8 +14,8 @@ class WebControllerTest extends TestCase
     */
    public function testGetIndex()
    {
-      /*$crawler = $this->call('GET', '/');
-      $this->assertTrue($crawler->isOk());*/
+      $crawler = $this->call('GET', '/');
+      $this->assertTrue($crawler->isOk());
    }
 
    /**
@@ -23,8 +23,8 @@ class WebControllerTest extends TestCase
     */
    public function testGetContact()
    {
-      /*$crawler = $this->call('GET', '/contact');
-      $this->assertTrue($crawler->isOk());*/
+      $crawler = $this->call('GET', '/contact');
+      $this->assertTrue($crawler->isOk());
    }
 
    /**
@@ -32,8 +32,8 @@ class WebControllerTest extends TestCase
     */
    public function testGetAbout()
    {
-      /*$crawler = $this->call('GET', '/about');
-      $this->assertTrue($crawler->isOk());*/
+      $crawler = $this->call('GET', '/about');
+      $this->assertTrue($crawler->isOk());
    }
 
    /**
@@ -41,8 +41,8 @@ class WebControllerTest extends TestCase
     */
    public function testGetAvailableParking()
    {
-      /*$crawler = $this->call('GET', '/parking');
-      $this->assertTrue($crawler->isOk());*/
+      $crawler = $this->call('GET', '/parking');
+      $this->assertTrue($crawler->isOk());
    }
 }
  

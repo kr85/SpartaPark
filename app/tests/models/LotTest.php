@@ -24,8 +24,8 @@ class LotTest extends TestCase
     */
    public function testRelationWithOwner()
    {
-      /*$lot = FactoryMuff::create('Lot');
-      $this->assertEquals($lot->owner_id, $lot->owners->id);*/
+      $lot = FactoryMuff::create('Lot');
+      $this->assertEquals($lot->owner_id, $lot->owners->id);
    }
 
    /**

@@ -19,8 +19,8 @@ class RegionTest extends TestCase
     */
    public function testRelationWithLot()
    {
-      /*$region = FactoryMuff::create('Region');
-      $this->assertEquals($region->lot_id, $region->lots->id);*/
+      $region = FactoryMuff::create('Region');
+      $this->assertEquals($region->lot_id, $region->lots->id);
    }
 
    /**
