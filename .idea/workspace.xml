@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/ExampleTest.php" afterPath="$PROJECT_DIR$/app/tests/ExampleTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/models/LotTest.php" afterPath="$PROJECT_DIR$/app/tests/models/LotTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/controllers/MobileControllerTest.php" afterPath="$PROJECT_DIR$/app/tests/controllers/MobileControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/models/RegionTest.php" afterPath="$PROJECT_DIR$/app/tests/models/RegionTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/TestCase.php" afterPath="$PROJECT_DIR$/app/tests/TestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/controllers/WebControllerTest.php" afterPath="$PROJECT_DIR$/app/tests/controllers/WebControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="" />
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
