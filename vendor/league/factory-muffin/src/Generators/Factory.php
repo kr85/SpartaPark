@@ -2,10 +2,13 @@
 
 namespace League\FactoryMuffin\Generators;
 
-use League\FactoryMuffin\Facade as FactoryMuffin;
-
 /**
- * Class Factory.
+ * This is the factory generator class.
+ *
+ * The factory generator can be useful for setting up relationships between
+ * models. The factory generator will return the model id of the model you ask
+ * it to generate. Please note that class is not be considered part of the
+ * public api, and should only be used internally by Factory Muffin.
  *
  * @package League\FactoryMuffin\Generators
  * @author  Zizaco <zizaco@gmail.com>
@@ -13,7 +16,7 @@ use League\FactoryMuffin\Facade as FactoryMuffin;
  * @author  Graham Campbell <graham@mineuk.com>
  * @license <https://github.com/thephpleague/factory-muffin/blob/master/LICENSE> MIT
  */
-class Factory extends Base
+final class Factory extends Base
 {
     /**
      * Generate, and return the attribute.
@@ -32,7 +35,7 @@ class Factory extends Base
     /**
      * Return generated data.
      *
-     * @return int
+     * @return int|null
      */
     public function generate()
     {
@@ -48,7 +51,7 @@ class Factory extends Base
      *
      * @param object $object The model instance.
      *
-     * @return int
+     * @return int|null
      */
     private function getId($object)
     {

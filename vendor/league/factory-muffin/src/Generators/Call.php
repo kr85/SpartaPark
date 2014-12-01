@@ -6,7 +6,11 @@ use League\FactoryMuffin\Exceptions\MethodNotFoundException;
 use League\FactoryMuffin\Facade as FactoryMuffin;
 
 /**
- * Class Call.
+ * This is the call generator class.
+ *
+ * The call generator allows you to generate attributes by calling static
+ * methods on your models. Please note that class is not be considered part of
+ * the public api, and should only be used internally by Factory Muffin.
  *
  * @package League\FactoryMuffin\Generators
  * @author  Zizaco <zizaco@gmail.com>
@@ -14,7 +18,7 @@ use League\FactoryMuffin\Facade as FactoryMuffin;
  * @author  Graham Campbell <graham@mineuk.com>
  * @license <https://github.com/thephpleague/factory-muffin/blob/master/LICENSE> MIT
  */
-class Call extends Base
+final class Call extends Base
 {
     /**
      * Generate, and return the attribute.
@@ -47,6 +51,8 @@ class Call extends Base
      *
      * @param string $method
      * @param array  $args
+     *
+     * @throws \League\FactoryMuffin\Exceptions\MethodNotFoundException
      *
      * @return mixed
      */

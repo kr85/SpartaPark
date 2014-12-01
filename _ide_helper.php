@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.11 on 2014-11-13.
+ * Generated for Laravel 4.2.11 on 2014-11-30.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -366,7 +366,7 @@ namespace {
         }
         
         /**
-         * Terminate the request and send the response to the browser.
+         * Call the "finish" and "shutdown" callbacks assigned to the application.
          *
          * @param \Symfony\Component\HttpFoundation\Request $request
          * @param \Symfony\Component\HttpFoundation\Response $response
@@ -8413,7 +8413,7 @@ namespace {
         }
         
         /**
-         * Push a new an array of jobs onto the queue.
+         * Push an array of jobs onto the queue.
          *
          * @param array $jobs
          * @param mixed $data

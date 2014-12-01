@@ -3,7 +3,11 @@
 namespace League\FactoryMuffin\Exceptions;
 
 /**
- * Class SaveFailedException.
+ * This is the save failed exception class.
+ *
+ * This is thrown when the save method of a model does not equal true in a
+ * loose comparison. This class extends ModelException, so you may want to try
+ * to catch that exception instead, if you want to be more general.
  *
  * @package League\FactoryMuffin\Exceptions
  * @author  Scott Robertson <scottymeuk@gmail.com>
@@ -22,9 +26,9 @@ class SaveFailedException extends ModelException
     /**
      * Create a new instance.
      *
-     * @param string $model
-     * @param string $errors
-     * @param string $message
+     * @param string      $model
+     * @param string|null $errors
+     * @param string|null $message
      *
      * @return void
      */

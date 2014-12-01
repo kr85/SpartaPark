@@ -92,7 +92,7 @@ class PHPUnit_Framework_Constraint_IsEqual extends PHPUnit_Framework_Constraint
     protected $ignoreCase = false;
 
     /**
-     * @var PHPUnit_Framework_ComparisonFailure
+     * @var SebastianBergmann\Comparator\ComparisonFailure
      */
     protected $lastFailure;
 
@@ -149,28 +149,29 @@ class PHPUnit_Framework_Constraint_IsEqual extends PHPUnit_Framework_Constraint
      */
     public function evaluate($other, $description = '', $returnResult = false)
     {
-        $comparatorFactory = PHPUnit_Framework_ComparatorFactory::getDefaultInstance();
+        $comparatorFactory = new SebastianBergmann\Comparator\Factory;
 
         try {
             $comparator = $comparatorFactory->getComparatorFor(
-              $other, $this->value
+                $this->value,
+                $other
             );
 
             $comparator->assertEquals(
-              $this->value,
-              $other,
-              $this->delta,
-              $this->canonicalize,
-              $this->ignoreCase
+                $this->value,
+                $other,
+                $this->delta,
+                $this->canonicalize,
+                $this->ignoreCase
             );
-        } catch (PHPUnit_Framework_ComparisonFailure $f) {
+        } catch (SebastianBergmann\Comparator\ComparisonFailure $f) {
             if ($returnResult) {
                 return false;
             }
 
             throw new PHPUnit_Framework_ExpectationFailedException(
-              trim($description . "\n" . $f->getMessage()),
-              $f
+                trim($description . "\n" . $f->getMessage()),
+                $f
             );
         }
 
@@ -191,25 +192,22 @@ class PHPUnit_Framework_Constraint_IsEqual extends PHPUnit_Framework_Constraint
                 return 'is equal to <text>';
             } else {
                 return sprintf(
-                  'is equal to <string:%s>',
-
-                  $this->value
+                    'is equal to <string:%s>',
+                    $this->value
                 );
             }
         } else {
             if ($this->delta != 0) {
                 $delta = sprintf(
-                  ' with delta <%F>',
-
-                  $this->delta
+                    ' with delta <%F>',
+                    $this->delta
                 );
             }
 
             return sprintf(
-              'is equal to %s%s',
-
-              $this->exporter->export($this->value),
-              $delta
+                'is equal to %s%s',
+                $this->exporter->export($this->value),
+                $delta
             );
         }
     }
