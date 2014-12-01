@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8cdf602a-7566-4b0f-a575-5c9c0913b35e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tests/TestCase.php" afterPath="$PROJECT_DIR$/app/tests/TestCase.php" />
     </list>
     <ignored path="spartapark.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,19 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestCase.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestCase.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tests/TestCase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="8" selection-start="571" selection-end="571" vertical-scroll-proportion="0.5627198" vertical-offset="0" max-vertical-offset="853">
+            <state line="32" column="8" selection-start="571" selection-end="571" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="72" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="12" column="56" selection-start="144" selection-end="144" vertical-scroll-proportion="0.20524515" vertical-offset="0" max-vertical-offset="877">
               <folding />
             </state>
           </provider>
@@ -632,6 +631,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/tests/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="8" selection-start="571" selection-end="571" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="41" selection-start="1884" selection-end="1884" vertical-scroll-proportion="7.5833335" vertical-offset="1097" max-vertical-offset="1950">
@@ -641,14 +647,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="72" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="8" selection-start="571" selection-end="571" vertical-scroll-proportion="0.5627198" vertical-offset="0" max-vertical-offset="853">
+        <state line="12" column="56" selection-start="144" selection-end="144" vertical-scroll-proportion="0.20524515" vertical-offset="0" max-vertical-offset="877">
           <folding />
         </state>
       </provider>
