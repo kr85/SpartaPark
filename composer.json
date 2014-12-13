@@ -19,13 +19,13 @@
         "doctrine/dbal": "~2.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.3.*",
+        "phpunit/phpunit": "4.*",
         "mockery/mockery": "0.9.*",
         "league/factory-muffin": "~2.0"
     },
     "autoload": {
-        "psr-0": {
-            "SpartaPark": "app/"
+        "psr-4": {
+            "SpartaPark\\": "app/SpartaPark/"
         },
         "classmap": [
             "app/commands",

@@ -80,6 +80,7 @@ class PHPUnit_Framework_Constraint_IsType extends PHPUnit_Framework_Constraint
       'array' => true,
       'boolean' => true,
       'bool' => true,
+      'double' => true,
       'float' => true,
       'integer' => true,
       'int' => true,
@@ -137,6 +138,7 @@ class PHPUnit_Framework_Constraint_IsType extends PHPUnit_Framework_Constraint
                 return is_integer($other);
                 }
 
+            case 'double':
             case 'float': {
                 return is_float($other);
                 }
@@ -163,7 +165,7 @@ class PHPUnit_Framework_Constraint_IsType extends PHPUnit_Framework_Constraint
                 }
 
             case 'resource': {
-                return is_resource($other);
+                return is_resource($other) || strtolower(@get_resource_type($other)) === 'unknown';
                 }
 
             case 'scalar': {
