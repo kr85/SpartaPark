@@ -19,12 +19,11 @@
                     <div class="story-icon-box animated" id="story-icon-box-problem">
                         <i class="fa fa-exclamation-triangle"></i>
                         <h3>Problem</h3>
-                        <p class="story-subsection-text">A short paragraph (or maybe long) describing the problem.
-                           Pretty much looking for that length of stuff stuff stuff.
-                           Stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff.
-                           And some more stuff stuff stuff stuff stuff stuff stuff stuff stuff.
-                           And even more stuff stuff stuff stuff stuff stuff stuff stuff stuff.
-                           And even if you wrote more stuff stuff stuff stuff if would be fine...
+                        <p class="story-subsection-text">
+                        Parking at San Jose State is an incredibly frustrating experience. Because of the regular
+                        schedule of classes, the parking garages have incredibly busy periods where a large number of
+                        people are all competing to find the last spot at once. Students and faculty often spend as
+                        much time trying to park as they do driving to campus, wasting gas, time, and patience.
                         </p>
                     </div>
                 </div>
@@ -32,8 +31,9 @@
                     <div class="story-icon-box animated" id="story-icon-box-vision">
                         <i class="fa fa-eye"></i>
                         <h3>Vision</h3>
-                        <p class="story-subsection-text" id="vision-subsection-p">A short paragraph (a few sentences) describing our vision or the big picture.
-                           Maybe something about senior project. Around same length as previous one.
+                        <p class="story-subsection-text" id="vision-subsection-p">
+                        We believe that parking can be made better even without expanding parking lot capacity.
+                        We aimed to make it possible to not have to ever spend time looking for a parking spot again.
                         </p>
                     </div>
                 </div>
@@ -41,8 +41,10 @@
                     <div class="story-icon-box animated" id="story-icon-box-goal">
                         <i class="fa fa-flag-checkered"></i>
                         <h3>Goal</h3>
-                        <p class="story-subsection-text">A short paragraph (a few sentences) describing our goal or the steps we needed to take.
-                           Maybe say something that it is our senior project. Around same length as the first one.
+                        <p class="story-subsection-text">
+                        A significant part of the problem is people not knowing what garages have spaces available,
+                        and where in the garage they are. Our goal was to make information about capacity and
+                        availability location available to everybody, anywhere.
                         </p>
                     </div>
                 </div>
@@ -50,8 +52,12 @@
                     <div class="story-icon-box animated" id="story-icon-box-solution">
                         <i class="fa fa-users"></i>
                         <h3>Solution</h3>
-                        <p class="story-subsection-text">...And SpartaPark was born.</p>
-                        <p class="story-subsection-text">Or something like that... whatever you guys think we should write here...</p>
+                        <p class="story-subsection-text">
+                        We created the SpartaPark system, which can be installed in any parking garage or lot.
+                        A small number of sensors all provide information to a central service that informs users of
+                        the exact number of spaces available on each floor of each garage. This information is
+                        available on the web or on your phone.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -76,8 +82,9 @@
                                 Raspberry Pi  Ultimate Starter Kit
                             </p>
                             <p class="design-subsection-text">
-                                Here we should write something about the Raspberry Pi kit
-                                and how cool it is, cheap, easy to use and stuff like that or whatever you want to write.
+                                The physical hardware we used is a Raspberry Pi, a low cost computer that can serve
+                                as a simple hardware base for many purposes. We used a camera and motion sensor module
+                                to take photos whenever there is movement in front of our sensors.
                             </p>
                         </div>
                         <div id="raspberry-pi-dim"></div>
@@ -88,11 +95,12 @@
                         <div class="object-recognition-image img-thumbnail"></div>
                         <div class="caption">
                             <p class="design-subsection-title">
-                                Object Recognition
+                                Object Recognition Software
                             </p>
                             <p class="design-subsection-text">
-                                Here we should write something about the super fancy object recognition
-                                algorithms that we use to distinguish cars from other objects and stuff like that.
+                                Motion detection alone would not provide an accurate count of cars in a garage, as
+                                people or animals could also set off the motion detector. We therefore analyze the
+                                photos to determine if they are actually cars.
                             </p>
                         </div>
                         <div id="object-recognition-dim"></div>
@@ -106,8 +114,10 @@
                                 Web & Mobile Service
                             </p>
                             <p class="design-subsection-text">
-                                Here we should write something about our service... that it is super cool, browser
-                                responsive and available to everyone or whatever you guys want.
+                                All of the information provided by our sensors gets uploaded to our web service, so
+                                that we can then provide useful features to users on their phone or the web. They can
+                                search for parking garages by location or name, view availabilities, and remove the
+                                stress from the parking experience.
                             </p>
                         </div>
                         <div id="web-service-dim"></div>
@@ -127,13 +137,13 @@
             </div>
             <div class="row row-padding">
                 <div class="col-md-8 col-lg-8 hide animated" id="service-section-text">
+                    <p class="service-subsection-title">Try it for yourself</p>
                     <ul>
-                        <li>Here we should write something about SpartaPark's service</li>
-                        <li>It can be bullet points or paragraphs...</li>
-                        <li>I don't know, maybe come up with a bunch of marketing stuff or whatever you guys decide</li>
-                        <li>We have a whole section to fill so we can put a bunch of things...</li>
-                        <li>More stuff</li>
-                        <li>And more stuff</li>
+                        <li>View the map</li>
+                        <li>Check the available parking spaces</li>
+                        <li>Get the directions and commute to the parking lot</li>
+                        <li>Avoid the usual stress and frustration of finding parking</li>
+                        <li>Enjoy your classes</li>
                     </ul>
                 </div>
                 <div class="col-md-4 hide animated" id="service-section-map">
