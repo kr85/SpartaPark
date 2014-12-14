@@ -138,7 +138,7 @@
             <div class="row row-padding">
                 <div class="col-md-8 col-lg-8 hide animated" id="service-section-text">
                     <p class="service-subsection-title">Try it for yourself</p>
-                    <ul>
+                    <ul class="service-subsection-text">
                         <li>View the map</li>
                         <li>Check the available parking spaces</li>
                         <li>Get the directions and commute to the parking lot</li>

@@ -83,6 +83,9 @@ footer {
     margin-right: auto;
     line-height: 5;
   }
+  .index-map-canvas {
+    display: none;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .contact-page-header {
@@ -117,6 +120,9 @@ footer {
     width: 435px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .index-map-canvas {
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -311,6 +317,9 @@ footer {
   }
   .sidebar-container {
     height: 200px;
+  }
+  .index-map-canvas {
+    display: none;
   }
 }
 @media (min-width: 768px) {
@@ -550,17 +559,6 @@ footer {
     margin-left: 343px;
     margin-top: 18px;
   }
-  .static-map {
-    background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=37.336,-121.881&zoom=15&size=347x339&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3323731,-121.8830326&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3331113,-121.8808485&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.339324,-121.880713);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 347px 339px;
-    height: 339px;
-    width: 347px;
-    padding: 0;
-    margin: 5px;
-    border-radius: 5px;
-  }
   .main-map-loader {
     position: fixed;
     left: 0;
@@ -593,6 +591,9 @@ footer {
     margin-top: 0;
     margin-left: 0;
     margin-bottom: 50px;
+  }
+  .index-map-canvas {
+    display: none;
   }
 }
 @media (min-width: 992px) {
@@ -1144,16 +1145,6 @@ div.content-wrapper.content-wrapper-navbar-push > div#map_canvas {
   position: relative;
   min-height: 500px;
 }
-.index-map-canvas {
-  margin-top: 6px;
-  box-shadow: 0 1px 10px #8c8c8c, 0 1px 0 #FFF inset;
-  border: 1px solid #999999;
-  border-radius: 5px;
-}
-.index-map-canvas:hover {
-  box-shadow: 0 1px 10px #0045a3, 0 1px 0 #FFF inset;
-  border: 1px solid rgba(0, 80, 243, 0.88);
-}
 .lot-entry {
   border-bottom: 1px solid #cecece;
   min-height: 55px;
@@ -1567,24 +1558,6 @@ div#map-directions-canvas {
   padding-top: 25px;
   padding-bottom: 25px;
 }
-.view-full-map-container {
-  position: absolute;
-  top: 26px;
-  right: 36px;
-  background-color: #ffffff;
-  padding: 9px;
-  border-radius: 10px;
-  border: 1px solid;
-}
-.view-full-map-container:hover {
-  box-shadow: 0 1px 5px #0045a3, 0 1px 0 #FFF inset;
-}
-.view-full-map {
-  text-transform: uppercase;
-  background: url(../images/icon-zoom.png) left center no-repeat transparent;
-  padding-left: 21px;
-  font-size: 13px;
-}
 .follow-us-wrapper {
   background-color: #000000;
   box-shadow: 0 0 10px black;
@@ -1873,83 +1846,6 @@ div#map-directions-canvas {
 .story-section-wrapper {
   box-shadow: none;
 }
-/*.scroll-arrow-wrapper {
-  position: absolute;
-  left: 50%;
-  top: -53px;
-  display: block;
-  z-index: 1;
-  width: 100px;
-  height: 100px;
-  margin-left: -50px;
-  padding: 20px 19px;
-  font-size: 8px;
-  background: none repeat scroll 0 0 #adaaaa;
-  box-shadow: 0 0 5px 0 #333333;
-  border-radius: 50%;
-  border: 1px solid #919191;
-}
-.scroll-arrow-wrapper-design-section {
-  position: absolute;
-  left: 50%;
-  top: -53px;
-  display: block;
-  z-index: 1;
-  width: 100px;
-  height: 100px;
-  margin-left: -50px;
-  padding: 20px 19px;
-  font-size: 8px;
-  background: none repeat scroll 0 0 #adaaaa;
-  box-shadow: 0 0 5px 0 #333333;
-  border-radius: 50%;
-  border: 1px solid #919191;
-}
-.scroll-arrow-wrapper-service-section {
-  position: absolute;
-  left: 50%;
-  top: -53px;
-  display: block;
-  z-index: 1;
-  width: 100px;
-  height: 100px;
-  margin-left: -50px;
-  padding: 20px 19px;
-  font-size: 8px;
-  background: none repeat scroll 0 0 #adaaaa;
-  box-shadow: 0 0 5px 0 #333333;
-  border-radius: 50%;
-  border: 1px solid #919191;
-}
-.scroll-arrow {
-  background-image: url(../images/scroll-down-arrow.png);
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: 60px 60px;
-  background-position: center center;
-  margin: 0;
-  padding: 0;
-  height: 60px;
-  width: 60px;
-}
-.scroll-arrow-wrapper:hover {
-  background: none repeat scroll 0 0 #101010;
-  border: 1px solid #101010;
-}
-.scroll-arrow-wrapper-design-section:hover {
-  background: none repeat scroll 0 0 #101010;
-  border: 1px solid #101010;
-}
-.scroll-arrow-wrapper-service-section:hover {
-  background: none repeat scroll 0 0 #101010;
-  border: 1px solid #101010;
-}
-.half-circle-scroll {
-  background-color: #000000;
-}
-.scroll-arrow-carousel-wrapper {
-
-}*/
 .raspberry-pi-image {
   background-image: url(../images/raspberry-pi-image.jpg);
   background-repeat: no-repeat;
@@ -2099,6 +1995,53 @@ div#map-directions-canvas {
     background-position: bottom center;
     background-size: 1900px 400px;
   }
+  .service-subsection-title {
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+  .service-subsection-text {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .static-map {
+    background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=37.336,-121.881&zoom=15&size=347x339&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3323731,-121.8830326&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3331113,-121.8808485&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.339324,-121.880713);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 347px 339px;
+    height: 339px;
+    width: 347px;
+    padding: 0;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .index-map-canvas {
+    margin-top: 6px;
+    box-shadow: 0 1px 10px #8c8c8c, 0 1px 0 #FFF inset;
+    border: 1px solid #999999;
+    border-radius: 5px;
+  }
+  .index-map-canvas:hover {
+    box-shadow: 0 1px 10px #0045a3, 0 1px 0 #FFF inset;
+    border: 1px solid rgba(0, 80, 243, 0.88);
+  }
+  .view-full-map-container {
+    position: absolute;
+    top: 26px;
+    right: 36px;
+    background-color: #ffffff;
+    padding: 9px;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  .view-full-map-container:hover {
+    box-shadow: 0 1px 5px #0045a3, 0 1px 0 #FFF inset;
+  }
+  .view-full-map {
+    text-transform: uppercase;
+    background: url(../images/icon-zoom.png) left center no-repeat transparent;
+    padding-left: 21px;
+    font-size: 13px;
+  }
 }
 @media (min-width: 1280px) and (max-width: 1624px) {
   .story-section-wrapper {
@@ -2201,6 +2144,53 @@ div#map-directions-canvas {
     background-position: bottom center;
     background-size: 1624px 300px;
   }
+  .service-subsection-title {
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+  .service-subsection-text {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .static-map {
+    background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=37.336,-121.881&zoom=15&size=347x339&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3323731,-121.8830326&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3331113,-121.8808485&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.339324,-121.880713);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 347px 339px;
+    height: 339px;
+    width: 347px;
+    padding: 0;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .index-map-canvas {
+    margin-top: 6px;
+    box-shadow: 0 1px 10px #8c8c8c, 0 1px 0 #FFF inset;
+    border: 1px solid #999999;
+    border-radius: 5px;
+  }
+  .index-map-canvas:hover {
+    box-shadow: 0 1px 10px #0045a3, 0 1px 0 #FFF inset;
+    border: 1px solid rgba(0, 80, 243, 0.88);
+  }
+  .view-full-map-container {
+    position: absolute;
+    top: 26px;
+    right: 36px;
+    background-color: #ffffff;
+    padding: 9px;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  .view-full-map-container:hover {
+    box-shadow: 0 1px 5px #0045a3, 0 1px 0 #FFF inset;
+  }
+  .view-full-map {
+    text-transform: uppercase;
+    background: url(../images/icon-zoom.png) left center no-repeat transparent;
+    padding-left: 21px;
+    font-size: 13px;
+  }
 }
 @media (min-width: 990px) and (max-width: 1279px) {
   .story-section-wrapper {
@@ -2299,6 +2289,53 @@ div#map-directions-canvas {
   .section-title h1 span#bullet-right-service {
     left: 708px;
   }
+  .service-subsection-title {
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+ .service-subsection-text {
+   text-transform: uppercase;
+   font-size: 20px;
+ }
+  .static-map {
+    background-image: url(https://maps.googleapis.com/maps/api/staticmap?center=37.336,-121.881&zoom=15&size=347x339&scale=1&maptype=roadmap&markers=color:red|label:|37.3353235,-121.8804712&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3323731,-121.8830326&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.3331113,-121.8808485&markers=icon:http://spartapark.cloudapp.net/assets/images/parking.png|37.339324,-121.880713);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 347px 339px;
+    height: 339px;
+    width: 347px;
+    padding: 0;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .index-map-canvas {
+    margin-top: 6px;
+    box-shadow: 0 1px 10px #8c8c8c, 0 1px 0 #FFF inset;
+    border: 1px solid #999999;
+    border-radius: 5px;
+  }
+  .index-map-canvas:hover {
+    box-shadow: 0 1px 10px #0045a3, 0 1px 0 #FFF inset;
+    border: 1px solid rgba(0, 80, 243, 0.88);
+  }
+  .view-full-map-container {
+    position: absolute;
+    top: 26px;
+    right: 36px;
+    background-color: #ffffff;
+    padding: 9px;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  .view-full-map-container:hover {
+    box-shadow: 0 1px 5px #0045a3, 0 1px 0 #FFF inset;
+  }
+  .view-full-map {
+    text-transform: uppercase;
+    background: url(../images/icon-zoom.png) left center no-repeat transparent;
+    padding-left: 21px;
+    font-size: 13px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   #story-icon-box-vision {
@@ -2354,6 +2391,19 @@ div#map-directions-canvas {
   }
   .section-title h1 span#bullet-right-service {
     left: 612px;
+  }
+}
+@media (max-width: 1200px) {
+  .index-map-canvas {
+    display: none;
+  }
+  .service-subsection-title {
+    text-transform: uppercase;
+    font-size: 35px;
+  }
+  .service-subsection-text {
+    text-transform: uppercase;
+    font-size: 20px;
   }
 }
 @media (min-width: 765px) and (max-width: 991px) {
