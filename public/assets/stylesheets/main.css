@@ -1831,13 +1831,13 @@ div#map-directions-canvas {
   background: url(../images/design-section-background.jpg) repeat scroll 0 0 #f0f0f0;
 }
 .story-section-wrapper {
- min-height: 600px;
+ min-height: 800px;
 }
 .design-section-wrapper {
-  min-height: 600px;
+  min-height: 820px;
 }
 .service-section-wrapper {
-  min-height: 600px;
+  min-height: 750px;
 }
 .service-section-wrapper {
   box-shadow: none;
