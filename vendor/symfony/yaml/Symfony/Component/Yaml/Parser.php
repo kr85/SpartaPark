@@ -29,7 +29,7 @@ class Parser
     private $refs = array();
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param int $offset The offset of YAML document (used for line numbers in error messages)
      */
@@ -623,7 +623,7 @@ class Parser
 
         // strip YAML header
         $count = 0;
-        $value = preg_replace('#^\%YAML[: ][\d\.]+.*\n#su', '', $value, -1, $count);
+        $value = preg_replace('#^\%YAML[: ][\d\.]+.*\n#u', '', $value, -1, $count);
         $this->offset += $count;
 
         // remove leading comments
@@ -649,7 +649,7 @@ class Parser
     }
 
     /**
-     * Returns true if the next line starts unindented collection
+     * Returns true if the next line starts unindented collection.
      *
      * @return bool Returns true if the next line starts unindented collection, false otherwise
      */
@@ -681,7 +681,7 @@ class Parser
     }
 
     /**
-     * Returns true if the string is un-indented collection item
+     * Returns true if the string is un-indented collection item.
      *
      * @return bool Returns true if the string is un-indented collection item, false otherwise
      */

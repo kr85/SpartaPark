@@ -14,9 +14,11 @@ namespace Monolog\Handler;
 use Monolog\Logger;
 
 /**
- * Class to record a log on a NewRelic application
- *
+ * Class to record a log on a NewRelic application.
+ * Enabling New Relic High Security mode may prevent capture of useful information.
+ * 
  * @see https://docs.newrelic.com/docs/agents/php-agent
+ * @see https://docs.newrelic.com/docs/accounts-partnerships/accounts/security/high-security
  */
 class NewRelicHandler extends AbstractProcessingHandler
 {
@@ -26,6 +28,13 @@ class NewRelicHandler extends AbstractProcessingHandler
      * @var string
      */
     protected $appName;
+
+    /**
+     * Name of the current transaction
+     *
+     * @var string
+     */
+    protected $transactionName;
 
     /**
      * Some context and extra data is passed into the handler as arrays of values. Do we send them as is
@@ -39,14 +48,21 @@ class NewRelicHandler extends AbstractProcessingHandler
      * {@inheritDoc}
      *
      * @param string  $appName
-     * @param boolean $implodeArrays
+     * @param boolean $explodeArrays
+     * @param string  $transactionName
      */
-    public function __construct($level = Logger::ERROR, $bubble = true, $appName = null, $explodeArrays = false)
-    {
+    public function __construct(
+        $level = Logger::ERROR,
+        $bubble = true,
+        $appName = null,
+        $explodeArrays = false,
+        $transactionName = null
+    ) {
         parent::__construct($level, $bubble);
 
         $this->appName       = $appName;
         $this->explodeArrays = $explodeArrays;
+        $this->transactionName = $transactionName;
     }
 
     /**
@@ -60,6 +76,11 @@ class NewRelicHandler extends AbstractProcessingHandler
 
         if ($appName = $this->getAppName($record['context'])) {
             $this->setNewRelicAppName($appName);
+        }
+
+        if ($transactionName = $this->getTransactionName($record['context'])) {
+            $this->setNewRelicTransactionName($transactionName);
+            unset($record['context']['transaction_name']);
         }
 
         if (isset($record['context']['exception']) && $record['context']['exception'] instanceof \Exception) {
@@ -102,7 +123,7 @@ class NewRelicHandler extends AbstractProcessingHandler
 
     /**
      * Returns the appname where this log should be sent. Each log can override the default appname, set in this
-     * handler's constructor, by providing the appname in its context.
+     * handler's constructor, by providing the appname in it's context.
      *
      * @param  array       $context
      * @return null|string
@@ -117,6 +138,23 @@ class NewRelicHandler extends AbstractProcessingHandler
     }
 
     /**
+     * Returns the name of the current transaction. Each log can override the default transaction name, set in this
+     * handler's constructor, by providing the transaction_name in it's context
+     *
+     * @param array $context
+     *
+     * @return null|string
+     */
+    protected function getTransactionName(array $context)
+    {
+        if (isset($context['transaction_name'])) {
+            return $context['transaction_name'];
+        }
+
+        return $this->transactionName;
+    }
+
+    /**
      * Sets the NewRelic application that should receive this log.
      *
      * @param string $appName
@@ -124,5 +162,15 @@ class NewRelicHandler extends AbstractProcessingHandler
     protected function setNewRelicAppName($appName)
     {
         newrelic_set_appname($appName);
+    }
+
+    /**
+     * Overwrites the name of the current transaction
+     *
+     * @param $transactionName
+     */
+    protected function setNewRelicTransactionName($transactionName)
+    {
+        newrelic_name_transaction($transactionName);
     }
 }

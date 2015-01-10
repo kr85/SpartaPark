@@ -106,6 +106,7 @@ class MySqlPlatform extends AbstractPlatform
     public function getConcatExpression()
     {
         $args = func_get_args();
+
         return 'CONCAT(' . join(', ', (array) $args) . ')';
     }
 
@@ -298,7 +299,7 @@ class MySqlPlatform extends AbstractPlatform
      *
      * @deprecated Deprecated since version 2.5, Use {@link self::getColumnCollationDeclarationSQL()} instead.
      *
-     * @param string $collation   name of the collation
+     * @param string $collation name of the collation
      *
      * @return string  DBMS specific SQL code portion needed to set the COLLATION
      *                 of a field declaration.
@@ -666,7 +667,98 @@ class MySqlPlatform extends AbstractPlatform
             $diff->removedForeignKeys = array();
         }
 
-        $sql = array_merge($sql, parent::getPreAlterTableIndexForeignKeySQL($diff));
+        $sql = array_merge(
+            $sql,
+            parent::getPreAlterTableIndexForeignKeySQL($diff),
+            $this->getPreAlterTableRenameIndexForeignKeySQL($diff)
+        );
+
+        return $sql;
+    }
+
+    /**
+     * @param TableDiff $diff The table diff to gather the SQL for.
+     *
+     * @return array
+     */
+    protected function getPreAlterTableRenameIndexForeignKeySQL(TableDiff $diff)
+    {
+        $sql = array();
+        $tableName = $diff->getName($this)->getQuotedName($this);
+
+        foreach ($this->getRemainingForeignKeyConstraintsRequiringRenamedIndexes($diff) as $foreignKey) {
+            if (! in_array($foreignKey, $diff->changedForeignKeys, true)) {
+                $sql[] = $this->getDropForeignKeySQL($foreignKey, $tableName);
+            }
+        }
+
+        return $sql;
+    }
+
+    /**
+     * Returns the remaining foreign key constraints that require one of the renamed indexes.
+     *
+     * "Remaining" here refers to the diff between the foreign keys currently defined in the associated
+     * table and the foreign keys to be removed.
+     *
+     * @param TableDiff $diff The table diff to evaluate.
+     *
+     * @return array
+     */
+    private function getRemainingForeignKeyConstraintsRequiringRenamedIndexes(TableDiff $diff)
+    {
+        if (empty($diff->renamedIndexes) || ! $diff->fromTable instanceof Table) {
+            return array();
+        }
+
+        $foreignKeys = array();
+        /** @var \Doctrine\DBAL\Schema\ForeignKeyConstraint[] $remainingForeignKeys */
+        $remainingForeignKeys = array_diff_key(
+            $diff->fromTable->getForeignKeys(),
+            $diff->removedForeignKeys
+        );
+
+        foreach ($remainingForeignKeys as $foreignKey) {
+            foreach ($diff->renamedIndexes as $index) {
+                if ($foreignKey->intersectsIndexColumns($index)) {
+                    $foreignKeys[] = $foreignKey;
+
+                    break;
+                }
+            }
+        }
+
+        return $foreignKeys;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getPostAlterTableIndexForeignKeySQL(TableDiff $diff)
+    {
+        return array_merge(
+            parent::getPostAlterTableIndexForeignKeySQL($diff),
+            $this->getPostAlterTableRenameIndexForeignKeySQL($diff)
+        );
+    }
+
+    /**
+     * @param TableDiff $diff The table diff to gather the SQL for.
+     *
+     * @return array
+     */
+    protected function getPostAlterTableRenameIndexForeignKeySQL(TableDiff $diff)
+    {
+        $sql = array();
+        $tableName = (false !== $diff->newName)
+            ? $diff->getNewName()->getQuotedName($this)
+            : $diff->getName($this)->getQuotedName($this);
+
+        foreach ($this->getRemainingForeignKeyConstraintsRequiringRenamedIndexes($diff) as $foreignKey) {
+            if (! in_array($foreignKey, $diff->changedForeignKeys, true)) {
+                $sql[] = $this->getCreateForeignKeySQL($foreignKey, $tableName);
+            }
+        }
 
         return $sql;
     }
@@ -713,6 +805,34 @@ class MySqlPlatform extends AbstractPlatform
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getFloatDeclarationSQL(array $field)
+    {
+        return 'DOUBLE PRECISION' . $this->getUnsignedDeclaration($field);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDecimalTypeDeclarationSQL(array $columnDef)
+    {
+        return parent::getDecimalTypeDeclarationSQL($columnDef) . $this->getUnsignedDeclaration($columnDef);
+    }
+
+    /**
+     * Get unsigned declaration for a column.
+     *
+     * @param array $columnDef
+     *
+     * @return string
+     */
+    private function getUnsignedDeclaration(array $columnDef)
+    {
+        return ! empty($columnDef['unsigned']) ? ' UNSIGNED' : '';
+    }
+
+    /**
      * {@inheritDoc}
      */
     protected function _getCommonIntegerTypeDeclarationSQL(array $columnDef)
@@ -721,9 +841,8 @@ class MySqlPlatform extends AbstractPlatform
         if ( ! empty($columnDef['autoincrement'])) {
             $autoinc = ' AUTO_INCREMENT';
         }
-        $unsigned = (isset($columnDef['unsigned']) && $columnDef['unsigned']) ? ' UNSIGNED' : '';
 
-        return $unsigned . $autoinc;
+        return $this->getUnsignedDeclaration($columnDef) . $autoinc;
     }
 
     /**
@@ -736,6 +855,7 @@ class MySqlPlatform extends AbstractPlatform
             $query .= ' MATCH ' . $foreignKey->getOption('match');
         }
         $query .= parent::getAdvancedForeignKeyOptionsSQL($foreignKey);
+
         return $query;
     }
 

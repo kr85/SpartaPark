@@ -376,7 +376,19 @@ class Grammar extends BaseGrammar {
 	{
 		return $this->wrap($where['column']).' is not null';
 	}
-
+	
+	/**
+	 * Compile a "where date" clause.
+	 *
+	 * @param  \Illuminate\Database\Query\Builder  $query
+	 * @param  array  $where
+	 * @return string
+	 */
+	protected function whereDate(Builder $query, $where)
+	{
+		return $this->dateBasedWhere('date', $query, $where);
+	}
+	
 	/**
 	 * Compile a "where day" clause.
 	 *
@@ -463,7 +475,7 @@ class Grammar extends BaseGrammar {
 	{
 		$sql = implode(' ', array_map(array($this, 'compileHaving'), $havings));
 
-		return 'having '.preg_replace('/and /', '', $sql, 1);
+		return 'having '.preg_replace('/and |or /', '', $sql, 1);
 	}
 
 	/**
@@ -555,6 +567,21 @@ class Grammar extends BaseGrammar {
 		foreach ($query->unions as $union)
 		{
 			$sql .= $this->compileUnion($union);
+		}
+
+		if (isset($query->unionOrders))
+		{
+			$sql .= ' '.$this->compileOrders($query, $query->unionOrders);
+		}
+
+		if (isset($query->unionLimit))
+		{
+			$sql .= ' '.$this->compileLimit($query, $query->unionLimit);
+		}
+
+		if (isset($query->unionOffset))
+		{
+			$sql .= ' '.$this->compileOffset($query, $query->unionOffset);
 		}
 
 		return ltrim($sql);
