@@ -60,9 +60,12 @@
             <!-- Content -->
             @yield('content')
 
-            <!-- Footer -->
-            @include('footers.main')
-        </div>
+            <div class="push"></div>
+        </div
+
+        <!-- Footer -->
+        @include('footers.main')
+
 
         <!-- Javascript -->
         {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
