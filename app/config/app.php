@@ -127,7 +127,6 @@ return array(
       'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
       'Torann\GeoIP\GeoIPServiceProvider',
       'Toin0u\Geocoder\GeocoderServiceProvider',
-      'Intervention\Image\ImageServiceProvider',
 
       'SpartaPark\Repository\RepositoryServiceProvider',
 

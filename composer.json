@@ -14,8 +14,6 @@
         "kriswallsmith/buzz": "dev-master",
         "zendframework/zend-http": "2.3.*@dev",
         "geoip/geoip": "dev-master",
-        "intervention/image": "2.*",
-        "intervention/imagecache": "2.*",
         "doctrine/dbal": "~2.3"
     },
     "require-dev": {
