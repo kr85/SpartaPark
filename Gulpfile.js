@@ -10,9 +10,16 @@ gulp.task('css', function () {
     'public/assets/stylesheets/bootstrap-theme.min.css',
     'public/assets/stylesheets/animate.css',
     'public/assets/stylesheets/main.css',
-    'public/assets/fonts/font-awesome/css/font-awesome.min.css'
+    'public/assets/fonts/font-awesome/css/font-awesome.css'
   ])
     .pipe(concatCss('all.css'))
+    .pipe(minifyCss({keepBreaks:false}))
+    .pipe(gulp.dest('public/assets/stylesheets'))
+});
+
+gulp.task('css-min', function () {
+  gulp.src(['public/assets/stylesheets/all.css'])
+    .pipe(concatCss('all-min.css'))
     .pipe(minifyCss({keepBreaks:false}))
     .pipe(gulp.dest('public/assets/stylesheets'))
 });
