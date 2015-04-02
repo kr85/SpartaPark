@@ -30,11 +30,15 @@ class Yaml
      *
      *  Usage:
      *  <code>
-     *   $array = Yaml::parse(file_get_contents('config.yml'));
+     *   $array = Yaml::parse('config.yml');
      *   print_r($array);
      *  </code>
      *
-     * @param string $input                  A string containing YAML
+     * As this method accepts both plain strings and file names as an input,
+     * you must validate the input before calling this method. Passing a file
+     * as an input is a deprecated feature and will be removed in 3.0.
+     *
+     * @param string $input                  Path to a YAML file or a string containing YAML
      * @param bool   $exceptionOnInvalidType True if an exception must be thrown on invalid types false otherwise
      * @param bool   $objectSupport          True if object support is enabled, false otherwise
      *
@@ -46,9 +50,28 @@ class Yaml
      */
     public static function parse($input, $exceptionOnInvalidType = false, $objectSupport = false)
     {
+        // if input is a file, process it
+        $file = '';
+        if (strpos($input, "\n") === false && is_file($input)) {
+            if (false === is_readable($input)) {
+                throw new ParseException(sprintf('Unable to parse "%s" as the file is not readable.', $input));
+            }
+
+            $file = $input;
+            $input = file_get_contents($file);
+        }
+
         $yaml = new Parser();
 
-        return $yaml->parse($input, $exceptionOnInvalidType, $objectSupport);
+        try {
+            return $yaml->parse($input, $exceptionOnInvalidType, $objectSupport);
+        } catch (ParseException $e) {
+            if ($file) {
+                $e->setParsedFile($file);
+            }
+
+            throw $e;
+        }
     }
 
     /**

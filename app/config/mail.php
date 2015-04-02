@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'spartaparkcontact@gmail.com',
+	'username' => getenv('MAILER_USERNAME'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => '',
+	'password' => getenv('MAILER_PASSWORD'),
 
 	/*
 	|--------------------------------------------------------------------------

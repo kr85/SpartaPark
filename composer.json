@@ -7,8 +7,8 @@
         "way/generators": "3.0.*",
         "barryvdh/laravel-ide-helper": "1.11.*",
         "fzaninotto/faker": "1.4.*",
-        "appitventures/phpgmaps": "dev-master",
-        "torann/geoip": "dev-master",
+        "appitventures/phpgmaps": "1.0.*@dev",
+        "torann/geoip": "0.1.*@dev",
         "knyga/getip": "dev-master",
         "toin0u/geocoder-laravel": "@stable",
         "kriswallsmith/buzz": "dev-master",
@@ -53,5 +53,5 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }

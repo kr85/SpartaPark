@@ -805,34 +805,6 @@ class MySqlPlatform extends AbstractPlatform
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getFloatDeclarationSQL(array $field)
-    {
-        return 'DOUBLE PRECISION' . $this->getUnsignedDeclaration($field);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getDecimalTypeDeclarationSQL(array $columnDef)
-    {
-        return parent::getDecimalTypeDeclarationSQL($columnDef) . $this->getUnsignedDeclaration($columnDef);
-    }
-
-    /**
-     * Get unsigned declaration for a column.
-     *
-     * @param array $columnDef
-     *
-     * @return string
-     */
-    private function getUnsignedDeclaration(array $columnDef)
-    {
-        return ! empty($columnDef['unsigned']) ? ' UNSIGNED' : '';
-    }
-
-    /**
      * {@inheritDoc}
      */
     protected function _getCommonIntegerTypeDeclarationSQL(array $columnDef)
@@ -841,8 +813,9 @@ class MySqlPlatform extends AbstractPlatform
         if ( ! empty($columnDef['autoincrement'])) {
             $autoinc = ' AUTO_INCREMENT';
         }
+        $unsigned = (isset($columnDef['unsigned']) && $columnDef['unsigned']) ? ' UNSIGNED' : '';
 
-        return $this->getUnsignedDeclaration($columnDef) . $autoinc;
+        return $unsigned . $autoinc;
     }
 
     /**

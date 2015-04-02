@@ -28,12 +28,6 @@ version
 composer require mockery/mockery
 ```
 
-If you want to run the tests:
-
-```
-vendor/bin/phpunit
-```
-
 ## Mock Objects
 
 In unit tests, mock objects simulate the behaviour of real objects. They are
@@ -57,5 +51,7 @@ matchers used when defining expected method arguments.
 
 ## Documentation
 
-The current version can be seen at [docs.mockery.io](http://docs.mockery.io).
+**Note:** We're transitioning the documentation to readthedocs.org, current
+version can be seen at [docs.mockery.io](http://docs.mockery.io), feedback
+welcome. 
 

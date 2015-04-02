@@ -40,7 +40,7 @@ class PHPUnit_TextUI_Command
      * @var array
      */
     protected $longOptions = array(
-      'colors==' => null,
+      'colors' => null,
       'bootstrap=' => null,
       'columns=' => null,
       'configuration=' => null,
@@ -245,7 +245,7 @@ class PHPUnit_TextUI_Command
         foreach ($this->options[0] as $option) {
             switch ($option[0]) {
                 case '--colors': {
-                    $this->arguments['colors'] = $option[1] ?: PHPUnit_TextUI_ResultPrinter::COLOR_AUTO;
+                    $this->arguments['colors'] = true;
                     }
                 break;
 
@@ -512,6 +512,7 @@ class PHPUnit_TextUI_Command
                     $this->arguments['disallowTestOutput']         = true;
                     $this->arguments['enforceTimeLimit']           = true;
                     $this->arguments['disallowTodoAnnotatedTests'] = true;
+                    $this->arguments['deprecatedStrictModeOption'] = true;
                     }
                 break;
 
@@ -906,15 +907,14 @@ Test Execution Options:
   --disallow-test-output    Be strict about output during tests.
   --enforce-time-limit      Enforce time limit based on test size.
   --disallow-todo-tests     Disallow @todo-annotated tests.
-  --strict                  Run tests in strict mode (enables all of the above).
 
   --process-isolation       Run each test in a separate PHP process.
   --no-globals-backup       Do not backup and restore \$GLOBALS for each test.
   --static-backup           Backup and restore static attributes for each test.
 
-  --colors=<flag>           Use colors in output ("never", "auto" or "always").
-  --columns <n>             Number of columns to use for progress output.
-  --columns max             Use maximum number of columns for progress output.
+  --colors                  Use colors in output.
+  --columns <n>             Number of columns to use for progress outout.
+  --columns max             Use maximum number of columns for progress outout.
   --stderr                  Write to STDERR instead of STDOUT.
   --stop-on-error           Stop execution upon first error.
   --stop-on-failure         Stop execution upon first error or failure.

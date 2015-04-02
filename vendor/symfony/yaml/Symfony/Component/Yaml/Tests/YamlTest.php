@@ -21,5 +21,11 @@ class YamlTest extends \PHPUnit_Framework_TestCase
         $yml = Yaml::dump($data);
         $parsed = Yaml::parse($yml);
         $this->assertEquals($data, $parsed);
+
+        $filename = __DIR__.'/Fixtures/index.yml';
+        $contents = file_get_contents($filename);
+        $parsedByFilename = Yaml::parse($filename);
+        $parsedByContents = Yaml::parse($contents);
+        $this->assertEquals($parsedByFilename, $parsedByContents);
     }
 }

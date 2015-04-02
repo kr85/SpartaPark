@@ -15,18 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Kosta Rashev">
 
-        <!-- Bootstrap CSS -->
-        {{ HTML::style('assets/stylesheets/bootstrap.min.css') }}
-        {{ HTML::style('assets/stylesheets/bootstrap-theme.min.css') }}
-
-        <!-- Animate CSS -->
-        {{ HTML::style('assets/stylesheets/animate.css') }}
-
-        <!-- Custom CSS -->
-        {{ HTML::style('assets/stylesheets/main.css') }}
-
-        <!-- Font Awesome -->
-        {{ HTML::style('assets/fonts/font-awesome/css/font-awesome.min.css') }}
+        <!-- Stylesheets -->
+        {{ HTML::style('assets/stylesheets/all.css') }}
 
         <!-- Modernizr JS -->
         {{ HTML::script('assets/javascript/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
@@ -61,23 +51,13 @@
             @yield('content')
 
             <div class="push"></div>
-        </div
+        </div>
 
         <!-- Footer -->
         @include('footers.main')
 
-
         <!-- Javascript -->
-        {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
-        <script>window.jQuery ||
-            document.write('<scr'+'ipt type="text/javascript" src="assets/javascript/vendor/jquery-1.11.0.min.js"><\/scr'+'ipt>')
-        </script>
-        {{ HTML::script('assets/javascript/vendor/jquery.imgpreload.min.js') }}
-        {{ HTML::script('assets/javascript/vendor/jquery.browser.min.js') }}
-        {{ HTML::script('assets/javascript/vendor/bootstrap.min.js') }}
-        {{ HTML::script('assets/javascript/vendor/enscroll-0.6.1.min.js') }}
-        {{ HTML::script('assets/javascript/plugins.js') }}
-        {{ HTML::script('assets/javascript/main.js') }}
+        {{ HTML::script('assets/javascript/all.js') }}
 
         <!-- Google Analytics -->
         <script>
