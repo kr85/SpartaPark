@@ -9,5 +9,4 @@ return array(
     'SpartaPark\\' => array($baseDir . '/app/SpartaPark'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\FactoryMuffin\\' => array($vendorDir . '/league/factory-muffin/src'),
-    'Barryvdh\\LaravelIdeHelper\\' => array($vendorDir . '/barryvdh/laravel-ide-helper/src'),
 );

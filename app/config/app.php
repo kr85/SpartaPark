@@ -123,7 +123,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
       'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
       'Torann\GeoIP\GeoIPServiceProvider',
       'Toin0u\Geocoder\GeocoderServiceProvider',
